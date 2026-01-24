@@ -16,7 +16,7 @@ class ServiceMapper:
                 vertexai=True,
                 project=Config.GCP_PROJECT_ID,
                 location=Config.AI_LOCATION
-            )
+            ).aio
         else:
             self.client = None
         self.model_name = MODEL_DISCOVERY
@@ -29,7 +29,7 @@ class ServiceMapper:
         with open(SERVICE_MAP_SCHEMA_PATH, 'r') as f:
             self.schema = json.load(f)
 
-    def discover_services(self, csp_a: str, csp_b: str) -> dict:
+    async def discover_services(self, csp_a: str, csp_b: str) -> dict:
         """
         Maps services from CSP A to CSP B using Gemini 3 Flash.
         """
@@ -51,7 +51,7 @@ class ServiceMapper:
         # So discovery can return full list.
 
         try:
-            response = self.client.models.generate_content(
+            response = await self.client.models.generate_content(
                 model=self.model_name,
                 contents=user_content,
                 config=types.GenerateContentConfig(
@@ -82,7 +82,10 @@ class ServiceMapper:
             return {"items": []}
 
 if __name__ == "__main__":
+    import asyncio
     # Local test
-    mapper = ServiceMapper()
-    result = mapper.discover_services("AWS", "GCP")
-    print(json.dumps(result, indent=2))
+    async def main():
+        mapper = ServiceMapper()
+        result = await mapper.discover_services("AWS", "GCP")
+        print(json.dumps(result, indent=2))
+    asyncio.run(main())

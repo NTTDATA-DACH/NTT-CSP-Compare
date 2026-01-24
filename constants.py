@@ -5,6 +5,7 @@ MODEL_SYNTHESIS = "gemini-3-pro-preview"
 
 # Budgets & Configs
 GROUNDING_THRESHOLD = 0.7
+MAX_CONCURRENT_REQUESTS = 10
 
 # File Paths
 PROMPT_CONFIG_PATH = "assets/json/prompt_config.json"

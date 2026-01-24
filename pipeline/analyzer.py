@@ -15,7 +15,7 @@ class TechnicalAnalyst:
                 vertexai=True,
                 project=Config.GCP_PROJECT_ID,
                 location=Config.AI_LOCATION
-            )
+            ).aio
         else:
             self.client = None
         self.model_name = MODEL_ANALYSIS
@@ -28,7 +28,7 @@ class TechnicalAnalyst:
         with open(TECHNICAL_SCHEMA_PATH, 'r') as f:
             self.schema = json.load(f)
 
-    def perform_analysis(self, csp_a: str, csp_b: str, service_pair: dict) -> dict:
+    async def perform_analysis(self, csp_a: str, csp_b: str, service_pair: dict) -> dict:
         service_a_name = service_pair.get("csp_a_service_name")
         service_a_url = service_pair.get("csp_a_url")
         service_b_name = service_pair.get("csp_b_service_name")
@@ -68,7 +68,7 @@ class TechnicalAnalyst:
             # Note: ThinkingConfig location in GenerateContentConfig might vary by version.
             # Based on docs: config=types.GenerateContentConfig(thinking_config=...)
 
-            response = self.client.models.generate_content(
+            response = await self.client.models.generate_content(
                 model=self.model_name,
                 contents=user_content,
                 config=types.GenerateContentConfig(

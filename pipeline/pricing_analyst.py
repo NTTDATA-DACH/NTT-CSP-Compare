@@ -15,7 +15,7 @@ class PricingAnalyst:
                 vertexai=True,
                 project=Config.GCP_PROJECT_ID,
                 location=Config.AI_LOCATION
-            )
+            ).aio
         else:
             self.client = None
         self.model_name = MODEL_ANALYSIS # Reuse the same model (Pro Thinking)
@@ -28,7 +28,7 @@ class PricingAnalyst:
         with open(PRICING_SCHEMA_PATH, 'r') as f:
             self.schema = json.load(f)
 
-    def perform_analysis(self, csp_a: str, csp_b: str, service_pair: dict) -> dict:
+    async def perform_analysis(self, csp_a: str, csp_b: str, service_pair: dict) -> dict:
         service_a_name = service_pair.get("csp_a_service_name")
         service_b_name = service_pair.get("csp_b_service_name")
 
@@ -57,7 +57,7 @@ class PricingAnalyst:
         )
 
         try:
-            response = self.client.models.generate_content(
+            response = await self.client.models.generate_content(
                 model=self.model_name,
                 contents=user_content,
                 config=types.GenerateContentConfig(

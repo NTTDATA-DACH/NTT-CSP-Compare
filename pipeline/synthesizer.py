@@ -16,7 +16,7 @@ class Synthesizer:
                 vertexai=True,
                 project=Config.GCP_PROJECT_ID,
                 location=Config.AI_LOCATION
-            )
+            ).aio
         else:
             self.client = None
         self.model_name = MODEL_SYNTHESIS
@@ -29,7 +29,7 @@ class Synthesizer:
         with open(SYNTHESIS_SCHEMA_PATH, 'r') as f:
             self.schema = json.load(f)
 
-    def synthesize(self, service_pair_id: str, technical_data: dict, pricing_data: dict) -> dict:
+    async def synthesize(self, service_pair_id: str, technical_data: dict, pricing_data: dict) -> dict:
         """
         Synthesizes technical and pricing analysis into a narrative.
         Returns the Result object (Technical + Pricing + Synthesis).
@@ -65,7 +65,7 @@ class Synthesizer:
         )
 
         try:
-            response = self.client.models.generate_content(
+            response = await self.client.models.generate_content(
                 model=self.model_name,
                 contents=user_content,
                 config=types.GenerateContentConfig(

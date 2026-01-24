@@ -3,7 +3,9 @@ import logging
 import json
 import os
 import datetime
+import asyncio
 from config import Config
+from constants import MAX_CONCURRENT_REQUESTS
 from pipeline.discovery import ServiceMapper
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
@@ -13,7 +15,50 @@ from pipeline.visualizer import DashboardGenerator
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def main():
+async def process_service_item(item, tech_analyst, pricing_analyst, synthesizer, csp_a, csp_b, semaphore):
+    async with semaphore:
+        service_a = item["csp_a_service_name"]
+        service_b = item.get("csp_b_service_name")
+
+        if not service_b:
+            logger.info(f"Skipping {service_a} (no match in {csp_b})")
+            return None
+
+        service_pair_id = f"{service_a}_vs_{service_b}"
+        logger.info(f"Processing: {service_pair_id}")
+
+        # Perform analyses
+        tech_data = await tech_analyst.perform_analysis(csp_a, csp_b, item)
+        if not tech_data:
+            logger.warning(f"Technical analysis failed for {service_pair_id}")
+            return None
+        tech_data["service_pair_id"] = service_pair_id
+        with open(f"data/technical_{service_pair_id}.json", "w") as f:
+            json.dump(tech_data, f, indent=2)
+
+        pricing_data = await pricing_analyst.perform_analysis(csp_a, csp_b, item)
+        if not pricing_data:
+            logger.warning(f"Pricing analysis failed for {service_pair_id}")
+            return None
+        pricing_data["service_pair_id"] = service_pair_id
+        with open(f"data/pricing_{service_pair_id}.json", "w") as f:
+            json.dump(pricing_data, f, indent=2)
+
+        # Synthesis
+        result_json = await synthesizer.synthesize(service_pair_id, tech_data, pricing_data)
+        if not result_json:
+            logger.warning(f"Synthesis failed for {service_pair_id}")
+            return None
+        with open(f"data/result_{service_pair_id}.json", "w") as f:
+            json.dump(result_json, f, indent=2)
+
+        # Return combined result for visualization
+        return {
+            "map": item,
+            "result": result_json
+        }
+
+async def main():
     parser = argparse.ArgumentParser(description="Cloud Service Provider Comparator Pipeline")
     parser.add_argument("--csp-a", required=True, help="First CSP (e.g., AWS)")
     parser.add_argument("--csp-b", required=True, help="Second CSP (e.g., GCP)")
@@ -32,7 +77,7 @@ def main():
 
     # --- Phase 1: Discovery ---
     mapper = ServiceMapper()
-    service_map = mapper.discover_services(csp_a, csp_b)
+    service_map = await mapper.discover_services(csp_a, csp_b)
 
     # Save Service Map
     with open(f"data/service_map_{csp_a}_{csp_b}.json", "w") as f:
@@ -47,58 +92,15 @@ def main():
     tech_analyst = TechnicalAnalyst()
     pricing_analyst = PricingAnalyst()
     synthesizer = Synthesizer()
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
-    final_results = []
-
+    tasks = []
     for item in items:
-        service_a = item["csp_a_service_name"]
-        service_b = item.get("csp_b_service_name")
-        domain = item.get("domain", "General")
+        tasks.append(process_service_item(item, tech_analyst, pricing_analyst, synthesizer, csp_a, csp_b, semaphore))
 
-        if not service_b:
-            logger.info(f"Skipping {service_a} (no match in {csp_b})")
-            continue
+    processed_results = await asyncio.gather(*tasks)
 
-        service_pair_id = f"{service_a}_vs_{service_b}"
-        logger.info(f"Processing: {service_pair_id}")
-
-        # Technical Analysis
-        tech_data = tech_analyst.perform_analysis(csp_a, csp_b, item)
-        if not tech_data:
-            logger.warning(f"Technical analysis failed for {service_pair_id}")
-            continue
-
-        # Add ID if missing (schema requires it)
-        tech_data["service_pair_id"] = service_pair_id
-
-        with open(f"data/technical_{service_pair_id}.json", "w") as f:
-            json.dump(tech_data, f, indent=2)
-
-        # Pricing Analysis
-        pricing_data = pricing_analyst.perform_analysis(csp_a, csp_b, item)
-        if not pricing_data:
-            logger.warning(f"Pricing analysis failed for {service_pair_id}")
-            continue
-
-        pricing_data["service_pair_id"] = service_pair_id
-
-        with open(f"data/pricing_{service_pair_id}.json", "w") as f:
-            json.dump(pricing_data, f, indent=2)
-
-        # Synthesis
-        result_json = synthesizer.synthesize(service_pair_id, tech_data, pricing_data)
-        if not result_json:
-            logger.warning(f"Synthesis failed for {service_pair_id}")
-            continue
-
-        with open(f"data/result_{service_pair_id}.json", "w") as f:
-            json.dump(result_json, f, indent=2)
-
-        # Append to list for visualization (combining map and result)
-        final_results.append({
-            "map": item,
-            "result": result_json
-        })
+    final_results = [res for res in processed_results if res is not None]
 
     # --- Phase 5: Visualization ---
     visualizer = DashboardGenerator()
@@ -110,4 +112,4 @@ def main():
     logger.info("Pipeline completed successfully.")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
