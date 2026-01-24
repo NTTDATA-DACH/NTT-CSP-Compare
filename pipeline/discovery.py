@@ -11,11 +11,14 @@ logger = logging.getLogger(__name__)
 
 class ServiceMapper:
     def __init__(self):
-        self.client = genai.Client(
-            vertexai=True,
-            project=Config.GCP_PROJECT_ID,
-            location=Config.AI_LOCATION
-        )
+        if not Config.TEST_MODE:
+            self.client = genai.Client(
+                vertexai=True,
+                project=Config.GCP_PROJECT_ID,
+                location=Config.AI_LOCATION
+            )
+        else:
+            self.client = None
         self.model_name = MODEL_DISCOVERY
         self._load_assets()
 
@@ -31,6 +34,34 @@ class ServiceMapper:
         Maps services from CSP A to CSP B using Gemini 3 Flash.
         """
         logger.info(f"Starting discovery: {csp_a} -> {csp_b} using {self.model_name}")
+
+        if Config.TEST_MODE:
+            logger.info("TEST_MODE is enabled. Returning mock data.")
+            return {
+                "items": [
+                    {
+                        "domain": "Compute",
+                        "csp_a_service_name": "EC2",
+                        "csp_a_url": "https://aws.amazon.com/ec2/",
+                        "csp_b_service_name": "Compute Engine",
+                        "csp_b_url": "https://cloud.google.com/compute/"
+                    },
+                    {
+                        "domain": "Storage",
+                        "csp_a_service_name": "S3",
+                        "csp_a_url": "https://aws.amazon.com/s3/",
+                        "csp_b_service_name": "Cloud Storage",
+                        "csp_b_url": "https://cloud.google.com/storage/"
+                    },
+                    {
+                        "domain": "Database",
+                        "csp_a_service_name": "RDS",
+                        "csp_a_url": "https://aws.amazon.com/rds/",
+                        "csp_b_service_name": "Cloud SQL",
+                        "csp_b_url": "https://cloud.google.com/sql/"
+                    }
+                ]
+            }
 
         prompt_config = self.prompts["discovery_prompt"]
         system_instruction = prompt_config["system_instruction"]

@@ -1,0 +1,12 @@
+{
+  "service_pair_id": "RDS_vs_Cloud SQL",
+  "pricing_models": [
+    {
+      "model_type": "On-Demand",
+      "csp_a_details": "Standard hourly rates",
+      "csp_b_details": "Standard hourly rates"
+    }
+  ],
+  "cost_efficiency_score": 8.0,
+  "notes": "Mock pricing data."
+}

@@ -10,11 +10,14 @@ logger = logging.getLogger(__name__)
 
 class PricingAnalyst:
     def __init__(self):
-        self.client = genai.Client(
-            vertexai=True,
-            project=Config.GCP_PROJECT_ID,
-            location=Config.AI_LOCATION
-        )
+        if not Config.TEST_MODE:
+            self.client = genai.Client(
+                vertexai=True,
+                project=Config.GCP_PROJECT_ID,
+                location=Config.AI_LOCATION
+            )
+        else:
+            self.client = None
         self.model_name = MODEL_ANALYSIS # Reuse the same model (Pro Thinking)
         self._load_assets()
 
@@ -32,6 +35,17 @@ class PricingAnalyst:
         if not service_b_name:
             logger.warning(f"Skipping pricing analysis for {service_a_name} as no equivalent found in {csp_b}")
             return None
+
+        if Config.TEST_MODE:
+            logger.info(f"TEST_MODE enabled for PricingAnalyst. Returning mock data for {service_a_name} vs {service_b_name}")
+            return {
+                "service_pair_id": f"{service_a_name}_vs_{service_b_name}",
+                "pricing_models": [
+                    {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
+                ],
+                "cost_efficiency_score": 8.0,
+                "notes": "Mock pricing data."
+            }
 
         prompt_config = self.prompts["pricing_prompt"]
         system_instruction = prompt_config["system_instruction"]

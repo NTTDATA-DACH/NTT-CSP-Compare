@@ -9,8 +9,8 @@
           "domain": { "type": "string" },
           "csp_a_service_name": { "type": "string" },
           "csp_a_url": { "type": "string", "format": "uri" },
-          "csp_b_service_name": { "type": ["string", "null"] },
-          "csp_b_url": { "type": ["string", "null"], "format": "uri" }
+          "csp_b_service_name": { "type": "string", "nullable": true },
+          "csp_b_url": { "type": "string", "format": "uri", "nullable": true }
         },
         "required": ["domain", "csp_a_service_name"]
       }

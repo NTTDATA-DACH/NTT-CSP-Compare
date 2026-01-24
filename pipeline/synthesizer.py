@@ -11,11 +11,14 @@ logger = logging.getLogger(__name__)
 
 class Synthesizer:
     def __init__(self):
-        self.client = genai.Client(
-            vertexai=True,
-            project=Config.GCP_PROJECT_ID,
-            location=Config.AI_LOCATION
-        )
+        if not Config.TEST_MODE:
+            self.client = genai.Client(
+                vertexai=True,
+                project=Config.GCP_PROJECT_ID,
+                location=Config.AI_LOCATION
+            )
+        else:
+            self.client = None
         self.model_name = MODEL_SYNTHESIS
         self._load_assets()
 
@@ -31,6 +34,23 @@ class Synthesizer:
         Synthesizes technical and pricing analysis into a narrative.
         Returns the Result object (Technical + Pricing + Synthesis).
         """
+        if Config.TEST_MODE:
+            logger.info(f"TEST_MODE enabled for Synthesizer. Returning mock data for {service_pair_id}")
+            synthesis_result = {
+                "detailed_comparison": "This is a mock detailed comparison.",
+                "executive_summary": "Mock executive summary."
+            }
+            return {
+                "metadata": {
+                    "service_pair_id": service_pair_id,
+                    "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                    "model_version": self.model_name
+                },
+                "technical_data": technical_data,
+                "pricing_data": pricing_data,
+                "synthesis": synthesis_result
+            }
+
         prompt_config = self.prompts["synthesis_prompt"]
         system_instruction = prompt_config["system_instruction"]
 
