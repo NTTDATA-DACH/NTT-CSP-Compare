@@ -59,6 +59,7 @@ graph TD
     *   `aiplatform.googleapis.com`
     *   `run.googleapis.com`
     *   `storage.googleapis.com`
+    *   `cloudresourcemanager.googleapis.com`
 3.  **Authenticate:** Authenticate your local environment:
     ```bash
     gcloud auth application-default login
