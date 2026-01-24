@@ -1,10 +1,10 @@
 # Models
-MODEL_DISCOVERY = "gemini-3-flash"
-MODEL_ANALYSIS = "gemini-3-pro-thinking"
-MODEL_SYNTHESIS = "gemini-3-pro-thinking"
+MODEL_DISCOVERY = "gemini-3-flash-preview"
+MODEL_ANALYSIS = "gemini-3-pro-preview"
+MODEL_SYNTHESIS = "gemini-3-pro-preview"
 
 # Budgets & Configs
-THINKING_BUDGET = 2048
+THINKING_BUDGET = "high"
 GROUNDING_THRESHOLD = 0.7
 
 # File Paths
