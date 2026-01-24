@@ -63,6 +63,20 @@ graph TD
     ```bash
     gcloud auth application-default login
     ```
+4.  **Create a Service Account:** The Cloud Run Job requires a dedicated Service Account with permissions for Vertex AI and Cloud Storage.
+    ```bash
+    # Replace <PROJECT_ID> with your GCP Project ID
+    export PROJECT_ID=<PROJECT_ID>
+    export SA_NAME="csp-comparator-sa"
+    export SA_EMAIL="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
+
+    # Create the service account
+    gcloud iam service-accounts create ${SA_NAME} --display-name="CSP Comparator Service Account"
+
+    # Grant permissions to the service account
+    gcloud projects add-iam-policy-binding ${PROJECT_ID} --member="serviceAccount:${SA_EMAIL}" --role="roles/aiplatform.user"
+    gcloud projects add-iam-policy-binding ${PROJECT_ID} --member="serviceAccount:${SA_EMAIL}" --role="roles/storage.objectAdmin"
+    ```
 
 ### Installation
 1.  **Clone the repository:**
