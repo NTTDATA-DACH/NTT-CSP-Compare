@@ -202,9 +202,9 @@ cython_debug/
 .cursorindexingignore
 
 # local data 
-data/
-public/
-raw/
+data/*
+public/*
+raw/*
 
 # Terraform
 .terraform/
