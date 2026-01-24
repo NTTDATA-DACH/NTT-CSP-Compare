@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "service_pair_id": { "type": "string" },
+    "maturity_analysis": {
+      "type": "string",
+      "description": "Evaluation of stability, SLAs, and enterprise readiness."
+    },
+    "integration_quality": {
+      "type": "string",
+      "description": "Assessment of SDKs, ecosystem, and versatility."
+    },
+    "technical_advantages_a": { "type": "array", "items": { "type": "string" } },
+    "technical_advantages_b": { "type": "array", "items": { "type": "string" } },
+    "technical_score": {
+      "type": "number",
+      "minimum": -10,
+      "maximum": 10,
+      "description": "Score based purely on quality/features. -10 (B worse) to +10 (B better)."
+    },
+    "technical_reasoning": { "type": "string" }
+  },
+  "required": ["service_pair_id", "maturity_analysis", "integration_quality", "technical_score", "technical_reasoning"]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "domain": { "type": "string" },
+          "csp_a_service_name": { "type": "string" },
+          "csp_a_url": { "type": "string", "format": "uri" },
+          "csp_b_service_name": { "type": ["string", "null"] },
+          "csp_b_url": { "type": ["string", "null"], "format": "uri" }
+        },
+        "required": ["domain", "csp_a_service_name"]
+      }
+    }
+  },
+  "required": ["items"]
+}

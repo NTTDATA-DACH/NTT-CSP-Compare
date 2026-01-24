@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "service_pair_id": { "type": "string" },
+    "pricing_models": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of billing methods (e.g. 'On-Demand', 'Spot', 'Committed Use')."
+    },
+    "free_tier_comparison": {
+      "type": "string",
+      "description": "Direct comparison of free tier limits."
+    },
+    "pricing_advantages_a": { "type": "array", "items": { "type": "string" } },
+    "pricing_advantages_b": { "type": "array", "items": { "type": "string" } },
+    "cost_efficiency_score": {
+      "type": "number",
+      "minimum": -10,
+      "maximum": 10,
+      "description": "Score based purely on cost. -10 (B expensive) to +10 (B cheaper)."
+    },
+    "pricing_reasoning": { "type": "string" }
+  },
+  "required": ["service_pair_id", "pricing_models", "free_tier_comparison", "cost_efficiency_score", "pricing_reasoning"]
+}
