@@ -211,6 +211,9 @@ raw/*
 *.tfstate
 *.tfstate.*
 *.tfvars
+terraform/.terraform.lock.hcl
+terraform.lock.hcl
+terraform.tfstate.backup
 
 # Marimo
 marimo/_static/
