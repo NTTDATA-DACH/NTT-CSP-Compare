@@ -4,7 +4,6 @@ MODEL_ANALYSIS = "gemini-3-pro-preview"
 MODEL_SYNTHESIS = "gemini-3-pro-preview"
 
 # Budgets & Configs
-THINKING_BUDGET = "high"
 GROUNDING_THRESHOLD = 0.7
 
 # File Paths

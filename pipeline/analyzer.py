@@ -3,7 +3,7 @@ import logging
 from google import genai
 from google.genai import types
 from config import Config
-from constants import MODEL_ANALYSIS, PROMPT_CONFIG_PATH, TECHNICAL_SCHEMA_PATH, THINKING_BUDGET
+from constants import MODEL_ANALYSIS, PROMPT_CONFIG_PATH, TECHNICAL_SCHEMA_PATH
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -77,8 +77,7 @@ class TechnicalAnalyst:
                     response_schema=self.schema,
                     temperature=0.7, # Thinking models often benefit from non-zero temp
                     thinking_config=types.ThinkingConfig(
-                        include_thoughts=False, # We usually don't need thoughts in final JSON output unless debugging
-                        thinking_budget=THINKING_BUDGET
+                        include_thoughts=False # We usually don't need thoughts in final JSON output unless debugging
                     ),
                     tools=[
                         types.Tool(

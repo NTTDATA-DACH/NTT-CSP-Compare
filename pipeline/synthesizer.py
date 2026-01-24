@@ -4,7 +4,7 @@ import datetime
 from google import genai
 from google.genai import types
 from config import Config
-from constants import MODEL_SYNTHESIS, PROMPT_CONFIG_PATH, SYNTHESIS_SCHEMA_PATH, THINKING_BUDGET
+from constants import MODEL_SYNTHESIS, PROMPT_CONFIG_PATH, SYNTHESIS_SCHEMA_PATH
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -75,7 +75,6 @@ class Synthesizer:
                     temperature=0.7,
                     thinking_config=types.ThinkingConfig(
                         include_thoughts=False,
-                        thinking_budget=THINKING_BUDGET
                     )
                     # No Grounding for synthesis
                 )
