@@ -56,9 +56,8 @@ graph TD
 ### GCP Setup
 1.  **Create a GCP Project:** If you don't have one already, create a new project in the [Google Cloud Console](https://console.cloud.google.com/).
 2.  **Enable APIs:** Enable the following APIs for your project:
-    *   `aiplatform.googleapis.com`
-    *   `run.googleapis.com`
-    *   `storage.googleapis.com`
+    *   `cloudresourcemanager.googleapis.com`
+    *   All the others will be done by terraform
 3.  **Authenticate:** Authenticate your local environment:
     ```bash
     gcloud auth application-default login
