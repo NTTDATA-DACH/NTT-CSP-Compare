@@ -7,6 +7,7 @@ from pipeline.discovery import ServiceMapper
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
 from pipeline.synthesizer import Synthesizer
+from config import Config
 
 # Mock response objects
 class MockResponse:
@@ -128,6 +129,26 @@ class TestPipeline(unittest.TestCase):
         config = kwargs['config']
         self.assertIsNotNone(config.thinking_config)
         self.assertIsNone(config.tools) # Should be None or empty
+
+
+class TestConfig(unittest.TestCase):
+
+    @patch.dict(os.environ, {"GCP_PROJECT_ID": "test-project-123"})
+    def test_gcp_project_id_from_env(self):
+        import importlib
+        import config
+        importlib.reload(config)
+        from config import Config as ReloadedConfig
+        self.assertEqual(ReloadedConfig.GCP_PROJECT_ID, "test-project-123")
+
+    @patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": "fallback-project-456"}, clear=True)
+    def test_google_cloud_project_fallback(self):
+        # We need to reload the config module to re-evaluate the class variables
+        import importlib
+        import config
+        importlib.reload(config)
+        from config import Config as ReloadedConfig
+        self.assertEqual(ReloadedConfig.GCP_PROJECT_ID, "fallback-project-456")
 
 if __name__ == '__main__':
     unittest.main()
