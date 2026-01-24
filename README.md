@@ -122,6 +122,8 @@ To run the pipeline locally, use the `run_local.sh` script:
 *   `--csp-b`: The second Cloud Service Provider.
 *   `--test`: (Optional) Runs the pipeline in test mode, limiting the analysis to the first 3 services found.
 
+**Note:** Running the script without the `--test` flag will execute the pipeline in "pro mode," which connects to live Google Cloud services and will incur costs. Ensure you have authenticated with `gcloud auth application-default login` before running in this mode.
+
 ### Cloud Pipeline Run
 To run the pipeline in a serverless environment, trigger the Cloud Run Job created by Terraform.
 
