@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Comparator: {{ csp_a }} vs {{ csp_b }}</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #333; }
+        .summary-card { background: #e8f4f8; padding: 20px; border-left: 5px solid #3498db; margin-bottom: 20px; }
+        .service-row { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .service-row:last-child { border-bottom: none; }
+        .domain-header { background-color: #eee; padding: 10px; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        .score { font-weight: bold; }
+        .score-positive { color: green; }
+        .score-negative { color: red; }
+        .score-neutral { color: gray; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; font-weight: bold; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-box { background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 5px; }
+        .stat-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Service Provider Comparison</h1>
+        <h2>{{ csp_a }} vs {{ csp_b }}</h2>
+        <p>Generated at: {{ generated_at }}</p>
+
+        <div class="summary-card">
+            <h3>Executive Summary</h3>
+            <p>{{ executive_summary }}</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value">{{ total_services }}</div>
+                <div>Services Compared</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ avg_technical_score }}</div>
+                <div>Avg Technical Score (Positive = {{ csp_b }} better)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ avg_cost_score }}</div>
+                <div>Avg Cost Efficiency (Positive = {{ csp_b }} cheaper)</div>
+            </div>
+        </div>
+
+        <h3>Detailed Comparison by Domain</h3>
+
+        {% for domain, services in services_by_domain.items() %}
+        <details>
+            <summary>{{ domain }} (Avg Score: {{ domain_scores[domain] }})</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{ csp_a }} Service</th>
+                        <th>{{ csp_b }} Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    <tr>
+                        <td><a href="{{ service.map.csp_a_url }}" target="_blank">{{ service.map.csp_a_service_name }}</a></td>
+                        <td>
+                            {% if service.map.csp_b_service_name %}
+                            <a href="{{ service.map.csp_b_url }}" target="_blank">{{ service.map.csp_b_service_name }}</a>
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </td>
+                        <td class="score {{ 'score-positive' if service.result.technical_data.technical_score > 0 else 'score-negative' if service.result.technical_data.technical_score < 0 else 'score-neutral' }}">
+                            {{ service.result.technical_data.technical_score }}
+                        </td>
+                        <td class="score {{ 'score-positive' if service.result.pricing_data.cost_efficiency_score > 0 else 'score-negative' if service.result.pricing_data.cost_efficiency_score < 0 else 'score-neutral' }}">
+                            {{ service.result.pricing_data.cost_efficiency_score }}
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> {{ service.result.technical_data.technical_reasoning }}<br><br>
+                                    <strong>Pricing:</strong> {{ service.result.pricing_data.pricing_reasoning }}
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </details>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

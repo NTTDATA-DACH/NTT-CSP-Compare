@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "service_pair_id": {
+      "type": "string",
+      "description": "Unique identifier to link back to technical and pricing data."
+    },
+    "detailed_comparison": {
+      "type": "string",
+      "description": "A comprehensive Markdown essay synthesizing technical and pricing findings."
+    },
+    "executive_summary": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "A high-impact summary strictly under 300 characters."
+    }
+  },
+  "required": [
+    "service_pair_id",
+    "detailed_comparison",
+    "executive_summary"
+  ]
+}

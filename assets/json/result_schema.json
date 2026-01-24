@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "service_pair_id": { "type": "string" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "model_version": { "type": "string" }
+      },
+      "required": ["service_pair_id", "generated_at"]
+    },
+    "technical_data": {
+      "type": "object",
+      "description": "The complete object from Phase 2 (Technical Analysis).",
+      "required": ["maturity_analysis", "integration_quality", "technical_score"]
+    },
+    "pricing_data": {
+      "type": "object",
+      "description": "The complete object from Phase 3 (Pricing Analysis).",
+      "required": ["pricing_models", "cost_efficiency_score"]
+    },
+    "synthesis": {
+      "type": "object",
+      "properties": {
+        "detailed_comparison": {
+          "type": "string",
+          "description": "A comprehensive Markdown essay synthesizing technical and pricing findings."
+        },
+        "executive_summary": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "A high-impact summary strictly under 300 characters."
+        }
+      },
+      "required": ["detailed_comparison", "executive_summary"]
+    }
+  },
+  "required": ["metadata", "technical_data", "pricing_data", "synthesis"]
+}
