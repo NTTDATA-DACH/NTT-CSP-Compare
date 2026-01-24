@@ -3,7 +3,7 @@ import logging
 from google import genai
 from google.genai import types
 from config import Config
-from constants import MODEL_ANALYSIS, PROMPT_CONFIG_PATH, PRICING_SCHEMA_PATH, THINKING_BUDGET
+from constants import MODEL_ANALYSIS, PROMPT_CONFIG_PATH, PRICING_SCHEMA_PATH
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -66,8 +66,7 @@ class PricingAnalyst:
                     response_schema=self.schema,
                     temperature=0.7,
                     thinking_config=types.ThinkingConfig(
-                        include_thoughts=False,
-                        thinking_budget=THINKING_BUDGET
+                        include_thoughts=False
                     ),
                     tools=[
                         types.Tool(

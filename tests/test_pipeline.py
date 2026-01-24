@@ -35,7 +35,7 @@ class TestPipeline(unittest.TestCase):
         self.assertEqual(result, expected_data)
         mock_models.generate_content.assert_called_once()
         args, kwargs = mock_models.generate_content.call_args
-        self.assertEqual(kwargs['model'], "gemini-3-flash")
+        self.assertEqual(kwargs['model'], "gemini-3-flash-preview")
         self.assertIn("Analyze the service catalog", kwargs['contents'])
 
     @patch('pipeline.analyzer.genai.Client')
@@ -70,7 +70,6 @@ class TestPipeline(unittest.TestCase):
 
         # Verify ThinkingConfig
         self.assertIsNotNone(config.thinking_config)
-        self.assertEqual(config.thinking_config.thinking_budget, 2048)
 
         # Verify Grounding
         self.assertIsNotNone(config.tools)
