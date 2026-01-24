@@ -70,6 +70,9 @@ graph TD
     export SA_NAME="csp-comparator-sa"
     export SA_EMAIL="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 
+    # set project_id if on gcloud shell
+    gcloud config set project ${PROJECT_ID}
+
     # Create the service account
     gcloud iam service-accounts create ${SA_NAME} --display-name="CSP Comparator Service Account"
 
