@@ -35,43 +35,18 @@ class ServiceMapper:
         """
         logger.info(f"Starting discovery: {csp_a} -> {csp_b} using {self.model_name}")
 
-        if Config.TEST_MODE:
-            logger.info("TEST_MODE is enabled. Returning mock data.")
-            return {
-                "items": [
-                    {
-                        "domain": "Compute",
-                        "csp_a_service_name": "EC2",
-                        "csp_a_url": "https://aws.amazon.com/ec2/",
-                        "csp_b_service_name": "Compute Engine",
-                        "csp_b_url": "https://cloud.google.com/compute/"
-                    },
-                    {
-                        "domain": "Storage",
-                        "csp_a_service_name": "S3",
-                        "csp_a_url": "https://aws.amazon.com/s3/",
-                        "csp_b_service_name": "Cloud Storage",
-                        "csp_b_url": "https://cloud.google.com/storage/"
-                    },
-                    {
-                        "domain": "Database",
-                        "csp_a_service_name": "RDS",
-                        "csp_a_url": "https://aws.amazon.com/rds/",
-                        "csp_b_service_name": "Cloud SQL",
-                        "csp_b_url": "https://cloud.google.com/sql/"
-                    }
-                ]
-            }
-
         prompt_config = self.prompts["discovery_prompt"]
         system_instruction = prompt_config["system_instruction"]
         user_content = prompt_config["user_template"].format(csp_a=csp_a, csp_b=csp_b)
 
+        if Config.TEST_MODE:
+            user_content += "\n\nIMPORTANT: For this test run, please only return a maximum of 5 services."
+
         # For testing purposes, if TEST_MODE is on, we might want to inject a simpler prompt
         # or limit the scope, but the LLM should handle it.
-        # The project spec says TEST=true limits processing to top 3 services.
+        # The project spec implies TEST=true should limit processing, which this does.
         # This limit logic might need to be applied AFTER discovery or IN the prompt.
-        # "true limits processing to top 3 services" usually means downstream.
+        # Downstream logic in main.py also limits the number of services processed.
         # But if the discovery returns 100 services, we iterate only 3.
         # So discovery can return full list.
 
