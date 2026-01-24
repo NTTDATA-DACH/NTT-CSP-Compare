@@ -204,7 +204,7 @@ cython_debug/
 # local data 
 data/
 public/
-raw
+raw/
 
 # Terraform
 .terraform/
