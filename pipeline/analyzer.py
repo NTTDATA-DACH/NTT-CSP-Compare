@@ -10,11 +10,14 @@ logger = logging.getLogger(__name__)
 
 class TechnicalAnalyst:
     def __init__(self):
-        self.client = genai.Client(
-            vertexai=True,
-            project=Config.GCP_PROJECT_ID,
-            location=Config.AI_LOCATION
-        )
+        if not Config.TEST_MODE:
+            self.client = genai.Client(
+                vertexai=True,
+                project=Config.GCP_PROJECT_ID,
+                location=Config.AI_LOCATION
+            )
+        else:
+            self.client = None
         self.model_name = MODEL_ANALYSIS
         self._load_assets()
 
@@ -34,6 +37,20 @@ class TechnicalAnalyst:
         if not service_b_name:
             logger.warning(f"Skipping analysis for {service_a_name} as no equivalent found in {csp_b}")
             return None
+
+        if Config.TEST_MODE:
+            logger.info(f"TEST_MODE enabled for TechnicalAnalyst. Returning mock data for {service_a_name} vs {service_b_name}")
+            return {
+                "service_pair_id": f"{service_a_name}_vs_{service_b_name}",
+                "maturity_analysis": {
+                    "csp_a": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"},
+                    "csp_b": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"}
+                },
+                "integration_quality": {
+                    "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
+                },
+                "technical_score": 9.5
+            }
 
         prompt_config = self.prompts["technical_prompt"]
         system_instruction = prompt_config["system_instruction"]
