@@ -39,8 +39,11 @@ class Synthesizer:
         if Config.TEST_MODE:
             logger.info(f"TEST_MODE enabled for Synthesizer. Returning mock data for {service_pair_id}")
             synthesis_result = {
-                "detailed_comparison": "This is a mock detailed comparison.",
-                "executive_summary": "Mock executive summary."
+                "strengths_csp_a": ["- Mock strength A1", "- Mock strength A2"],
+                "strengths_csp_b": ["- Mock strength B1", "- Mock strength B2"],
+                "weaknesses_csp_a": ["- Mock weakness A1"],
+                "weaknesses_csp_b": ["- Mock weakness B1"],
+                "final_recommendation": "Mock recommendation.",
             }
             return {
                 "metadata": {
