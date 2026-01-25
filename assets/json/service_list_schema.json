@@ -7,9 +7,10 @@
         "type": "object",
         "properties": {
           "service_name": { "type": "string" },
-          "service_url": { "type": "string", "format": "uri" }
+          "service_url": { "type": "string", "format": "uri" },
+          "description": { "type": "string" }
         },
-        "required": ["service_name", "service_url"]
+        "required": ["service_name", "service_url", "description"]
       }
     }
   },
