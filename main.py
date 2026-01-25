@@ -172,36 +172,21 @@ async def main():
     final_results = [res for res in processed_results if res is not None]
 
     # --- Phase 5: Management Summary ---
-    # Group results by domain
-    services_by_domain = {}
+    # Group results by domain for the new summary generation
+    synthesis_by_domain = {}
     for item in final_results:
         domain = item["map"].get("domain", "Uncategorized")
-        if domain not in services_by_domain:
-            services_by_domain[domain] = []
-        services_by_domain[domain].append(item["result"]["synthesis"])
+        if domain not in synthesis_by_domain:
+            synthesis_by_domain[domain] = []
+        synthesis_by_domain[domain].append(item["result"]["synthesis"])
 
-    # Generate management summary for each domain
-    management_summaries = {}
-    summary_tasks = []
-
-    for domain, synthesis_results in services_by_domain.items():
-        summary_tasks.append(
-            (domain, synthesizer.summarize_by_domain(domain, synthesis_results))
-        )
-
-    summary_results = await asyncio.gather(*[task for _, task in summary_tasks])
-
-    for (domain, _), summary in zip(summary_tasks, summary_results):
-        if summary:
-            management_summaries[domain] = summary
-        else:
-            logger.warning(f"Management summary failed for domain {domain}")
-
-
-    # --- Phase 5b: Overarching Summary ---
-    overarching_summary = await synthesizer.summarize_overall(management_summaries)
-    if not overarching_summary:
-        logger.warning("Overarching summary generation failed.")
+    # Generate the consolidated management summary
+    management_summary = await synthesizer.generate_management_summary(
+        synthesis_by_domain
+    )
+    if not management_summary:
+        logger.warning("Management summary generation failed.")
+        management_summary = {} # Ensure it's a dict to avoid template errors
 
     # --- Phase 6: Visualization ---
     visualizer = DashboardGenerator()
@@ -213,8 +198,7 @@ async def main():
         csp_b,
         final_results,
         items,
-        management_summaries,
-        overarching_summary,
+        management_summary,
         output_html,
     )
 
