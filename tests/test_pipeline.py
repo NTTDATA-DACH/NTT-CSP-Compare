@@ -1,20 +1,11 @@
 import unittest
-from unittest.mock import MagicMock, patch, AsyncMock
+from unittest.mock import patch
 import json
 import os
-import asyncio
-from google.genai import types
 from pipeline.discovery import ServiceMapper
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
 from pipeline.synthesizer import Synthesizer
-from config import Config
-
-# Mock response objects
-class MockResponse:
-    def __init__(self, parsed_data):
-        self.parsed = parsed_data
-        self.text = json.dumps(parsed_data)
 
 # Define mock data at the class level for reuse
 mock_technical_data = {
@@ -39,7 +30,7 @@ mock_pricing_data = {
 }
 
 expected_synthesis = {
-    "detailed_comparison": "This is a mock detailed comparison.",
+    "detailed_comparison": "Mock detailed comparison.",
     "executive_summary": "Mock executive summary."
 }
 
@@ -47,7 +38,7 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
     @patch("builtins.open")
     async def test_discovery(self, mock_open):
         mock_open.return_value.__enter__.return_value.read.return_value = "{}"
-        with patch('config.Config.TEST_MODE', True):
+        with patch('pipeline.discovery.Config.TEST_MODE', True):
             mapper = ServiceMapper()
             # In test mode, discover_services returns a hardcoded mock object.
             # The client is not used, so we don't need to mock it.
@@ -65,65 +56,43 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             analyst = TechnicalAnalyst()
             service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
             result = await analyst.perform_analysis("AWS", "GCP", service_pair)
-            self.assertEqual(result, mock_technical_data)
+            expected_data = mock_technical_data.copy()
+            self.assertEqual(result, expected_data)
 
-        expected_data = {
-            "service_pair_id": "EC2_vs_GCE",
-            "maturity_analysis": {
-                "csp_a": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"},
-                "csp_b": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"}
-            },
-            "integration_quality": {
-                "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
-            },
-            "technical_score": 9.5
-        }
-        self.assertEqual(result, expected_data)
-
-    @patch('pipeline.pricing_analyst.genai.Client')
-    async def test_pricing(self, MockClient):
+    async def test_pricing(self):
         # This test now validates that TEST_MODE returns the correct mock data.
-        analyst = PricingAnalyst()
-        service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
+        with patch('pipeline.pricing_analyst.Config.TEST_MODE', True):
+            analyst = PricingAnalyst()
+            service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
+            result = await analyst.perform_analysis("AWS", "GCP", service_pair)
+            expected_data = mock_pricing_data.copy()
+            self.assertEqual(result, expected_data)
 
     @patch("builtins.open")
-    @patch("pipeline.synthesizer.genai.Client")
-    async def test_synthesizer(self, MockClient, mock_open):
+    async def test_synthesizer(self, mock_open):
         # This test now validates that TEST_MODE returns the correct mock data.
         mock_open.return_value.__enter__.return_value.read.return_value = "{}"
-        synthesizer = Synthesizer()
-
-        # Mock the return value for the synthesize method
-        expected_synthesis = {
-            "executive_summary": "Mock executive summary.",
-            "detailed_comparison": "Mock detailed comparison.",
-        }
-        synthesizer.client.generate_content = AsyncMock(
-            return_value=MockResponse(expected_synthesis)
-        )
-
-        with patch("config.Config.TEST_MODE", True):
+        with patch("pipeline.synthesizer.Config.TEST_MODE", True):
+            synthesizer = Synthesizer()
             result = await synthesizer.synthesize("EC2_vs_GCE", {}, {})
 
-        # The result object contains more than just the synthesis, let's check that part
-        self.assertIn("synthesis", result)
-        self.assertEqual(result["synthesis"], expected_synthesis)
-        self.assertIn("metadata", result)
+            # The result object contains more than just the synthesis, let's check that part
+            self.assertIn("synthesis", result)
+            self.assertEqual(result["synthesis"], expected_synthesis)
+            self.assertIn("metadata", result)
 
     @patch("builtins.open")
-    @patch("pipeline.synthesizer.genai.Client")
-    async def test_summarize_by_domain(self, MockClient, mock_open):
+    async def test_summarize_by_domain(self, mock_open):
         mock_open.return_value.__enter__.return_value.read.return_value = "{}"
-        synthesizer = Synthesizer()
-
-        with patch("config.Config.TEST_MODE", True):
+        with patch("pipeline.synthesizer.Config.TEST_MODE", True):
+            synthesizer = Synthesizer()
             result = await synthesizer.summarize_by_domain("Compute", [{}])
 
-        self.assertIn("management_summary", result)
-        self.assertEqual(
-            result["management_summary"],
-            "This is a mock management summary for the Compute domain.",
-        )
+            self.assertIn("management_summary", result)
+            self.assertEqual(
+                result["management_summary"],
+                "This is a mock management summary for the Compute domain.",
+            )
 
 
 class TestConfig(unittest.TestCase):

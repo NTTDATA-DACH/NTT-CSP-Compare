@@ -1,9 +1,6 @@
 import json
 import logging
 import datetime
-from unittest.mock import AsyncMock
-from google import genai
-from google.genai import types
 from config import Config
 from constants import (
     MODEL_SYNTHESIS,
@@ -11,6 +8,7 @@ from constants import (
     SYNTHESIS_SCHEMA_PATH,
     MANAGEMENT_SUMMARY_SCHEMA_PATH,
 )
+from pipeline.gemini import GeminiClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -18,15 +16,7 @@ logger = logging.getLogger(__name__)
 
 class Synthesizer:
     def __init__(self):
-        self.client = (
-            genai.Client(
-                vertexai=True,
-                project=Config.GCP_PROJECT_ID,
-                location=Config.AI_LOCATION,
-            ).aio
-            if not Config.TEST_MODE
-            else AsyncMock()
-        )
+        self.client = GeminiClient()
         self.model_name = MODEL_SYNTHESIS
         self._load_assets()
 
@@ -61,21 +51,17 @@ class Synthesizer:
         )
 
         try:
-            response = await self.client.models.generate_content(
-                model=self.model_name,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type="application/json",
-                    response_schema=self.management_summary_schema,
-                    temperature=0.7,
-                ),
+            response = await self.client.generate_content(
+                model_name=self.model_name,
+                user_content=user_content,
+                system_instruction=system_instruction,
+                schema=self.management_summary_schema,
+                enable_grounding=False
             )
-
-            if hasattr(response, "parsed") and response.parsed:
-                return response.parsed
-            else:
-                return json.loads(response.text)
+            if response is None:
+                logger.error(f"Received None response from GeminiClient for {domain_name}")
+                return None
+            return response
 
         except Exception as e:
             logger.error(f"Error generating management summary for {domain_name}: {e}")
@@ -120,26 +106,17 @@ class Synthesizer:
         )
 
         try:
-            response = await self.client.models.generate_content(
-                model=self.model_name,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type='application/json',
-                    response_schema=self.schema,
-                    temperature=0.7,
-                    thinking_config=types.ThinkingConfig(
-                        include_thoughts=False,
-                    )
-                    # No Grounding for synthesis
-                )
+            synthesis_result = await self.client.generate_content(
+                model_name=self.model_name,
+                user_content=user_content,
+                system_instruction=system_instruction,
+                schema=self.schema,
+                enable_grounding=False
             )
 
-            synthesis_result = None
-            if hasattr(response, 'parsed') and response.parsed:
-                synthesis_result = response.parsed
-            else:
-                synthesis_result = json.loads(response.text)
+            if synthesis_result is None:
+                logger.error(f"Received None response from GeminiClient for {service_pair_id}")
+                return None
 
             # Construct final Result object
             result = {

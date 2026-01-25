@@ -1,18 +1,15 @@
 import json
 import logging
-import os
-from unittest.mock import AsyncMock
-from google import genai
-from google.genai import types
 from config import Config
 from constants import MODEL_DISCOVERY, PROMPT_CONFIG_PATH, SERVICE_MAP_SCHEMA_PATH, SERVICE_LIST_SCHEMA_PATH
+from pipeline.gemini import GeminiClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class ServiceMapper:
     def __init__(self):
-        self.client = None
+        self.client = GeminiClient()
         self.model_name = MODEL_DISCOVERY
         self._load_assets()
 
@@ -30,16 +27,6 @@ class ServiceMapper:
         """
         Gets a list of services for a single CSP.
         """
-        if self.client is None:
-            self.client = (
-                genai.Client(
-                    vertexai=True,
-                    project=Config.GCP_PROJECT_ID,
-                    location=Config.AI_LOCATION,
-                ).aio
-                if not Config.TEST_MODE
-                else AsyncMock()
-            )
 
         if Config.TEST_MODE:
             logger.info(f"TEST_MODE enabled for ServiceMapper. Returning mock service list for {csp}.")
@@ -66,19 +53,16 @@ class ServiceMapper:
         user_content = prompt_config["user_template"].format(csp=csp)
 
         try:
-            response = await self.client.models.generate_content(
-                model=self.model_name,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type='application/json',
-                    response_schema=self.service_list_schema,
-                    temperature=0.1,
-                )
+            response = await self.client.generate_content(
+                model_name=self.model_name,
+                user_content=user_content,
+                system_instruction=system_instruction,
+                schema=self.service_list_schema
             )
-            if hasattr(response, 'parsed') and response.parsed:
-                return response.parsed
-            return json.loads(response.text)
+            if response is None:
+                logger.error(f"Received None response from GeminiClient for {csp}")
+                return {"services": []}
+            return response
         except Exception as e:
             logger.error(f"Error getting service list for {csp}: {e}")
             return {"services": []}
@@ -87,16 +71,6 @@ class ServiceMapper:
         """
         Maps services from CSP A to CSP B using Gemini 3 Flash.
         """
-        if self.client is None:
-            self.client = (
-                genai.Client(
-                    vertexai=True,
-                    project=Config.GCP_PROJECT_ID,
-                    location=Config.AI_LOCATION,
-                ).aio
-                if not Config.TEST_MODE
-                else AsyncMock()
-            )
 
         if Config.TEST_MODE:
             logger.info("TEST_MODE enabled for ServiceMapper. Returning mock data.")
@@ -136,48 +110,18 @@ class ServiceMapper:
             services_b=json.dumps(services_b)
         )
 
-        # The main.py script handles the test mode by slicing the final list of services.
-        # This ensures that the discovery prompt is consistent across all environments
-        # and prevents the model from generating a truncated list even in test mode,
-        # which allows us to test the full discovery process with a limited number of items.
-        # So discovery can return full list.
-
         try:
-            response = await self.client.models.generate_content(
-                model=self.model_name,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type='application/json',
-                    response_schema=self.schema,
-                    temperature=0.1, # Deterministic
-                )
+            response = await self.client.generate_content(
+                model_name=self.model_name,
+                user_content=user_content,
+                system_instruction=system_instruction,
+                schema=self.schema
             )
-
-            if not response.text:
-                logger.error("Empty response from Discovery model.")
+            if response is None:
+                logger.error(f"Received None response from GeminiClient during service mapping for {csp_a} to {csp_b}")
                 return {"items": []}
-
-            # Verify and parse JSON
-            # The SDK might parse it automatically if we access response.parsed?
-            # PyPI doc says: print(response.parsed)
-
-            if hasattr(response, 'parsed') and response.parsed:
-                return response.parsed
-
-            # Fallback to text parsing
-            return json.loads(response.text)
+            return response
 
         except Exception as e:
             logger.error(f"Error during discovery: {e}")
-            # Return empty structure or raise
             return {"items": []}
-
-if __name__ == "__main__":
-    import asyncio
-    # Local test
-    async def main():
-        mapper = ServiceMapper()
-        result = await mapper.discover_services("AWS", "GCP")
-        print(json.dumps(result, indent=2))
-    asyncio.run(main())
