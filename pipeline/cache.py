@@ -1,0 +1,62 @@
+import json
+import logging
+import os
+import time
+
+logger = logging.getLogger(__name__)
+
+class CacheManager:
+    def __init__(self, cache_dir="data", max_age_days=7):
+        self.cache_dir = cache_dir
+        self.max_age_seconds = max_age_days * 24 * 60 * 60
+        os.makedirs(self.cache_dir, exist_ok=True)
+
+    def _get_filepath(self, key):
+        return os.path.join(self.cache_dir, f"{key}.json")
+
+    def get(self, key):
+        filepath = self._get_filepath(key)
+        if not os.path.exists(filepath):
+            return None
+
+        try:
+            file_age = time.time() - os.path.getmtime(filepath)
+            if file_age > self.max_age_seconds:
+                logger.info(f"Cache expired for {key} (Age: {file_age/86400:.1f} days)")
+                return None
+
+            with open(filepath, "r") as f:
+                data = json.load(f)
+                if not self.is_valid(data):
+                    logger.warning(f"Invalid cached data for {key}")
+                    return None
+                logger.info(f"Using cached data for {key}")
+                return data
+        except (json.JSONDecodeError, OSError) as e:
+            logger.warning(f"Failed to load cache from {filepath}: {e}")
+            return None
+
+    def set(self, key, data):
+        if not self.is_valid(data):
+            logger.warning(f"Skipping cache for {key} due to invalid data.")
+            return
+
+        filepath = self._get_filepath(key)
+        try:
+            with open(filepath, "w") as f:
+                json.dump(data, f, indent=2)
+            logger.info(f"Cached data for {key}")
+        except OSError as e:
+            logger.error(f"Failed to write cache to {filepath}: {e}")
+
+    def is_valid(self, data):
+        if not data:
+            return False
+        if isinstance(data, list) and len(data) == 0:
+            return False
+        if isinstance(data, dict) and not data:
+            return False
+        # Specific check for service_map format
+        if 'items' in data and not isinstance(data['items'], list):
+            return False
+        return True
