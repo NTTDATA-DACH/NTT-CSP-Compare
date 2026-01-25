@@ -10,7 +10,7 @@ class Config:
     else:
         GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID", os.getenv("GOOGLE_CLOUD_PROJECT"))
         BUCKET_NAME = os.getenv("BUCKET_NAME")
-        AI_LOCATION = os.getenv("AI_LOCATION")
+        AI_LOCATION = "global"
 
         missing_vars = []
         if not GCP_PROJECT_ID:
