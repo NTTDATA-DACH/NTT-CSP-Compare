@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import datetime
+import markdown
 from jinja2 import Environment, FileSystemLoader
 from constants import TEMPLATE_PATH
 
@@ -112,14 +113,31 @@ class DashboardGenerator:
         overarching_summary = management_summary.get("overarching_summary", "")
         domain_summaries = management_summary.get("domain_summaries", {})
 
+        # Convert Markdown to HTML
+        overarching_summary_html = markdown.markdown(overarching_summary)
+        domain_summaries_html = {
+            domain: markdown.markdown(summary)
+            for domain, summary in domain_summaries.items()
+        }
+
+        # Convert synthesis markdown to HTML
+        for item in results:
+            if (
+                "synthesis" in item["result"]
+                and "detailed_comparison" in item["result"]["synthesis"]
+            ):
+                item["result"]["synthesis"]["detailed_comparison"] = markdown.markdown(
+                    item["result"]["synthesis"]["detailed_comparison"]
+                )
+
 
         # Render final HTML
         html_content = self.template.render(
             csp_a=csp_a,
             csp_b=csp_b,
             generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            overarching_summary=overarching_summary,
-            management_summaries=domain_summaries,
+            overarching_summary=overarching_summary_html,
+            management_summaries=domain_summaries_html,
             total_services=total_services_csp_a,
             total_compared=total_compared,
             avg_technical_score=round(avg_technical, 2),

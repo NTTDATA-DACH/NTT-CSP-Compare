@@ -36,7 +36,7 @@
         <div class="summary-card">
             <h3>Overarching Summary</h3>
             {% if overarching_summary %}
-            <p>{{ overarching_summary }}</p>
+            <div>{{ overarching_summary | safe }}</div>
             {% else %}
             <p>The overarching summary could not be generated.</p>
             {% endif %}
@@ -49,7 +49,7 @@
             {% else %}
             {% for domain, summary in management_summaries.items() %}
             <h4>{{ domain }}</h4>
-            <p>{{ summary }}</p>
+            <div>{{ summary | safe }}</div>
             {% endfor %}
             {% endif %}
         </div>
@@ -119,7 +119,7 @@
                                 <div style="padding: 10px; background: #fafafa;">
                                     <strong>Technical:</strong> {{ service.result.technical_data.technical_reasoning }}<br><br>
                                     <strong>Pricing:</strong> {{ service.result.pricing_data.pricing_reasoning }}<br><br>
-                                    <strong>Synthesis:</strong> {{ service.result.synthesis.detailed_comparison }}
+                                    <strong>Synthesis:</strong> {{ service.result.synthesis.detailed_comparison | safe }}
                                 </div>
                             </details>
                         </td>
