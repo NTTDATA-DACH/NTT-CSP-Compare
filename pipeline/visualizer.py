@@ -19,45 +19,30 @@ class DashboardGenerator:
         """
         Generates the HTML dashboard from the aggregated results.
         """
-        if not results:
-            logger.warning("No results to visualize.")
+        missing_services_list = [
+            item for item in service_maps
+            if not item.get("csp_b_service_name")
+        ]
+
+        if not results and not missing_services_list:
+            logger.warning("No results or missing services to visualize.")
             return
 
         # Prepare data for template
-        total_services = len(results)
+        total_compared = len(results)
+        total_services_csp_a = len(service_maps)
 
-        tech_scores = [r["result"]["technical_data"]["technical_score"] for r in results]
-        price_scores = [r["result"]["pricing_data"]["cost_efficiency_score"] for r in results]
+        tech_scores = [r["result"]["technical_data"]["technical_score"] for r in results] if results else []
+        price_scores = [r["result"]["pricing_data"]["cost_efficiency_score"] for r in results] if results else []
 
-        avg_technical = sum(tech_scores) / total_services if total_services else 0
-        avg_price = sum(price_scores) / total_services if total_services else 0
+        avg_technical = sum(tech_scores) / total_compared if total_compared else 0
+        avg_price = sum(price_scores) / total_compared if total_compared else 0
 
         # Group by Domain
-        # We need to link results back to the domain from the service map.
-        # Result metadata has service_pair_id.
-        # Service Map has items with domain.
-        # I need a way to look up domain by service_pair_id or service name.
-        # Ideally, main.py passes a structure that has both map and result.
-
-        # Let's assume 'results' is a list of dicts, each containing 'result' and 'map' keys.
-        # OR main.py reconstructs this.
-        # I'll update the signature to expect a combined object or I'll iterate carefully.
-
-        # Actually, let's assume 'results' is the list of fully populated Result objects
-        # and 'service_maps' contains the domain info.
-        # BUT result.json metadata only has service_pair_id (which might be the service name?).
-        # In technical_schema, service_pair_id is a string.
-        # Let's try to map them.
-
-        # Better approach: Pass a list of objects like:
-        # [{'map': {...}, 'result': {...}}]
-
-        # I will assume the `results` argument is this combined list for simplicity in this method,
-        # or I will join them here.
-        # Let's assume `results` is the list of objects: { "map": service_map_item, "result": result_json }
-
         services_by_domain = {}
         domain_scores = {}
+        domain_scores_tech = {}
+        domain_scores_cost = {}
 
         for item in results:
             domain = item["map"].get("domain", "Uncategorized")
@@ -65,39 +50,76 @@ class DashboardGenerator:
                 services_by_domain[domain] = []
             services_by_domain[domain].append(item)
 
-        # Calculate domain averages
+        # Calculate domain averages for table display and chart
         for domain, items in services_by_domain.items():
+            count = len(items)
             d_tech = sum([i["result"]["technical_data"]["technical_score"] for i in items])
             d_price = sum([i["result"]["pricing_data"]["cost_efficiency_score"] for i in items])
-            count = len(items)
-            # Simple avg of both
-            avg_combined = (d_tech + d_price) / (2 * count)
+
+            avg_combined = (d_tech + d_price) / (2 * count) if count > 0 else 0
             domain_scores[domain] = round(avg_combined, 2)
 
-        # Global Executive Summary (Just taking the first one or synthesizing a global one?
-        # The architecture diagram has "Synthesizer" -> "Synthesis".
-        # The Synthesizer produces a synthesis per service pair.
-        # It doesn't seem to produce a GLOBAL synthesis.
-        # Project.md 2.2 says: "Synthesizer... Ingests validated JSONs... Generates... essay." per service pair.
-        # But "The Dashboard Generator... presents the synthesis".
-        # It implies listing them or maybe aggregating?
-        # I will just put a placeholder "Global Summary" or aggregate the executive summaries of the top services?
-        # The HTML template I wrote has {{ executive_summary }}.
-        # Maybe I should just concatenate them or leave it generic.
-        # I will generate a simple summary string.
+            domain_scores_tech[domain] = round(d_tech / count, 2) if count > 0 else 0
+            domain_scores_cost[domain] = round(d_price / count, 2) if count > 0 else 0
 
-        global_summary = f"Comparison of {total_services} services across {len(services_by_domain)} domains."
+        # Prepare data for Chart.js spider web graph
+        chart_labels = list(services_by_domain.keys())
+        chart_tech_data = [domain_scores_tech[d] for d in chart_labels]
+        chart_cost_data = [domain_scores_cost[d] for d in chart_labels]
+
+        domain_scores_chart_data = {
+            "labels": json.dumps(chart_labels),
+            "datasets": [
+                {
+                    "label": f'Technical Score ({csp_b} vs {csp_a})',
+                    "data": json.dumps(chart_tech_data),
+                    "fill": True,
+                    "backgroundColor": 'rgba(54, 162, 235, 0.2)',
+                    "borderColor": 'rgb(54, 162, 235)',
+                    "pointBackgroundColor": 'rgb(54, 162, 235)',
+                },
+                {
+                    "label": f'Cost Efficiency ({csp_b} vs {csp_a})',
+                    "data": json.dumps(chart_cost_data),
+                    "fill": True,
+                    "backgroundColor": 'rgba(255, 99, 132, 0.2)',
+                    "borderColor": 'rgb(255, 99, 132)',
+                    "pointBackgroundColor": 'rgb(255, 99, 132)',
+                }
+            ]
+        }
+
+        # Extract a global executive summary.
+        all_summaries = [
+            r["result"]["synthesis"]["executive_summary"]
+            for r in results
+            if "synthesis" in r["result"] and "executive_summary" in r["result"]["synthesis"]
+        ]
+
+        if not all_summaries:
+            executive_summary = "No synthesis results available."
+        elif len(all_summaries) == 1:
+            executive_summary = all_summaries[0]
+        else:
+            # Simple concatenation for now. A more advanced implementation could synthesize a new summary.
+            executive_summary = "Key takeaways across services:\n<ul>"
+            for summary in all_summaries:
+                executive_summary += f"<li>{summary}</li>"
+            executive_summary += "</ul>"
 
         html_content = self.template.render(
             csp_a=csp_a,
             csp_b=csp_b,
             generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            executive_summary=global_summary,
-            total_services=total_services,
+            executive_summary=executive_summary,
+            total_services=total_services_csp_a,
+            total_compared=total_compared,
             avg_technical_score=round(avg_technical, 2),
             avg_cost_score=round(avg_price, 2),
             services_by_domain=services_by_domain,
-            domain_scores=domain_scores
+            domain_scores=domain_scores,
+            domain_scores_chart_data=domain_scores_chart_data,
+            missing_services=missing_services_list
         )
 
         with open(output_path, 'w') as f:

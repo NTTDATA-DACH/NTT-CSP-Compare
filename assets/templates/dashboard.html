@@ -25,6 +25,7 @@
         .stat-box { background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 5px; }
         .stat-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -34,12 +35,16 @@
 
         <div class="summary-card">
             <h3>Executive Summary</h3>
-            <p>{{ executive_summary }}</p>
+            <div>{{ executive_summary | safe }}</div>
         </div>
 
         <div class="stats-grid">
             <div class="stat-box">
                 <div class="stat-value">{{ total_services }}</div>
+                <div>Total Services in {{ csp_a }}</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ total_compared }}</div>
                 <div>Services Compared</div>
             </div>
             <div class="stat-box">
@@ -52,8 +57,16 @@
             </div>
         </div>
 
+        <h3>Domain Scores Overview</h3>
+        <div style="width: 50%; margin: auto;">
+            <canvas id="domainScoresChart"></canvas>
+        </div>
+
         <h3>Detailed Comparison by Domain</h3>
 
+        {% if not services_by_domain %}
+        <p>No services were compared.</p>
+        {% else %}
         {% for domain, services in services_by_domain.items() %}
         <details>
             <summary>{{ domain }} (Avg Score: {{ domain_scores[domain] }})</summary>
@@ -89,7 +102,8 @@
                                 <summary>View Details</summary>
                                 <div style="padding: 10px; background: #fafafa;">
                                     <strong>Technical:</strong> {{ service.result.technical_data.technical_reasoning }}<br><br>
-                                    <strong>Pricing:</strong> {{ service.result.pricing_data.pricing_reasoning }}
+                                    <strong>Pricing:</strong> {{ service.result.pricing_data.pricing_reasoning }}<br><br>
+                                    <strong>Synthesis:</strong> {{ service.result.synthesis.detailed_comparison }}
                                 </div>
                             </details>
                         </td>
@@ -99,7 +113,72 @@
             </table>
         </details>
         {% endfor %}
+        {% endif %}
+
+        <h3>Services in {{ csp_a }} Missing in {{ csp_b }}</h3>
+        {% if not missing_services %}
+        <p>No missing services found.</p>
+        {% else %}
+        <ul>
+            {% for service in missing_services %}
+            <li>{{ service.csp_a_service_name }} ({{ service.domain }})</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
     </div>
+
+    <script>
+        const ctx = document.getElementById('domainScoresChart');
+        const chartData = {
+            labels: JSON.parse('{{ domain_scores_chart_data.labels | safe }}'),
+            datasets: [
+                {
+                    label: '{{ domain_scores_chart_data.datasets[0].label }}',
+                    data: JSON.parse('{{ domain_scores_chart_data.datasets[0].data | safe }}'),
+                    fill: true,
+                    backgroundColor: '{{ domain_scores_chart_data.datasets[0].backgroundColor }}',
+                    borderColor: '{{ domain_scores_chart_data.datasets[0].borderColor }}',
+                    pointBackgroundColor: '{{ domain_scores_chart_data.datasets[0].pointBackgroundColor }}',
+                },
+                {
+                    label: '{{ domain_scores_chart_data.datasets[1].label }}',
+                    data: JSON.parse('{{ domain_scores_chart_data.datasets[1].data | safe }}'),
+                    fill: true,
+                    backgroundColor: '{{ domain_scores_chart_data.datasets[1].backgroundColor }}',
+                    borderColor: '{{ domain_scores_chart_data.datasets[1].borderColor }}',
+                    pointBackgroundColor: '{{ domain_scores_chart_data.datasets[1].pointBackgroundColor }}',
+                }
+            ]
+        };
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: chartData,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        min: -10,
+                        max: 10,
+                        ticks: {
+                           backdropColor: 'rgba(0, 0, 0, 0)',
+                           color: '#444'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
