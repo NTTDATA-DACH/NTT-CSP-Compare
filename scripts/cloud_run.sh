@@ -2,80 +2,71 @@
 set -e
 set -o pipefail
 
-ENV_FILE="$(dirname "$0")/.env"
+# This script now acts as a wrapper for Terraform and gcloud commands,
+# sourcing all its configuration from the Terraform state.
 
-# Helper to manage environment variables
-get_or_ask_var() {
-    local var_name=$1
-    local prompt_msg=$2
-    if [ -z "${!var_name-}" ]; then
-        if [ -f "$ENV_FILE" ]; then
-            val=$(grep "^${var_name}=" "$ENV_FILE" | cut -d'=' -f2-)
-            if [ -n "$val" ]; then export "$var_name"="$val"; return; fi
-        fi
-        read -p "$prompt_msg: " user_input
-        echo "${var_name}=${user_input}" >> "$ENV_FILE"
-        export "$var_name"="$user_input"
-    fi
-}
-
-# 1. Load basic project info
-get_or_ask_var "GCP_PROJECT_ID" "Enter your GCP Project ID"
-get_or_ask_var "ARTIFACT_REGISTRY_REPO" "Enter Artifact Registry Repo Name"
-get_or_ask_var "IMAGE_NAME" "Enter Container Image Name"
-get_or_ask_var "SERVICE_ACCOUNT_EMAIL" "Enter Service Account Email"
-
-# 2. Fetch infra data from Terraform
+# 1. Fetch all required infrastructure details from Terraform
 fetch_infra() {
     echo "Querying Terraform for infrastructure details..."
     pushd terraform > /dev/null
-    GCP_REGION=$(terraform output -raw region 2>/dev/null || echo "us-central1")
-    GCS_BUCKET_NAME=$(terraform output -raw bucket_name 2>/dev/null || echo "")
+
+    # Run terraform output once and capture the JSON output
+    TF_OUTPUT=$(terraform output -json)
+
+    # Use jq to parse the output, reducing multiple calls to terraform
+    GCP_PROJECT_ID=$(jq -r '.project_id.value' <<< "$TF_OUTPUT")
+    GCP_REGION=$(jq -r '.region.value' <<< "$TF_OUTPUT")
+    GCS_BUCKET_NAME=$(jq -r '.bucket_name.value' <<< "$TF_OUTPUT")
+    ARTIFACT_REGISTRY_REPO=$(jq -r '.artifact_registry_repo.value' <<< "$TF_OUTPUT")
+    JOB_NAME=$(jq -r '.job_name.value' <<< "$TF_OUTPUT")
+
     popd > /dev/null
 
-    if [ -z "$GCS_BUCKET_NAME" ]; then
-        echo "Error: Could not find 'bucket_name' output. Run 'terraform apply' first."
+    # Validate that all required variables were fetched
+    if [ -z "$GCP_PROJECT_ID" ] || [ -z "$GCP_REGION" ] || [ -z "$GCS_BUCKET_NAME" ] || [ -z "$ARTIFACT_REGISTRY_REPO" ] || [ -z "$JOB_NAME" ]; then
+        echo "Error: Could not fetch all required outputs from Terraform."
+        echo "Please run 'terraform apply' in the 'terraform' directory first."
         exit 1
     fi
 }
 
-# 3. Ensure Artifact Registry exists
-ensure_repo() {
-    if ! gcloud artifacts repositories describe "$ARTIFACT_REGISTRY_REPO" --location="$GCP_REGION" &>/dev/null; then
-        echo "Creating Artifact Registry repository..."
-        gcloud artifacts repositories create "$ARTIFACT_REGISTRY_REPO" \
-            --repository-format=docker --location="$GCP_REGION"
-    fi
-}
-
+# 2. Build and push the container image
 build() {
     fetch_infra
-    ensure_repo
-    local image_uri="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REGISTRY_REPO}/${IMAGE_NAME}:latest"
+    local image_name="csp-comparator-pipeline" # Defining a consistent image name
+    local image_uri="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REGISTRY_REPO}/${image_name}:latest"
+
     echo "Building and pushing container: ${image_uri}"
     gcloud builds submit --tag "${image_uri}" .
+
+    # Persist the image URI for the deploy step
+    echo "IMAGE_URI=${image_uri}" > /tmp/image_uri.tmp
 }
 
+# 3. Deploy the infrastructure using Terraform
 deploy() {
-    build
-    local image_uri="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REGISTRY_REPO}/${IMAGE_NAME}:latest"
-    
-    echo "Deploying Cloud Run Job: csp-comparator-job..."
-    gcloud run jobs deploy "csp-comparator-job" \
-        --image "$image_uri" \
-        --region "$GCP_REGION" \
-        --service-account "$SERVICE_ACCOUNT_EMAIL" \
-        --set-env-vars "GCP_PROJECT_ID=${GCP_PROJECT_ID},BUCKET_NAME=${GCS_BUCKET_NAME},AI_LOCATION=${GCP_REGION}" \
-        --cpu 2 --memory 4Gi \
-        --max-retries 3
+    # The 'build' step must be run before 'deploy'
+    if [ ! -f /tmp/image_uri.tmp ]; then
+        echo "Error: Image URI not found. Please run the 'build' command first."
+        exit 1
+    fi
+    source /tmp/image_uri.tmp
+
+    echo "Deploying infrastructure with Terraform..."
+    pushd terraform > /dev/null
+    terraform apply -auto-approve \
+        -var="container_image=${IMAGE_URI}"
+    popd > /dev/null
 }
 
+# 4. Trigger the Cloud Run Job
 trigger() {
-    fetch_infra
-    echo "Executing job..."
-    gcloud run jobs execute "csp-comparator-job" --region "$GCP_REGION" --args="$*"
+    fetch_infra # Ensure we have the latest job name
+    echo "Executing job: ${JOB_NAME}..."
+    gcloud run jobs execute "${JOB_NAME}" --region "${GCP_REGION}" --args="$*"
 }
 
+# Main command dispatcher
 case "$1" in
     build) build ;;
     deploy) deploy ;;
