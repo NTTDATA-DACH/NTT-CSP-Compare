@@ -14,9 +14,15 @@ variable "bucket_name" {
   type        = string
 }
 
+variable "artifact_registry_repo" {
+  description = "Name of the Artifact Registry repository"
+  type        = string
+}
+
 variable "container_image" {
   description = "Container image URI for the pipeline job"
   type        = string
+  default     = "" # Optional: will be provided by the build script
 }
 
 variable "service_account_email" {
