@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+from unittest.mock import AsyncMock
 from google import genai
 from google.genai import types
 from config import Config
@@ -11,14 +12,15 @@ logger = logging.getLogger(__name__)
 
 class ServiceMapper:
     def __init__(self):
-        if not Config.TEST_MODE:
-            self.client = genai.Client(
+        self.client = (
+            genai.Client(
                 vertexai=True,
                 project=Config.GCP_PROJECT_ID,
-                location=Config.AI_LOCATION
+                location=Config.AI_LOCATION,
             ).aio
-        else:
-            self.client = None
+            if not Config.TEST_MODE
+            else AsyncMock()
+        )
         self.model_name = MODEL_DISCOVERY
         self._load_assets()
 

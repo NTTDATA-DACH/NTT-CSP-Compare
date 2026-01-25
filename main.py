@@ -4,6 +4,7 @@ import json
 import os
 import datetime
 import asyncio
+import sys
 from config import Config
 from constants import MAX_CONCURRENT_REQUESTS
 from pipeline.discovery import ServiceMapper
@@ -112,4 +113,8 @@ async def main():
     logger.info("Pipeline completed successfully.")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except ValueError as e:
+        logger.error(f"Configuration error: {e}")
+        sys.exit(1)

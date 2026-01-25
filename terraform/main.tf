@@ -24,6 +24,30 @@ resource "google_project_service" "cloud_run" {
   disable_on_destroy = false
 }
 
+# Enable Cloud Build API
+resource "google_project_service" "cloud_build" {
+  service            = "cloudbuild.googleapis.com"
+  disable_on_destroy = false
+}
+
+# Enable Artifact Registry API
+resource "google_project_service" "artifact_registry" {
+  service            = "artifactregistry.googleapis.com"
+  disable_on_destroy = false
+}
+
+# Enable GCS API
+resource "google_project_service" "storage" {
+  service            = "storage.googleapis.com"
+  disable_on_destroy = false
+}
+
+# Enable Cloud Resource Manager API
+resource "google_project_service" "cloud_resource_manager" {
+  service            = "cloudresourcemanager.googleapis.com"
+  disable_on_destroy = false
+}
+
 # GCS Bucket
 resource "google_storage_bucket" "app_bucket" {
   name          = var.bucket_name
