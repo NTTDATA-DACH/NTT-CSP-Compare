@@ -121,11 +121,31 @@ async def main():
     # --- Phase 1: Discovery ---
     mapper = ServiceMapper()
 
+    # Step 1: Get service lists for each CSP
+    service_list_a_file = f"data/service_list_{csp_a}.json"
+    service_list_a = get_cached_data(service_list_a_file)
+    if not service_list_a:
+        service_list_a = await mapper.get_service_list(csp_a)
+        with open(service_list_a_file, "w") as f:
+            json.dump(service_list_a, f, indent=2)
+    else:
+        logger.info(f"Using cached service list for {csp_a}")
+
+    service_list_b_file = f"data/service_list_{csp_b}.json"
+    service_list_b = get_cached_data(service_list_b_file)
+    if not service_list_b:
+        service_list_b = await mapper.get_service_list(csp_b)
+        with open(service_list_b_file, "w") as f:
+            json.dump(service_list_b, f, indent=2)
+    else:
+        logger.info(f"Using cached service list for {csp_b}")
+
+    # Step 2: Map services between the two CSPs
     service_map_file = f"data/service_map_{csp_a}_{csp_b}.json"
     service_map = get_cached_data(service_map_file)
 
     if not service_map:
-        service_map = await mapper.discover_services(csp_a, csp_b)
+        service_map = await mapper.map_services(csp_a, csp_b, service_list_a['services'], service_list_b['services'])
         # Save Service Map
         with open(service_map_file, "w") as f:
             json.dump(service_map, f, indent=2)

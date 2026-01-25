@@ -1,5 +1,5 @@
 # Models
-MODEL_DISCOVERY = "gemini-3-flash-preview"
+MODEL_DISCOVERY = "gemini-3-pro-preview"
 MODEL_ANALYSIS = "gemini-3-pro-preview"
 MODEL_SYNTHESIS = "gemini-3-pro-preview"
 
@@ -10,6 +10,7 @@ MAX_CONCURRENT_REQUESTS = 10
 # File Paths
 PROMPT_CONFIG_PATH = "assets/json/prompt_config.json"
 SERVICE_MAP_SCHEMA_PATH = "assets/json/service_map_schema.json"
+SERVICE_LIST_SCHEMA_PATH = "assets/json/service_list_schema.json"
 TECHNICAL_SCHEMA_PATH = "assets/json/technical_schema.json"
 PRICING_SCHEMA_PATH = "assets/json/pricing_schema.json"
 SYNTHESIS_SCHEMA_PATH = "assets/json/synthesis_schema.json"
