@@ -1,7 +1,7 @@
 {
   "service_list_prompt": {
-    "system_instruction": "You are a Senior Cloud Architect. Your task is to list all services from a cloud provider.",
-    "user_template": "Create a complete and exhaustive listing of all services from {csp}. Do not skip any services. It is critical that the list is 100% complete. Your output must be a strict JSON object with the service names and their documentation URLs.",
+    "system_instruction": "## Role\nYou are a Senior Cloud Infrastructure Architect.",
+    "user_template": "\n\n## Objective\nYour task is to identify and list all core services for a specified Cloud Service Provider (CSP). \n\n## Grounding Rules\n1. Use Google Search to verify current 2026 service names and availability.\n2. Today is Sunday, January 25, 2026. Prioritize results from the 2025-2026 window.\n3. If a service has been deprecated or renamed, provide the newest 2026 nomenclature.\n\n## Output Constraints\n- Respond strictly in valid JSON format.\n- Do not include conversational fluff or introductory text.\n- Categorize services by domain (Compute, Storage, Networking, AI, etc.).",
     "description": "Lists all services for a single CSP."
   },
   "service_map_prompt": {
