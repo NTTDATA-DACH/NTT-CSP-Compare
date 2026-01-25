@@ -25,7 +25,7 @@ class GeminiClient:
         system_time = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S %Z')
         timed_system_instruction = f"Today is {system_time}. Use this date as the reference point for all Google Search queries.\n\n{system_instruction}"
 
-        tools = [types.Tool(google_search=types.GoogleSearchRetrieval())] if enable_grounding else []
+        tools = [types.Tool(google_search=types.GoogleSearch())] if enable_grounding else []
 
         try:
             response = await self.client.models.generate_content(
