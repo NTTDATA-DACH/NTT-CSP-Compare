@@ -44,12 +44,16 @@ expected_synthesis = {
 }
 
 class TestPipeline(unittest.IsolatedAsyncioTestCase):
-    async def test_discovery(self):
+    @patch("builtins.open")
+    async def test_discovery(self, mock_open):
+        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
         with patch('config.Config.TEST_MODE', True):
             mapper = ServiceMapper()
             # In test mode, discover_services returns a hardcoded mock object.
             # The client is not used, so we don't need to mock it.
-            result = await mapper.discover_services("AWS", "GCP")
+            services_a = await mapper.get_service_list("AWS")
+            services_b = await mapper.get_service_list("GCP")
+            result = await mapper.map_services("AWS", "GCP", services_a['services'], services_b['services'])
 
             # Verify that the mock data is returned
             self.assertIn("items", result)

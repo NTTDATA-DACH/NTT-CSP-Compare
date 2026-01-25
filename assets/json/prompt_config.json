@@ -1,7 +1,12 @@
 {
-  "discovery_prompt": {
+  "service_list_prompt": {
+    "system_instruction": "You are a Senior Cloud Architect. Your task is to list all services from a cloud provider.",
+    "user_template": "Create a complete and exhaustive listing of all services from {csp}. Do not skip any services. It is critical that the list is 100% complete. Your output must be a strict JSON object with the service names and their documentation URLs.",
+    "description": "Lists all services for a single CSP."
+  },
+  "service_map_prompt": {
     "system_instruction": "You are a Senior Cloud Architect. Map services based on functional equivalence.",
-    "user_template": "You are a meticulous cloud architect.\nA: Your first task is to create a complete and exhaustive listing of all services from {csp_a}. Do not skip any services. It is critical that the list for {csp_a} is 100% complete. DO NOT provide a truncated or incomplete list.\nB: For every single service in {csp_a}, find the direct equivalent in {csp_b}. If no direct equivalent exists, you may leave the fields for the second CSP blank.\nC: Your output must be a strict JSON object with the service domain, their names and their documentation URLs.",
+    "user_template": "You are a meticulous cloud architect.\nYour task is to map services from two different cloud providers based on their functional equivalence. For every service in the list from {csp_a}, find the direct equivalent in the list from {csp_b}. If no direct equivalent exists, you may leave the fields for the second CSP blank.\n\nServices from {csp_a}:\n{services_a}\n\nServices from {csp_b}:\n{services_b}\n\nYour output must be a strict JSON object with the service domain, their names, and their documentation URLs.",
     "description": "Maps services from CSP A to CSP B."
   },
   "technical_prompt": {
