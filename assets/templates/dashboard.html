@@ -34,7 +34,16 @@
         <p>Generated at: {{ generated_at }}</p>
 
         <div class="summary-card">
-            <h3>Management Summary</h3>
+            <h3>Overarching Summary</h3>
+            {% if overarching_summary %}
+            <p>{{ overarching_summary.overarching_summary }}</p>
+            {% else %}
+            <p>The overarching summary could not be generated.</p>
+            {% endif %}
+        </div>
+
+        <div class="summary-card">
+            <h3>Domain-Specific Summaries</h3>
             {% if not management_summaries %}
             <p>No management summaries were generated.</p>
             {% else %}
