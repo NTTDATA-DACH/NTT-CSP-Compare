@@ -6,7 +6,27 @@
       "items": {
         "type": "object",
         "properties": {
-          "domain": { "type": "string" },
+          "domain": { "type": "string",
+            "enum": [
+              "Compute",
+              "Storage",
+              "Networking",
+              "Containers",
+              "AI Services",
+              "Unified Data",
+              "MLOps",
+              "Identity (IAM)",
+              "Confidential",
+              "Sovereign",
+              "Security",
+              "Governance",
+              "FinOps",
+              "Serverless",
+              "Edge",
+              "Industry Cloud",
+              "IoT"
+              ]
+            },
           "service_name": { "type": "string" },
           "service_url": { "type": "string", "format": "uri" },
           "description": { "type": "string" }
