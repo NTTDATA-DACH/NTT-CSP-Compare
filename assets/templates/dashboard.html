@@ -36,7 +36,7 @@
         <div class="summary-card">
             <h3>Overarching Summary</h3>
             {% if overarching_summary %}
-            <p>{{ overarching_summary.overarching_summary }}</p>
+            <p>{{ overarching_summary }}</p>
             {% else %}
             <p>The overarching summary could not be generated.</p>
             {% endif %}
@@ -49,7 +49,7 @@
             {% else %}
             {% for domain, summary in management_summaries.items() %}
             <h4>{{ domain }}</h4>
-            <p>{{ summary.management_summary }}</p>
+            <p>{{ summary }}</p>
             {% endfor %}
             {% endif %}
         </div>

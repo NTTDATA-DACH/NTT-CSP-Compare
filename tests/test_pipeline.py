@@ -82,17 +82,15 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             self.assertIn("metadata", result)
 
     @patch("builtins.open")
-    async def test_summarize_by_domain(self, mock_open):
+    async def test_generate_management_summary(self, mock_open):
         mock_open.return_value.__enter__.return_value.read.return_value = "{}"
         with patch("pipeline.synthesizer.Config.TEST_MODE", True):
             synthesizer = Synthesizer()
-            result = await synthesizer.summarize_by_domain("Compute", [{}])
+            result = await synthesizer.generate_management_summary({"Compute": [{}]})
 
-            self.assertIn("management_summary", result)
-            self.assertEqual(
-                result["management_summary"],
-                "This is a mock management summary for the Compute domain.",
-            )
+            self.assertIn("overarching_summary", result)
+            self.assertIn("domain_summaries", result)
+            self.assertIn("Compute", result["domain_summaries"])
 
 
 class TestConfig(unittest.TestCase):

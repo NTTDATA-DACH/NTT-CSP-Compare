@@ -21,8 +21,7 @@ class DashboardGenerator:
         csp_b: str,
         results: list,
         service_maps: list,
-        management_summaries: dict,
-        overarching_summary: dict,
+        management_summary: dict,
         output_path: str,
     ):
         """
@@ -109,13 +108,18 @@ class DashboardGenerator:
             ],
         }
 
+        # Extract summaries for the template
+        overarching_summary = management_summary.get("overarching_summary", "")
+        domain_summaries = management_summary.get("domain_summaries", {})
+
+
         # Render final HTML
         html_content = self.template.render(
             csp_a=csp_a,
             csp_b=csp_b,
             generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             overarching_summary=overarching_summary,
-            management_summaries=management_summaries,
+            management_summaries=domain_summaries,
             total_services=total_services_csp_a,
             total_compared=total_compared,
             avg_technical_score=round(avg_technical, 2),
