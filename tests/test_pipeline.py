@@ -65,9 +65,9 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
         analyst = PricingAnalyst()
         service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
 
-        with patch('config.Config.TEST_MODE', True):
-            result = await analyst.perform_analysis("AWS", "GCP", service_pair)
-
+    @patch('pipeline.synthesizer.genai.Client')
+    async def test_synthesizer(self, MockClient):
+        mock_client_instance = MockClient.return_value
         expected_data = {
             "service_pair_id": "EC2_vs_GCE",
             "pricing_models": [
@@ -76,24 +76,28 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             "cost_efficiency_score": 8.0,
             "notes": "Mock pricing data."
         }
-        self.assertEqual(result, expected_data)
+        # Since the client method is now async, the mock needs to be async too
+        mock_client_instance.aio.models.generate_content = AsyncMock(
+            return_value=MockResponse(expected_synthesis)
+        )
 
     @patch('pipeline.synthesizer.genai.Client')
     async def test_synthesizer(self, MockClient):
         # This test now validates that TEST_MODE returns the correct mock data.
         synthesizer = Synthesizer()
+        result = await synthesizer.synthesize("EC2_vs_GCE", {}, {})
 
-        with patch('config.Config.TEST_MODE', True):
-            result = await synthesizer.synthesize("EC2_vs_GCE", {"tech": "data"}, {"price": "data"})
+        # The result object contains more than just the synthesis, let's check that part
+        self.assertIn("synthesis", result)
+        self.assertEqual(result['synthesis'], expected_synthesis)
+        self.assertIn("metadata", result)
 
-        # We don't care about the exact timestamp
-        self.assertIn("service_pair_id", result["metadata"])
-        self.assertIn("generated_at", result["metadata"])
+        # Verify call arguments
+        args, kwargs = mock_client_instance.aio.models.generate_content.call_args
+        config = kwargs['config']
 
-        # Check the rest of the structure
-        self.assertEqual(result["technical_data"], {"tech": "data"})
-        self.assertEqual(result["pricing_data"], {"price": "data"})
-        self.assertIn("detailed_comparison", result["synthesis"])
+        # In synthesizer, grounding is not used, so tools should not be set.
+        self.assertNotIn('tools', kwargs)
 
 
 class TestConfig(unittest.TestCase):

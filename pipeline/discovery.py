@@ -35,6 +35,33 @@ class ServiceMapper:
         """
         Maps services from CSP A to CSP B using Gemini 3 Flash.
         """
+        if Config.TEST_MODE:
+            logger.info("TEST_MODE enabled for ServiceMapper. Returning mock data.")
+            return {
+                "items": [
+                    {
+                        "domain": "Compute",
+                        "csp_a_service_name": "EC2",
+                        "csp_a_url": "https://aws.amazon.com/ec2/",
+                        "csp_b_service_name": "Compute Engine",
+                        "csp_b_url": "https://cloud.google.com/compute/"
+                    },
+                    {
+                        "domain": "Storage",
+                        "csp_a_service_name": "S3",
+                        "csp_a_url": "https://aws.amazon.com/s3/",
+                        "csp_b_service_name": "Cloud Storage",
+                        "csp_b_url": "https://cloud.google.com/storage/"
+                    },
+                    {
+                        "domain": "Database",
+                        "csp_a_service_name": "RDS",
+                        "csp_a_url": "https://aws.amazon.com/rds/",
+                        "csp_b_service_name": ""
+                    }
+                ]
+            }
+
         logger.info(f"Starting discovery: {csp_a} -> {csp_b} using {self.model_name}")
 
         prompt_config = self.prompts["discovery_prompt"]
