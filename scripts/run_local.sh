@@ -15,7 +15,7 @@ fetch_infra() {
     popd > /dev/null
 
     # Validate that all required variables were fetched
-    if [ -z "$GCP_PROJECT_ID" ] || [ -z "$BUCKET_NAME" ] || [ -z "$AI_LOCATION" ]; then
+    if [ -z "$GCP_PROJECT_ID" ] || [ "$GCP_PROJECT_ID" == "null" ] || [ -z "$BUCKET_NAME" ] || [ -z "$AI_LOCATION" ]; then
         echo "Error: Could not fetch all required outputs from Terraform."
         echo "Please run 'terraform apply' in the 'terraform' directory first."
         return 1
