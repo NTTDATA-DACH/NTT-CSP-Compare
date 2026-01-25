@@ -18,5 +18,10 @@
     "system_instruction": "You are a Chief Technology Officer (CTO) summarizing a vendor selection process. You are concise, decisive, and persuasive. You synthesize technical quality and cost efficiency into a cohesive narrative.",
     "user_template": "Review the following two analysis reports for the service pair {service_pair_id}:\n\nTechnical Analysis:\n{technical_json}\n\nPricing Analysis:\n{pricing_json}\n\nTasks:\n1. Write a 'Detailed Comparison' (Markdown). Synthesize the pros/cons of both. use (Compute, Storage, Database, AI, Security) domains of services and generate a sumamry for each. Explain the trade-offs between cost and quality. Who should use which?\n2. Write an 'Executive Summary'. This must be a single paragraph, strictly under 300 characters. It must declare a winner or a specific use-case split.\n\nOutput strict JSON.",
     "description": "Merges technical and pricing data into a human-readable narrative."
+  },
+  "management_summary_prompt": {
+    "system_instruction": "You are a Chief Technology Officer (CTO) authoring a strategic summary for executive leadership. Your focus is on the big picture, business implications, and strategic alignment. You are concise and avoid technical jargon.",
+    "user_template": "You have been provided with a series of detailed comparisons for services within the '{domain_name}' domain. Review these individual summaries and synthesize them into a single, cohesive management summary.\n\nIndividual Summaries:\n{synthesis_json}\n\nYour Task:\nWrite a 'Management Summary' for the '{domain_name}' domain. This summary should:\n1. Be a well-written, narrative-style paragraph.\n2. Identify the strategic advantages and disadvantages of each cloud provider in this domain.\n3. Provide a clear recommendation on which provider is better suited for specific business needs (e.g., cost-sensitive startups, enterprise-grade applications, specific feature requirements).\n4. Avoid bullet points and lists. The output should be a fluid paragraph.\n\nOutput strict JSON.",
+    "description": "Generates a high-level management summary for a service domain."
   }
 }

@@ -82,25 +82,44 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
         analyst = PricingAnalyst()
         service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
 
-    @patch('pipeline.synthesizer.genai.Client')
-    async def test_synthesizer(self, MockClient):
+    @patch("builtins.open")
+    @patch("pipeline.synthesizer.genai.Client")
+    async def test_synthesizer(self, MockClient, mock_open):
         # This test now validates that TEST_MODE returns the correct mock data.
+        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
         synthesizer = Synthesizer()
-        expected_synthesis = {
-            "strengths_csp_a": ["- Mock strength A1", "- Mock strength A2"],
-            "strengths_csp_b": ["- Mock strength B1", "- Mock strength B2"],
-            "weaknesses_csp_a": ["- Mock weakness A1"],
-            "weaknesses_csp_b": ["- Mock weakness B1"],
-            "final_recommendation": "Mock recommendation.",
-        }
 
-        with patch('config.Config.TEST_MODE', True):
+        # Mock the return value for the synthesize method
+        expected_synthesis = {
+            "executive_summary": "Mock executive summary.",
+            "detailed_comparison": "Mock detailed comparison.",
+        }
+        synthesizer.client.generate_content = AsyncMock(
+            return_value=MockResponse(expected_synthesis)
+        )
+
+        with patch("config.Config.TEST_MODE", True):
             result = await synthesizer.synthesize("EC2_vs_GCE", {}, {})
 
         # The result object contains more than just the synthesis, let's check that part
         self.assertIn("synthesis", result)
-        self.assertEqual(result['synthesis'], expected_synthesis)
+        self.assertEqual(result["synthesis"], expected_synthesis)
         self.assertIn("metadata", result)
+
+    @patch("builtins.open")
+    @patch("pipeline.synthesizer.genai.Client")
+    async def test_summarize_by_domain(self, MockClient, mock_open):
+        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
+        synthesizer = Synthesizer()
+
+        with patch("config.Config.TEST_MODE", True):
+            result = await synthesizer.summarize_by_domain("Compute", [{}])
+
+        self.assertIn("management_summary", result)
+        self.assertEqual(
+            result["management_summary"],
+            "This is a mock management summary for the Compute domain.",
+        )
 
 
 class TestConfig(unittest.TestCase):

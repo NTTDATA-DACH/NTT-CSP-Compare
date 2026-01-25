@@ -34,8 +34,15 @@
         <p>Generated at: {{ generated_at }}</p>
 
         <div class="summary-card">
-            <h3>Executive Summary</h3>
-            <div>{{ executive_summary | safe }}</div>
+            <h3>Management Summary</h3>
+            {% if not management_summaries %}
+            <p>No management summaries were generated.</p>
+            {% else %}
+            {% for domain, summary in management_summaries.items() %}
+            <h4>{{ domain }}</h4>
+            <p>{{ summary.management_summary }}</p>
+            {% endfor %}
+            {% endif %}
         </div>
 
         <div class="stats-grid">
