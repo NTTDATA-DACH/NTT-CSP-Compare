@@ -16,88 +16,82 @@ class MockResponse:
         self.parsed = parsed_data
         self.text = json.dumps(parsed_data)
 
+# Define mock data at the class level for reuse
+mock_technical_data = {
+    "service_pair_id": "EC2_vs_GCE",
+    "maturity_analysis": {
+        "csp_a": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"},
+        "csp_b": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"}
+    },
+    "integration_quality": {
+        "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
+    },
+    "technical_score": 9.5
+}
+
+mock_pricing_data = {
+    "service_pair_id": "EC2_vs_GCE",
+    "pricing_models": [
+        {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
+    ],
+    "cost_efficiency_score": 8.0,
+    "notes": "Mock pricing data."
+}
+
+expected_synthesis = {
+    "detailed_comparison": "This is a mock detailed comparison.",
+    "executive_summary": "Mock executive summary."
+}
+
+
 class TestPipeline(unittest.IsolatedAsyncioTestCase):
 
-    async def test_discovery(self):
-        with patch('config.Config.TEST_MODE', True):
+    @patch('pipeline.discovery.genai.Client')
+    async def test_discovery(self, MockClient):
+        # Setup async mock for the client
+        MockClient.return_value.aio.models.generate_content = AsyncMock(
+            return_value=MockResponse({"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]})
+        )
+
+        # Patch TEST_MODE in the module where it's used to test the real logic path
+        with patch('pipeline.discovery.Config.TEST_MODE', False):
             mapper = ServiceMapper()
-
-            # Configure the mock created in __init__
-            mapper.client.models.generate_content.return_value = MockResponse(
-                {"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]}
-            )
-
+            # ServiceMapper.__init__ will now use the mock client from the patch
             result = await mapper.discover_services("AWS", "GCP")
 
             # Verify
             self.assertEqual(result, {"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]})
-            mapper.client.models.generate_content.assert_called_once()
-            args, kwargs = mapper.client.models.generate_content.call_args
+            # Check the mock that __init__ would have created and used
+            MockClient.return_value.aio.models.generate_content.assert_called_once()
+            args, kwargs = MockClient.return_value.aio.models.generate_content.call_args
             self.assertEqual(kwargs['model'], "gemini-3-flash-preview")
             self.assertIn("Analyze the service catalog", kwargs['contents'])
 
-    @patch('pipeline.analyzer.genai.Client')
-    async def test_analyzer(self, MockClient):
-        # This test now validates that TEST_MODE returns the correct mock data.
-        analyst = TechnicalAnalyst()
-        service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
-
-        # Enable test mode for this specific test
-        with patch('config.Config.TEST_MODE', True):
+    async def test_analyzer_test_mode(self):
+        # Patch TEST_MODE in the module where it is checked
+        with patch('pipeline.analyzer.Config.TEST_MODE', True):
+            analyst = TechnicalAnalyst()
+            service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
             result = await analyst.perform_analysis("AWS", "GCP", service_pair)
+            self.assertEqual(result, mock_technical_data)
 
-        expected_data = {
-            "service_pair_id": "EC2_vs_GCE",
-            "maturity_analysis": {
-                "csp_a": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"},
-                "csp_b": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"}
-            },
-            "integration_quality": {
-                "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
-            },
-            "technical_score": 9.5
-        }
-        self.assertEqual(result, expected_data)
+    async def test_pricing_test_mode(self):
+        # Patch TEST_MODE in the module where it is checked
+        with patch('pipeline.pricing_analyst.Config.TEST_MODE', True):
+            analyst = PricingAnalyst()
+            service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
+            result = await analyst.perform_analysis("AWS", "GCP", service_pair)
+            self.assertEqual(result, mock_pricing_data)
 
-    @patch('pipeline.pricing_analyst.genai.Client')
-    async def test_pricing(self, MockClient):
-        # This test now validates that TEST_MODE returns the correct mock data.
-        analyst = PricingAnalyst()
-        service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
+    async def test_synthesizer_test_mode(self):
+        # Patch TEST_MODE in the module where it is checked
+        with patch('pipeline.synthesizer.Config.TEST_MODE', True):
+            synthesizer = Synthesizer()
+            result = await synthesizer.synthesize("EC2_vs_GCE", mock_technical_data, mock_pricing_data)
 
-    @patch('pipeline.synthesizer.genai.Client')
-    async def test_synthesizer(self, MockClient):
-        mock_client_instance = MockClient.return_value
-        expected_data = {
-            "service_pair_id": "EC2_vs_GCE",
-            "pricing_models": [
-                {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
-            ],
-            "cost_efficiency_score": 8.0,
-            "notes": "Mock pricing data."
-        }
-        # Since the client method is now async, the mock needs to be async too
-        mock_client_instance.aio.models.generate_content = AsyncMock(
-            return_value=MockResponse(expected_synthesis)
-        )
-
-    @patch('pipeline.synthesizer.genai.Client')
-    async def test_synthesizer(self, MockClient):
-        # This test now validates that TEST_MODE returns the correct mock data.
-        synthesizer = Synthesizer()
-        result = await synthesizer.synthesize("EC2_vs_GCE", {}, {})
-
-        # The result object contains more than just the synthesis, let's check that part
-        self.assertIn("synthesis", result)
-        self.assertEqual(result['synthesis'], expected_synthesis)
-        self.assertIn("metadata", result)
-
-        # Verify call arguments
-        args, kwargs = mock_client_instance.aio.models.generate_content.call_args
-        config = kwargs['config']
-
-        # In synthesizer, grounding is not used, so tools should not be set.
-        self.assertNotIn('tools', kwargs)
+            self.assertIn("synthesis", result)
+            self.assertEqual(result['synthesis'], expected_synthesis)
+            self.assertIn("metadata", result)
 
 
 class TestConfig(unittest.TestCase):
