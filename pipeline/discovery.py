@@ -33,16 +33,16 @@ class ServiceMapper:
             if csp == "AWS":
                 return {
                     "services": [
-                        {"service_name": "EC2", "service_url": "https://aws.amazon.com/ec2/"},
-                        {"service_name": "S3", "service_url": "https://aws.amazon.com/s3/"},
-                        {"service_name": "RDS", "service_url": "https://aws.amazon.com/rds/"}
+                        {"service_name": "EC2", "service_url": "https://aws.amazon.com/ec2/", "description": "Virtual Servers in the Cloud"},
+                        {"service_name": "S3", "service_url": "https://aws.amazon.com/s3/", "description": "Object Storage Built to Store and Retrieve Any Amount of Data from Anywhere"},
+                        {"service_name": "RDS", "service_url": "https://aws.amazon.com/rds/", "description": "Managed Relational Database Service for MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB"}
                     ]
                 }
             else:
                  return {
                     "services": [
-                        {"service_name": "Compute Engine", "service_url": "https://cloud.google.com/compute/"},
-                        {"service_name": "Cloud Storage", "service_url": "https://cloud.google.com/storage/"}
+                        {"service_name": "Compute Engine", "service_url": "https://cloud.google.com/compute/", "description": "Virtual Machines Running in Google's Data Center"},
+                        {"service_name": "Cloud Storage", "service_url": "https://cloud.google.com/storage/", "description": "Object Storage for Companies of All Sizes"}
                     ]
                 }
 
