@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Management Summary Schema",
   "description": "Schema for the high-level management summary of a service domain.",
   "type": "object",
