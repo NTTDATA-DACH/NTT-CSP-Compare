@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "service_name": { "type": "string" },
+          "service_url": { "type": "string", "format": "uri" }
+        },
+        "required": ["service_name", "service_url"]
+      }
+    }
+  },
+  "required": ["services"]
+}
