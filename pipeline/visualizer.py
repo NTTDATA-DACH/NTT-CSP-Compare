@@ -15,13 +15,20 @@ class DashboardGenerator:
         self.env = Environment(loader=FileSystemLoader(template_dir))
         self.template = self.env.get_template(template_name)
 
-    def generate_dashboard(self, csp_a: str, csp_b: str, results: list, service_maps: list, output_path: str):
+    def generate_dashboard(
+        self,
+        csp_a: str,
+        csp_b: str,
+        results: list,
+        service_maps: list,
+        management_summaries: dict,
+        output_path: str,
+    ):
         """
         Generates the HTML dashboard from the aggregated results.
         """
         missing_services_list = [
-            item for item in service_maps
-            if not item.get("csp_b_service_name")
+            item for item in service_maps if not item.get("csp_b_service_name")
         ]
 
         if not results and not missing_services_list:
@@ -32,8 +39,16 @@ class DashboardGenerator:
         total_compared = len(results)
         total_services_csp_a = len(service_maps)
 
-        tech_scores = [r["result"]["technical_data"]["technical_score"] for r in results] if results else []
-        price_scores = [r["result"]["pricing_data"]["cost_efficiency_score"] for r in results] if results else []
+        tech_scores = (
+            [r["result"]["technical_data"]["technical_score"] for r in results]
+            if results
+            else []
+        )
+        price_scores = (
+            [r["result"]["pricing_data"]["cost_efficiency_score"] for r in results]
+            if results
+            else []
+        )
 
         avg_technical = sum(tech_scores) / total_compared if total_compared else 0
         avg_price = sum(price_scores) / total_compared if total_compared else 0
@@ -53,8 +68,12 @@ class DashboardGenerator:
         # Calculate domain averages for table display and chart
         for domain, items in services_by_domain.items():
             count = len(items)
-            d_tech = sum([i["result"]["technical_data"]["technical_score"] for i in items])
-            d_price = sum([i["result"]["pricing_data"]["cost_efficiency_score"] for i in items])
+            d_tech = sum(
+                [i["result"]["technical_data"]["technical_score"] for i in items]
+            )
+            d_price = sum(
+                [i["result"]["pricing_data"]["cost_efficiency_score"] for i in items]
+            )
 
             avg_combined = (d_tech + d_price) / (2 * count) if count > 0 else 0
             domain_scores[domain] = round(avg_combined, 2)
@@ -71,47 +90,30 @@ class DashboardGenerator:
             "labels": json.dumps(chart_labels),
             "datasets": [
                 {
-                    "label": f'Technical Score ({csp_b} vs {csp_a})',
+                    "label": f"Technical Score ({csp_b} vs {csp_a})",
                     "data": json.dumps(chart_tech_data),
                     "fill": True,
-                    "backgroundColor": 'rgba(54, 162, 235, 0.2)',
-                    "borderColor": 'rgb(54, 162, 235)',
-                    "pointBackgroundColor": 'rgb(54, 162, 235)',
+                    "backgroundColor": "rgba(54, 162, 235, 0.2)",
+                    "borderColor": "rgb(54, 162, 235)",
+                    "pointBackgroundColor": "rgb(54, 162, 235)",
                 },
                 {
-                    "label": f'Cost Efficiency ({csp_b} vs {csp_a})',
+                    "label": f"Cost Efficiency ({csp_b} vs {csp_a})",
                     "data": json.dumps(chart_cost_data),
                     "fill": True,
-                    "backgroundColor": 'rgba(255, 99, 132, 0.2)',
-                    "borderColor": 'rgb(255, 99, 132)',
-                    "pointBackgroundColor": 'rgb(255, 99, 132)',
-                }
-            ]
+                    "backgroundColor": "rgba(255, 99, 132, 0.2)",
+                    "borderColor": "rgb(255, 99, 132)",
+                    "pointBackgroundColor": "rgb(255, 99, 132)",
+                },
+            ],
         }
 
-        # Extract a global executive summary.
-        all_summaries = [
-            r["result"]["synthesis"]["executive_summary"]
-            for r in results
-            if "synthesis" in r["result"] and "executive_summary" in r["result"]["synthesis"]
-        ]
-
-        if not all_summaries:
-            executive_summary = "No synthesis results available."
-        elif len(all_summaries) == 1:
-            executive_summary = all_summaries[0]
-        else:
-            # Simple concatenation for now. A more advanced implementation could synthesize a new summary.
-            executive_summary = "Key takeaways across services:\n<ul>"
-            for summary in all_summaries:
-                executive_summary += f"<li>{summary}</li>"
-            executive_summary += "</ul>"
-
+        # Render final HTML
         html_content = self.template.render(
             csp_a=csp_a,
             csp_b=csp_b,
             generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            executive_summary=executive_summary,
+            management_summaries=management_summaries,
             total_services=total_services_csp_a,
             total_compared=total_compared,
             avg_technical_score=round(avg_technical, 2),
@@ -119,7 +121,7 @@ class DashboardGenerator:
             services_by_domain=services_by_domain,
             domain_scores=domain_scores,
             domain_scores_chart_data=domain_scores_chart_data,
-            missing_services=missing_services_list
+            missing_services=missing_services_list,
         )
 
         with open(output_path, 'w') as f:

@@ -5,10 +5,16 @@ from unittest.mock import AsyncMock
 from google import genai
 from google.genai import types
 from config import Config
-from constants import MODEL_SYNTHESIS, PROMPT_CONFIG_PATH, SYNTHESIS_SCHEMA_PATH
+from constants import (
+    MODEL_SYNTHESIS,
+    PROMPT_CONFIG_PATH,
+    SYNTHESIS_SCHEMA_PATH,
+    MANAGEMENT_SUMMARY_SCHEMA_PATH,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 class Synthesizer:
     def __init__(self):
@@ -25,25 +31,69 @@ class Synthesizer:
         self._load_assets()
 
     def _load_assets(self):
-        with open(PROMPT_CONFIG_PATH, 'r') as f:
+        with open(PROMPT_CONFIG_PATH, "r") as f:
             self.prompts = json.load(f)
 
-        with open(SYNTHESIS_SCHEMA_PATH, 'r') as f:
+        with open(SYNTHESIS_SCHEMA_PATH, "r") as f:
             self.schema = json.load(f)
 
-    async def synthesize(self, service_pair_id: str, technical_data: dict, pricing_data: dict) -> dict:
+        with open(MANAGEMENT_SUMMARY_SCHEMA_PATH, "r") as f:
+            self.management_summary_schema = json.load(f)
+
+    async def summarize_by_domain(self, domain_name: str, synthesis_results: list) -> dict:
+        if not synthesis_results:
+            return None
+
+        if Config.TEST_MODE:
+            logger.info(
+                f"TEST_MODE enabled. Returning mock management summary for {domain_name}"
+            )
+            return {
+                "management_summary": f"This is a mock management summary for the {domain_name} domain."
+            }
+
+        prompt_config = self.prompts["management_summary_prompt"]
+        system_instruction = prompt_config["system_instruction"]
+        synthesis_str = json.dumps(synthesis_results)
+
+        user_content = prompt_config["user_template"].format(
+            domain_name=domain_name, synthesis_json=synthesis_str
+        )
+
+        try:
+            response = await self.client.models.generate_content(
+                model=self.model_name,
+                contents=user_content,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    response_mime_type="application/json",
+                    response_schema=self.management_summary_schema,
+                    temperature=0.7,
+                ),
+            )
+
+            if hasattr(response, "parsed") and response.parsed:
+                return response.parsed
+            else:
+                return json.loads(response.text)
+
+        except Exception as e:
+            logger.error(f"Error generating management summary for {domain_name}: {e}")
+            return None
+    async def synthesize(
+        self, service_pair_id: str, technical_data: dict, pricing_data: dict
+    ) -> dict:
         """
         Synthesizes technical and pricing analysis into a narrative.
         Returns the Result object (Technical + Pricing + Synthesis).
         """
         if Config.TEST_MODE:
-            logger.info(f"TEST_MODE enabled for Synthesizer. Returning mock data for {service_pair_id}")
+            logger.info(
+                f"TEST_MODE enabled for Synthesizer. Returning mock data for {service_pair_id}"
+            )
             synthesis_result = {
-                "strengths_csp_a": ["- Mock strength A1", "- Mock strength A2"],
-                "strengths_csp_b": ["- Mock strength B1", "- Mock strength B2"],
-                "weaknesses_csp_a": ["- Mock weakness A1"],
-                "weaknesses_csp_b": ["- Mock weakness B1"],
-                "final_recommendation": "Mock recommendation.",
+                "executive_summary": "Mock executive summary.",
+                "detailed_comparison": "Mock detailed comparison.",
             }
             return {
                 "metadata": {

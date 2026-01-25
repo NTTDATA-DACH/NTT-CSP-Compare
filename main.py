@@ -151,12 +151,41 @@ async def main():
 
     final_results = [res for res in processed_results if res is not None]
 
-    # --- Phase 5: Visualization ---
+    # --- Phase 5: Management Summary ---
+    # Group results by domain
+    services_by_domain = {}
+    for item in final_results:
+        domain = item["map"].get("domain", "Uncategorized")
+        if domain not in services_by_domain:
+            services_by_domain[domain] = []
+        services_by_domain[domain].append(item["result"]["synthesis"])
+
+    # Generate management summary for each domain
+    management_summaries = {}
+    summary_tasks = []
+
+    for domain, synthesis_results in services_by_domain.items():
+        summary_tasks.append(
+            (domain, synthesizer.summarize_by_domain(domain, synthesis_results))
+        )
+
+    summary_results = await asyncio.gather(*[task for _, task in summary_tasks])
+
+    for (domain, _), summary in zip(summary_tasks, summary_results):
+        if summary:
+            management_summaries[domain] = summary
+        else:
+            logger.warning(f"Management summary failed for domain {domain}")
+
+
+    # --- Phase 6: Visualization ---
     visualizer = DashboardGenerator()
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     output_html = f"public/{csp_a}_{csp_b}_{timestamp}.html"
 
-    visualizer.generate_dashboard(csp_a, csp_b, final_results, items, output_html)
+    visualizer.generate_dashboard(
+        csp_a, csp_b, final_results, items, management_summaries, output_html
+    )
 
     logger.info("Pipeline completed successfully.")
 
