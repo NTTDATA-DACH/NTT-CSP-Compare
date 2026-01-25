@@ -12,15 +12,7 @@ logger = logging.getLogger(__name__)
 
 class ServiceMapper:
     def __init__(self):
-        self.client = (
-            genai.Client(
-                vertexai=True,
-                project=Config.GCP_PROJECT_ID,
-                location=Config.AI_LOCATION,
-            ).aio
-            if not Config.TEST_MODE
-            else AsyncMock()
-        )
+        self.client = None
         self.model_name = MODEL_DISCOVERY
         self._load_assets()
 
@@ -35,6 +27,17 @@ class ServiceMapper:
         """
         Maps services from CSP A to CSP B using Gemini 3 Flash.
         """
+        if self.client is None:
+            self.client = (
+                genai.Client(
+                    vertexai=True,
+                    project=Config.GCP_PROJECT_ID,
+                    location=Config.AI_LOCATION,
+                ).aio
+                if not Config.TEST_MODE
+                else AsyncMock()
+            )
+
         if Config.TEST_MODE:
             logger.info("TEST_MODE enabled for ServiceMapper. Returning mock data.")
             return {
