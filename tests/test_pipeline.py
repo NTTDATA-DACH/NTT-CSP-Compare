@@ -1,7 +1,8 @@
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, AsyncMock
 import json
 import os
+import asyncio
 from google.genai import types
 from pipeline.discovery import ServiceMapper
 from pipeline.analyzer import TechnicalAnalyst
@@ -15,35 +16,30 @@ class MockResponse:
         self.parsed = parsed_data
         self.text = json.dumps(parsed_data)
 
-class TestPipeline(unittest.TestCase):
+class TestPipeline(unittest.IsolatedAsyncioTestCase):
 
     @patch('pipeline.discovery.genai.Client')
-    def test_discovery(self, MockClient):
+    async def test_discovery(self, MockClient):
         # Setup Mock
         mock_client_instance = MockClient.return_value
-        mock_models = MagicMock()
-        mock_client_instance.models = mock_models
-
-        expected_data = {"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]}
-        mock_models.generate_content.return_value = MockResponse(expected_data)
+        mock_client_instance.aio.models.generate_content = AsyncMock(
+            return_value=MockResponse({"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]})
+        )
 
         # Run
         mapper = ServiceMapper()
-        result = mapper.discover_services("AWS", "GCP")
+        result = await mapper.discover_services("AWS", "GCP")
 
         # Verify
-        self.assertEqual(result, expected_data)
-        mock_models.generate_content.assert_called_once()
-        args, kwargs = mock_models.generate_content.call_args
+        self.assertEqual(result, {"items": [{"domain": "Compute", "csp_a_service_name": "EC2"}]})
+        mock_client_instance.aio.models.generate_content.assert_called_once()
+        args, kwargs = mock_client_instance.aio.models.generate_content.call_args
         self.assertEqual(kwargs['model'], "gemini-3-flash-preview")
         self.assertIn("Analyze the service catalog", kwargs['contents'])
 
     @patch('pipeline.analyzer.genai.Client')
-    def test_analyzer(self, MockClient):
+    async def test_analyzer(self, MockClient):
         mock_client_instance = MockClient.return_value
-        mock_models = MagicMock()
-        mock_client_instance.models = mock_models
-
         expected_data = {
             "service_pair_id": "EC2_vs_GCE",
             "maturity_analysis": "Mature",
@@ -51,7 +47,7 @@ class TestPipeline(unittest.TestCase):
             "technical_score": 5,
             "technical_reasoning": "Reason"
         }
-        mock_models.generate_content.return_value = MockResponse(expected_data)
+        mock_client_instance.aio.models.generate_content = AsyncMock(return_value=MockResponse(expected_data))
 
         analyst = TechnicalAnalyst()
         service_pair = {
@@ -60,12 +56,12 @@ class TestPipeline(unittest.TestCase):
             "csp_b_service_name": "GCE",
             "csp_b_url": "url"
         }
-        result = analyst.perform_analysis("AWS", "GCP", service_pair)
+        result = await analyst.perform_analysis("AWS", "GCP", service_pair)
 
         self.assertEqual(result, expected_data)
 
         # Verify Thinking and Grounding
-        args, kwargs = mock_models.generate_content.call_args
+        args, kwargs = mock_client_instance.aio.models.generate_content.call_args
         config = kwargs['config']
 
         # Verify ThinkingConfig
@@ -76,11 +72,8 @@ class TestPipeline(unittest.TestCase):
         self.assertTrue(any(t.google_search is not None for t in config.tools))
 
     @patch('pipeline.pricing_analyst.genai.Client')
-    def test_pricing(self, MockClient):
+    async def test_pricing(self, MockClient):
         mock_client_instance = MockClient.return_value
-        mock_models = MagicMock()
-        mock_client_instance.models = mock_models
-
         expected_data = {
             "service_pair_id": "EC2_vs_GCE",
             "pricing_models": ["On-Demand"],
@@ -88,19 +81,19 @@ class TestPipeline(unittest.TestCase):
             "cost_efficiency_score": 0,
             "pricing_reasoning": "Same"
         }
-        mock_models.generate_content.return_value = MockResponse(expected_data)
+        mock_client_instance.aio.models.generate_content = AsyncMock(return_value=MockResponse(expected_data))
 
         analyst = PricingAnalyst()
         service_pair = {
             "csp_a_service_name": "EC2",
             "csp_b_service_name": "GCE"
         }
-        result = analyst.perform_analysis("AWS", "GCP", service_pair)
+        result = await analyst.perform_analysis("AWS", "GCP", service_pair)
 
         self.assertEqual(result, expected_data)
 
         # Verify Thinking and Grounding
-        args, kwargs = mock_models.generate_content.call_args
+        args, kwargs = mock_client_instance.aio.models.generate_content.call_args
         config = kwargs['config']
         self.assertIsNotNone(config.thinking_config)
         self.assertIsNotNone(config.tools)
