@@ -1,25 +1,15 @@
 import json
 import logging
-from unittest.mock import AsyncMock
-from google import genai
-from google.genai import types
 from config import Config
 from constants import MODEL_ANALYSIS, PROMPT_CONFIG_PATH, PRICING_SCHEMA_PATH
+from pipeline.gemini import GeminiClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class PricingAnalyst:
     def __init__(self):
-        self.client = (
-            genai.Client(
-                vertexai=True,
-                project=Config.GCP_PROJECT_ID,
-                location=Config.AI_LOCATION,
-            ).aio
-            if not Config.TEST_MODE
-            else AsyncMock()
-        )
+        self.client = GeminiClient()
         self.model_name = MODEL_ANALYSIS # Reuse the same model (Pro Thinking)
         self._load_assets()
 
@@ -59,29 +49,16 @@ class PricingAnalyst:
         )
 
         try:
-            response = await self.client.models.generate_content(
-                model=self.model_name,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type='application/json',
-                    response_schema=self.schema,
-                    temperature=0.7,
-                    thinking_config=types.ThinkingConfig(
-                        include_thoughts=False
-                    ),
-                    tools=[
-                        types.Tool(
-                            google_search=types.GoogleSearch()
-                        )
-                    ]
-                )
+            response = await self.client.generate_content(
+                model_name=self.model_name,
+                user_content=user_content,
+                system_instruction=system_instruction,
+                schema=self.schema
             )
-
-            if hasattr(response, 'parsed') and response.parsed:
-                return response.parsed
-
-            return json.loads(response.text)
+            if response is None:
+                logger.error(f"Received None response from GeminiClient for {service_a_name} vs {service_b_name}")
+                return None
+            return response
 
         except Exception as e:
             logger.error(f"Error analyzing pricing for {service_a_name} vs {service_b_name}: {e}")
