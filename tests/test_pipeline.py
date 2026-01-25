@@ -16,7 +16,32 @@ class MockResponse:
         self.parsed = parsed_data
         self.text = json.dumps(parsed_data)
 
-class TestPipeline(unittest.IsolatedAsyncioTestCase):
+# Define mock data at the class level for reuse
+mock_technical_data = {
+    "service_pair_id": "EC2_vs_GCE",
+    "maturity_analysis": {
+        "csp_a": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"},
+        "csp_b": {"stability": "High", "release_stage": "GA", "feature_completeness": "High"}
+    },
+    "integration_quality": {
+        "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
+    },
+    "technical_score": 9.5
+}
+
+mock_pricing_data = {
+    "service_pair_id": "EC2_vs_GCE",
+    "pricing_models": [
+        {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
+    ],
+    "cost_efficiency_score": 8.0,
+    "notes": "Mock pricing data."
+}
+
+expected_synthesis = {
+    "detailed_comparison": "This is a mock detailed comparison.",
+    "executive_summary": "Mock executive summary."
+}
 
     async def test_discovery(self):
         with patch('config.Config.TEST_MODE', True):
@@ -29,15 +54,13 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             self.assertIn("items", result)
             self.assertEqual(result["items"][0]["csp_a_service_name"], "EC2")
 
-    @patch('pipeline.analyzer.genai.Client')
-    async def test_analyzer(self, MockClient):
-        # This test now validates that TEST_MODE returns the correct mock data.
-        analyst = TechnicalAnalyst()
-        service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
-
-        # Enable test mode for this specific test
-        with patch('config.Config.TEST_MODE', True):
+    async def test_analyzer_test_mode(self):
+        # Patch TEST_MODE in the module where it is checked
+        with patch('pipeline.analyzer.Config.TEST_MODE', True):
+            analyst = TechnicalAnalyst()
+            service_pair = {"csp_a_service_name": "EC2", "csp_b_service_name": "GCE"}
             result = await analyst.perform_analysis("AWS", "GCP", service_pair)
+            self.assertEqual(result, mock_technical_data)
 
         expected_data = {
             "service_pair_id": "EC2_vs_GCE",
