@@ -60,8 +60,8 @@ class Synthesizer:
         system_instruction = prompt_config["system_instruction"]
 
         # Serialize inputs for the prompt
-        tech_str = json.dumps(technical_data, indent=2)
-        price_str = json.dumps(pricing_data, indent=2)
+        tech_str = json.dumps(technical_data)
+        price_str = json.dumps(pricing_data)
 
         user_content = prompt_config["user_template"].format(
             service_pair_id=service_pair_id,
