@@ -6,11 +6,12 @@
       "items": {
         "type": "object",
         "properties": {
+          "domain": { "type": "string" },
           "service_name": { "type": "string" },
           "service_url": { "type": "string", "format": "uri" },
           "description": { "type": "string" }
         },
-        "required": ["service_name", "service_url", "description"]
+        "required": ["domain", "service_name", "service_url", "description"]
       }
     }
   },
