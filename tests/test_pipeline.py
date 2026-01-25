@@ -43,6 +43,7 @@ expected_synthesis = {
     "executive_summary": "Mock executive summary."
 }
 
+class TestPipeline(unittest.IsolatedAsyncioTestCase):
     async def test_discovery(self):
         with patch('config.Config.TEST_MODE', True):
             mapper = ServiceMapper()
