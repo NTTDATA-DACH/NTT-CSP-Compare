@@ -33,6 +33,7 @@ class GeminiClient:
                 contents=user_content,
                 config=types.GenerateContentConfig(
                     tools=tools,
+                    max_output_tokens=65536,
                     thinking_config=types.ThinkingConfig(
                         include_thoughts=True,
                         thinking_level="HIGH"
