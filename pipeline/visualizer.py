@@ -22,6 +22,7 @@ class DashboardGenerator:
         results: list,
         service_maps: list,
         management_summaries: dict,
+        overarching_summary: dict,
         output_path: str,
     ):
         """
@@ -113,6 +114,7 @@ class DashboardGenerator:
             csp_a=csp_a,
             csp_b=csp_b,
             generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            overarching_summary=overarching_summary,
             management_summaries=management_summaries,
             total_services=total_services_csp_a,
             total_compared=total_compared,

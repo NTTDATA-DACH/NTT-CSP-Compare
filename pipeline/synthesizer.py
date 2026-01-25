@@ -10,6 +10,7 @@ from constants import (
     PROMPT_CONFIG_PATH,
     SYNTHESIS_SCHEMA_PATH,
     MANAGEMENT_SUMMARY_SCHEMA_PATH,
+    OVERARCHING_SUMMARY_SCHEMA_PATH,
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -39,6 +40,48 @@ class Synthesizer:
 
         with open(MANAGEMENT_SUMMARY_SCHEMA_PATH, "r") as f:
             self.management_summary_schema = json.load(f)
+
+        with open(OVERARCHING_SUMMARY_SCHEMA_PATH, "r") as f:
+            self.overarching_summary_schema = json.load(f)
+
+    async def summarize_overall(self, domain_summaries: dict) -> dict:
+        if not domain_summaries:
+            return None
+
+        if Config.TEST_MODE:
+            logger.info("TEST_MODE enabled. Returning mock overarching summary.")
+            return {
+                "overarching_summary": "This is a mock overarching summary for the entire comparison."
+            }
+
+        prompt_config = self.prompts["overarching_summary_prompt"]
+        system_instruction = prompt_config["system_instruction"]
+        domain_summaries_str = json.dumps(domain_summaries)
+
+        user_content = prompt_config["user_template"].format(
+            domain_summaries_json=domain_summaries_str
+        )
+
+        try:
+            response = await self.client.models.generate_content(
+                model=self.model_name,
+                contents=user_content,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    response_mime_type="application/json",
+                    response_schema=self.overarching_summary_schema,
+                    temperature=0.7,
+                ),
+            )
+
+            if hasattr(response, "parsed") and response.parsed:
+                return response.parsed
+            else:
+                return json.loads(response.text)
+
+        except Exception as e:
+            logger.error(f"Error generating overarching summary: {e}")
+            return None
 
     async def summarize_by_domain(self, domain_name: str, synthesis_results: list) -> dict:
         if not synthesis_results:

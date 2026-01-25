@@ -178,13 +178,24 @@ async def main():
             logger.warning(f"Management summary failed for domain {domain}")
 
 
+    # --- Phase 5b: Overarching Summary ---
+    overarching_summary = await synthesizer.summarize_overall(management_summaries)
+    if not overarching_summary:
+        logger.warning("Overarching summary generation failed.")
+
     # --- Phase 6: Visualization ---
     visualizer = DashboardGenerator()
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     output_html = f"public/{csp_a}_{csp_b}_{timestamp}.html"
 
     visualizer.generate_dashboard(
-        csp_a, csp_b, final_results, items, management_summaries, output_html
+        csp_a,
+        csp_b,
+        final_results,
+        items,
+        management_summaries,
+        overarching_summary,
+        output_html,
     )
 
     logger.info("Pipeline completed successfully.")
