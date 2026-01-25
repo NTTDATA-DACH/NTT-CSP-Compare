@@ -68,15 +68,10 @@ class ServiceMapper:
         system_instruction = prompt_config["system_instruction"]
         user_content = prompt_config["user_template"].format(csp_a=csp_a, csp_b=csp_b)
 
-        if Config.TEST_MODE:
-            user_content += "\n\nIMPORTANT: For this test run, please only return a maximum of 5 services."
-
-        # For testing purposes, if TEST_MODE is on, we might want to inject a simpler prompt
-        # or limit the scope, but the LLM should handle it.
-        # The project spec implies TEST=true should limit processing, which this does.
-        # This limit logic might need to be applied AFTER discovery or IN the prompt.
-        # Downstream logic in main.py also limits the number of services processed.
-        # But if the discovery returns 100 services, we iterate only 3.
+        # The main.py script handles the test mode by slicing the final list of services.
+        # This ensures that the discovery prompt is consistent across all environments
+        # and prevents the model from generating a truncated list even in test mode,
+        # which allows us to test the full discovery process with a limited number of items.
         # So discovery can return full list.
 
         try:
