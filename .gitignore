@@ -203,7 +203,7 @@ cython_debug/
 
 # local data 
 data/*
-public/*
+# public/*
 raw/*
 
 # Terraform
