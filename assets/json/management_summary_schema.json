@@ -1,14 +1,20 @@
 {
-  "title": "Management Summary Schema",
-  "description": "Schema for the high-level management summary of a service domain.",
   "type": "object",
   "properties": {
-    "management_summary": {
-      "description": "A single, cohesive, narrative-style paragraph summarizing the strategic comparison of a service domain.",
-      "type": "string"
+    "overarching_summary": {
+      "type": "string",
+      "description": "A holistic view of the strengths and weaknesses of each cloud provider across all domains and a clear, strategic recommendation."
+    },
+    "domain_summaries": {
+      "type": "object",
+      "description": "A dictionary where keys are the domain names and values are the domain-specific summary strings.",
+      "additionalProperties": {
+        "type": "string"
+      }
     }
   },
   "required": [
-    "management_summary"
+    "overarching_summary",
+    "domain_summaries"
   ]
 }
