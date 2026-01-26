@@ -1,11 +1,13 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock, AsyncMock
 import json
 import os
+import asyncio
 from pipeline.discovery import ServiceMapper
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
 from pipeline.synthesizer import Synthesizer
+from main import process_service_item, format_service_name
 
 # Define mock data at the class level for reuse
 mock_technical_data = {
@@ -91,6 +93,45 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             self.assertIn("overarching_summary", result)
             self.assertIn("domain_summaries", result)
             self.assertIn("Compute", result["domain_summaries"])
+
+    def test_format_service_name(self):
+        self.assertEqual(format_service_name("AWS", "EC2"), "aws_ec2")
+        self.assertEqual(format_service_name("GCP", "Compute Engine"), "gcp_compute_engine")
+
+    async def test_process_service_item_caching_collision(self):
+        # Mocks for dependencies
+        tech_analyst = MagicMock()
+        pricing_analyst = MagicMock()
+        synthesizer = MagicMock()
+        cache = MagicMock()
+        semaphore = asyncio.Semaphore(1)
+
+        # Mock return values for async methods
+        tech_analyst.perform_analysis = AsyncMock(return_value={"tech_data": "some_data"})
+        pricing_analyst.perform_analysis = AsyncMock(return_value={"pricing_data": "some_data"})
+        synthesizer.synthesize = AsyncMock(return_value={"synthesis": "some_synthesis"})
+
+        # Item 1: AWS "Compute" service vs GCP "Compute Engine"
+        item1 = {"csp_a_service_name": "Compute", "csp_b_service_name": "Compute Engine"}
+        csp_a1, csp_b1 = "AWS", "GCP"
+
+        # Item 2: Azure "Compute" service vs GCP "Compute Engine" (same service names, different csp_a)
+        item2 = {"csp_a_service_name": "Compute", "csp_b_service_name": "Compute Engine"}
+        csp_a2, csp_b2 = "Azure", "GCP"
+
+        # Simulate cache misses for both
+        cache.get.return_value = None
+
+        # Process both items
+        await process_service_item(item1, tech_analyst, pricing_analyst, synthesizer, csp_a1, csp_b1, cache, semaphore)
+        await process_service_item(item2, tech_analyst, pricing_analyst, synthesizer, csp_a2, csp_b2, cache, semaphore)
+
+        # Get the keys used for caching
+        tech_key1_call = cache.set.call_args_list[0][0][0]
+        tech_key2_call = cache.set.call_args_list[3][0][0] # 3 because each process_service_item calls cache.set 3 times
+
+        # Assert that the keys are different
+        self.assertNotEqual(tech_key1_call, tech_key2_call, "Cache keys for services with the same name but different CSPs should be different.")
 
 
 class TestConfig(unittest.TestCase):

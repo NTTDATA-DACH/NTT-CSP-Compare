@@ -16,6 +16,10 @@ from pipeline.visualizer import DashboardGenerator
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+def format_service_name(csp, service_name):
+    """Formats a service name for use in cache keys."""
+    return f"{csp}_{service_name}".lower().replace(" ", "_")
+
 async def process_service_item(item, tech_analyst, pricing_analyst, synthesizer, csp_a, csp_b, cache, semaphore):
     async with semaphore:
         service_a = item["csp_a_service_name"]
@@ -25,7 +29,10 @@ async def process_service_item(item, tech_analyst, pricing_analyst, synthesizer,
             logger.info(f"Skipping {service_a} (no match in {csp_b})")
             return None
 
-        service_pair_id = f"{service_a}_vs_{service_b}"
+        formatted_service_a = format_service_name(csp_a, service_a)
+        formatted_service_b = format_service_name(csp_b, service_b)
+        service_pair_id = f"{formatted_service_a}_vs_{formatted_service_b}"
+
         logger.info(f"Processing: {service_pair_id}")
 
         # Technical Analysis
