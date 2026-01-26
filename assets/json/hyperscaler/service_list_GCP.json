@@ -1,0 +1,1186 @@
+{
+  "services": [
+  {
+    "domain": "AI Services",
+    "service_name": "Vertex AI TensorBoard",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/experiments/tensorboard-overview",
+    "description": "A fully managed version of TensorBoard for tracking and visualizing machine learning experiments."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Distance Matrix API",
+    "service_url": "http://googleusercontent.com/maps.google.com/7",
+    "description": "Calculates travel distance and time for a matrix of origins and destinations."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Geolocation API",
+    "service_url": "http://googleusercontent.com/maps.google.com/8",
+    "description": "Returns a location and accuracy radius based on information about cell towers and WiFi nodes."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Time Zone API",
+    "service_url": "http://googleusercontent.com/maps.google.com/9",
+    "description": "Provides time offset data for locations on the surface of the earth."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Elevation API",
+    "service_url": "https://cloud.google.com/maps-platform/air-quality0",
+    "description": "Provides elevation data for all locations on the surface of the earth, including depth locations on the ocean floor."
+  },
+  {
+    "domain": "Management & Operations",
+    "service_name": "Cloud Resource Manager",
+    "service_url": "https://cloud.google.com/resource-manager/docs",
+    "description": "The service that allows you to programmatically manage the resource hierarchy (Organizations, Folders, Projects)."
+  },
+  {
+    "domain": "Management & Operations",
+    "service_name": "Service Usage",
+    "service_url": "https://cloud.google.com/service-usage/docs",
+    "description": "Enables you to list, enable, and disable APIs and services in your Google Cloud projects, and manage quotas."
+  },
+  {
+    "domain": "Management & Operations",
+    "service_name": "Cloud Support API",
+    "service_url": "https://cloud.google.com/support/docs",
+    "description": "Allows you to programmatically create and manage customer support cases."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Firebase Crashlytics",
+    "service_url": "https://firebase.google.com/docs/crashlytics",
+    "description": "A lightweight, realtime crash reporter that helps you track, prioritize, and fix stability issues in your apps."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Firebase Performance Monitoring",
+    "service_url": "https://firebase.google.com/docs/perf-mon",
+    "description": "Gives you insight into the performance characteristics of your Apple, Android, and web apps."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Firebase App Check",
+    "service_url": "https://firebase.google.com/docs/app-check",
+    "description": "Helps protect your backend resources from abuse, such as billing fraud and phishing, by validating app authenticity."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Chrome Enterprise Premium",
+    "service_url": "https://cloud.google.com/chrome-enterprise/premium/docs",
+    "description": "Advanced security for web browsing, providing data protection and threat defense directly in the browser (formerly BeyondCorp Enterprise features)."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Firebase Cloud Messaging (FCM)",
+    "service_url": "https://firebase.google.com/docs/cloud-messaging",
+    "description": "A cross-platform messaging solution that lets you reliably send messages and notifications at no cost."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Firebase Test Lab",
+    "service_url": "https://firebase.google.com/docs/test-lab",
+    "description": "A cloud-based app-testing infrastructure that lets you test your app on a wide variety of devices and configurations."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Firebase Remote Config",
+    "service_url": "https://firebase.google.com/docs/remote-config",
+    "description": "A cloud service that lets you change the behavior and appearance of your app without requiring users to download an app update."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Contact Center AI Platform",
+    "service_url": "https://cloud.google.com/contact-center/ccai-platform/docs",
+    "description": "A specialized Solution-as-a-Service (SaaS) platform for managing customer interactions, extending standard Dialogflow capabilities."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Document AI Warehouse",
+    "service_url": "https://cloud.google.com/document-ai-warehouse/docs",
+    "description": "A fully managed platform to store, search, govern, and manage documents and their extracted metadata at scale."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Manufacturing Data Engine",
+    "service_url": "https://cloud.google.com/manufacturing-data-engine/docs",
+    "description": "An end-to-end solution to process, contextualize, and store factory data for analytics and AI."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Telecom Subscriber Insights",
+    "service_url": "https://cloud.google.com/telecom-subscriber-insights/docs",
+    "description": "Helps CSPs ingest and analyze subscriber data to provide personalized offers and improve retention."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Places API (New)",
+    "service_url": "https://developers.google.com/maps/documentation/places/web-service/op-overview",
+    "description": "Provides detailed information about 200 million places and points of interest, optimized for cloud-based location intelligence."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Routes API",
+    "service_url": "https://developers.google.com/maps/documentation/routes",
+    "description": "The next generation of the Directions and Distance Matrix APIs, offering advanced routing features like two-wheeler routes and toll calculations."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Geocoding API",
+    "service_url": "https://developers.google.com/maps/documentation/geocoding",
+    "description": "Converts addresses into geographic coordinates (latitude/longitude) and vice versa for server-side processing."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Policy Intelligence",
+    "service_url": "https://cloud.google.com/policy-intelligence/docs",
+    "description": "Provides smart access control recommendations and policy troubleshooting tools to reduce security risk."
+  },
+  {
+    "domain": "Management & Operations",
+    "service_name": "Recommender",
+    "service_url": "https://cloud.google.com/recommender/docs",
+    "description": "A service that provides automatic recommendations for cost optimization, security, and performance across your Google Cloud resources."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Dataprep",
+    "service_url": "https://cloud.google.com/dataprep/docs",
+    "description": "An intelligent cloud data service to visually explore, clean, and prepare data for analysis and machine learning."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Quantum Computing Service",
+    "service_url": "https://cloud.google.com/quantum/docs",
+    "description": "Provides access to Google's quantum processors and simulators for research and algorithm development."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Air Quality API",
+    "service_url": "https://cloud.google.com/maps-platform/air-quality",
+    "description": "Provides current and forecasted air pollution data for more than 100 countries."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Pollen API",
+    "service_url": "https://cloud.google.com/maps-platform/pollen",
+    "description": "Offers localized pollen count data and heatmaps for health-focused applications."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Discovery AI",
+    "service_url": "https://cloud.google.com/discovery-ai/docs",
+    "description": "Google-quality search and recommendation models tuned for retail and media sites to improve conversion."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Immersive Stream for XR",
+    "service_url": "https://cloud.google.com/immersive-stream/xr/docs",
+    "description": "Renders 3D and AR experiences in the cloud and streams them to any device, untethered."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Cloud Billing API",
+    "service_url": "https://cloud.google.com/billing/docs/apis",
+    "description": "Programmatically manages billing accounts, budgets, and viewing catalog SKU prices."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Service Consumer Management",
+    "service_url": "https://cloud.google.com/service-consumer-management/docs",
+    "description": "Tools for managed service providers to deliver and manage their services on Google Cloud."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Address Validation API",
+    "service_url": "https://cloud.google.com/maps-platform/address-validation",
+    "description": "High-fidelity address validation to detect inaccurate addresses and improve checkout/delivery rates."
+  },
+  {
+    "domain": "Migration",
+    "service_name": "Dual Run",
+    "service_url": "https://cloud.google.com/dual-run/docs",
+    "description": "A mainframe modernization service that allows simultaneous processing on mainframes and Google Cloud to ensure zero disruption."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Cloud Healthcare Data Engine",
+    "service_url": "https://cloud.google.com/healthcare-data-engine/docs",
+    "description": "An end-to-end managed solution for creating longitudinal clinical records in near real-time."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Telecom Network Automation",
+    "service_url": "https://cloud.google.com/telecom-network-automation/docs",
+    "description": "A cloud-native automation tool for managing telecom network functions and infrastructure."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "BigLake",
+    "service_url": "https://cloud.google.com/biglake/docs",
+    "description": "A storage engine that unifies data warehouses and data lakes, allowing fine-grained access control across multi-cloud storage."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Service Directory",
+    "service_url": "https://cloud.google.com/service-directory/docs",
+    "description": "A managed service that lets you register, resolve, and discover services across your hybrid and multi-cloud environment."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "ApiHub",
+    "service_url": "https://cloud.google.com/apihub/docs",
+    "description": "A centralized catalog to discover, manage, and govern all APIs within an organization, regardless of where they are hosted."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Cloud Code",
+    "service_url": "https://cloud.google.com/code/docs",
+    "description": "IDE plugins for VS Code and IntelliJ that speed up cloud-native development with integrated debugging and Kubernetes support."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Workload Identity Federation",
+    "service_url": "https://cloud.google.com/iam/docs/workload-identity-federation",
+    "description": "Allows on-premises or other cloud workloads (AWS, Azure) to access Google Cloud resources without managing service account keys."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Cloud HSM",
+    "service_url": "https://cloud.google.com/kms/docs/hsm",
+    "description": "A cloud-hosted Hardware Security Module (HSM) service for hosting cryptographic keys in FIPS 140-2 Level 3 certified hardware."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Google Threat Intelligence",
+    "service_url": "https://cloud.google.com/threat-intelligence/docs",
+    "description": "Combines Mandiant frontline intelligence, VirusTotal community visibility, and Google threat insights to identify attacks."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Cloud Identity",
+    "service_url": "https://cloud.google.com/identity/docs",
+    "description": "An Identity as a Service (IDaaS) solution that manages users and groups, offering enterprise-grade security and application management."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "VM Manager",
+    "service_url": "https://cloud.google.com/compute/docs/vm-manager",
+    "description": "A suite of tools for managing operating systems for large fleets of VMs, including patch management and configuration management."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Anti Money Laundering AI",
+    "service_url": "https://cloud.google.com/financial-services/anti-money-laundering/docs",
+    "description": "An AI-powered service designed for financial institutions to detect money laundering risk with high precision."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Solar API",
+    "service_url": "https://developers.google.com/maps/documentation/solar",
+    "description": "Provides solar rooftop potential and financial analysis for over 320 million buildings using Google Earth imagery and AI."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Looker Studio",
+    "service_url": "https://cloud.google.com/looker-studio/docs",
+    "description": "A self-service business intelligence platform (formerly Data Studio) for turning data into fully customizable dashboards and reports."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Vertex AI Vector Search",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/vector-search/overview",
+    "description": "A high-scale, low-latency vector database for implementing semantic search and RAG (Retrieval-Augmented Generation)."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Vertex AI Feature Store",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/featurestore/overview",
+    "description": "A centralized repository to organize, store, and serve ML features, ensuring consistency between training and serving."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Vertex AI Pipelines",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/pipelines/introduction",
+    "description": "Orchestrates machine learning workflows using Kubeflow Pipelines or TFX in a serverless manner."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Visual Inspection AI",
+    "service_url": "https://cloud.google.com/vision/automl/docs/visual-inspection-overview",
+    "description": "Purpose-built AI for manufacturing to detect defects in products with extremely high accuracy."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Cloud Optimization API",
+    "service_url": "https://cloud.google.com/optimization/docs",
+    "description": "Solves complex vehicle routing and shipment scheduling problems for logistics fleets."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Application Integration",
+    "service_url": "https://cloud.google.com/application-integration/docs",
+    "description": "An iPaaS (Integration Platform as a Service) with a visual designer to connect SaaS apps and Google Cloud services."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Secure Source Manager",
+    "service_url": "https://cloud.google.com/secure-source-manager/docs",
+    "description": "A highly secure, private Git source code repository designed for enterprise governance and compliance."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Dataproc Metastore",
+    "service_url": "https://cloud.google.com/dataproc-metastore/docs",
+    "description": "A fully managed, serverless Apache Hive metastore (HMS) for data lakes."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Google Cloud Managed Service for Prometheus",
+    "service_url": "https://cloud.google.com/stackdriver/docs/managed-prometheus",
+    "description": "Fully managed Prometheus-compatible monitoring for Kubernetes workloads."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Assured Open Source Software",
+    "service_url": "https://cloud.google.com/assured-open-source-software/docs",
+    "description": "Provides trustworthy, vetted, and scanned open-source packages (Java, Python) mirrored by Google."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Public Certificate Authority",
+    "service_url": "https://cloud.google.com/public-certificate-authority/docs",
+    "description": "A secure and highly available service for automating the provisioning of public TLS certificates."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Migration Center",
+    "service_url": "https://cloud.google.com/migration-center/docs",
+    "description": "A unified platform for discovering assets, planning, and executing migrations to Google Cloud."
+  },
+{
+    "domain": "Developer Tools",
+    "service_name": "Cloud Endpoints",
+    "service_url": "https://cloud.google.com/endpoints/docs",
+    "description": "Develop, deploy, protect and monitor your APIs using an NGINX-based proxy."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Service Infrastructure",
+    "service_url": "https://cloud.google.com/service-infrastructure/docs",
+    "description": "A foundational platform for building Google Cloud-style services."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Transfer Appliance",
+    "service_url": "https://cloud.google.com/transfer-appliance/docs",
+    "description": "High-capacity hardware appliance for moving large amounts of data to Google Cloud securely."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Backup for GKE",
+    "service_url": "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+    "description": "Simple, cloud-native backup and restore specifically for Google Kubernetes Engine clusters."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Network Connectivity Center",
+    "service_url": "https://cloud.google.com/network-connectivity/docs/network-connectivity-center",
+    "description": "A unified hub to manage global connectivity across your on-premises and cloud networks."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Media CDN",
+    "service_url": "https://cloud.google.com/media-cdn/docs",
+    "description": "A content delivery network optimized for high-throughput media and entertainment workloads."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Certificate Manager",
+    "service_url": "https://cloud.google.com/certificate-manager/docs",
+    "description": "A service to acquire, manage, and deploy TLS certificates at scale for your load balancers."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Access Approval",
+    "service_url": "https://cloud.google.com/access-approval/docs",
+    "description": "Requires manual approval from your organization before Google support or engineering can access your data."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Access Transparency",
+    "service_url": "https://cloud.google.com/access-transparency/docs",
+    "description": "Provides near real-time logs that capture the actions Google personnel take when accessing your content."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Confidential Computing",
+    "service_url": "https://cloud.google.com/confidential-computing/docs",
+    "description": "Technology that encrypts data in use while it is being processed in memory."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Web Risk",
+    "service_url": "https://cloud.google.com/web-risk/docs",
+    "description": "An API to detect malicious URLs on your website and in your client applications."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Risk Manager",
+    "service_url": "https://cloud.google.com/risk-manager/docs",
+    "description": "Scans your workloads for compliance violations and provides insurance eligibility reports."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "BigQuery Data Transfer Service",
+    "service_url": "https://cloud.google.com/bigquery/docs/transfer-service",
+    "description": "Automates data movement into BigQuery from SaaS applications like Google Ads and external cloud storage."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Firebase Realtime Database",
+    "service_url": "https://firebase.google.com/docs/database",
+    "description": "A NoSQL cloud database that lets you store and sync data between your users in real time."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Cloud Healthcare API",
+    "service_url": "https://cloud.google.com/healthcare-api/docs",
+    "description": "Standards-based APIs (FHIR, HL7, DICOM) for healthcare data interoperability and AI analysis."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Retail API",
+    "service_url": "https://cloud.google.com/retail/docs",
+    "description": "Provides search, recommendation, and personalization capabilities specifically tuned for retailers."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Talent Solution",
+    "service_url": "https://cloud.google.com/talent-solution/docs",
+    "description": "AI-powered job search and candidate matching technology."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Dialogflow",
+    "service_url": "https://cloud.google.com/dialogflow/docs",
+    "description": "A comprehensive platform for building lifelike conversational AI and virtual agents (CX & ES)."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Vertex AI AutoML",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/start/automl-users",
+    "description": "Allows you to train high-quality custom machine learning models with minimal effort and expertise."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Timeseries Forecasting",
+    "service_url": "https://cloud.google.com/vertex-ai/docs/tabular-data/forecasting/overview",
+    "description": "A specialized Vertex AI service to forecast future values based on historical data."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Live Stream API",
+    "service_url": "https://cloud.google.com/livestream/docs",
+    "description": "A service to transcode live video streams for delivery to a wide variety of devices."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Transcoder API",
+    "service_url": "https://cloud.google.com/transcoder/docs",
+    "description": "Batch convert video files into different formats for optimized delivery."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Video Stitcher API",
+    "service_url": "https://cloud.google.com/video-stitcher/docs",
+    "description": "Dynamically insert content (like ads) into video-on-demand and live streams server-side."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Sole-tenant nodes",
+    "service_url": "https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes",
+    "description": "Dedicated physical servers for your project, useful for compliance and licensing requirements."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Carbon Footprint",
+    "service_url": "https://cloud.google.com/carbon-footprint/docs",
+    "description": "A tool to measure, report, and reduce the carbon emissions associated with your Google Cloud usage."
+  },
+      {
+      "domain": "AI Services",
+      "service_name": "Vertex AI Agent Builder",
+      "service_url": "https://cloud.google.com/vertex-ai/docs/agent-builder",
+      "description": "A low-code platform to build and deploy generative AI agents grounded in enterprise data, supporting multi-agent orchestration."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Gemini 3 Pro",
+      "service_url": "https://cloud.google.com/vertex-ai/docs/generative-ai/model-reference/gemini",
+      "description": "The latest multimodal model (Jan 2026) featuring enhanced reasoning and native agentic capabilities for complex task execution."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "MedLM",
+      "service_url": "https://cloud.google.com/vertex-ai/generative-ai/docs/medlm",
+      "description": "A family of foundation models fine-tuned for healthcare industry use cases, providing high-accuracy medical insights."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Vertex AI",
+      "service_url": "https://cloud.google.com/vertex-ai/docs",
+      "description": "A unified platform for building, deploying, and scaling machine learning models, integrating MLOps and generative AI tools."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Cloud Vision AI",
+      "service_url": "https://cloud.google.com/vision/docs",
+      "description": "Integrates vision detection features like image labeling, face detection, and OCR into applications."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Cloud Speech-to-Text",
+      "service_url": "https://cloud.google.com/speech-to-text/docs",
+      "description": "Converts audio to text using neural network models, supporting over 120 languages and variants."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Cloud Text-to-Speech",
+      "service_url": "https://cloud.google.com/text-to-speech/docs",
+      "description": "Converts text into natural-sounding speech with over 220 voices, utilizing DeepMind's WaveNet technology."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Cloud Translation API",
+      "service_url": "https://cloud.google.com/translate/docs",
+      "description": "Dynamically translates text between thousands of language pairs for websites and applications."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Cloud Natural Language API",
+      "service_url": "https://cloud.google.com/natural-language/docs",
+      "description": "Provides natural language understanding including sentiment analysis, entity analysis, and content classification."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Video Intelligence API",
+      "service_url": "https://cloud.google.com/video-intelligence/docs",
+      "description": "Makes videos searchable by extracting metadata, identifying key entities, and analyzing video content."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Document AI",
+      "service_url": "https://cloud.google.com/document-ai/docs",
+      "description": "A unified console using machine learning to classify, extract, and split documents to automate data capture."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Gemini Code Assist",
+      "service_url": "https://cloud.google.com/gemini/docs/code-assist",
+      "description": "An AI-powered collaborator that helps developers build, deploy, and operate applications."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Cloud TPUs",
+      "service_url": "https://cloud.google.com/tpu/docs",
+      "description": "Specialized AI accelerators (including v5p & Ironwood) designed for large-scale training and inference of massive machine learning models."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Blockchain Node Engine",
+      "service_url": "https://cloud.google.com/blockchain-node-engine/docs",
+      "description": "A fully managed node-hosting service for Web3 development, simplifying the deployment of blockchain nodes."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Compute Engine",
+      "service_url": "https://cloud.google.com/compute/docs",
+      "description": "Secure and customizable virtual machines running on Google's infrastructure with options for GPUs and Local SSDs."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "App Engine",
+      "service_url": "https://cloud.google.com/appengine/docs",
+      "description": "A fully managed serverless platform for building and hosting web applications with automatic scaling."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Cloud Functions",
+      "service_url": "https://cloud.google.com/functions/docs",
+      "description": "A scalable, pay-as-you-go serverless execution environment that runs code in response to events."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Google Cloud VMware Engine",
+      "service_url": "https://cloud.google.com/vmware-engine/docs",
+      "description": "A fully managed service to run native VMware workloads in Google Cloud without re-platforming."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Bare Metal Solution",
+      "service_url": "https://cloud.google.com/bare-metal/docs",
+      "description": "Provides dedicated bare metal hardware for specialized workloads like Oracle databases."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Batch",
+      "service_url": "https://cloud.google.com/batch/docs",
+      "description": "A fully managed service for scheduling and executing batch jobs at scale."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Migrate to Virtual Machines",
+      "service_url": "https://cloud.google.com/migrate/virtual-machines/docs",
+      "description": "Facilitates the migration of physical and virtual servers from on-premises or other clouds into Compute Engine."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Spot VMs",
+      "service_url": "https://cloud.google.com/compute/docs/instances/spot",
+      "description": "Highly affordable compute instances suitable for fault-tolerant workloads."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud NGFW Enterprise",
+      "service_url": "https://cloud.google.com/firewall/docs/next-gen-firewall",
+      "description": "An advanced fully-distributed firewall service with integrated Intrusion Prevention System (IPS)."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Virtual Private Cloud (VPC)",
+      "service_url": "https://cloud.google.com/vpc/docs",
+      "description": "A global virtual network spanning all Google Cloud regions, supporting granular IP management and routing."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud Load Balancing",
+      "service_url": "https://cloud.google.com/load-balancing/docs",
+      "description": "A fully distributed, software-defined managed load balancing service for high availability."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud DNS",
+      "service_url": "https://cloud.google.com/dns/docs",
+      "description": "A scalable, reliable, and managed authoritative Domain Name System (DNS) service."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud CDN",
+      "service_url": "https://cloud.google.com/cdn/docs",
+      "description": "A fast and reliable Content Delivery Network accelerating content delivery via global edge locations."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud NAT",
+      "service_url": "https://cloud.google.com/nat/docs",
+      "description": "Managed Network Address Translation allowing private instances to access the internet securely."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud Interconnect",
+      "service_url": "https://cloud.google.com/network-connectivity/docs/interconnect",
+      "description": "Provides direct physical connections between on-premises networks and Google's network."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud VPN",
+      "service_url": "https://cloud.google.com/network-connectivity/docs/vpn",
+      "description": "Securely connects peer networks to VPCs through IPsec VPN connections over the internet."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud Router",
+      "service_url": "https://cloud.google.com/network-connectivity/docs/router",
+      "description": "Enables dynamic Border Gateway Protocol (BGP) route updates for hybrid networks."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud IDS",
+      "service_url": "https://cloud.google.com/intrusion-detection-system/docs",
+      "description": "Cloud-native network threat detection for high-performance security monitoring."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Private Service Connect",
+      "service_url": "https://cloud.google.com/vpc/docs/private-service-connect",
+      "description": "Allows private consumption of services across VPC networks without public internet exposure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Network Intelligence Center",
+      "service_url": "https://cloud.google.com/network-intelligence-center/docs",
+      "description": "A comprehensive platform for monitoring, verifying, and optimizing network health and topology."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud Service Mesh",
+      "service_url": "https://cloud.google.com/service-mesh/docs",
+      "description": "Managed service mesh for advanced traffic management, observability, and security (formerly Traffic Director)."
+    },
+     {
+      "domain": "Networking",
+      "service_name": "Cloud Domains",
+      "service_url": "https://cloud.google.com/domains/docs",
+      "description": "A service for registering and managing web domains directly within Google Cloud."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Parallelstore",
+      "service_url": "https://cloud.google.com/parallelstore/docs",
+      "description": "A high-performance parallel file system designed for AI and HPC workloads."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Cloud Storage",
+      "service_url": "https://cloud.google.com/storage/docs",
+      "description": "Scalable, secure, and durable object storage with classes for various access frequencies (Standard, Nearline, etc.)."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Persistent Disk",
+      "service_url": "https://cloud.google.com/persistent-disk/docs",
+      "description": "High-performance block storage for VM instances, providing reliable and low-latency storage."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Filestore",
+      "service_url": "https://cloud.google.com/filestore/docs",
+      "description": "Fully managed NFSv3 file storage service for enterprise applications."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Google Cloud NetApp Volumes",
+      "service_url": "https://cloud.google.com/netapp/volumes/docs",
+      "description": "Fully managed file storage powered by NetApp ONTAP for high-performance enterprise workloads."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Cloud Storage for Firebase",
+      "service_url": "https://firebase.google.com/docs/storage",
+      "description": "Object storage service built for app developers to store and serve user-generated content."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Google Cloud Backup and DR",
+      "service_url": "https://cloud.google.com/backup-disaster-recovery/docs",
+      "description": "Managed backup and disaster recovery service for centralized workload protection."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Storage Transfer Service",
+      "service_url": "https://cloud.google.com/storage-transfer/docs",
+      "description": "Managed service for high-volume data transfers from other clouds or on-premises to Cloud Storage."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Application Design Center",
+      "service_url": "https://cloud.google.com/application-design-center/docs",
+      "description": "A visual tool for designing, deploying, and managing cloud application infrastructure and templates."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Agent Development Kit (ADK)",
+      "service_url": "https://cloud.google.com/vertex-ai/docs/adk",
+      "description": "A modular framework and SDK for professional developers to build and deploy custom AI agents."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AppSheet",
+      "service_url": "https://about.appsheet.com/home/",
+      "description": "A no-code platform for building mobile and web applications without writing code."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Deployment Manager",
+      "service_url": "https://cloud.google.com/deployment-manager/docs",
+      "description": "Infrastructure deployment service automating resource creation using YAML or Python templates."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Build",
+      "service_url": "https://cloud.google.com/build/docs",
+      "description": "A service that executes builds on Google Cloud infrastructure for artifacts like Docker containers."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Deploy",
+      "service_url": "https://cloud.google.com/deploy/docs",
+      "description": "Fully managed continuous delivery service for GKE, Cloud Run, and Anthos."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Source Repositories",
+      "service_url": "https://cloud.google.com/source-repositories/docs",
+      "description": "Private, scalable, and secure Git repository managed by Google."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Shell",
+      "service_url": "https://cloud.google.com/shell/docs",
+      "description": "Interactive browser-based shell environment with pre-installed tools."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Workstations",
+      "service_url": "https://cloud.google.com/workstations/docs",
+      "description": "Fully managed, secure development environments accessed via browser or local IDE."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Apigee",
+      "service_url": "https://cloud.google.com/apigee/docs",
+      "description": "Platform for developing and managing APIs with security, rate limiting, and analytics."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "API Gateway",
+      "service_url": "https://cloud.google.com/api-gateway/docs",
+      "description": "Fully managed service for developing, deploying, and securing APIs."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Tasks",
+      "service_url": "https://cloud.google.com/tasks/docs",
+      "description": "Fully managed service for asynchronous task execution and delivery."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Workflows",
+      "service_url": "https://cloud.google.com/workflows/docs",
+      "description": "Orchestrates and automates Google Cloud and HTTP-based API services."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Cloud Scheduler",
+      "service_url": "https://cloud.google.com/scheduler/docs",
+      "description": "Fully managed enterprise-grade cron job scheduler."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Eventarc",
+      "service_url": "https://cloud.google.com/eventarc/docs",
+      "description": "Eventing functionality that lets you asynchronously deliver events from Google services, SaaS, and your own apps."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Firebase Hosting",
+      "service_url": "https://firebase.google.com/docs/hosting",
+      "description": "Production-grade web content hosting for developers."
+    },
+     {
+      "domain": "Developer Tools",
+      "service_name": "Firebase Authentication",
+      "service_url": "https://firebase.google.com/docs/auth",
+      "description": "Backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Database Center",
+      "service_url": "https://cloud.google.com/database-center/docs",
+      "description": "A unified, AI-powered fleet management dashboard for all databases within the portfolio."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Datastream",
+      "service_url": "https://cloud.google.com/datastream/docs",
+      "description": "Serverless change data capture (CDC) and replication service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Catalog",
+      "service_url": "https://cloud.google.com/data-catalog/docs",
+      "description": "Managed metadata management service for data discovery and governance (part of Dataplex)."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud SQL",
+      "service_url": "https://cloud.google.com/sql/docs",
+      "description": "Fully managed relational database for MySQL, PostgreSQL, and SQL Server."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud Spanner",
+      "service_url": "https://cloud.google.com/spanner/docs",
+      "description": "Fully managed, mission-critical, relational database with global consistency and horizontal scalability."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud Bigtable",
+      "service_url": "https://cloud.google.com/bigtable/docs",
+      "description": "Scalable NoSQL database service for large analytical and operational workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Firestore",
+      "service_url": "https://cloud.google.com/firestore/docs",
+      "description": "Flexible, scalable NoSQL cloud database for mobile, web, and server development."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Memorystore",
+      "service_url": "https://cloud.google.com/memorystore/docs",
+      "description": "Fully managed in-memory data store service for Redis and Memcached."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "BigQuery",
+      "service_url": "https://cloud.google.com/bigquery/docs",
+      "description": "Serverless, multi-cloud data warehouse for analyzing petabytes of data using SQL."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Dataflow",
+      "service_url": "https://cloud.google.com/dataflow/docs",
+      "description": "Fully managed streaming and batch data processing service based on Apache Beam."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Dataproc",
+      "service_url": "https://cloud.google.com/dataproc/docs",
+      "description": "Managed service for running Apache Spark, Flink, and other open source tools."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Pub/Sub",
+      "service_url": "https://cloud.google.com/pubsub/docs",
+      "description": "Asynchronous messaging service for decoupling services and real-time ingestion."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud Data Fusion",
+      "service_url": "https://cloud.google.com/data-fusion/docs",
+      "description": "Fully managed, cloud-native enterprise data integration service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud Composer",
+      "service_url": "https://cloud.google.com/composer/docs",
+      "description": "Fully managed workflow orchestration service built on Apache Airflow."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Dataplex",
+      "service_url": "https://cloud.google.com/dataplex/docs",
+      "description": "Intelligent data fabric for unified data management and governance."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AlloyDB for PostgreSQL",
+      "service_url": "https://cloud.google.com/alloydb/docs",
+      "description": "Fully managed PostgreSQL-compatible database for demanding enterprise workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Database Migration Service",
+      "service_url": "https://cloud.google.com/database-migration/docs",
+      "description": "Serverless, minimal-downtime migrations to Cloud SQL and AlloyDB."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Dataform",
+      "service_url": "https://cloud.google.com/dataform/docs",
+      "description": "Service for developing and deploying SQL-based data transformation pipelines in BigQuery."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Looker",
+      "service_url": "https://cloud.google.com/looker/docs",
+      "description": "Enterprise business intelligence and data applications platform."
+    },
+     {
+      "domain": "Databases and Big Data",
+      "service_name": "Earth Engine",
+      "service_url": "https://earthengine.google.com/",
+      "description": "A planetary-scale platform for Earth science data & analysis."
+    },
+     {
+      "domain": "Databases and Big Data",
+      "service_name": "Analytics Hub",
+      "service_url": "https://cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "description": "A data exchange platform to securely share and monetize data assets."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "FinOps Hub 2.0",
+      "service_url": "https://cloud.google.com/billing/docs/how-to/finops-hub",
+      "description": "Centralized dashboard providing AI-driven insights for cloud cost optimization."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cloud Monitoring",
+      "service_url": "https://cloud.google.com/monitoring/docs",
+      "description": "Provides visibility into the performance, uptime, and health of cloud applications."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cloud Logging",
+      "service_url": "https://cloud.google.com/logging/docs",
+      "description": "Fully managed service for ingesting, analyzing, and storing log data."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Error Reporting",
+      "service_url": "https://cloud.google.com/error-reporting/docs",
+      "description": "Aggregates and analyzes crashes in running cloud services."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cloud Trace",
+      "service_url": "https://cloud.google.com/trace/docs",
+      "description": "Distributed tracing system for latency data and performance bottleneck identification."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cloud Profiler",
+      "service_url": "https://cloud.google.com/profiler/docs",
+      "description": "Continuous profiler for analyzing CPU or memory-intensive functions."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Model Armor",
+      "service_url": "https://cloud.google.com/model-armor/docs",
+      "description": "Security layer protecting LLMs from prompt injection and data leakage."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Binary Authorization",
+      "service_url": "https://cloud.google.com/binary-authorization/docs",
+      "description": "Deploy-time security control ensuring only trusted container images are deployed."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Identity Platform",
+      "service_url": "https://cloud.google.com/identity-platform/docs",
+      "description": "Customer identity and access management (CIAM) platform."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Identity and Access Management (IAM)",
+      "service_url": "https://cloud.google.com/iam/docs",
+      "description": "Authorization system for controlling action on specific resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Secret Manager",
+      "service_url": "https://cloud.google.com/secret-manager/docs",
+      "description": "Secure storage system for API keys, passwords, and sensitive data."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cloud Key Management Service (KMS)",
+      "service_url": "https://cloud.google.com/kms/docs",
+      "description": "Cloud-hosted key management service for cryptographic keys."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Security Command Center",
+      "service_url": "https://cloud.google.com/security-command-center/docs",
+      "description": "Centralized security and risk management platform."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Google Cloud Armor",
+      "service_url": "https://cloud.google.com/armor/docs",
+      "description": "DDoS protection and Web Application Firewall (WAF) service."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Identity-Aware Proxy (IAP)",
+      "service_url": "https://cloud.google.com/iap/docs",
+      "description": "Controls access to cloud applications based on user identity and context."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "VPC Service Controls",
+      "service_url": "https://cloud.google.com/vpc-service-controls/docs",
+      "description": "Defines security perimeters around Google Cloud resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Certificate Authority Service",
+      "service_url": "https://cloud.google.com/certificate-authority-service/docs",
+      "description": "Scalable service for managing private certificate authorities (CAs)."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Sensitive Data Protection",
+      "service_url": "https://cloud.google.com/sensitive-data-protection/docs",
+      "description": "Helps discover, classify, and redact sensitive information (formerly Cloud DLP)."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Google SecOps",
+      "service_url": "https://cloud.google.com/secops/docs",
+      "description": "Unified platform for security operations including SIEM and SOAR."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "reCAPTCHA Enterprise",
+      "service_url": "https://cloud.google.com/recaptcha-enterprise/docs",
+      "description": "Fraud detection service that protects your site from spam and abuse."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "BeyondCorp Enterprise",
+      "service_url": "https://cloud.google.com/beyondcorp-enterprise/docs",
+      "description": "Zero trust solution enabling secure access to applications without a VPN."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Assured Workloads",
+      "service_url": "https://cloud.google.com/assured-workloads/docs",
+      "description": "Helps you secure your workloads and comply with regulatory requirements."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cloud Asset Inventory",
+      "service_url": "https://cloud.google.com/asset-inventory/docs",
+      "description": "Inventory service to monitor and analyze all your GCP assets and metadata."
+    },
+     {
+      "domain": "Security and Governance",
+      "service_name": "Managed Service for Microsoft Active Directory",
+      "service_url": "https://cloud.google.com/managed-microsoft-ad/docs",
+      "description": "Highly available, hardened Microsoft Active Directory hosted on Google Cloud."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Anthos",
+      "service_url": "https://cloud.google.com/anthos/docs",
+      "description": "Platform for managing containerized applications across multiple clouds and on-premises."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Google Kubernetes Engine (GKE)",
+      "service_url": "https://cloud.google.com/kubernetes-engine/docs",
+      "description": "Managed environment for deploying containerized applications using Kubernetes."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Cloud Run",
+      "service_url": "https://cloud.google.com/run/docs",
+      "description": "Fully managed compute platform for scaling stateless containers."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Artifact Registry",
+      "service_url": "https://cloud.google.com/artifact-registry/docs",
+      "description": "Manager for container images and language packages, integrated with CI/CD."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Google Distributed Cloud",
+      "service_url": "https://cloud.google.com/distributed-cloud/docs",
+      "description": "Hardware and software solutions extending Google Cloud infrastructure to the edge."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Google Distributed Cloud Edge",
+      "service_url": "https://cloud.google.com/distributed-cloud/edge/docs",
+      "description": "Fully managed product bringing infrastructure closer to data generation sources."
+    }
+  ]
+}

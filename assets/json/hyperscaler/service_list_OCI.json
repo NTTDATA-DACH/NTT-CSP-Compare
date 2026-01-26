@@ -1,0 +1,988 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "Batch",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/oci-batch/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/oci-batch/home.htm%22,%22description%22:%22Managed) batch processing service for running large-scale parallel and HPC-style jobs."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Compute",
+      "service_url": "https://docs.oracle.com/iaas/Content/Compute/home.htm",
+      "description": "Core](https://docs.oracle.com/iaas/Content/Compute/home.htm%22,%22description%22:%22Core) compute service for running virtual machines and bare metal instances."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Oracle Cloud Migrations",
+      "service_url": "https://docs.oracle.com/iaas/Content/cloud-migration/home.htm",
+      "description": "Migration](https://docs.oracle.com/iaas/Content/cloud-migration/home.htm%22,%22description%22:%22Migration) tooling for discovering, assessing, and migrating workloads to OCI."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Oracle Linux",
+      "service_url": "https://docs.oracle.com/iaas/oracle-linux/home.htm",
+      "description": "Oracle](https://docs.oracle.com/iaas/oracle-linux/home.htm%22,%22description%22:%22Oracle) Linux images and OS tooling optimized for OCI."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Secure Desktops",
+      "service_url": "https://docs.oracle.com/iaas/secure-desktops/home.htm",
+      "description": "Cloud-hosted](https://docs.oracle.com/iaas/secure-desktops/home.htm%22,%22description%22:%22Cloud-hosted) secure desktop environments."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "VMware Solution",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/VMware/Concepts/ocvsoverview.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/VMware/Concepts/ocvsoverview.htm%22,%22description%22:%22Managed) VMware SDDC on OCI for VMware workloads."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Archive Storage",
+      "service_url": "https://docs.oracle.com/iaas/Content/Archive/home.htm",
+      "description": "Low-cost](https://docs.oracle.com/iaas/Content/Archive/home.htm%22,%22description%22:%22Low-cost) archival storage tier for infrequently accessed data."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Block Volume",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Block/home.htm",
+      "description": "Block](https://docs.oracle.com/en-us/iaas/Content/Block/home.htm%22,%22description%22:%22Block) storage volumes for compute instances."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "File Storage",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/File/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/File/home.htm%22,%22description%22:%22Managed) NFS file storage for shared file systems."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "File Storage with Lustre",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/lustre/home.htm",
+      "description": "High-performance](https://docs.oracle.com/en-us/iaas/Content/lustre/home.htm%22,%22description%22:%22High-performance) Lustre file system for HPC and AI."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Object Storage",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Object/home.htm",
+      "description": "Highly](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm%22,%22description%22:%22Highly) durable, scalable object storage for unstructured data."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cluster Placement Groups",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/cluster-placement-groups/home.htm",
+      "description": "Placement](https://docs.oracle.com/en-us/iaas/Content/cluster-placement-groups/home.htm%22,%22description%22:%22Placement) control for compute clusters to optimize performance."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "DNS and Traffic Management",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/DNS/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/DNS/home.htm%22,%22description%22:%22Managed) DNS, traffic steering, and health-based routing."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "FastConnect",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnect.htm",
+      "description": "Dedicated](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnect.htm%22,%22description%22:%22Dedicated) private connectivity between OCI and on-premises."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "IP Management",
+      "service_url": "https://docs.oracle.com/iaas/Content/Network/Concepts/ipaddressesanddns.htm",
+      "description": "IP](https://docs.oracle.com/iaas/Content/Network/Concepts/ipaddressesanddns.htm%22,%22description%22:%22IP) addressing and DNS-related management concepts in OCI."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Load Balancer",
+      "service_url": "https://docs.oracle.com/iaas/Content/Balance/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/Balance/home.htm%22,%22description%22:%22Managed) Layer-7 load balancing for application traffic."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Network Command Center Services",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/net_command_center.htm",
+      "description": "Network](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/net_command_center.htm%22,%22description%22:%22Network) monitoring and troubleshooting for OCI connectivity."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Network Load Balancer",
+      "service_url": "https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/home.htm%22,%22description%22:%22Managed) Layer-4 load balancing for network traffic."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Networking",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/landing.htm",
+      "description": "Core](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/landing.htm%22,%22description%22:%22Core) virtual networking services (VCNs, routing, gateways, connectivity)."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Oracle Interconnect for Azure",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/azure.htm",
+      "description": "Private](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/azure.htm%22,%22description%22:%22Private) connectivity between OCI and Azure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Oracle Interconnect for Google Cloud",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/access-to-google-cloud-platform.htm",
+      "description": "Private](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/access-to-google-cloud-platform.htm%22,%22description%22:%22Private) connectivity between OCI and Google Cloud."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Web Application Acceleration",
+      "service_url": "https://docs.oracle.com/iaas/Content/web-app-acceleration/home.htm",
+      "description": "Edge](https://docs.oracle.com/iaas/Content/web-app-acceleration/home.htm%22,%22description%22:%22Edge) acceleration and routing to improve web performance."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Artifact Registry",
+      "service_url": "https://docs.oracle.com/iaas/Content/artifacts/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/artifacts/home.htm%22,%22description%22:%22Managed) registry for storing and managing software artifacts."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Container Instances",
+      "service_url": "https://docs.oracle.com/iaas/Content/container-instances/home.htm",
+      "description": "Serverless](https://docs.oracle.com/iaas/Content/container-instances/home.htm%22,%22description%22:%22Serverless) containers for running workloads without managing servers."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Container Registry",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Registry/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/Registry/home.htm%22,%22description%22:%22Managed) registry for storing and managing container images."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Kubernetes Engine",
+      "service_url": "https://docs.oracle.com/iaas/Content/ContEng/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/ContEng/home.htm%22,%22description%22:%22Managed) Kubernetes service (OKE) for containerized applications."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "TimesTen Database for OKE",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/timesten-oke/",
+      "description": "In-memory](https://docs.oracle.com/en/cloud/paas/timesten-oke/%22,%22description%22:%22In-memory) database deployment for OKE using TimesTen."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Verrazzano",
+      "service_url": "https://docs.oracle.com/en/cloud/iaas/verrazzano/index.html",
+      "description": "Enterprise](https://docs.oracle.com/en/cloud/iaas/verrazzano/index.html%22,%22description%22:%22Enterprise) platform for operating cloud native apps on Kubernetes."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "WebLogic Server for OKE",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/weblogic-container/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/weblogic-container/index.html%22,%22description%22:%22Managed) WebLogic deployment option for OKE."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Analytics Cloud",
+      "service_url": "https://docs.oracle.com/iaas/analytics-cloud/index.html",
+      "description": "Managed](https://docs.oracle.com/iaas/analytics-cloud/index.html%22,%22description%22:%22Managed) analytics and BI platform for data visualization."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous AI Database for Analytics and Data Warehousing",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html",
+      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html%22,%22description%22:%22Autonomous) database optimized for analytics and data warehousing."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous AI Database for Transaction Processing and Mixed Workloads",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html",
+      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html%22,%22description%22:%22Autonomous) database optimized for OLTP and mixed workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous AI Database on Dedicated Exadata Infrastructure",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbd-index.html",
+      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbd-index.html%22,%22description%22:%22Autonomous) database on dedicated Exadata infrastructure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous AI Database on Exadata Cloud@Customer",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcc-index.html",
+      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcc-index.html%22,%22description%22:%22Autonomous) database on Exadata Cloud@Customer."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous AI JSON Database",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-json-database/index.html",
+      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/index.html%22,%22description%22:%22Autonomous) JSON document database service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Autonomous Recovery Service",
+      "service_url": "https://docs.oracle.com/en-us/iaas/recovery-service/index.html",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/recovery-service/index.html%22,%22description%22:%22Managed) database backup and recovery for Oracle Database."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Base Database",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/base-database/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/base-database/index.html%22,%22description%22:%22Managed) Oracle Database service on VM and bare metal."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Big Data Service",
+      "service_url": "https://docs.oracle.com/iaas/Content/bigdata/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/bigdata/home.htm%22,%22description%22:%22Managed) Hadoop/Spark big data clusters."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Connector Hub",
+      "service_url": "https://docs.oracle.com/iaas/Content/connector-hub/home.htm",
+      "description": "Route](https://docs.oracle.com/iaas/Content/connector-hub/home.htm%22,%22description%22:%22Route) and move data/events between OCI and external targets."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Catalog",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/data-catalog/home.htm",
+      "description": "Metadata](https://docs.oracle.com/en-us/iaas/Content/data-catalog/home.htm%22,%22description%22:%22Metadata) management and data discovery service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Flow",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/home.htm",
+      "description": "Serverless](https://docs.oracle.com/en-us/iaas/Content/data-flow/using/home.htm%22,%22description%22:%22Serverless) Apache Spark for ETL and data engineering."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Integration",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/home.htm",
+      "description": "Data](https://docs.oracle.com/en-us/iaas/Content/data-integration/home.htm%22,%22description%22:%22Data) integration service for pipelines and ETL."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Integrator",
+      "service_url": "https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/12.2.1.4/index.html",
+      "description": "Enterprise](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/12.2.1.4/index.html%22,%22description%22:%22Enterprise) data integration tooling documentation."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Transforms",
+      "service_url": "https://docs.oracle.com/en/database/data-integration/data-transforms/index.html",
+      "description": "Data](https://docs.oracle.com/en/database/data-integration/data-transforms/index.html%22,%22description%22:%22Data) transformation tooling for integration workflows."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Database Migration",
+      "service_url": "https://docs.oracle.com/iaas/database-migration/index.html",
+      "description": "Migrate](https://docs.oracle.com/iaas/database-migration/index.html%22,%22description%22:%22Migrate) Oracle databases to OCI with minimal downtime."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Exadata Database Service on Cloud@Customer",
+      "service_url": "https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/index.html",
+      "description": "Exadata](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/index.html%22,%22description%22:%22Exadata) Database Service delivered on Cloud@Customer."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Exadata Database Service on Dedicated Infrastructure",
+      "service_url": "https://docs.oracle.com/en/engineered-systems/exadata-cloud-service/index.html",
+      "description": "Managed](https://docs.oracle.com/en/engineered-systems/exadata-cloud-service/index.html%22,%22description%22:%22Managed) Oracle Database on dedicated Exadata infrastructure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Exadata Database Service on Exascale Infrastructure",
+      "service_url": "https://docs.oracle.com/en/engineered-systems/exadata-database-exascale/exdxs/overview-exadb-xs-service.html",
+      "description": "Managed](https://docs.oracle.com/en/engineered-systems/exadata-database-exascale/exdxs/overview-exadb-xs-service.html%22,%22description%22:%22Managed) Oracle Database on Exadata Exascale infrastructure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "External Database",
+      "service_url": "https://docs.oracle.com/en-us/iaas/external-database/index.html",
+      "description": "Management](https://docs.oracle.com/en-us/iaas/external-database/index.html%22,%22description%22:%22Management) and observability for databases outside OCI."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Fusion Data Intelligence",
+      "service_url": "https://docs.oracle.com/en-us/iaas/analytics-for-applications/index.html",
+      "description": "Prebuilt](https://docs.oracle.com/en-us/iaas/analytics-for-applications/index.html%22,%22description%22:%22Prebuilt) analytics for Oracle Applications Cloud."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Globally Distributed Autonomous AI Database",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/globally-distributed-autonomous-database/",
+      "description": "Globally](https://docs.oracle.com/en/cloud/paas/globally-distributed-autonomous-database/%22,%22description%22:%22Globally) distributed autonomous database for scale and residency."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Globally Distributed Exadata Database on Exascale Infrastructure",
+      "service_url": "https://docs.oracle.com/en-us/iaas/globally-distributed-exascale-database/index.html",
+      "description": "Globally](https://docs.oracle.com/en-us/iaas/globally-distributed-exascale-database/index.html%22,%22description%22:%22Globally) distributed Exadata database service on Exascale."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "GoldenGate",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/index.html",
+      "description": "Real-time](https://docs.oracle.com/en/cloud/paas/goldengate-service/index.html%22,%22description%22:%22Real-time) data replication and streaming integration service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "MySQL HeatWave",
+      "service_url": "https://docs.oracle.com/en-us/iaas/mysql-database/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/mysql-database/home.htm%22,%22description%22:%22Managed) MySQL with HeatWave acceleration for analytics/ML."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "NoSQL Database",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/nosql-cloud/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/nosql-cloud/index.html%22,%22description%22:%22Managed) NoSQL database for key-value and document workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "OCI Cache",
+      "service_url": "https://docs.oracle.com/iaas/Content/ocicache/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/ocicache/home.htm%22,%22description%22:%22Managed) cache clusters for low-latency application performance."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "OCI Database with PostgreSQL",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/postgresql/home.htm%22,%22description%22:%22Managed) PostgreSQL-compatible database service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "OCI Search with OpenSearch",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm%22,%22description%22:%22Managed) OpenSearch for search and analytics."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Oracle Database Service for Azure",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/database-for-azure/intro.htm",
+      "description": "OCI-managed](https://docs.oracle.com/en-us/iaas/Content/database-for-azure/intro.htm%22,%22description%22:%22OCI-managed) database service integrated with Azure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Oracle Database@AWS",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/database-at-aws/oaaws.htm",
+      "description": "OCI-managed](https://docs.oracle.com/en-us/iaas/Content/database-at-aws/oaaws.htm%22,%22description%22:%22OCI-managed) Oracle Database services deployed in AWS."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Oracle Database@Azure",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaa.htm",
+      "description": "OCI-managed](https://docs.oracle.com/en-us/iaas/Content/database-at-azure/oaa.htm%22,%22description%22:%22OCI-managed) Oracle Database services deployed in Azure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Oracle Database@Google Cloud",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/database-at-gcp/home.htm",
+      "description": "OCI-managed](https://docs.oracle.com/en-us/iaas/Content/database-at-gcp/home.htm%22,%22description%22:%22OCI-managed) Oracle Database services deployed in Google Cloud."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Queue",
+      "service_url": "https://docs.oracle.com/iaas/Content/queue/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/queue/home.htm%22,%22description%22:%22Managed) queue service for asynchronous processing."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "SOA",
+      "service_url": "https://docs.oracle.com/en/middleware/soa-suite/index.html",
+      "description": "SOA](https://docs.oracle.com/en/middleware/soa-suite/index.html%22,%22description%22:%22SOA) Suite platform for enterprise integration and orchestration."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Streaming",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/Streaming/home.htm%22,%22description%22:%22Managed) streaming service for event ingestion and processing."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Streaming with Apache Kafka",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/kafka/home.htm",
+      "description": "Kafka-compatible](https://docs.oracle.com/en-us/iaas/Content/kafka/home.htm%22,%22description%22:%22Kafka-compatible) interface for OCI Streaming."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Application Performance Monitoring",
+      "service_url": "https://docs.oracle.com/iaas/application-performance-monitoring/home.htm",
+      "description": "Distributed](https://docs.oracle.com/iaas/application-performance-monitoring/home.htm%22,%22description%22:%22Distributed) tracing and APM for performance diagnostics."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Autonomous Linux",
+      "service_url": "https://docs.oracle.com/iaas/autonomous-linux/doc/home.htm",
+      "description": "Automated](https://docs.oracle.com/iaas/autonomous-linux/doc/home.htm%22,%22description%22:%22Automated) OS updates, patching, and critical-event monitoring."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Console Dashboards",
+      "service_url": "https://docs.oracle.com/iaas/Content/Dashboards/home.htm",
+      "description": "Custom](https://docs.oracle.com/iaas/Content/Dashboards/home.htm%22,%22description%22:%22Custom) dashboards for visualizing OCI resources and metrics."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Database Management",
+      "service_url": "https://docs.oracle.com/iaas/database-management/home.htm",
+      "description": "Lifecycle](https://docs.oracle.com/iaas/database-management/home.htm%22,%22description%22:%22Lifecycle) management and monitoring for Oracle databases."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Fleet Application Management",
+      "service_url": "https://docs.oracle.com/iaas/Content/fleet-management/home.htm",
+      "description": "Operate](https://docs.oracle.com/iaas/Content/fleet-management/home.htm%22,%22description%22:%22Operate) and manage fleets of applications and resources."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Health Checks",
+      "service_url": "https://docs.oracle.com/iaas/Content/HealthChecks/home.htm",
+      "description": "Global](https://docs.oracle.com/iaas/Content/HealthChecks/home.htm%22,%22description%22:%22Global) probing for endpoint availability and latency."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Java Management",
+      "service_url": "https://docs.oracle.com/iaas/jms/index.html",
+      "description": "Monitor](https://docs.oracle.com/iaas/jms/index.html%22,%22description%22:%22Monitor) and manage Java runtimes and applications."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Log Analytics",
+      "service_url": "https://docs.oracle.com/en-us/iaas/log-analytics/home.htm",
+      "description": "Centralized](https://docs.oracle.com/en-us/iaas/log-analytics/home.htm%22,%22description%22:%22Centralized) log analysis and insights."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Logging",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Logging/home.htm",
+      "description": "Centralized](https://docs.oracle.com/en-us/iaas/Content/Logging/home.htm%22,%22description%22:%22Centralized) log collection, routing, and retention."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Management Agent",
+      "service_url": "https://docs.oracle.com/en-us/iaas/management-agents/home.htm",
+      "description": "Agent](https://docs.oracle.com/en-us/iaas/management-agents/home.htm%22,%22description%22:%22Agent) enabling OCI management services data collection."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Management Dashboard",
+      "service_url": "https://docs.oracle.com/iaas/management-dashboard/home.htm",
+      "description": "Operational](https://docs.oracle.com/iaas/management-dashboard/home.htm%22,%22description%22:%22Operational) dashboards across OCI resources."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Monitoring",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Monitoring/home.htm",
+      "description": "Metrics](https://docs.oracle.com/en-us/iaas/Content/Monitoring/home.htm%22,%22description%22:%22Metrics), alarms, and monitoring for OCI resources."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Notifications",
+      "service_url": "https://docs.oracle.com/iaas/Content/Notification/home.htm",
+      "description": "Pub/sub](https://docs.oracle.com/iaas/Content/Notification/home.htm%22,%22description%22:%22Pub/sub) notifications for alarms and events."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Ops Insights",
+      "service_url": "https://docs.oracle.com/iaas/operations-insights/home.htm",
+      "description": "Capacity](https://docs.oracle.com/iaas/operations-insights/home.htm%22,%22description%22:%22Capacity) planning and operations insights."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "OS Management Hub",
+      "service_url": "https://docs.oracle.com/en-us/iaas/osmh/doc/home.htm",
+      "description": "Centralized](https://docs.oracle.com/en-us/iaas/osmh/doc/home.htm%22,%22description%22:%22Centralized) OS patching, packages, and lifecycle management."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Resource Analytics",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/resource-analytics/home.htm",
+      "description": "Analytics](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/home.htm%22,%22description%22:%22Analytics) on OCI resource utilization and inventory."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Resource Manager",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/home.htm",
+      "description": "Terraform-based](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/home.htm%22,%22description%22:%22Terraform-based) Infrastructure as Code automation for OCI."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Search",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Search/home.htm",
+      "description": "Search](https://docs.oracle.com/en-us/iaas/Content/Search/home.htm%22,%22description%22:%22Search) across OCI resources using metadata and tags."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Stack Monitoring",
+      "service_url": "https://docs.oracle.com/iaas/stack-monitoring/home.htm",
+      "description": "Monitoring](https://docs.oracle.com/iaas/stack-monitoring/home.htm%22,%22description%22:%22Monitoring) for application stacks and dependencies."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "WebLogic Management",
+      "service_url": "https://docs.oracle.com/en-us/iaas/wlms/home.htm",
+      "description": "Monitoring](https://docs.oracle.com/en-us/iaas/wlms/home.htm%22,%22description%22:%22Monitoring) and management for WebLogic domains."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "AI Data Platform",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
+      "description": "End-to-end](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html%22,%22description%22:%22End-to-end) platform for AI/ML data pipelines."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Data Labeling",
+      "service_url": "https://docs.oracle.com/iaas/Content/data-labeling/using/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/data-labeling/using/home.htm%22,%22description%22:%22Managed) data labeling for ML training datasets."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Data Science",
+      "service_url": "https://docs.oracle.com/iaas/Content/data-science/using/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/data-science/using/home.htm%22,%22description%22:%22Managed) notebooks, training, deployment, and MLOps."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Digital Assistant",
+      "service_url": "https://docs.oracle.com/iaas/digital-assistant/index.html",
+      "description": "Conversational](https://docs.oracle.com/iaas/digital-assistant/index.html%22,%22description%22:%22Conversational) AI platform for chatbots and assistants."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Document Understanding",
+      "service_url": "https://docs.oracle.com/iaas/Content/document-understanding/using/home.htm",
+      "description": "Extract](https://docs.oracle.com/iaas/Content/document-understanding/using/home.htm%22,%22description%22:%22Extract) text and structured data from documents."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Generative AI",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm%22,%22description%22:%22Managed) generative AI service for LLM applications."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Generative AI Agents",
+      "service_url": "https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm%22,%22description%22:%22Managed) agent framework for generative AI workflows."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Language",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/language/using/home.htm",
+      "description": "Managed](https://docs.oracle.com/en-us/iaas/Content/language/using/home.htm%22,%22description%22:%22Managed) NLP services for text analytics."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Speech",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/speech/home.htm",
+      "description": "Speech-to-text](https://docs.oracle.com/en-us/iaas/Content/speech/home.htm%22,%22description%22:%22Speech-to-text) and speech AI capabilities."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Vision",
+      "service_url": "https://docs.oracle.com/iaas/Content/vision/using/home.htm",
+      "description": "Computer](https://docs.oracle.com/iaas/Content/vision/using/home.htm%22,%22description%22:%22Computer) vision APIs for image analysis."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Access Governance",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/access-governance/index.html",
+      "description": "Identity](https://docs.oracle.com/en/cloud/paas/access-governance/index.html%22,%22description%22:%22Identity) governance for access reviews and compliance."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Audit",
+      "service_url": "https://docs.oracle.com/iaas/Content/Audit/home.htm",
+      "description": "Record](https://docs.oracle.com/iaas/Content/Audit/home.htm%22,%22description%22:%22Record) OCI API calls and administrative activities."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Automated CEMLI Execution",
+      "service_url": "https://docs.oracle.com/iaas/Content/auto-cemli-execution/home.htm",
+      "description": "Tooling](https://docs.oracle.com/iaas/Content/auto-cemli-execution/home.htm%22,%22description%22:%22Tooling) to package and deploy EBS CEMLI customizations."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Bastion",
+      "service_url": "https://docs.oracle.com/iaas/Content/Bastion/home.htm",
+      "description": "Secure](https://docs.oracle.com/iaas/Content/Bastion/home.htm%22,%22description%22:%22Secure) SSH/RDP access without public endpoints."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Billing",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
+      "description": "Billing](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Billing) tools for subscription and invoice management."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Billing and Cost Management",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
+      "description": "Manage](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Manage) usage, budgets, cost analysis, and rewards."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Certificates",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm",
+      "description": "Certificate](https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm%22,%22description%22:%22Certificate) lifecycle management for TLS/SSL."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cloud Advisor",
+      "service_url": "https://docs.oracle.com/iaas/Content/CloudAdvisor/home.htm",
+      "description": "Recommendations](https://docs.oracle.com/iaas/Content/CloudAdvisor/home.htm%22,%22description%22:%22Recommendations) and best-practice guidance for OCI."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cloud Guard",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/cloud-guard/home.htm",
+      "description": "Security](https://docs.oracle.com/en-us/iaas/Content/cloud-guard/home.htm%22,%22description%22:%22Security) posture management and threat detection."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Compartment Quotas",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Quotas/home.htm",
+      "description": "Policy-based](https://docs.oracle.com/en-us/iaas/Content/Quotas/home.htm%22,%22description%22:%22Policy-based) quotas to control resource consumption."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Compliance Documents",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/ComplianceDocuments/Concepts/compliancedocsoverview.htm",
+      "description": "Access](https://docs.oracle.com/en-us/iaas/Content/ComplianceDocuments/Concepts/compliancedocsoverview.htm%22,%22description%22:%22Access) OCI compliance attestations and reports."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Control Center",
+      "service_url": "https://docs.oracle.com/iaas/Content/control-center/home.htm",
+      "description": "Centralized](https://docs.oracle.com/iaas/Content/control-center/home.htm%22,%22description%22:%22Centralized) governance and controls for OCI environments."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cost Management",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
+      "description": "Cost](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Cost) tracking, reporting, and FinOps capabilities."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Data Safe",
+      "service_url": "https://docs.oracle.com/en-us/iaas/data-safe/index.html",
+      "description": "Database](https://docs.oracle.com/en-us/iaas/data-safe/index.html%22,%22description%22:%22Database) security auditing and activity monitoring."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Full Stack Disaster Recovery",
+      "service_url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html",
+      "description": "Orchestrated](https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html%22,%22description%22:%22Orchestrated) disaster recovery for application stacks."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "IAM with Identity Domains",
+      "service_url": "https://docs.oracle.com/iaas/Content/Identity/home.htm",
+      "description": "Identity](https://docs.oracle.com/iaas/Content/Identity/home.htm%22,%22description%22:%22Identity) and access management with identity domains."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "IAM without Identity Domains",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Identity/home1.htm",
+      "description": "Classic](https://docs.oracle.com/en-us/iaas/Content/Identity/home1.htm%22,%22description%22:%22Classic) IAM without identity domains."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "License Manager",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/General/LicenseManager/Concepts/licensemanageroverview.htm",
+      "description": "Track](https://docs.oracle.com/en-us/iaas/Content/General/LicenseManager/Concepts/licensemanageroverview.htm%22,%22description%22:%22Track) and manage software licenses and BYOL usage."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Managed Access",
+      "service_url": "https://docs.oracle.com/iaas/Content/managed-access/home.htm",
+      "description": "Controlled](https://docs.oracle.com/iaas/Content/managed-access/home.htm%22,%22description%22:%22Controlled) workflows for privileged/managed access."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Managed Cloud Self Service Platform",
+      "service_url": "https://docs.oracle.com/iaas/Content/managed-cloud-self-service/home.htm",
+      "description": "Self-service](https://docs.oracle.com/iaas/Content/managed-cloud-self-service/home.htm%22,%22description%22:%22Self-service) tools to manage Oracle EBS CEMLIs."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Network Firewall",
+      "service_url": "https://docs.oracle.com/iaas/Content/network-firewall/home.htm",
+      "description": "Stateful](https://docs.oracle.com/iaas/Content/network-firewall/home.htm%22,%22description%22:%22Stateful) network firewall for VCN traffic."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Oracle Support Rewards",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
+      "description": "Earn](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Earn) Oracle Support Rewards based on OCI spend."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Organization Management",
+      "service_url": "https://docs.oracle.com/iaas/Content/General/organization/home.htm",
+      "description": "Manage](https://docs.oracle.com/iaas/Content/General/organization/home.htm%22,%22description%22:%22Manage) OCI organizations and multiple tenancies."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Pulse",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/pulse/home.htm",
+      "description": "Tenancy](https://docs.oracle.com/en-us/iaas/Content/pulse/home.htm%22,%22description%22:%22Tenancy) and service health/status information."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Resource Scheduler",
+      "service_url": "https://docs.oracle.com/iaas/Content/resource-scheduler/home.htm",
+      "description": "Schedule](https://docs.oracle.com/iaas/Content/resource-scheduler/home.htm%22,%22description%22:%22Schedule) resources to optimize usage and cost."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Secret Management Service",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/secret-management/home.htm",
+      "description": "Secure](https://docs.oracle.com/en-us/iaas/Content/secret-management/home.htm%22,%22description%22:%22Secure) storage and management for secrets."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Security Advisor",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/home.htm",
+      "description": "Security](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/home.htm%22,%22description%22:%22Security) best-practice checks and recommendations."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Security Zones",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/security-zone/home.htm",
+      "description": "Security](https://docs.oracle.com/en-us/iaas/Content/security-zone/home.htm%22,%22description%22:%22Security) guardrails to enforce policy compliance."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Support Requests",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm",
+      "description": "Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm%22,%22description%22:%22Support) request guidance and workflows."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Tagging",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Tagging/home.htm",
+      "description": "Defined](https://docs.oracle.com/en-us/iaas/Content/Tagging/home.htm%22,%22description%22:%22Defined) and free-form tags for resource organization."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Threat Intelligence",
+      "service_url": "https://docs.oracle.com/iaas/Content/threat-intel/home.htm",
+      "description": "Threat](https://docs.oracle.com/iaas/Content/threat-intel/home.htm%22,%22description%22:%22Threat) intelligence feeds and indicators."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Vault",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/KeyManagement/home.htm",
+      "description": "Key](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/home.htm%22,%22description%22:%22Key) management and vault for encryption and secrets."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Vulnerability Scanning",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/scanning/home.htm",
+      "description": "Host](https://docs.oracle.com/en-us/iaas/Content/scanning/home.htm%22,%22description%22:%22Host) and container vulnerability scanning."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Web Application Firewall",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/WAF/home.htm",
+      "description": "Protect](https://docs.oracle.com/en-us/iaas/Content/WAF/home.htm%22,%22description%22:%22Protect) web applications from common attacks."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Zero Trust Packet Routing",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/home.htm",
+      "description": "Zero-trust](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/home.htm%22,%22description%22:%22Zero-trust) routing controls for packet flows."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "APEX Service",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/apex/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/apex/index.html%22,%22description%22:%22Managed) Oracle APEX low-code development service."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "API Gateway",
+      "service_url": "https://docs.oracle.com/iaas/Content/APIGateway/home.htm",
+      "description": "Managed](https://docs.oracle.com/iaas/Content/APIGateway/home.htm%22,%22description%22:%22Managed) API gateway for publishing and securing APIs."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Application Dependency Management",
+      "service_url": "https://docs.oracle.com/iaas/Content/application-dependency-management/home.htm",
+      "description": "Discover](https://docs.oracle.com/iaas/Content/application-dependency-management/home.htm%22,%22description%22:%22Discover) and map application dependencies."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Blockchain Platform",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/blockchain-cloud/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/index.html%22,%22description%22:%22Managed) enterprise blockchain platform."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Commercial Guide to Marketplace",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/commercial-guide.htm",
+      "description": "Commercial](https://docs.oracle.com/en-us/iaas/Content/Marketplace/commercial-guide.htm%22,%22description%22:%22Commercial) and purchasing guidance for Marketplace."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Data Transforms",
+      "service_url": "https://docs.oracle.com/en/database/data-integration/data-transforms/index.html",
+      "description": "Data](https://docs.oracle.com/en/database/data-integration/data-transforms/index.html%22,%22description%22:%22Data) transformation tooling for integration workflows."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Database Tools",
+      "service_url": "https://docs.oracle.com/en-us/iaas/database-tools/home.htm",
+      "description": "Database](https://docs.oracle.com/en-us/iaas/database-tools/home.htm%22,%22description%22:%22Database) tooling for connections and utilities."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "DevOps",
+      "service_url": "https://docs.oracle.com/iaas/Content/devops/using/home.htm",
+      "description": "CI/CD](https://docs.oracle.com/iaas/Content/devops/using/home.htm%22,%22description%22:%22CI/CD) pipelines for building and deploying applications."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Email Delivery",
+      "service_url": "https://docs.oracle.com/iaas/Content/Email/home.htm",
+      "description": "Outbound](https://docs.oracle.com/iaas/Content/Email/home.htm%22,%22description%22:%22Outbound) transactional and bulk email delivery service."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Events",
+      "service_url": "https://docs.oracle.com/iaas/Content/Events/home.htm",
+      "description": "Event](https://docs.oracle.com/iaas/Content/Events/home.htm%22,%22description%22:%22Event) routing service for reacting to changes and triggers."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Functions",
+      "service_url": "https://docs.oracle.com/iaas/Content/Functions/home.htm",
+      "description": "Serverless](https://docs.oracle.com/iaas/Content/Functions/home.htm%22,%22description%22:%22Serverless) functions for event-driven compute."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Integration 3",
+      "service_url": "https://docs.oracle.com/iaas/application-integration/index.html",
+      "description": "Oracle](https://docs.oracle.com/iaas/application-integration/index.html%22,%22description%22:%22Oracle) Integration (v3) for modern app integration."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Integration Generation 2",
+      "service_url": "https://docs.oracle.com/iaas/integration/index.html",
+      "description": "Oracle](https://docs.oracle.com/iaas/integration/index.html%22,%22description%22:%22Oracle) Integration service (Gen 2)."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Marketplace",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm",
+      "description": "Discover](https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm%22,%22description%22:%22Discover), purchase, and deploy solutions on OCI."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Marketplace Guide",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm",
+      "description": "Marketplace](https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm%22,%22description%22:%22Marketplace) documentation and guidance."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Marketplace Policies",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/marketplace-policies.htm",
+      "description": "Regulatory](https://docs.oracle.com/en-us/iaas/Content/Marketplace/marketplace-policies.htm%22,%22description%22:%22Regulatory) and publishing policies for Marketplace."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Media Services",
+      "service_url": "https://docs.oracle.com/iaas/Content/media-services/home.htm",
+      "description": "Media](https://docs.oracle.com/iaas/Content/media-services/home.htm%22,%22description%22:%22Media) processing services for streaming and workflows."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Mobile Hub",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/mobile-hub/index.html",
+      "description": "Backend](https://docs.oracle.com/en/cloud/paas/mobile-hub/index.html%22,%22description%22:%22Backend) services to accelerate mobile app development."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Oracle APEX",
+      "service_url": "https://docs.oracle.com/en/database/oracle/apex/index.html",
+      "description": "Low-code](https://docs.oracle.com/en/database/oracle/apex/index.html%22,%22description%22:%22Low-code) platform for building data-driven applications."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Oracle Multicloud Hub",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/multicloud-hub/home.htm",
+      "description": "Unified](https://docs.oracle.com/en-us/iaas/Content/multicloud-hub/home.htm%22,%22description%22:%22Unified) management of multicloud resources and connections."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Process Automation",
+      "service_url": "https://docs.oracle.com/iaas/process-automation/index.html",
+      "description": "Workflow](https://docs.oracle.com/iaas/process-automation/index.html%22,%22description%22:%22Workflow) and process automation service."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Service Catalog",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/overview_of_service_catalog.htm",
+      "description": "Organize](https://docs.oracle.com/en-us/iaas/Content/Marketplace/overview_of_service_catalog.htm%22,%22description%22:%22Organize) and consume Marketplace offerings via catalogs."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Using Marketplace",
+      "service_url": "https://docs.oracle.com/iaas/Content/Marketplace/how-to-use.htm",
+      "description": "Operational](https://docs.oracle.com/iaas/Content/Marketplace/how-to-use.htm%22,%22description%22:%22Operational) guidance for using Marketplace."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Visual Builder",
+      "service_url": "https://docs.oracle.com/iaas/visual-builder/index.html",
+      "description": "Low-code](https://docs.oracle.com/iaas/visual-builder/index.html%22,%22description%22:%22Low-code) visual development for web and mobile apps."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Visual Builder Studio",
+      "service_url": "https://docs.oracle.com/iaas/visual-builder-studio/index.html",
+      "description": "IDE](https://docs.oracle.com/iaas/visual-builder-studio/index.html%22,%22description%22:%22IDE) and tooling for Visual Builder development."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "WebCenter",
+      "service_url": "https://docs.oracle.com/en/middleware/webcenter/index.html",
+      "description": "Content](https://docs.oracle.com/en/middleware/webcenter/index.html%22,%22description%22:%22Content) and portal platform for enterprise web experiences."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "WebLogic Server for OCI",
+      "service_url": "https://docs.oracle.com/en/cloud/paas/weblogic-cloud/index.html",
+      "description": "Managed](https://docs.oracle.com/en/cloud/paas/weblogic-cloud/index.html%22,%22description%22:%22Managed) WebLogic Server service on OCI."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Compute Cloud@Customer",
+      "service_url": "https://docs.oracle.com/en-us/iaas/compute-cloud-at-customer/ccc/home.htm",
+      "description": "OCI](https://docs.oracle.com/en-us/iaas/compute-cloud-at-customer/ccc/home.htm%22,%22description%22:%22OCI) services delivered on-premises via Cloud@Customer."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Compute Cloud@Customer Isolated",
+      "service_url": "https://docs.oracle.com/en-us/iaas/compute-cloud-at-customer-isolated/c3i/home.htm",
+      "description": "OCI](https://docs.oracle.com/en-us/iaas/compute-cloud-at-customer-isolated/c3i/home.htm%22,%22description%22:%22OCI) services for disconnected/isolated environments."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Internet of Things",
+      "service_url": "https://docs.oracle.com/en-us/iaas/Content/internet-of-things/home.htm",
+      "description": "Connect](https://docs.oracle.com/en-us/iaas/Content/internet-of-things/home.htm%22,%22description%22:%22Connect) devices, ingest telemetry, and manage IoT domains."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Managed Services for Mac",
+      "service_url": "https://docs.oracle.com/iaas/Content/managed-mac/home.htm",
+      "description": "Dedicated](https://docs.oracle.com/iaas/Content/managed-mac/home.htm%22,%22description%22:%22Dedicated) Mac servers hosted in OCI data centers."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Private Cloud Appliance",
+      "service_url": "https://docs.oracle.com/en-us/iaas/private-cloud-appliance/pca/home.htm",
+      "description": "Turnkey](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/pca/home.htm%22,%22description%22:%22Turnkey) on-premises OCI platform for private cloud."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Roving Edge Infrastructure",
+      "service_url": "https://docs.oracle.com/iaas/Content/Rover/home.htm",
+      "description": "Ruggedized](https://docs.oracle.com/iaas/Content/Rover/home.htm%22,%22description%22:%22Ruggedized) edge infrastructure for running OCI services."
+    }
+  ]
+}

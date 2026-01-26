@@ -1,0 +1,1282 @@
+{
+  "services": [
+  {
+    "domain": "Networking",
+    "service_name": "Azure Virtual Network Manager",
+    "service_url": "https://learn.microsoft.com/en-us/azure/virtual-network-manager/overview",
+    "description": "A management service that enables you to group, configure, deploy, and manage virtual networks globally across subscriptions."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Firewall Manager",
+    "service_url": "https://learn.microsoft.com/en-us/azure/firewall-manager/overview",
+    "description": "A security management service that provides central security policy and route management for cloud-based security perimeters."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Deployment Stacks",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/deployment-stacks/overview",
+    "description": "A resource provider that allows you to manage a collection of Azure resources as a single atomic unit, with support for 'deny settings' to prevent unauthorized changes."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra External ID",
+    "service_url": "https://learn.microsoft.com/en-us/entra/external-id/customers/overview-customers-ciam",
+    "description": "A next-generation customer identity and access management (CIAM) solution for building secure, branded sign-in experiences for external users."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Permissions Management",
+    "service_url": "https://learn.microsoft.com/en-us/entra/permissions-management/overview",
+    "description": "A cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility and control over permissions for any identity."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure API Center",
+    "service_url": "https://learn.microsoft.com/en-us/azure/api-center/overview",
+    "description": "A centralized service for developing and maintaining an inventory of an organization's APIs, regardless of their type, stage, or deployment location."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Storage Actions",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-actions-overview",
+    "description": "A fully managed serverless platform that allows you to perform automated data management tasks on billions of objects in Azure Storage."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Cloud Services (Extended Support)",
+    "service_url": "https://learn.microsoft.com/en-us/azure/cloud-services-extended-support/overview",
+    "description": "A modern Azure Resource Manager-based deployment model for the classic Azure Cloud Services offering."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Defender for IoT",
+    "service_url": "https://learn.microsoft.com/en-us/azure/defender-for-iot/organizations/overview",
+    "description": "Provides agentless security for unmanaged IoT and OT devices, including discovery, vulnerability management, and threat monitoring."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Identity Governance",
+    "service_url": "https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview",
+    "description": "Ensures the right people have the right access to the right resources with access reviews, entitlement management, and privileged access."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Verified ID",
+    "service_url": "https://learn.microsoft.com/en-us/entra/verified-id/decentralized-identifier-overview",
+    "description": "A managed decentralized identity service that allows organizations to issue and verify digital credentials based on open standards."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Managed Prometheus",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/prometheus-metrics-overview",
+    "description": "A fully managed service for Prometheus-compatible metrics, providing cloud-native observability for Kubernetes environments."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure IP Groups",
+    "service_url": "https://learn.microsoft.com/en-us/azure/firewall/ip-groups",
+    "description": "Allows you to group and manage IP addresses for Azure Firewall rules, simplifying security policy management."
+  },
+  {
+    "domain": "Container Operations",
+    "service_name": "Azure Container Apps Jobs",
+    "service_url": "https://learn.microsoft.com/en-us/azure/container-apps/jobs",
+    "description": "Allows you to run containerized tasks that execute for a finite duration and exit, triggered by events, schedules, or on-demand."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure DNS Private Zones",
+    "service_url": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+    "description": "Provides a reliable and secure DNS service for your virtual networks to manage and resolve domain names without needing a custom DNS solution."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Private Link Service",
+    "service_url": "https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview",
+    "description": "Enables you to provide your own service (behind a Standard Load Balancer) to other consumers privately via Azure Private Link."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Shared Disks",
+    "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
+    "description": "Enables attaching a managed disk to multiple virtual machines simultaneously for clustered applications like SQL Failover Cluster Instances."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Blob Inventory",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/blobs/blob-inventory",
+    "description": "A service that provides a catalog of your blobs and their properties, helping you manage data at scale for compliance and cost optimization."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Archive Storage",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview#archive-access-tier",
+    "description": "An ultra-low-cost tier for storing rarely accessed data with flexible latency requirements for long-term retention."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Resource Health",
+    "service_url": "https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview",
+    "description": "Helps you diagnose and get support for service problems that affect your individual Azure resources."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Template Specs",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs",
+    "description": "A resource type for storing ARM templates in your resource groups for sharing, versioning, and secure deployment."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Managed Instance for Apache Airflow",
+    "service_url": "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-factory-workflow-orchestration-manager",
+    "description": "A managed orchestration service that allows you to run Apache Airflow directed acyclic graphs (DAGs) in Azure Data Factory."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Payment HSM",
+    "service_url": "https://learn.microsoft.com/en-us/azure/payment-hsm/overview",
+    "description": "A niche service providing hardware security modules for financial organizations to protect cryptographic keys for real-time payment transactions."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Privileged Identity Management (PIM)",
+    "service_url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
+    "description": "A service that enables you to manage, control, and monitor access to important resources in your organization."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Spring Apps Enterprise",
+    "service_url": "https://learn.microsoft.com/en-us/azure/spring-apps/enterprise-plan-overview",
+    "description": "A specialized tier of Azure Spring Apps co-engineered with VMware to provide commercial Tanzu components for enterprise Spring workloads."
+  },
+    {
+    "domain": "AI Services",
+    "service_name": "Foundry Agent Service",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-studio/concepts/agents-overview",
+    "description": "A 2026-core service for building and managing high-scale AI agents that integrate directly with enterprise data and toolsets."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Agent ID",
+    "service_url": "https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/",
+    "description": "A specialized identity service launched in 2026 to govern AI agents as first-class identities with specific access guardrails."
+  },
+  {
+    "domain": "Container Operations",
+    "service_name": "AKS Deployment Safeguards",
+    "service_url": "https://azure.microsoft.com/en-us/updates/?id=548101",
+    "description": "A 2026 feature for Azure Kubernetes Service that enforces Pod Security Standards at the infrastructure level to prevent configuration drift."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Private Link Direct Connect",
+    "service_url": "https://azure.microsoft.com/en-us/blog/azure-networking-updates-on-security-reliability-and-high-availability/",
+    "description": "Extends Private Link connectivity to any routable private IP address, supporting disconnected VNets and external SaaS providers."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Internet Access",
+    "service_url": "https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/",
+    "description": "An identity-centric secure web gateway that protects against threats from the open internet and manages access to SaaS apps."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Copilot",
+    "service_url": "https://learn.microsoft.com/en-us/azure/copilot/overview",
+    "description": "An AI-powered companion that helps you manage your cloud infrastructure by answering questions and generating CLI commands/templates."
+  },
+  {
+    "domain": "Container Operations",
+    "service_name": "Azure Advanced Container Networking Service",
+    "service_url": "https://azure.microsoft.com/en-us/blog/azure-networking-updates-on-security-reliability-and-high-availability/",
+    "description": "A managed add-on for AKS that provides high-performance networking, FQDN filtering, and pod-level observability."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Modular Datacenter",
+    "service_url": "https://learn.microsoft.com/en-us/azure/modular-datacenter/overview",
+    "description": "A complete, ruggedized datacenter solution in a box, designed for high-intensity workloads in remote or disconnected environments."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Data Manager for Energy",
+    "service_url": "https://learn.microsoft.com/en-us/azure/energy-data-manager/",
+    "description": "An enterprise-grade OSDU Data Platform for the energy industry to unify data across silos and accelerate digital transformation."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Dedicated HSM",
+    "service_url": "https://learn.microsoft.com/en-us/azure/dedicated-hsm/overview",
+    "description": "Provides dedicated hardware security modules in the cloud for cryptographic key storage with full administrative control."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure FarmBeats",
+    "service_url": "https://learn.microsoft.com/en-us/azure/farmbeats/overview",
+    "description": "A business-to-business offering that makes it easy to aggregate agricultural datasets from sensors, drones, and satellites."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Managed Applications",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/managed-applications/overview",
+    "description": "Enables you to offer cloud solutions that are easy for consumers to deploy and operate, while the provider maintains the lifecycle."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Migrate",
+    "service_url": "https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview",
+    "description": "A central hub to track the discovery, assessment, and migration of your on-premises apps and workloads to Azure."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Resource Manager (ARM)",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "description": "The deployment and management service for Azure, providing a management layer to create, update, and delete resources."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure RTOS",
+    "service_url": "https://learn.microsoft.com/en-us/azure/rtos/",
+    "description": "A real-time operating system (RTOS) for IoT and edge devices powered by microcontrollers (MCUs)."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Windows for IoT",
+    "service_url": "https://learn.microsoft.com/en-us/windows/iot/",
+    "description": "A member of the Windows family that brings enterprise-class power, security, and manageability to the Internet of Things."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "SQL Server on Azure Virtual Machines",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview",
+    "description": "Enables you to run full versions of SQL Server in the cloud without having to manage on-premises hardware."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Boards",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/boards/get-started/what-is-azure-boards",
+    "description": "An Agile tool for software teams to plan, track, and discuss work across the entire development process."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Repos",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/repos/get-started/what-is-repos",
+    "description": "A set of version control tools to manage your code, providing private Git repositories or Team Foundation Version Control (TFVC)."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Test Plans",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/test/overview",
+    "description": "Provides a browser-based test management solution for planned manual testing, user acceptance testing, and exploratory testing."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "GitHub Advanced Security for Azure DevOps",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-overview",
+    "description": "Integrates GitHub’s security features like secret scanning and dependency scanning directly into Azure DevOps pipelines."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Update Management Center",
+    "service_url": "https://learn.microsoft.com/en-us/azure/update-center/overview",
+    "description": "A unified service to help manage and govern software updates for all your Windows and Linux machines across Azure and on-premises."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure HPC Cache",
+    "service_url": "https://learn.microsoft.com/en-us/azure/hpc-cache/hpc-cache-overview",
+    "description": "Speeds up access to data for high-performance computing (HPC) tasks by caching data from multiple storage sources."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Data Catalog",
+    "service_url": "https://learn.microsoft.com/en-us/azure/data-catalog/data-catalog-overview",
+    "description": "A fully managed cloud service that serves as a system of registration and discovery for enterprise data assets."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Data Lake Analytics",
+    "service_url": "https://learn.microsoft.com/en-us/azure/data-lake-analytics/data-lake-analytics-overview",
+    "description": "An on-demand analytics job service that simplifies big data by allowing you to write queries to transform your data and extract insights."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure NAT Gateway",
+    "service_url": "https://learn.microsoft.com/en-us/azure/nat-gateway/nat-overview",
+    "description": "A fully managed and highly resilient Network Address Translation (NAT) service that provides outbound internet connectivity for virtual subnets."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure DNS Private Resolver",
+    "service_url": "https://learn.microsoft.com/en-us/azure/dns/dns-private-resolver-overview",
+    "description": "Enables you to query Azure DNS private zones from an on-premises environment and vice versa without hosting VM-based DNS servers."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Spot Virtual Machines",
+    "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms",
+    "description": "Allows you to take advantage of unused Azure capacity at a significant cost saving, ideal for workloads that can handle interruptions."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Data Science Virtual Machines",
+    "service_url": "https://learn.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview",
+    "description": "Customized VM images on Azure pre-installed with popular tools for data science and machine learning modeling."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Content Safety",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+    "description": "A safety service that detects harmful user-generated and AI-generated content in text and images, crucial for 2026 AI governance."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure Health Data Services",
+    "service_url": "https://learn.microsoft.com/en-us/azure/health-data-services/overview",
+    "description": "A set of managed API services based on open standards (like FHIR and DICOM) for unifying healthcare data in the cloud."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Anomaly Detector",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/anomaly-detector/overview",
+    "description": "An AI service that enables you to monitor and detect abnormalities in your time series data without needing machine learning expertise."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Lighthouse",
+    "service_url": "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
+    "description": "Enables cross-tenant management with higher visibility and control, allowing service providers to manage resources for multiple customers."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Copilot for Security",
+    "service_url": "https://learn.microsoft.com/en-us/copilot/security/microsoft-copilot-security",
+    "description": "A generative AI-powered security solution that helps defenders identify, investigate, and respond to threats at machine speed."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Blueprints",
+    "service_url": "https://learn.microsoft.com/en-us/azure/governance/blueprints/overview",
+    "description": "Enables cloud architects to define a repeatable set of Azure resources that implement and adhere to an organization's standards and requirements."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Resource Mover",
+    "service_url": "https://learn.microsoft.com/en-us/azure/resource-mover/overview",
+    "description": "Provides a unified experience to help you move Azure resources between Azure regions."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Automanage",
+    "service_url": "https://learn.microsoft.com/en-us/azure/automanage/automanage-virtual-machines",
+    "description": "A service that eliminates the need to discover, know how to onboard, and configure certain services to benefit your virtual machine."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Monitor: Application Insights",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
+    "description": "An extension of Azure Monitor that provides Application Performance Management (APM) and monitoring for live web applications."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Monitor: Log Analytics",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview",
+    "description": "The primary tool in the Azure portal to edit and run log queries from data collected by Azure Monitor Logs."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Cloud Shell",
+    "service_url": "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+    "description": "An interactive, authenticated, browser-accessible shell for managing Azure resources using Bash or PowerShell."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure SignalR Service",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-overview",
+    "description": "A fully managed service that simplifies the process of adding real-time web functionality to applications over HTTP."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Automation",
+    "service_url": "https://learn.microsoft.com/en-us/azure/automation/automation-intro",
+    "description": "Delivers a cloud-based automation and configuration service that supports consistent management across your Azure and non-Azure environments."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Notification Hubs",
+    "service_url": "https://learn.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-overview",
+    "description": "A massively scalable mobile push notification engine for quickly sending millions of messages to iOS, Android, and Windows devices."
+  },
+  {
+    "domain": "Container Operations",
+    "service_name": "Web App for Containers",
+    "service_url": "https://learn.microsoft.com/en-us/azure/app-service/configure-custom-container",
+    "description": "Allows you to deploy and run containerized web apps on Windows and Linux using the App Service infrastructure."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Event Hubs",
+    "service_url": "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
+    "description": "A big data streaming platform and event ingestion service capable of receiving and processing millions of events per second."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Power BI Embedded",
+    "service_url": "https://learn.microsoft.com/en-us/power-bi/developer/embedded/azure-pbi-embedded-what-is-it",
+    "description": "Enables developers to embed interactive reports and dashboards into their own applications without building their own visualization tools."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure File Sync",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction",
+    "description": "A service that centralizes your organization's file shares in Azure Files, while keeping the flexibility, performance, and compatibility of an on-premises file server."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Remote Rendering",
+    "service_url": "https://learn.microsoft.com/en-us/azure/remote-rendering/overview/about",
+    "description": "A service that renders high-quality, complex 3D content in the cloud and streams it in real time to devices like HoloLens 2."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Time Series Insights",
+    "service_url": "https://learn.microsoft.com/en-us/azure/time-series-insights/overview-what-is-tsi",
+    "description": "A fully managed analytics, storage, and visualization service for managing IoT-scale time-series data."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Local",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-local/overview",
+    "description": "A 2026-focused distributed cloud offering that enables you to run Azure services on-premises with sovereign private cloud capabilities."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure VMware Solution",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-vmware/",
+    "description": "Allows you to run native VMware workloads on Azure, providing a seamless path to migrate or extend your on-premises VMware environments to the cloud."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure CycleCloud",
+    "service_url": "https://learn.microsoft.com/en-us/azure/cyclecloud/",
+    "description": "An enterprise-friendly tool for orchestrating and managing High Performance Computing (HPC) environments on Azure."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Service Fabric",
+    "service_url": "https://learn.microsoft.com/en-us/azure/service-fabric/",
+    "description": "A distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Modeling and Simulation Workbench",
+    "service_url": "https://learn.microsoft.com/en-us/azure/modeling-and-simulation-workbench/",
+    "description": "A secure, collaborative infrastructure-as-a-service environment for running engineering simulation and modeling workloads."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Managed Lustre",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/",
+    "description": "A managed file system service designed for high-performance computing (HPC) and AI workloads that require massive throughput."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Private 5G Core",
+    "service_url": "https://learn.microsoft.com/en-us/azure/private-5g-core/",
+    "description": "Provides a simple, scalable, and secure way to deploy and manage a private 5G core network on an edge compute platform."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Communications Gateway",
+    "service_url": "https://learn.microsoft.com/en-us/azure/communications-gateway/",
+    "description": "A managed service that connects fixed and mobile voice networks to Microsoft Teams and Zoom."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Maps",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-maps/",
+    "description": "A suite of geospatial services that allow developers to integrate maps, search, routing, and traffic into their applications."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Managed Instance for Apache Cassandra",
+    "service_url": "https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/",
+    "description": "A fully managed service for open-source Apache Cassandra clusters, providing automated deployment and scaling."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure SQL Edge",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-sql-edge/",
+    "description": "A small-footprint, edge-optimized SQL database engine with built-in AI, designed for IoT and edge gateways."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Data Share",
+    "service_url": "https://learn.microsoft.com/en-us/azure/data-share/",
+    "description": "A simple and secure service for sharing data across organizations, enabling big data collaboration with external partners."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Managed Redis",
+    "service_url": "https://learn.microsoft.com/en-us/azure/managed-redis/",
+    "description": "An advanced, high-availability caching layer designed for the performance needs of modern cloud applications."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Personalizer",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/personalizer/",
+    "description": "A cloud-based service that helps your applications choose the best content items to show your users, learning from real-time behavior."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Bot Service",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/bot-service/",
+    "description": "A platform for developing intelligent, enterprise-grade bots that can chat with users on various channels."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure Health Bot",
+    "service_url": "https://learn.microsoft.com/en-us/azure/health-bot/",
+    "description": "A cloud platform that empowers developers in healthcare organizations to build and deploy AI-powered virtual health assistants."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Translator",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/",
+    "description": "Provides multi-language text translation and document translation through simple REST API calls."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Microsoft Entra Domain Services",
+    "service_url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/",
+    "description": "Provides managed domain services such as domain join, group policy, and LDAP, without the need to manage domain controllers."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Key Vault Managed HSM",
+    "service_url": "https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/",
+    "description": "A fully managed, highly available, single-tenant, standards-compliant cloud service for protecting cryptographic keys."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Information Protection",
+    "service_url": "https://learn.microsoft.com/en-us/azure/information-protection/",
+    "description": "Helps organizations discover, classify, and protect documents and emails by applying labels to content."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Pipelines",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/",
+    "description": "A cloud service that you can use to automatically build and test your code project and make it available to others."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Artifacts",
+    "service_url": "https://learn.microsoft.com/en-us/azure/devops/artifacts/",
+    "description": "Allows developers to share their packages from public and private sources and integrate package sharing into CI/CD pipelines."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Load Testing",
+    "service_url": "https://learn.microsoft.com/en-us/azure/load-testing/",
+    "description": "A fully managed load-testing service that enables you to generate high-scale load and identify performance bottlenecks."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Microsoft Dev Box",
+    "service_url": "https://learn.microsoft.com/en-us/azure/dev-box/",
+    "description": "Provides self-service access to high-performance, cloud-based workstations that are pre-configured for specific developer projects."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Microsoft Playwright Testing",
+    "service_url": "https://learn.microsoft.com/en-us/azure/playwright-testing/",
+    "description": "A managed service that enables you to run Playwright tests at scale across different browser engines in the cloud."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Web PubSub",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-web-pubsub/",
+    "description": "A service that makes it easy to build real-time web applications with WebSockets and the publish-subscribe pattern."
+  },
+    {
+    "domain": "Compute",
+    "service_name": "Azure Dedicated Host",
+    "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts",
+    "description": "Provides physical servers that are dedicated to one Azure subscription, helping meet compliance and security requirements."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure Elastic SAN",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/elastic-san/elastic-san-introduction",
+    "description": "A cloud-native storage area network (SAN) service that offers a scalable, cost-effective, and fully managed solution for block storage."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Peering Service",
+    "service_url": "https://learn.microsoft.com/en-us/azure/peering-service/about",
+    "description": "A networking service that enhances the connectivity to Microsoft cloud services such as Microsoft 365, Dynamics 365, or any Azure services."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Route Server",
+    "service_url": "https://learn.microsoft.com/en-us/azure/route-server/overview",
+    "description": "Simplifies dynamic routing between your network virtual appliance (NVA) and your virtual network."
+  },
+  {
+    "domain": "Container Operations",
+    "service_name": "Azure Container Storage",
+    "service_url": "https://learn.microsoft.com/en-us/azure/storage/container-storage/container-storage-introduction",
+    "description": "A volume management service built natively for containers to provide persistent storage for AKS clusters."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure MariaDB",
+    "service_url": "https://learn.microsoft.com/en-us/azure/mariadb/",
+    "description": "A fully managed community MariaDB database service for app developers."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Managed Grafana",
+    "service_url": "https://learn.microsoft.com/en-us/azure/managed-grafana/",
+    "description": "A fully managed service for running Grafana to visualize and analyze your operational telemetry."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Video Indexer",
+    "service_url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/",
+    "description": "A cloud application that uses AI to extract insights from video and audio files."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Confidential Ledger",
+    "service_url": "https://learn.microsoft.com/en-us/azure/confidential-ledger/",
+    "description": "Provides a high-integrity, tamper-protected ledger for sensitive data logs using Confidential Computing."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Attestation",
+    "service_url": "https://learn.microsoft.com/en-us/azure/attestation/",
+    "description": "A unified solution for remotely verifying the trustworthiness of a platform and the integrity of the binaries running inside it."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Deployment Environments",
+    "service_url": "https://learn.microsoft.com/en-us/azure/deployment-environments/",
+    "description": "Enables development teams to quickly spin up app infrastructure with project-based templates."
+  },
+  {
+    "domain": "Edge and IoT",
+    "service_name": "Azure Sphere",
+    "service_url": "https://learn.microsoft.com/en-us/azure-sphere/product-overview/what-is-azure-sphere",
+    "description": "A high-security, connected MCU platform that includes hardware, a secured OS, and a cloud-based security service."
+  },
+  {
+    "domain": "Networking",
+    "service_name": "Azure Internet Analyzer",
+    "service_url": "https://learn.microsoft.com/en-us/azure/internet-analyzer/",
+    "description": "A client-side measurement platform to test how networking infrastructure changes impact your users' performance."
+  },
+  {
+    "domain": "Compute",
+    "service_name": "Azure Image Builder",
+    "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/image-builder-overview",
+    "description": "A service that helps you automate the creation of custom VM images for Windows and Linux."
+  },
+  {
+    "domain": "Storage",
+    "service_name": "Azure FXT Edge Avere",
+    "service_url": "https://learn.microsoft.com/en-us/azure/fxt-edge-avere/",
+    "description": "A hybrid storage optimization solution that provides high-speed data access for high-performance computing (HPC) tasks."
+  },
+  {
+    "domain": "Security and Governance",
+    "service_name": "Azure Resource Graph",
+    "service_url": "https://learn.microsoft.com/en-us/azure/governance/resource-graph/",
+    "description": "An Azure service designed to extend Azure Resource Management by providing efficient resource exploration."
+  },
+  {
+    "domain": "Databases and Big Data",
+    "service_name": "Azure Open Datasets",
+    "service_url": "https://learn.microsoft.com/en-us/azure/open-datasets/",
+    "description": "A curated collection of publicly available datasets that you can use to accelerate machine learning workflows."
+  },
+  {
+    "domain": "AI Services",
+    "service_name": "Azure AI Content Safety",
+    "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/",
+    "description": "A service that detects harmful user-generated and AI-generated content in applications and services."
+  },
+  {
+    "domain": "Monitoring",
+    "service_name": "Azure Network Watcher",
+    "service_url": "https://learn.microsoft.com/en-us/azure/network-watcher/",
+    "description": "Provides tools to monitor, diagnose, and view metrics for resources in an Azure virtual network."
+  },
+  {
+    "domain": "Developer Tools",
+    "service_name": "Azure Lab Services",
+    "service_url": "https://learn.microsoft.com/en-us/azure/lab-services/",
+    "description": "Enables you to easily set up and manage labs for teaching, hackathons, and training."
+  },
+      {
+      "domain": "Compute",
+      "service_name": "Azure Compute Fleet",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/compute-fleet/",
+      "description": "A service introduced in 2026 that simplifies deploying and managing a diverse mix of VM types, including Spot and Reserved instances, as a single unit."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Static Web Apps",
+      "service_url": "https://learn.microsoft.com/en-us/azure/static-web-apps/",
+      "description": "A service that automatically builds and deploys full-stack web apps to Azure from a code repository, providing globally distributed hosting and integrated APIs."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Quantum",
+      "service_url": "https://learn.microsoft.com/en-us/azure/quantum/",
+      "description": "An open cloud ecosystem that allows you to run quantum algorithms on various hardware providers and simulate quantum solutions."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Virtual Machines",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/",
+      "description": "On-demand, scalable computing resources that allow you to deploy and manage Windows or Linux virtual machines (VMs)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Virtual Machine Scale Sets",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/",
+      "description": "Create and manage a group of load-balanced VMs that can automatically increase or decrease in response to demand."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure App Service",
+      "service_url": "https://learn.microsoft.com/en-us/azure/app-service/",
+      "description": "A fully managed platform for building, deploying, and scaling web apps supporting multiple languages."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Functions",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-functions/",
+      "description": "A serverless compute service that lets you run event-triggered code without explicitly provisioning or managing infrastructure."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Batch",
+      "service_url": "https://learn.microsoft.com/en-us/azure/batch/",
+      "description": "A platform service for running large-scale parallel and high-performance computing (HPC) batch jobs efficiently."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Virtual Desktop",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-desktop/",
+      "description": "A desktop and app virtualization service running on the cloud to deliver full Windows desktops to any device."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Azure Spring Apps",
+      "service_url": "https://learn.microsoft.com/en-us/azure/spring-apps/",
+      "description": "A fully managed service for Spring Boot apps that handles infrastructure management and monitoring."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Data Box",
+      "service_url": "https://learn.microsoft.com/en-us/azure/databox/",
+      "description": "A family of physical appliances that allow you to send terabytes of data into Azure in a quick, inexpensive, and reliable manner."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Storage Mover",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage-mover/",
+      "description": "A fully managed, hybrid migration service that makes it easy to migrate your on-premises files and folders to Azure Storage."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Blob Storage",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage/blobs/",
+      "description": "Massively scalable and secure object storage for cloud-native workloads, archives, and data lakes."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Files",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage/files/",
+      "description": "Simple, secure, and fully managed cloud file shares that utilize industry-standard SMB or NFS protocols."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Queue Storage",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage/queues/",
+      "description": "A service for storing large numbers of messages for reliable asynchronous communication between application components."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Table Storage",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage/tables/",
+      "description": "A service that stores non-relational structured data (NoSQL) in the cloud with a schemaless design."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Managed Disks",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+      "description": "Block-level storage volumes managed by Azure and used with Azure Virtual Machines."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure NetApp Files",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/",
+      "description": "A fully managed, high-performance file storage service aimed at enterprise core line-of-business applications."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Azure Data Lake Storage Gen2",
+      "service_url": "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "description": "A set of capabilities dedicated to big data analytics, built on Azure Blob Storage."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Orbital Ground Station",
+      "service_url": "https://learn.microsoft.com/en-us/azure/orbital/",
+      "description": "A fully managed cloud-based ground station as a service that lets you communicate with your spacecraft."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Virtual Network (VNet)",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-network/",
+      "description": "The fundamental building block for your private network in Azure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Load Balancer",
+      "service_url": "https://learn.microsoft.com/en-us/azure/load-balancer/",
+      "description": "A high-performance Layer 4 load balancing service that distributes inbound traffic among healthy backend instances."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Application Gateway",
+      "service_url": "https://learn.microsoft.com/en-us/azure/application-gateway/",
+      "description": "A web traffic load balancer with Layer 7 capabilities, including SSL termination and WAF."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure VPN Gateway",
+      "service_url": "https://learn.microsoft.com/en-us/azure/vpn-gateway/",
+      "description": "Sends encrypted traffic between an Azure virtual network and an on-premises location over the public internet."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure ExpressRoute",
+      "service_url": "https://learn.microsoft.com/en-us/azure/expressroute/",
+      "description": "Extends on-premises networks into the Microsoft cloud over a private connection without using the public internet."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Traffic Manager",
+      "service_url": "https://learn.microsoft.com/en-us/azure/traffic-manager/",
+      "description": "A DNS-based traffic load balancer for optimal distribution to services across global Azure regions."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure DNS",
+      "service_url": "https://learn.microsoft.com/en-us/azure/dns/",
+      "description": "A hosting service for DNS domains that provides name resolution using Microsoft Azure infrastructure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Front Door",
+      "service_url": "https://learn.microsoft.com/en-us/azure/frontdoor/",
+      "description": "A global, scalable entry-point that uses the Microsoft global edge network for fast, secure web applications."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Firewall",
+      "service_url": "https://learn.microsoft.com/en-us/azure/firewall/",
+      "description": "A managed, cloud-based network security service that protects your Azure Virtual Network resources."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Private Link",
+      "service_url": "https://learn.microsoft.com/en-us/azure/private-link/",
+      "description": "Enables access to Azure PaaS Services over a private endpoint in your virtual network."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Virtual WAN",
+      "service_url": "https://learn.microsoft.com/en-us/azure/virtual-wan/",
+      "description": "A networking service providing a single operational interface for many networking, security, and routing functionalities."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Azure Bastion",
+      "service_url": "https://learn.microsoft.com/en-us/azure/bastion/",
+      "description": "Provides secure RDP and SSH access to virtual machines directly through the Azure portal."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Kubernetes Fleet Manager",
+      "service_url": "https://learn.microsoft.com/en-us/azure/kubernetes-fleet-manager/",
+      "description": "Enables at-scale management of multiple Azure Kubernetes Service (AKS) clusters."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Kubernetes Service (AKS)",
+      "service_url": "https://learn.microsoft.com/en-us/azure/aks/",
+      "description": "A fully managed Kubernetes service that simplifies deploying and managing containerized applications."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Container Instances (ACI)",
+      "service_url": "https://learn.microsoft.com/en-us/azure/container-instances/",
+      "description": "A solution for running containers in Azure without managing servers."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Container Registry",
+      "service_url": "https://learn.microsoft.com/en-us/azure/container-registry/",
+      "description": "A managed, private Docker registry service for storing and managing container images."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Container Apps",
+      "service_url": "https://learn.microsoft.com/en-us/azure/container-apps/",
+      "description": "A fully managed serverless container service for microservices and containerized applications."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Azure Red Hat OpenShift",
+      "service_url": "https://learn.microsoft.com/en-us/azure/openshift/",
+      "description": "A fully managed OpenShift service, jointly engineered by Microsoft and Red Hat."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Microsoft Fabric",
+      "service_url": "https://learn.microsoft.com/en-us/microsoft-fabric/",
+      "description": "An all-in-one analytics solution for enterprises that covers everything from data movement to data science."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Database Migration Service",
+      "service_url": "https://learn.microsoft.com/en-us/azure/dms/",
+      "description": "A fully managed service designed to enable seamless migrations from multiple database sources to Azure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure HDInsight",
+      "service_url": "https://learn.microsoft.com/en-us/azure/hdinsight/",
+      "description": "A managed, full-spectrum, open-source analytics service supporting frameworks like Hadoop and Spark."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Analysis Services",
+      "service_url": "https://learn.microsoft.com/en-us/azure/analysis-services/",
+      "description": "An enterprise-grade data modeling service in the cloud for business intelligence and reporting."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure SQL Database",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/",
+      "description": "A fully managed platform as a service (PaaS) database engine based on the SQL Server engine."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Cosmos DB",
+      "service_url": "https://learn.microsoft.com/en-us/azure/cosmos-db/",
+      "description": "A fully managed NoSQL and relational database for modern app development with millisecond response times."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Database for PostgreSQL",
+      "service_url": "https://learn.microsoft.com/en-us/azure/postgresql/",
+      "description": "A fully managed database service based on the open-source PostgreSQL database engine."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Database for MySQL",
+      "service_url": "https://learn.microsoft.com/en-us/azure/mysql/",
+      "description": "A fully managed database service powered by the community edition of MySQL."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure SQL Managed Instance",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/",
+      "description": "A fully managed SQL service with broad SQL Server engine compatibility for easy lift-and-shift."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Cache for Redis",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/",
+      "description": "A fully managed, in-memory cache based on open-source Redis for high-performance architectures."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Synapse Analytics",
+      "service_url": "https://learn.microsoft.com/en-us/azure/synapse-analytics/",
+      "description": "A limitless analytics service that brings together enterprise data warehousing and Big Data analytics."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Databricks",
+      "service_url": "https://learn.microsoft.com/en-us/azure/databricks/",
+      "description": "A data analytics platform optimized for Azure for data engineering and machine learning."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Data Factory",
+      "service_url": "https://learn.microsoft.com/en-us/azure/data-factory/",
+      "description": "A cloud-based data integration service for orchestrating and automating data movement and transformation."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Stream Analytics",
+      "service_url": "https://learn.microsoft.com/en-us/azure/stream-analytics/",
+      "description": "A real-time analytics engine designed to process high volumes of fast streaming data from multiple sources."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Azure Data Explorer",
+      "service_url": "https://learn.microsoft.com/en-us/azure/data-explorer/",
+      "description": "A fast and highly scalable data exploration service for log and telemetry data."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Azure Monitor",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/",
+      "description": "A comprehensive solution for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Azure Service Health",
+      "service_url": "https://learn.microsoft.com/en-us/azure/service-health/",
+      "description": "Provides personalized alerts and guidance when Azure service issues affect you."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Foundry",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-studio/",
+      "description": "A unified platform for building, evaluating, and deploying AI solutions and autonomous agents."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Agent Service",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/agents/",
+      "description": "A service launched in 2026 to help enterprises build and deploy autonomous AI agents."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure OpenAI Service",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/",
+      "description": "Provides access to OpenAI's powerful language models including GPT-4 and GPT-3.5-Turbo."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Services",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/",
+      "description": "A portfolio of AI services for vision, speech, language, and decision-making capabilities."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure Machine Learning",
+      "service_url": "https://learn.microsoft.com/en-us/azure/machine-learning/",
+      "description": "A cloud-based environment you can use to train, deploy, automate, manage, and track ML models."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Search",
+      "service_url": "https://learn.microsoft.com/en-us/azure/search/",
+      "description": "A cloud search service for building rich search experiences over private, heterogeneous content."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Speech",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/",
+      "description": "Provides speech-to-text, text-to-speech, and speech translation capabilities."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Vision",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/",
+      "description": "Provides access to advanced algorithms that process images and return information based on visual features."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Language",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/",
+      "description": "A cloud-based service that provides Natural Language Processing (NLP) features for understanding text."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Azure AI Document Intelligence",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/",
+      "description": "Uses machine learning to extract text and tables from documents to automate data processing."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Advisor",
+      "service_url": "https://learn.microsoft.com/en-us/azure/advisor/",
+      "description": "A personalized cloud consultant that helps you follow best practices to optimize your Azure deployments."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Microsoft Purview",
+      "service_url": "https://learn.microsoft.com/en-us/purview/",
+      "description": "A unified data governance service that helps you manage and govern your on-premises, multicloud, and SaaS data."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Cost Management + Billing",
+      "service_url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
+      "description": "A suite of tools that help you monitor, allocate, and optimize your Azure cloud spend."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Backup",
+      "service_url": "https://learn.microsoft.com/en-us/azure/backup/",
+      "description": "A simple and cost-effective solution to back up your data and recover it from the Microsoft Azure cloud."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Site Recovery",
+      "service_url": "https://learn.microsoft.com/en-us/azure/site-recovery/",
+      "description": "A native disaster recovery as a service (DRaaS) that keeps your business running during outages."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Microsoft Defender for Cloud",
+      "service_url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/",
+      "description": "A cloud-native application protection platform that provides unified visibility and threat protection."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Microsoft Sentinel",
+      "service_url": "https://learn.microsoft.com/en-us/azure/sentinel/",
+      "description": "A cloud-native SIEM and SOAR solution for intelligent security analytics across the enterprise."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Key Vault",
+      "service_url": "https://learn.microsoft.com/en-us/azure/key-vault/",
+      "description": "A cloud service for securely storing and accessing secrets such as API keys and passwords."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Policy",
+      "service_url": "https://learn.microsoft.com/en-us/azure/governance/policy/",
+      "description": "A service that helps you enforce organizational standards and assess compliance at-scale."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Microsoft Entra ID",
+      "service_url": "https://learn.microsoft.com/en-us/entra/identity/",
+      "description": "A cloud-based identity and access management service, formerly known as Azure Active Directory."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure DDoS Protection",
+      "service_url": "https://learn.microsoft.com/en-us/azure/ddos-protection/",
+      "description": "Provides enhanced DDoS mitigation features to defend against attacks on your virtual network resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Azure Web Application Firewall (WAF)",
+      "service_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/",
+      "description": "Provides centralized protection of web applications from common exploits and vulnerabilities."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure Logic Apps",
+      "service_url": "https://learn.microsoft.com/en-us/azure/logic-apps/",
+      "description": "A cloud-based platform for creating and running automated workflows that integrate apps and data."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure Service Bus",
+      "service_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/",
+      "description": "A fully managed enterprise message broker used to decouple applications and services."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure Event Grid",
+      "service_url": "https://learn.microsoft.com/en-us/azure/event-grid/",
+      "description": "A highly scalable event routing service for building applications with event-based architectures."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure Communication Services",
+      "service_url": "https://learn.microsoft.com/en-us/azure/communication-services/",
+      "description": "Provides multichannel communication APIs for adding voice, video, chat, and SMS to applications."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure Chaos Studio",
+      "service_url": "https://learn.microsoft.com/en-us/azure/chaos-studio/",
+      "description": "A managed service that allows you to improve application resilience by injecting faults and simulating outages."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure DevOps",
+      "service_url": "https://learn.microsoft.com/en-us/azure/devops/",
+      "description": "A suite of services to share code, track work, and ship software via CI/CD pipelines."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure DevTest Labs",
+      "service_url": "https://learn.microsoft.com/en-us/azure/devtest-labs/",
+      "description": "A service that helps developers quickly create environments in Azure while controlling cost."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure App Configuration",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-app-configuration/",
+      "description": "A managed service that helps developers centralize their application and feature settings."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Azure API Management",
+      "service_url": "https://learn.microsoft.com/en-us/azure/api-management/",
+      "description": "A management platform for publishing, securing, and monitoring APIs across all environments."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure Arc",
+      "service_url": "https://learn.microsoft.com/en-us/azure/azure-arc/",
+      "description": "A bridge that extends Azure management and services to any infrastructure across hybrid and multicloud environments."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure Stack HCI",
+      "service_url": "https://learn.microsoft.com/en-us/azure-stack/hci/",
+      "description": "A hyperconverged infrastructure solution that runs virtualized workloads on-premises connected to Azure."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure IoT Hub",
+      "service_url": "https://learn.microsoft.com/en-us/azure/iot-hub/",
+      "description": "A central message hub for bi-directional communication between your IoT application and devices."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure IoT Central",
+      "service_url": "https://learn.microsoft.com/en-us/azure/iot-central/",
+      "description": "A ready-made environment that simplifies the creation of IoT solutions and reduces management burden."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure IoT Edge",
+      "service_url": "https://learn.microsoft.com/en-us/azure/iot-edge/",
+      "description": "Moves cloud analytics and custom business logic to devices to run workloads on the edge."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure Digital Twins",
+      "service_url": "https://learn.microsoft.com/en-us/azure/digital-twins/",
+      "description": "A platform for creating comprehensive digital models of real-world environments and interactions."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Azure Stack Hub",
+      "service_url": "https://learn.microsoft.com/en-us/azure-stack/operator/",
+      "description": "An extension of Azure that provides a way to run apps in an on-premises environment."
+    }
+  ]
+}

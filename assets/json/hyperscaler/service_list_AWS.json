@@ -1,0 +1,1450 @@
+{
+  "services": [
+    {
+      "domain": "Business Applications",
+      "service_name": "AWS Supply Chain",
+      "service_url": "https://aws.amazon.com/supply-chain/",
+      "description": "ML-powered application that unifies data and provides actionable insights to mitigate supply chain risks."
+    },
+    {
+      "domain": "Business Applications",
+      "service_name": "Amazon Honeycode",
+      "service_url": "https://aws.amazon.com/honeycode/",
+      "description": "Fully managed service that allows users to build powerful mobile and web applications without writing code."
+    },
+    {
+      "domain": "Business Applications",
+      "service_name": "Amazon Chime SDK",
+      "service_url": "https://aws.amazon.com/chime/chime-sdk/",
+      "description": "A set of real-time communications components that developers can use to add audio, video, and screen sharing to their own apps."
+    },
+    {
+      "domain": "Business Applications",
+      "service_name": "AWS B2B Data Interchange",
+      "service_url": "https://aws.amazon.com/b2b-data-interchange/",
+      "description": "Automates the transformation of EDI documents into common data formats for seamless partner integration."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Deadline Cloud",
+      "service_url": "https://aws.amazon.com/deadline-cloud/",
+      "description": "Fully managed service that helps customers set up, deploy, and scale render farms in minutes for visual effects."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon EC2 Auto Scaling",
+      "service_url": "https://aws.amazon.com/ec2/autoscaling/",
+      "description": "Helps you maintain application availability and allows you to automatically add or remove EC2 instances according to conditions you define."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS App Runner",
+      "service_url": "https://aws.amazon.com/apprunner/",
+      "description": "Fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3 Glacier Deep Archive",
+      "service_url": "https://aws.amazon.com/s3/storage-classes/glacier/deep-archive/",
+      "description": "AWS's lowest-cost storage class that supports long-term retention and digital preservation for data that may be accessed once or twice a year."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Elastic Disaster Recovery (DRS)",
+      "service_url": "https://aws.amazon.com/disaster-recovery/",
+      "description": "Minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Global Accelerator",
+      "service_url": "https://aws.amazon.com/global-accelerator/",
+      "description": "Improves the availability and performance of your applications with local or global users by using the AWS global network."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon Route 53 Resolver",
+      "service_url": "https://aws.amazon.com/route53/resolver/",
+      "description": "Recursive DNS for your VPC and on-premises network over AWS Direct Connect or managed VPN."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Cloud WAN",
+      "service_url": "https://aws.amazon.com/cloud-wan/",
+      "description": "A managed wide area network (WAN) service that makes it easy to build, manage, and monitor a global network."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Redshift Serverless",
+      "service_url": "https://aws.amazon.com/redshift/serverless/",
+      "description": "Makes it easy to run and scale analytics without having to manage data warehouse infrastructure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Managed Blockchain (AMB)",
+      "service_url": "https://aws.amazon.com/managed-blockchain/",
+      "description": "Fully managed service that makes it easy to join public networks or create and manage scalable private networks."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Glue Elastic Views",
+      "service_url": "https://aws.amazon.com/glue/features/elastic-views/",
+      "description": "Builds materialized views that automatically combine and replicate data across multiple data stores."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon FinSpace",
+      "service_url": "https://aws.amazon.com/finspace/",
+      "description": "Analytic data management and analytics service for financial services industry."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS HealthLake",
+      "service_url": "https://aws.amazon.com/healthlake/",
+      "description": "HIPAA-eligible service that enables healthcare and life sciences companies to store, transform, and analyze health data at scale."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon CloudWatch Logs",
+      "service_url": "https://aws.amazon.com/cloudwatch/details/#log-monitoring",
+      "description": "Enables you to centralize the logs from all of your systems, applications, and AWS services that you use."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Compute Optimizer",
+      "service_url": "https://aws.amazon.com/compute-optimizer/",
+      "description": "Recommends optimal AWS resources for your workloads to reduce costs and improve performance by using machine learning."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Proton",
+      "service_url": "https://aws.amazon.com/proton/",
+      "description": "The first fully managed delivery service for container and serverless applications."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Q Business",
+      "service_url": "https://aws.amazon.com/q/business/",
+      "description": "Generative AI-powered assistant that can answer questions, provide summaries, and complete tasks based on data in enterprise systems."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Q Developer",
+      "service_url": "https://aws.amazon.com/q/developer/",
+      "description": "AI-powered developer assistant that helps you build, optimize, and operate applications on AWS."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Rekognition Video",
+      "service_url": "https://aws.amazon.com/rekognition/video-features/",
+      "description": "Deep learning powered video analysis service that can detect objects, people, text, and activities."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "AWS DeepComposer",
+      "service_url": "https://aws.amazon.com/deepcomposer/",
+      "description": "Gives developers a creative way to learn machine learning through a musical keyboard and generative AI."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon SageMaker Canvas",
+      "service_url": "https://aws.amazon.com/sagemaker/canvas/",
+      "description": "Visual, no-code interface that allows business analysts to generate accurate ML predictions on their own."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Security Token Service (STS)",
+      "service_url": "https://aws.amazon.com/iam/details/temporary-security-credentials/",
+      "description": "Web service that enables you to request temporary, limited-privilege credentials for AWS users."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Shield Advanced",
+      "service_url": "https://aws.amazon.com/shield/features/#AWS_Shield_Advanced",
+      "description": "Provides expanded DDoS attack protection for web applications running on ELB, CloudFront, and Route 53."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Resource Groups",
+      "service_url": "https://aws.amazon.com/resource-groups/",
+      "description": "Helps you organize and manage your AWS resources by creating groups based on tags or CloudFormation stacks."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Service Quotas",
+      "service_url": "https://aws.amazon.com/service-quotas/",
+      "description": "Enables you to view and manage your quotas for AWS services from a central location."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Security Lake",
+      "service_url": "https://aws.amazon.com/security-lake/",
+      "description": "Automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Cloud Development Kit (CDK)",
+      "service_url": "https://aws.amazon.com/cdk/",
+      "description": "Open-source software development framework to define cloud infrastructure in code and provision it through CloudFormation."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Device Farm",
+      "service_url": "https://aws.amazon.com/device-farm/",
+      "description": "App testing service that lets you test and interact with your Android, iOS, and web apps against real physical devices."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Command Line Interface (CLI)",
+      "service_url": "https://aws.amazon.com/cli/",
+      "description": "Unified tool to manage your AWS services from the command line and automate them through scripts."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS SAM (Serverless Application Model)",
+      "service_url": "https://aws.amazon.com/serverless/sam/",
+      "description": "Open-source framework for building serverless applications on AWS."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Core Device Advisor",
+      "service_url": "https://aws.amazon.com/iot-core/device-advisor/",
+      "description": "Cloud-based fully managed test capability for validating IoT devices during development."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT 1-Click",
+      "service_url": "https://aws.amazon.com/iot-1-click/",
+      "description": "Service that enables simple devices to trigger AWS Lambda functions that can execute an action."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS Partner Device Catalog",
+      "service_url": "https://devices.amazonaws.com/",
+      "description": "Helps you find curated hardware that works with AWS IoT to build your solution faster."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock Data Automation",
+      "service_url": "https://aws.amazon.com/bedrock/data-automation/",
+      "description": "Automates the creation and management of datasets for fine-tuning foundation models."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock Guardrails",
+      "service_url": "https://aws.amazon.com/bedrock/guardrails/",
+      "description": "Implements safety, privacy, and truthfulness policies across generative AI applications."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock Knowledge Bases",
+      "service_url": "https://aws.amazon.com/bedrock/knowledge-bases/",
+      "description": "Connects foundation models to internal data sources for Retrieval-Augmented Generation (RAG)."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock Model Evaluation",
+      "service_url": "https://aws.amazon.com/bedrock/model-evaluation/",
+      "description": "Tools to assess and compare foundation model performance using automated and human benchmarks."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Augmented AI (A2I)",
+      "service_url": "https://aws.amazon.com/augmented-ai/",
+      "description": "Easily implements human review of machine learning predictions for quality control."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon HealthOmics",
+      "service_url": "https://aws.amazon.com/healthomics/",
+      "description": "Specialized service to store, query, and analyze genomic, transcriptomic, and other omics data."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Monitron",
+      "service_url": "https://aws.amazon.com/monitron/",
+      "description": "End-to-end system that uses ML to detect abnormal behavior in industrial machinery."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Lookout for Metrics",
+      "service_url": "https://aws.amazon.com/lookout-for-metrics/",
+      "description": "Automatically detects anomalies in business and operational metrics."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Lookout for Equipment",
+      "service_url": "https://aws.amazon.com/lookout-for-equipment/",
+      "description": "Analyzes sensor data to detect signs of machine failure before they occur."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Lookout for Vision",
+      "service_url": "https://aws.amazon.com/lookout-for-vision/",
+      "description": "Uses computer vision to spot defects and anomalies in visual representations of products."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon WorkSpaces",
+      "service_url": "https://aws.amazon.com/workspaces/",
+      "description": "Fully managed, secure Desktop-as-a-Service (DaaS) solution for remote work."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon WorkSpaces Web",
+      "service_url": "https://aws.amazon.com/workspaces/web/",
+      "description": "Low-cost, fully managed workspace to facilitate secure access to internal websites and SaaS apps."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon AppStream 2.0",
+      "service_url": "https://aws.amazon.com/appstream2/",
+      "description": "Fully managed non-persistent desktop and application streaming service."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon GameLift",
+      "service_url": "https://aws.amazon.com/gamelift/",
+      "description": "Dedicated game server hosting for multiplayer games with low latency and high reliability."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "VMware Cloud on AWS",
+      "service_url": "https://aws.amazon.com/vmware/",
+      "description": "Enables migration and extension of on-premises VMware vSphere-based environments to AWS."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Snowmobile",
+      "service_url": "https://aws.amazon.com/snowmobile/",
+      "description": "Exabyte-scale data transfer service used to move massive amounts of data to the cloud."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Transfer Family",
+      "service_url": "https://aws.amazon.com/aws-transfer-family/",
+      "description": "Fully managed support for file transfers directly into and out of Amazon S3 or Amazon EFS via SFTP, FTPS, and FTP."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Ground Station",
+      "service_url": "https://aws.amazon.com/ground-station/",
+      "description": "Fully managed service that lets you control satellite communications and process satellite data."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Private 5G",
+      "service_url": "https://aws.amazon.com/private5g/",
+      "description": "Managed service that helps enterprises set up and scale private 5G mobile networks."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Direct Connect Gateway",
+      "service_url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways.html",
+      "description": "Grouping mechanism for Direct Connect virtual interfaces to connect multiple VPCs across regions."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon EKS Distro",
+      "service_url": "https://aws.amazon.com/eks/distro/",
+      "description": "The same distribution of Kubernetes used by Amazon EKS for use on your own infrastructure."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Red Hat OpenShift Service on AWS (ROSA)",
+      "service_url": "https://aws.amazon.com/rosa/",
+      "description": "Managed OpenShift service that enables faster application building and scaling."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Data Firehose",
+      "service_url": "https://aws.amazon.com/kinesis/data-firehose/",
+      "description": "Fully managed service for delivering real-time streaming data to S3, Redshift, and OpenSearch."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Managed Service for Apache Flink",
+      "service_url": "https://aws.amazon.com/managed-service-apache-flink/",
+      "description": "Run and manage streaming applications using Apache Flink without managing servers."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Managed Workflows for Apache Airflow (MWAA)",
+      "service_url": "https://aws.amazon.com/mwaa/",
+      "description": "Managed orchestration service for Apache Airflow to set up and operate end-to-end data pipelines."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon OpenSearch Serverless",
+      "service_url": "https://aws.amazon.com/opensearch-service/features/serverless/",
+      "description": "On-demand, serverless configuration for OpenSearch to handle unpredictable workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Timestream for InfluxDB",
+      "service_url": "https://aws.amazon.com/timestream/influxdb/",
+      "description": "Fully managed InfluxDB-compatible engine for time-series workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Elemental MediaConvert",
+      "service_url": "https://aws.amazon.com/mediaconvert/",
+      "description": "File-based video transcoding service with broadcast-grade features."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Elemental MediaLive",
+      "service_url": "https://aws.amazon.com/medialive/",
+      "description": "Live video processing service for creating high-quality streams for broadcast and multiscreen devices."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Elemental MediaPackage",
+      "service_url": "https://aws.amazon.com/mediapackage/",
+      "description": "Prepares and protects video for delivery over the internet."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Interactive Video Service (IVS)",
+      "service_url": "https://aws.amazon.com/ivs/",
+      "description": "Managed live streaming solution that is quick and easy to set up for interactive apps."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon CloudWatch Internet Monitor",
+      "service_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html",
+      "description": "Visibility into how internet issues affect the performance and availability of your applications."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS User Notifications",
+      "service_url": "https://aws.amazon.com/notifications/",
+      "description": "Centralized location to view and manage notifications from various AWS services."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon CloudWatch Evidently",
+      "service_url": "https://aws.amazon.com/cloudwatch/evidently/",
+      "description": "Enables application developers to conduct A/B testing and feature flag management."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Firewall Manager",
+      "service_url": "https://aws.amazon.com/firewall-manager/",
+      "description": "Central management of firewall rules across all your accounts and applications."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Private Certificate Authority",
+      "service_url": "https://aws.amazon.com/private-ca/",
+      "description": "Managed private CA service for securing internal resources and IoT devices."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Signer",
+      "service_url": "https://aws.amazon.com/signer/",
+      "description": "Managed code-signing service to ensure the authenticity and integrity of your code."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Verified Permissions",
+      "service_url": "https://aws.amazon.com/verified-permissions/",
+      "description": "Centralized fine-grained permissions management and authorization for custom applications."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Payment Cryptography",
+      "service_url": "https://aws.amazon.com/payment-cryptography/",
+      "description": "Simplifies cryptography operations for payment processing applications."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Wickr",
+      "service_url": "https://aws.amazon.com/wickr/",
+      "description": "Enterprise-grade, end-to-end encrypted messaging and collaboration service."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Budgets",
+      "service_url": "https://aws.amazon.com/aws-cost-management/aws-budgets/",
+      "description": "Set custom budgets that alert you when your costs or usage exceed your budgeted amount."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Cost Explorer",
+      "service_url": "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/",
+      "description": "Visualize, understand, and manage your AWS costs and usage over time."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS License Manager",
+      "service_url": "https://aws.amazon.com/license-manager/",
+      "description": "Manage software licenses from vendors such as Microsoft, SAP, and Oracle on AWS."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Systems Manager (SSM)",
+      "service_url": "https://aws.amazon.com/systems-manager/",
+      "description": "Operations hub for AWS that provides visibility and control of your infrastructure."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Well-Architected Tool",
+      "service_url": "https://aws.amazon.com/well-architected-tool/",
+      "description": "Helps you review the state of your workloads and compares them to AWS architectural best practices."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Trusted Advisor",
+      "service_index": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
+      "description": "Provides real-time guidance to help you provision resources following AWS best practices."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Simple Queue Service (SQS)",
+      "service_url": "https://aws.amazon.com/sqs/",
+      "description": "Fully managed message queuing service for decoupling and scaling microservices."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Simple Notification Service (SNS)",
+      "service_url": "https://aws.amazon.com/sns/",
+      "description": "Fully managed messaging service for both application-to-application and application-to-person communication."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon EventBridge",
+      "service_url": "https://aws.amazon.com/eventbridge/",
+      "description": "Serverless event bus that makes it easy to connect applications using data from your own apps and SaaS."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon MQ",
+      "service_url": "https://aws.amazon.com/amazon-mq/",
+      "description": "Managed message broker service for Apache ActiveMQ and RabbitMQ."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Simple Workflow Service (SWF)",
+      "service_url": "https://aws.amazon.com/swf/",
+      "description": "Helps developers build, run, and scale background jobs that have parallel or sequential steps."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon AppFlow",
+      "service_url": "https://aws.amazon.com/appflow/",
+      "description": "Fully managed integration service that enables secure data transfer between SaaS apps and AWS."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Connect",
+      "service_url": "https://aws.amazon.com/connect/",
+      "description": "Easy-to-use omnichannel cloud contact center that helps companies provide superior customer service."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Pinpoint",
+      "service_url": "https://aws.amazon.com/pinpoint/",
+      "description": "Engagement service that enables multi-channel communication with customers via email, SMS, and push."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon Chime",
+      "service_url": "https://aws.amazon.com/chime/",
+      "description": "Communications service that transforms online meetings with an easy-to-use, secure application."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Amazon WorkMail",
+      "service_url": "https://aws.amazon.com/workmail/",
+      "description": "Secure, managed business email and calendar service with support for existing desktop and mobile clients."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT FleetWise",
+      "service_url": "https://aws.amazon.com/iot-fleetwise/",
+      "description": "Easily collect, transform, and transfer vehicle data to the cloud in near-real-time."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT TwinMaker",
+      "service_url": "https://aws.amazon.com/iot-twinmaker/",
+      "description": "Makes it easier to create digital twins of real-world systems like buildings and factories."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Core Device Advisor",
+      "service_url": "https://docs.aws.amazon.com/iot/latest/developerguide/device-advisor.html",
+      "description": "Cloud-based, fully managed test capability for validating IoT devices during development."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT RoboRunner",
+      "service_url": "https://aws.amazon.com/roborunner/",
+      "description": "Service that helps you build applications that make it easier to manage robot fleets."
+    },
+   {
+      "domain": "Compute",
+      "service_name": "Amazon EC2",
+      "service_url": "https://aws.amazon.com/ec2/",
+      "description": "Virtual servers in the cloud with support for Graviton5 processors (2026)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Lambda",
+      "service_url": "https://aws.amazon.com/lambda/",
+      "description": "Serverless event-driven compute that runs code without managing servers."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Fargate",
+      "service_url": "https://aws.amazon.com/fargate/",
+      "description": "Serverless compute engine for containers (ECS and EKS)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon Lightsail",
+      "service_url": "https://aws.amazon.com/lightsail/",
+      "description": "Easy-to-use virtual private server (VPS) for simple web applications."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS App Runner",
+      "service_url": "https://aws.amazon.com/apprunner/",
+      "description": "Fully managed service for deploying containerized web apps at scale."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Outposts",
+      "service_url": "https://aws.amazon.com/outposts/",
+      "description": "Brings native AWS services and infrastructure to on-premises facilities."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Batch",
+      "service_url": "https://aws.amazon.com/batch/",
+      "description": "Efficiently runs hundreds of thousands of batch computing jobs."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3",
+      "service_url": "https://aws.amazon.com/s3/",
+      "description": "Object storage with industry-leading scalability and availability."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon EBS",
+      "service_url": "https://aws.amazon.com/ebs/",
+      "description": "High-performance block storage for Amazon EC2 instances."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon EFS",
+      "service_url": "https://aws.amazon.com/efs/",
+      "description": "Serverless, elastic file system for Linux-based workloads."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon FSx",
+      "service_url": "https://aws.amazon.com/fsx/",
+      "description": "Managed file systems like Lustre, NetApp ONTAP, and OpenZFS."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3 Tables",
+      "service_url": "https://aws.amazon.com/s3/tables/",
+      "description": "Tabular data storage optimized for Apache Iceberg and AI training."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Backup",
+      "service_url": "https://aws.amazon.com/backup/",
+      "description": "Centralized, policy-based service to automate data protection."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon VPC",
+      "service_url": "https://aws.amazon.com/vpc/",
+      "description": "Logically isolated section of the AWS Cloud for your resources."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon Route 53",
+      "service_url": "https://aws.amazon.com/route53/",
+      "description": "Highly available and scalable cloud Domain Name System (DNS)."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon CloudFront",
+      "service_url": "https://aws.amazon.com/cloudfront/",
+      "description": "Global Content Delivery Network (CDN) with low latency."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon API Gateway",
+      "service_url": "https://aws.amazon.com/api-gateway/",
+      "description": "Service for creating, publishing, and securing APIs at any scale."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Direct Connect",
+      "service_url": "https://aws.amazon.com/directconnect/",
+      "description": "Dedicated network connection from your premises to AWS."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Transit Gateway",
+      "service_url": "https://aws.amazon.com/transit-gateway/",
+      "description": "Central hub to connect multiple VPCs and on-premises networks."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon VPC Lattice",
+      "service_url": "https://aws.amazon.com/vpc/lattice/",
+      "description": "Simplifies service-to-service communication and security."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Global Accelerator",
+      "service_url": "https://aws.amazon.com/global-accelerator/",
+      "description": "Improves global application performance via the AWS network."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon ECS",
+      "service_url": "https://aws.amazon.com/ecs/",
+      "description": "Fully managed container orchestration service for Docker containers."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon EKS",
+      "service_url": "https://aws.amazon.com/eks/",
+      "description": "The most trusted way to start, run, and scale Kubernetes."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon ECR",
+      "service_url": "https://aws.amazon.com/ecr/",
+      "description": "Managed container image registry for high-performance hosting."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon RDS",
+      "service_url": "https://aws.amazon.com/rds/",
+      "description": "Managed relational database service for MySQL, PostgreSQL, and more."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Aurora",
+      "service_url": "https://aws.amazon.com/rds/aurora/",
+      "description": "High-performance relational database with serverless and DSQL variants."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon DynamoDB",
+      "service_url": "https://aws.amazon.com/dynamodb/",
+      "description": "Serverless, NoSQL key-value database for millisecond performance."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Redshift",
+      "service_url": "https://aws.amazon.com/redshift/",
+      "description": "Cloud data warehouse for fast analysis of petabyte-scale data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Athena",
+      "service_url": "https://aws.amazon.com/athena/",
+      "description": "Serverless interactive query service for data stored in Amazon S3."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Glue",
+      "service_url": "https://aws.amazon.com/glue/",
+      "description": "Serverless data integration service (ETL) and data catalog."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon EMR",
+      "service_url": "https://aws.amazon.com/emr/",
+      "description": "Big data platform for processing data using Spark, Hive, and Presto."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon OpenSearch Service",
+      "service_url": "https://aws.amazon.com/opensearch-service/",
+      "description": "Managed search and log analytics based on OpenSearch."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Kinesis",
+      "service_url": "https://aws.amazon.com/kinesis/",
+      "description": "Easily collect, process, and analyze real-time streaming data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon MSK",
+      "service_url": "https://aws.amazon.com/msk/",
+      "description": "Managed streaming for Apache Kafka to process data in real time."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon DocumentDB",
+      "service_url": "https://aws.amazon.com/documentdb/",
+      "description": "Fast, scalable, and managed MongoDB-compatible database."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Neptune",
+      "service_url": "https://aws.amazon.com/neptune/",
+      "description": "Managed graph database service for highly connected datasets."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Timestream",
+      "service_url": "https://aws.amazon.com/timestream/",
+      "description": "Serverless time series database for IoT and operational apps."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon CloudWatch",
+      "service_url": "https://aws.amazon.com/cloudwatch/",
+      "description": "Observability service for monitoring metrics, logs, and events."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS CloudTrail",
+      "service_url": "https://aws.amazon.com/cloudtrail/",
+      "description": "Tracks user activity and API usage across your AWS infrastructure."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Config",
+      "service_url": "https://aws.amazon.com/config/",
+      "description": "Assesses, audits, and evaluates configurations of AWS resources."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS X-Ray",
+      "service_url": "https://aws.amazon.com/xray/",
+      "description": "Analyze and debug distributed applications and microservices."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock",
+      "service_url": "https://aws.amazon.com/bedrock/",
+      "description": "Gateway to building apps with high-performance foundation models."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon SageMaker",
+      "service_url": "https://aws.amazon.com/sagemaker/",
+      "description": "The complete platform to build, train, and deploy ML models."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Nova",
+      "service_url": "https://aws.amazon.com/nova/",
+      "description": "Frontier multimodal models for high-performance agentic reasoning."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Q",
+      "service_url": "https://aws.amazon.com/q/",
+      "description": "Generative AI-powered assistant for coding and business insights."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Kiro",
+      "service_url": "https://aws.amazon.com/kiro/",
+      "description": "Autonomous frontier AI agent and IDE for software development."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Rekognition",
+      "service_url": "https://aws.amazon.com/rekognition/",
+      "description": "Image and video analysis using deep learning technology."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Polly",
+      "service_url": "https://aws.amazon.com/polly/",
+      "description": "Turns text into lifelike speech using advanced TTS technology."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Transcribe",
+      "service_url": "https://aws.amazon.com/transcribe/",
+      "description": "Uses automatic speech recognition (ASR) to convert speech to text."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Lex",
+      "service_url": "https://aws.amazon.com/lex/",
+      "description": "Build conversational interfaces for apps using voice and text."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Braket",
+      "service_url": "https://aws.amazon.com/braket/",
+      "description": "Accelerate quantum computing research with managed simulators."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS IAM",
+      "service_url": "https://aws.amazon.com/iam/",
+      "description": "Securely manage access to AWS services and resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Organizations",
+      "service_url": "https://aws.amazon.com/organizations/",
+      "description": "Centrally manage and govern multiple AWS accounts."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Security Hub",
+      "service_url": "https://aws.amazon.com/security-hub/",
+      "description": "Central dashboard to manage security and compliance posture."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS KMS",
+      "service_url": "https://aws.amazon.com/kms/",
+      "description": "Create and manage cryptographic keys to protect data."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Secrets Manager",
+      "service_url": "https://aws.amazon.com/secrets-manager/",
+      "description": "Rotate, manage, and retrieve database credentials and API keys."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon GuardDuty",
+      "service_url": "https://aws.amazon.com/guardduty/",
+      "description": "Threat detection service to monitor accounts and workloads."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Inspector",
+      "service_url": "https://aws.amazon.com/inspector/",
+      "description": "Automated vulnerability management for EC2 and Lambda."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS WAF",
+      "service_url": "https://aws.amazon.com/waf/",
+      "description": "Web application firewall to protect against common exploits."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Shield",
+      "service_url": "https://aws.amazon.com/shield/",
+      "description": "Managed DDoS protection for applications running on AWS."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Cognito",
+      "service_url": "https://aws.amazon.com/cognito/",
+      "description": "Secure user directory for sign-up and sign-in to web/mobile apps."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CloudFormation",
+      "service_url": "https://aws.amazon.com/cloudformation/",
+      "description": "Model and provision infrastructure using declarative templates."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodePipeline",
+      "service_url": "https://aws.amazon.com/codepipeline/",
+      "description": "Automates release pipelines for continuous delivery."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeBuild",
+      "service_url": "https://aws.amazon.com/codebuild/",
+      "description": "Managed build service that compiles and runs tests on code."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeDeploy",
+      "service_url": "https://aws.amazon.com/codedeploy/",
+      "description": "Automates deployments to EC2, Fargate, and Lambda."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Step Functions",
+      "service_url": "https://aws.amazon.com/step-functions/",
+      "description": "Visual workflows for orchestrating microservices and processes."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Amplify",
+      "service_url": "https://aws.amazon.com/amplify/",
+      "description": "Tools to build and deploy full-stack mobile and web apps."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Core",
+      "service_url": "https://aws.amazon.com/iot-core/",
+      "description": "Connects devices to the cloud and routes trillions of messages."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Greengrass",
+      "service_url": "https://aws.amazon.com/iot-greengrass/",
+      "description": "Edge runtime that allows devices to act locally on data."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT SiteWise",
+      "service_url": "https://aws.amazon.com/iot-sitewise/",
+      "description": "Collects and monitors data from industrial equipment at scale."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Elastic Beanstalk",
+      "service_url": "https://aws.amazon.com/elasticbeanstalk/",
+      "description": "Platform as a Service (PaaS) for deploying and scaling web applications and services."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "EC2 Image Builder",
+      "service_url": "https://aws.amazon.com/image-builder/",
+      "description": "Automates the creation, management, and deployment of customized server images."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Wavelength",
+      "service_url": "https://aws.amazon.com/wavelength/",
+      "description": "Delivers ultra-low latency applications for 5G devices by embedding AWS services at the edge."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Local Zones",
+      "service_url": "https://aws.amazon.com/about-aws/global-infrastructure/localzones/",
+      "description": "Places compute, storage, and database services close to large population and industry centers."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS SimSpace Weaver",
+      "service_url": "https://aws.amazon.com/simspaceweaver/",
+      "description": "Builds and runs large-scale spatial simulations in the cloud."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Serverless Application Repository",
+      "service_url": "https://aws.amazon.com/serverless/serverlessrepo/",
+      "description": "A managed repository for discovering, deploying, and publishing serverless applications."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Snowball Edge Compute Optimized",
+      "service_url": "https://aws.amazon.com/snowball/",
+      "description": "Provides secure, ruggedized devices for edge computing and data transfer in disconnected environments."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3 Glacier",
+      "service_url": "https://aws.amazon.com/s3/storage-classes/glacier/",
+      "description": "Low-cost storage classes for data archiving and long-term backup."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS DataSync",
+      "service_url": "https://aws.amazon.com/datasync/",
+      "description": "Simplifies and accelerates moving data between on-premises and AWS storage."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Storage Gateway",
+      "service_url": "https://aws.amazon.com/storagegateway/",
+      "description": "Hybrid cloud storage service providing on-premises access to virtually unlimited cloud storage."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3 Object Lambda",
+      "service_url": "https://aws.amazon.com/s3/features/object-lambda/",
+      "description": "Adds custom code to S3 GET requests to process data as it is retrieved."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Snowcone",
+      "service_url": "https://aws.amazon.com/snowcone/",
+      "description": "Small, ultra-portable, and secure edge computing and data transfer device."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3 Multi-Region Access Points",
+      "service_url": "https://aws.amazon.com/s3/features/multi-region-access-points/",
+      "description": "Provides a single global endpoint to access data stored in multiple S3 buckets."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS PrivateLink",
+      "service_url": "https://aws.amazon.com/privatelink/",
+      "description": "Provides private connectivity between VPCs, AWS services, and on-premises networks."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Network Firewall",
+      "service_url": "https://aws.amazon.com/network-firewall/",
+      "description": "Managed firewall service providing network protections for all VPCs."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Cloud Map",
+      "service_url": "https://aws.amazon.com/cloud-map/",
+      "description": "Cloud resource discovery service for microservices and API-based applications."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS App Mesh",
+      "service_url": "https://aws.amazon.com/app-mesh/",
+      "description": "Service mesh that provides application-level networking for microservices."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Client VPN",
+      "service_url": "https://aws.amazon.com/vpn/client-vpn/",
+      "description": "Managed client-based VPN service that enables secure access to AWS resources."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Cloud WAN",
+      "service_url": "https://aws.amazon.com/cloud-wan/",
+      "description": "Managed wide-area network service to connect your data centers and branch offices to AWS."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Verified Access",
+      "service_url": "https://aws.amazon.com/verified-access/",
+      "description": "Provides secure, corporate-grade access to applications without a VPN."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon ECS Anywhere",
+      "service_url": "https://aws.amazon.com/ecs/anywhere/",
+      "description": "Enables the management of container workloads on customer-managed infrastructure using the ECS API."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon EKS Anywhere",
+      "service_url": "https://aws.amazon.com/eks/eks-anywhere/",
+      "description": "Allows creation and operation of Kubernetes clusters on-premises with EKS consistency."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "AWS App2Container",
+      "service_url": "https://aws.amazon.com/app2container/",
+      "description": "Modernization tool that containerizes Java and .NET applications and deploys them to ECS or EKS."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "AWS Copilot",
+      "service_url": "https://aws.amazon.com/copilot/",
+      "description": "Command-line interface to build, release, and operate production-ready containerized applications."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Keyspaces",
+      "service_url": "https://aws.amazon.com/keyspaces/",
+      "description": "Scalable, highly available, and managed Apache Cassandra-compatible database service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon QLDB",
+      "service_url": "https://aws.amazon.com/qldb/",
+      "description": "Fully managed ledger database that provides a transparent, immutable transaction log."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon MemoryDB for Redis",
+      "service_url": "https://aws.amazon.com/memorydb/",
+      "description": "Redis-compatible, durable, in-memory database service for ultra-fast performance."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon ElastiCache",
+      "service_url": "https://aws.amazon.com/elasticache/",
+      "description": "In-memory caching service supporting Redis and Memcached."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Database Migration Service (DMS)",
+      "service_url": "https://aws.amazon.com/dms/",
+      "description": "Helps you migrate databases to AWS quickly and securely with minimal downtime."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Lake Formation",
+      "service_url": "https://aws.amazon.com/lake-formation/",
+      "description": "Simplifies setting up, securing, and managing a data lake."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon QuickSight",
+      "service_url": "https://aws.amazon.com/quicksight/",
+      "description": "Scalable, serverless, embeddable, ML-powered business intelligence (BI) service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon DataZone",
+      "service_url": "https://aws.amazon.com/datazone/",
+      "description": "Data management service to catalog, discover, and share data across organizational boundaries."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Clean Rooms",
+      "service_url": "https://aws.amazon.com/clean-rooms/",
+      "description": "Enables secure collaboration on collective datasets without sharing raw underlying data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon FinSpace",
+      "service_url": "https://aws.amazon.com/finspace/",
+      "description": "Analytics service designed specifically for the financial services industry."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Glue DataBrew",
+      "service_url": "https://aws.amazon.com/glue/features/databrew/",
+      "description": "Visual data preparation tool that makes it easy to clean and normalize data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Data Pipeline",
+      "service_url": "https://aws.amazon.com/datapipeline/",
+      "description": "Managed service that helps you process and move data between different AWS storage services."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon Managed Grafana",
+      "service_url": "https://aws.amazon.com/grafana/",
+      "description": "Fully managed service for open-source Grafana to visualize operational data."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon Managed Service for Prometheus",
+      "service_url": "https://aws.amazon.com/prometheus/",
+      "description": "Prometheus-compatible monitoring for container environments at scale."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon DevOps Guru",
+      "service_url": "https://aws.amazon.com/devops-guru/",
+      "description": "ML-powered service that identifies operational issues and recommends fixes."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Resilience Hub",
+      "service_url": "https://aws.amazon.com/resilience-hub/",
+      "description": "Provides a central place to define, track, and manage the resilience of your applications."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Fault Injection Simulator (FIS)",
+      "service_url": "https://aws.amazon.com/fis/",
+      "description": "Managed service for running fault injection experiments to improve application resilience."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "CloudWatch RUM",
+      "service_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM.html",
+      "description": "Real-user monitoring service that provides visibility into client-side application performance."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Comprehend",
+      "service_url": "https://aws.amazon.com/comprehend/",
+      "description": "Natural-language processing (NLP) service that uses ML to find insights in text."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Translate",
+      "service_url": "https://aws.amazon.com/translate/",
+      "description": "Neural machine translation service for fast and high-quality language translation."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Textract",
+      "service_url": "https://aws.amazon.com/textract/",
+      "description": "Automatically extracts text, handwriting, and data from scanned documents."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Kendra",
+      "service_url": "https://aws.amazon.com/kendra/",
+      "description": "Intelligent search service powered by machine learning."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Personalize",
+      "service_url": "https://aws.amazon.com/personalize/",
+      "description": "Enables developers to build applications with the same ML technology used by Amazon.com for recommendations."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Forecast",
+      "service_url": "https://aws.amazon.com/forecast/",
+      "description": "Time-series forecasting service based on machine learning."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Fraud Detector",
+      "service_url": "https://aws.amazon.com/fraud-detector/",
+      "description": "Fully managed service that makes it easy to identify potentially fraudulent online activities."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon HealthLake",
+      "service_url": "https://aws.amazon.com/healthlake/",
+      "description": "HIPAA-eligible service that enables healthcare providers to store and analyze health data at scale."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Panorama",
+      "service_url": "https://aws.amazon.com/panorama/",
+      "description": "SDK and appliance that brings computer vision to on-premises internet protocol (IP) cameras."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "AWS DeepRacer",
+      "service_url": "https://aws.amazon.com/deepracer/",
+      "description": "Cloud-based 3D racing simulator for learning reinforcement learning."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Directory Service",
+      "service_url": "https://aws.amazon.com/directoryservice/",
+      "description": "Enables your directory-aware workloads to use managed Active Directory in the cloud."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Resource Access Manager (RAM)",
+      "service_url": "https://aws.amazon.com/ram/",
+      "description": "Enables you to share AWS resources with any AWS account or within your Organization."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Certificate Manager (ACM)",
+      "service_url": "https://aws.amazon.com/certificate-manager/",
+      "description": "Provision, manage, and deploy public and private SSL/TLS certificates."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS CloudHSM",
+      "service_url": "https://aws.amazon.com/cloudhsm/",
+      "description": "Cloud-based hardware security module (HSM) that enables you to generate and use your own encryption keys."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Macie",
+      "service_url": "https://aws.amazon.com/macie/",
+      "description": "Data security and privacy service that uses ML to discover and protect sensitive data in S3."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Detective",
+      "service_url": "https://aws.amazon.com/detective/",
+      "description": "Simplifies the process of investigating security findings and identifying root causes."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Audit Manager",
+      "service_url": "https://aws.amazon.com/audit-manager/",
+      "description": "Helps you continuously audit your AWS usage to simplify how you assess risk and compliance."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS IAM Identity Center",
+      "service_url": "https://aws.amazon.com/iam/identity-center/",
+      "description": "Next-generation single sign-on (SSO) service for multi-account management."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Service Catalog",
+      "service_url": "https://aws.amazon.com/servicecatalog/",
+      "description": "Allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeArtifact",
+      "service_url": "https://aws.amazon.com/codeartifact/",
+      "description": "Fully managed artifact repository service that makes it easy to store and share software packages."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeCommit",
+      "service_url": "https://aws.amazon.com/codecommit/",
+      "description": "Secure, highly scalable, managed source control service that hosts private Git repositories."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Cloud9",
+      "service_url": "https://aws.amazon.com/cloud9/",
+      "description": "Cloud-based integrated development environment (IDE) for writing, running, and debugging code."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CloudShell",
+      "service_url": "https://aws.amazon.com/cloudshell/",
+      "description": "Browser-based shell that makes it easy to securely manage, explore, and interact with AWS resources."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeCatalyst",
+      "service_url": "https://aws.amazon.com/codecatalyst/",
+      "description": "Unified software development service for building and delivering applications on AWS."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS AppConfig",
+      "service_url": "https://aws.amazon.com/appconfig/",
+      "description": "Enables you to create, manage, and quickly deploy application configurations."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS AppSync",
+      "service_url": "https://aws.amazon.com/appsync/",
+      "description": "Serverless GraphQL and Pub/Sub API service that simplifies application development."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Device Management",
+      "service_url": "https://aws.amazon.com/iot-device-management/",
+      "description": "Enables you to securely register, organize, monitor, and remotely manage IoT devices at scale."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Device Defender",
+      "service_url": "https://aws.amazon.com/iot-device-defender/",
+      "description": "Security service that allows you to audit the configurations of your IoT devices."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Events",
+      "service_url": "https://aws.amazon.com/iot-events/",
+      "description": "Makes it easy to detect and respond to events from IoT sensors and applications."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Analytics",
+      "service_url": "https://aws.amazon.com/iot-analytics/",
+      "description": "Fully managed service that makes it easy to run and operationalize sophisticated analytics on IoT data."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS RoboMaker",
+      "service_url": "https://aws.amazon.com/robomaker/",
+      "description": "Provides a comprehensive solution for robotics simulation and application development."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "FreeRTOS",
+      "service_url": "https://aws.amazon.com/freertos/",
+      "description": "Real-time operating system for microcontrollers that makes small, low-power edge devices easy to program."
+    }
+  ]
+}
