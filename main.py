@@ -148,12 +148,19 @@ async def main():
         synthesis_by_domain[domain].append(item["result"]["synthesis"])
 
     # Generate the consolidated management summary
-    management_summary = await synthesizer.generate_management_summary(
-        synthesis_by_domain
-    )
+    suffix = "_test" if test_mode else ""
+    management_summary_key = f"management_summary_{csp_a}_{csp_b}{suffix}"
+    management_summary = cache.get(management_summary_key)
+
     if not management_summary:
-        logger.warning("Management summary generation failed.")
-        management_summary = {} # Ensure it's a dict to avoid template errors
+        management_summary = await synthesizer.generate_management_summary(
+            synthesis_by_domain
+        )
+        if management_summary:
+            cache.set(management_summary_key, management_summary)
+        else:
+            logger.warning("Management summary generation failed.")
+            management_summary = {} # Ensure it's a dict to avoid template errors
 
     # --- Phase 6: Visualization ---
     visualizer = DashboardGenerator()
