@@ -1,0 +1,514 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "Amazon EC2",
+      "service_url": "https://docs.aws.amazon.com/ec2/",
+      "description": "Sichere und anpassbare Rechenkapazität in der Cloud (Nitro-System)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Amazon EC2 Auto Scaling",
+      "service_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+      "description": "Automatische Anpassung der Rechenkapazität zur Aufrechterhaltung der Leistung."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Lambda",
+      "service_url": "https://docs.aws.amazon.com/lambda/",
+      "description": "Serverloses Ausführen von Code als Reaktion auf Ereignisse."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Batch",
+      "service_url": "https://docs.aws.amazon.com/batch/",
+      "description": "Vollständig verwalteter Batch-Verarbeitungsdienst."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "EC2 Image Builder",
+      "service_url": "https://docs.aws.amazon.com/imagebuilder/",
+      "description": "Automatisierung der Erstellung und Verwaltung von VM-Images."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Step Functions",
+      "service_url": "https://docs.aws.amazon.com/step-functions/",
+      "description": "Serverlose Orchestrierung für moderne Anwendungen."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon S3",
+      "service_url": "https://docs.aws.amazon.com/s3/",
+      "description": "Objektspeicher mit Datenresidenz in der Sovereign Cloud."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon EBS",
+      "service_url": "https://docs.aws.amazon.com/ebs/",
+      "description": "Persistenter Block-Speicher für die Nutzung mit EC2."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Amazon EFS",
+      "service_url": "https://docs.aws.amazon.com/efs/",
+      "description": "Serverloses, elastisches Dateisystem."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Backup",
+      "service_url": "https://docs.aws.amazon.com/aws-backup/",
+      "description": "Zentralisierte Backup-Verwaltung für AWS-Dienste."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon VPC",
+      "service_url": "https://docs.aws.amazon.com/vpc/",
+      "description": "Logisch isoliertes virtuelles Netzwerk."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Elastic Load Balancing (ELB)",
+      "service_url": "https://docs.aws.amazon.com/elasticloadbalancing/",
+      "description": "Verteilung des eingehenden Datenverkehrs auf mehrere Ziele."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Transit Gateway",
+      "service_url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "description": "Verbindet VPCs und On-Premises-Netzwerke über einen zentralen Hub."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS PrivateLink",
+      "service_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+      "description": "Sicherer Zugriff auf Dienste über private IP-Adressen."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Amazon Route 53 Resolver",
+      "service_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-getting-started.html",
+      "description": "DNS-Auflösung innerhalb der VPC (Lokale Zone)."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon EKS",
+      "service_url": "https://docs.aws.amazon.com/eks/",
+      "description": "Managed Kubernetes Service."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon ECS",
+      "service_url": "https://docs.aws.amazon.com/ecs/",
+      "description": "Hochskalierbare Container-Verwaltung."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Amazon ECR",
+      "service_url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html",
+      "description": "Container-Registry zum Speichern und Verwalten von Docker-Images."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "AWS Fargate",
+      "service_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+      "description": "Serverlose Compute-Engine für Container."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Aurora",
+      "service_url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+      "description": "Relationale Datenbank kompatibel mit MySQL und PostgreSQL."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon RDS",
+      "service_url": "https://docs.aws.amazon.com/rds/",
+      "description": "Verwalteter Dienst für relationale Datenbanken."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon DynamoDB",
+      "service_url": "https://docs.aws.amazon.com/dynamodb/",
+      "description": "Schnelle und flexible NoSQL-Datenbank."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon ElastiCache",
+      "service_url": "https://docs.aws.amazon.com/elasticache/",
+      "description": "In-Memory-Datenspeicher für Redis und Memcached."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Redshift",
+      "service_url": "https://docs.aws.amazon.com/redshift/",
+      "description": "Schnelles, einfaches und kostengünstiges Data Warehousing."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon EMR",
+      "service_url": "https://docs.aws.amazon.com/emr/",
+      "description": "Big-Data-Plattform für die Verarbeitung riesiger Datenmengen."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon OpenSearch Service",
+      "service_url": "https://docs.aws.amazon.com/opensearch-service/",
+      "description": "Verwalteter Cluster für Suche und Analyse."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon MSK",
+      "service_url": "https://docs.aws.amazon.com/msk/",
+      "description": "Managed Streaming for Apache Kafka."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Glue",
+      "service_url": "https://docs.aws.amazon.com/glue/",
+      "description": "Serverloser Datenintegrationsdienst (ETL)."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Athena",
+      "service_url": "https://docs.aws.amazon.com/athena/",
+      "description": "Interaktiver Abfrageservice für S3-Daten mittels SQL."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Kinesis Data Streams",
+      "service_url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+      "description": "Echtzeit-Datenstreaming-Service."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon SNS",
+      "service_url": "https://docs.aws.amazon.com/sns/",
+      "description": "Verwalteter Nachrichtendienst (Pub/Sub)."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon SQS",
+      "service_url": "https://docs.aws.amazon.com/sqs/",
+      "description": "Verwalteter Nachrichtenwarteschlangen-Dienst."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon EventBridge",
+      "service_url": "https://docs.aws.amazon.com/eventbridge/",
+      "description": "Serverloser Event-Bus."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon Bedrock",
+      "service_url": "https://docs.aws.amazon.com/bedrock/",
+      "description": "Erstellen von Generative-AI-Anwendungen mit Foundation Models."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Amazon SageMaker",
+      "service_url": "https://docs.aws.amazon.com/sagemaker/",
+      "description": "Erstellen, Trainieren und Bereitstellen von ML-Modellen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS IAM",
+      "service_url": "https://docs.aws.amazon.com/iam/",
+      "description": "Identity and Access Management (Isoliert für ESC)."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS KMS",
+      "service_url": "https://docs.aws.amazon.com/kms/",
+      "description": "Verwaltung kryptografischer Schlüssel."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS CloudTrail",
+      "service_url": "https://docs.aws.amazon.com/awscloudtrail/",
+      "description": "Verfolgung von Benutzeraktivitäten und API-Nutzung."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Config",
+      "service_url": "https://docs.aws.amazon.com/config/",
+      "description": "Bewertung und Prüfung von Ressourcenkonfigurationen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon GuardDuty",
+      "service_url": "https://docs.aws.amazon.com/guardduty/",
+      "description": "Bedrohungserkennung zum Schutz von AWS-Konten."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Security Hub",
+      "service_url": "https://docs.aws.amazon.com/securityhub/",
+      "description": "Zentrales Dashboard für Sicherheitswarnungen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Secrets Manager",
+      "service_url": "https://docs.aws.amazon.com/secretsmanager/",
+      "description": "Rotation, Verwaltung und Abruf von Datenbankanmeldeinformationen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS WAF",
+      "service_url": "https://docs.aws.amazon.com/waf/",
+      "description": "Web Application Firewall zum Schutz vor Exploits."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Shield",
+      "service_url": "https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html",
+      "description": "Schutz vor DDoS-Angriffen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Organizations",
+      "service_url": "https://docs.aws.amazon.com/organizations/",
+      "description": "Zentrale Verwaltung und Governance für mehrere AWS-Konten."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon CloudWatch",
+      "service_url": "https://docs.aws.amazon.com/cloudwatch/",
+      "description": "Überwachung von Ressourcen und Anwendungen."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "AWS Health Dashboard",
+      "service_url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html",
+      "description": "Informationen zum Status von AWS-Diensten."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CloudFormation",
+      "service_url": "https://docs.aws.amazon.com/cloudformation/",
+      "description": "Modellierung und Bereitstellung von Ressourcen (IaC)."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeBuild",
+      "service_url": "https://docs.aws.amazon.com/codebuild/",
+      "description": "Erstellen und Testen von Code."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodeDeploy",
+      "service_url": "https://docs.aws.amazon.com/codedeploy/",
+      "description": "Automatisierung von Codebereitstellungen."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CodePipeline",
+      "service_url": "https://docs.aws.amazon.com/codepipeline/",
+      "description": "Orchestrierung von Release-Pipelines."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS X-Ray",
+      "service_url": "https://docs.aws.amazon.com/xray/",
+      "description": "Analyse und Debugging verteilter Anwendungen."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "AWS IoT Core",
+      "service_url": "https://docs.aws.amazon.com/iot/",
+      "description": "Verbindung von IoT-Geräten mit der Cloud."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Direct Connect",
+      "service_url": "https://docs.aws.amazon.com/directconnect/",
+      "description": "Dedizierte Netzwerkverbindung von On-Premises zur Sovereign Cloud."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Site-to-Site VPN",
+      "service_url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+      "description": "Verschlüsselte Verbindung zwischen dem lokalen Netzwerk und der VPC."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Client VPN",
+      "service_url": "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html",
+      "description": "Sicherer Fernzugriff auf AWS-Ressourcen für mobile Mitarbeiter."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Network Firewall",
+      "service_url": "https://docs.aws.amazon.com/network-firewall/",
+      "description": "Verwaltete Firewall für VPCs zum Schutz vor Netzwerkbedrohungen."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "AWS Cloud Map",
+      "service_url": "https://docs.aws.amazon.com/cloud-map/",
+      "description": "Ressourcenerkennung für Cloud-Anwendungen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Systems Manager",
+      "service_url": "https://docs.aws.amazon.com/systems-manager/",
+      "description": "Zentrale Sicht und operative Kontrolle über Infrastruktur (Patching, Automation)."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Trusted Advisor",
+      "service_url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "description": "Echtzeit-Empfehlungen zur Optimierung der AWS-Umgebung."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Inspector",
+      "service_url": "https://docs.aws.amazon.com/inspector/",
+      "description": "Automatisiertes Sicherheitsbewertungs-Tool für EC2 und ECR."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Amazon Macie",
+      "service_url": "https://docs.aws.amazon.com/macie/",
+      "description": "Datensicherheit und Datenschutzdienst (Erkennung sensibler Daten in S3)."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Certificate Manager (ACM)",
+      "service_url": "https://docs.aws.amazon.com/acm/",
+      "description": "Bereitstellung und Verwaltung von SSL/TLS-Zertifikaten."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Audit Manager",
+      "service_url": "https://docs.aws.amazon.com/audit-manager/",
+      "description": "Unterstützung bei der kontinuierlichen Prüfung der AWS-Nutzung."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Artifact",
+      "service_url": "https://docs.aws.amazon.com/artifact/",
+      "description": "Self-Service-Portal für Compliance-Berichte."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Service Catalog",
+      "service_url": "https://docs.aws.amazon.com/servicecatalog/",
+      "description": "Erstellung und Verwaltung von IT-Service-Katalogen für Organisationen."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Control Tower",
+      "service_url": "https://docs.aws.amazon.com/controltower/",
+      "description": "Einrichtung und Governance einer sicheren Multi-Account-AWS-Umgebung."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Resource Access Manager (RAM)",
+      "service_url": "https://docs.aws.amazon.com/ram/",
+      "description": "Sicheres Teilen von AWS-Ressourcen über Konten hinweg."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS Firewall Manager",
+      "service_url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html",
+      "description": "Zentrale Verwaltung von Firewall-Regeln über Konten hinweg."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "AWS License Manager",
+      "service_url": "https://docs.aws.amazon.com/license-manager/",
+      "description": "Verwaltung von Softwarelizenzen von Anbietern wie Microsoft, SAP, Oracle."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS DataSync",
+      "service_url": "https://docs.aws.amazon.com/datasync/",
+      "description": "Online-Datenübertragungsservice (On-Premises zu AWS Storage)."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "AWS Transfer Family",
+      "service_url": "https://docs.aws.amazon.com/transfer/",
+      "description": "Vollständig verwaltete SFTP-, FTPS- und FTP-Unterstützung für S3."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Database Migration Service (DMS)",
+      "service_url": "https://docs.aws.amazon.com/dms/",
+      "description": "Migration von Datenbanken zu AWS mit minimaler Ausfallzeit."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Kinesis Data Firehose",
+      "service_url": "https://docs.aws.amazon.com/firehose/",
+      "description": "Laden von Streaming-Daten in Data Lakes und Analysedienste."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Lake Formation",
+      "service_url": "https://docs.aws.amazon.com/lake-formation/",
+      "description": "Einrichtung eines sicheren Data Lakes in Tagen."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "AWS Glue DataBrew",
+      "service_url": "https://docs.aws.amazon.com/databrew/",
+      "description": "Visuelles Datenvorbereitungstool für Analysten und Data Scientists."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon Managed Service for Apache Flink",
+      "service_url": "https://docs.aws.amazon.com/managed-flink/",
+      "description": "Verarbeitung von Datenströmen in Echtzeit."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Amazon MQ",
+      "service_url": "https://docs.aws.amazon.com/amazon-mq/",
+      "description": "Verwalteter Message-Broker-Dienst für Apache ActiveMQ und RabbitMQ."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Application Auto Scaling",
+      "service_url": "https://docs.aws.amazon.com/autoscaling/application/",
+      "description": "Skalierung von Ressourcen jenseits von EC2 (z.B. DynamoDB, ECS)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AWS Compute Optimizer",
+      "service_url": "https://docs.aws.amazon.com/compute-optimizer/",
+      "description": "Empfehlungen für optimale AWS-Ressourcen basierend auf Nutzungsdaten."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon Managed Grafana",
+      "service_url": "https://docs.aws.amazon.com/grafana/",
+      "description": "Vollständig verwalteter Dienst für Grafana-Dashboards."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Amazon Managed Service for Prometheus",
+      "service_url": "https://docs.aws.amazon.com/prometheus/",
+      "description": "Prometheus-kompatibler Monitoring-Dienst für Container."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS CloudShell",
+      "service_url": "https://docs.aws.amazon.com/cloudshell/",
+      "description": "Browserbasierte Shell für die Verwaltung von AWS-Ressourcen."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS Well-Architected Tool",
+      "service_url": "https://docs.aws.amazon.com/wellarchitected/",
+      "description": "Überprüfung von Workloads anhand von Architektur-Best-Practices."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "AWS AppConfig",
+      "service_url": "https://docs.aws.amazon.com/appconfig/",
+      "description": "Erstellung, Verwaltung und Bereitstellung von Anwendungskonfigurationen."
+    }
+  ]
+}
