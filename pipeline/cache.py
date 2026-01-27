@@ -56,7 +56,4 @@ class CacheManager:
             return False
         if isinstance(data, dict) and not data:
             return False
-        # Specific check for service_map format
-        if 'items' in data and not isinstance(data['items'], list):
-            return False
         return True
