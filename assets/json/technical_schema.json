@@ -18,7 +18,11 @@
       "maximum": 10,
       "description": "Score based purely on quality/features. -10 (B worse) to +10 (B better)."
     },
-    "technical_reasoning": { "type": "string" }
+    "technical_reasoning": { "type": "string" },
+    "open_standard": {
+      "type": "string",
+      "description": "Whether the service is a proprietary service or based on an open standard and can be operated somewhere else. Explain your reasoning."
+    }
   },
-  "required": ["service_pair_id", "maturity_analysis", "integration_quality", "technical_score", "technical_reasoning"]
+  "required": ["service_pair_id", "maturity_analysis", "integration_quality", "technical_score", "technical_reasoning", "open_standard"]
 }

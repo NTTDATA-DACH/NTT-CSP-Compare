@@ -41,7 +41,8 @@ class TechnicalAnalyst:
                 "integration_quality": {
                     "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
                 },
-                "technical_score": 9.5
+                "technical_score": 9.5,
+                "open_standard": "This is a mock open standard analysis."
             }
 
         prompt_config = self.prompts["technical_prompt"]
