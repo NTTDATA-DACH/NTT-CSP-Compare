@@ -19,7 +19,8 @@ mock_technical_data = {
     "integration_quality": {
         "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
     },
-    "technical_score": 9.5
+    "technical_score": 9.5,
+    "open_standard": "This is a mock open standard analysis."
 }
 
 mock_pricing_data = {

@@ -93,6 +93,7 @@
                         <th>{{ csp_b }} Service</th>
                         <th>Technical Score</th>
                         <th>Cost Score</th>
+                        <th>Open Standard</th>
                         <th>Analysis</th>
                     </tr>
                 </thead>
@@ -113,6 +114,7 @@
                         <td class="score {{ 'score-positive' if service.result.pricing_data.cost_efficiency_score > 0 else 'score-negative' if service.result.pricing_data.cost_efficiency_score < 0 else 'score-neutral' }}">
                             {{ service.result.pricing_data.cost_efficiency_score }}
                         </td>
+                        <td>{{ service.result.technical_data.open_standard }}</td>
                         <td>
                             <details>
                                 <summary>View Details</summary>
