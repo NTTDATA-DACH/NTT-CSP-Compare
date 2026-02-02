@@ -50,15 +50,22 @@ class DashboardGenerator:
             if results
             else []
         )
+        lockin_scores = (
+            [r["result"]["technical_data"]["lockin_analysis"]["lockin_score"] for r in results]
+            if results
+            else []
+        )
 
         avg_technical = sum(tech_scores) / total_compared if total_compared else 0
         avg_price = sum(price_scores) / total_compared if total_compared else 0
+        avg_lockin = sum(lockin_scores) / total_compared if total_compared else 0
 
         # Group by Domain
         services_by_domain = {}
         domain_scores = {}
         domain_scores_tech = {}
         domain_scores_cost = {}
+        domain_scores_lockin = {}
 
         for item in results:
             domain = item["map"].get("domain", "Uncategorized")
@@ -75,17 +82,22 @@ class DashboardGenerator:
             d_price = sum(
                 [i["result"]["pricing_data"]["cost_efficiency_score"] for i in items]
             )
+            d_lockin = sum(
+                [i["result"]["technical_data"]["lockin_analysis"]["lockin_score"] for i in items]
+            )
 
             avg_combined = (d_tech + d_price) / (2 * count) if count > 0 else 0
             domain_scores[domain] = round(avg_combined, 2)
 
             domain_scores_tech[domain] = round(d_tech / count, 2) if count > 0 else 0
             domain_scores_cost[domain] = round(d_price / count, 2) if count > 0 else 0
+            domain_scores_lockin[domain] = round(d_lockin / count, 2) if count > 0 else 0
 
         # Prepare data for Chart.js spider web graph
         chart_labels = list(services_by_domain.keys())
         chart_tech_data = [domain_scores_tech[d] for d in chart_labels]
         chart_cost_data = [domain_scores_cost[d] for d in chart_labels]
+        chart_lockin_data = [domain_scores_lockin[d] for d in chart_labels]
 
         domain_scores_chart_data = {
             "labels": json.dumps(chart_labels),
@@ -105,6 +117,14 @@ class DashboardGenerator:
                     "backgroundColor": "rgba(255, 99, 132, 0.2)",
                     "borderColor": "rgb(255, 99, 132)",
                     "pointBackgroundColor": "rgb(255, 99, 132)",
+                },
+                {
+                    "label": f"LockIn Score ({csp_b} vs {csp_a})",
+                    "data": json.dumps(chart_lockin_data),
+                    "fill": True,
+                    "backgroundColor": "rgba(255, 205, 86, 0.2)",
+                    "borderColor": "rgb(255, 205, 86)",
+                    "pointBackgroundColor": "rgb(255, 205, 86)",
                 },
             ],
         }
@@ -142,6 +162,7 @@ class DashboardGenerator:
             total_compared=total_compared,
             avg_technical_score=round(avg_technical, 2),
             avg_cost_score=round(avg_price, 2),
+            avg_lockin_score=round(avg_lockin, 2),
             services_by_domain=services_by_domain,
             domain_scores=domain_scores,
             domain_scores_chart_data=domain_scores_chart_data,

@@ -43,7 +43,8 @@ class ServiceMapper:
                  return {
                     "services": [
                         {"service_name": "Compute Engine", "service_url": "https://cloud.google.com/compute/", "description": "Virtual Machines Running in Google's Data Center"},
-                        {"service_name": "Cloud Storage", "service_url": "https://cloud.google.com/storage/", "description": "Object Storage for Companies of All Sizes"}
+                        {"service_name": "Cloud Storage", "service_url": "https://cloud.google.com/storage/", "description": "Object Storage for Companies of All Sizes"},
+                        {"service_name": "Virtual Private Cloud", "service_url": "https://cloud.google.com/vpc/", "description": "Managed Networking for Your Google Cloud Resources"}
                     ]
                 }
 
@@ -151,6 +152,13 @@ class ServiceMapper:
                         "csp_a_service_name": "RDS",
                         "csp_a_url": "https://aws.amazon.com/rds/",
                         "csp_b_service_name": ""
+                    },
+                    {
+                        "domain": "Networking",
+                        "csp_a_service_name": "VPC",
+                        "csp_a_url": "https://aws.amazon.com/vpc/",
+                        "csp_b_service_name": "Virtual Private Cloud",
+                        "csp_b_url": "https://cloud.google.com/vpc/"
                     }
                 ]
             }

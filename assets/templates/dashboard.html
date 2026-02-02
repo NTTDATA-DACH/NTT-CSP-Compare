@@ -71,6 +71,10 @@
                 <div class="stat-value">{{ avg_cost_score }}</div>
                 <div>Avg Cost Efficiency (Positive = {{ csp_b }} cheaper)</div>
             </div>
+            <div class="stat-box">
+                <div class="stat-value">{{ avg_lockin_score }}</div>
+                <div>Avg LockIn Score (Positive = {{ csp_b }} better)</div>
+            </div>
         </div>
 
         <h3>Domain Scores Overview</h3>
@@ -93,7 +97,7 @@
                         <th>{{ csp_b }} Service</th>
                         <th>Technical Score</th>
                         <th>Cost Score</th>
-                        <th>Open Standard</th>
+                        <th>LockIn Score</th>
                         <th>Analysis</th>
                     </tr>
                 </thead>
@@ -114,12 +118,15 @@
                         <td class="score {{ 'score-positive' if service.result.pricing_data.cost_efficiency_score > 0 else 'score-negative' if service.result.pricing_data.cost_efficiency_score < 0 else 'score-neutral' }}">
                             {{ service.result.pricing_data.cost_efficiency_score }}
                         </td>
-                        <td>{{ service.result.technical_data.open_standard }}</td>
+                        <td class="score {{ 'score-positive' if service.result.technical_data.lockin_analysis.lockin_score > 0 else 'score-negative' if service.result.technical_data.lockin_analysis.lockin_score < 0 else 'score-neutral' }}">
+                            {{ service.result.technical_data.lockin_analysis.lockin_score }}
+                        </td>
                         <td>
                             <details>
                                 <summary>View Details</summary>
                                 <div style="padding: 10px; background: #fafafa;">
                                     <strong>Technical:</strong> {{ service.result.technical_data.technical_reasoning }}<br><br>
+                                    <strong>Lock-in:</strong> {{ service.result.technical_data.lockin_analysis.lockin_reasoning }}<br><br>
                                     <strong>Pricing:</strong> {{ service.result.pricing_data.pricing_reasoning }}<br><br>
                                     <strong>Synthesis:</strong> {{ service.result.synthesis.detailed_comparison | safe }}
                                 </div>
@@ -166,6 +173,14 @@
                     backgroundColor: '{{ domain_scores_chart_data.datasets[1].backgroundColor }}',
                     borderColor: '{{ domain_scores_chart_data.datasets[1].borderColor }}',
                     pointBackgroundColor: '{{ domain_scores_chart_data.datasets[1].pointBackgroundColor }}',
+                },
+                {
+                    label: '{{ domain_scores_chart_data.datasets[2].label }}',
+                    data: JSON.parse('{{ domain_scores_chart_data.datasets[2].data | safe }}'),
+                    fill: true,
+                    backgroundColor: '{{ domain_scores_chart_data.datasets[2].backgroundColor }}',
+                    borderColor: '{{ domain_scores_chart_data.datasets[2].borderColor }}',
+                    pointBackgroundColor: '{{ domain_scores_chart_data.datasets[2].pointBackgroundColor }}',
                 }
             ]
         };

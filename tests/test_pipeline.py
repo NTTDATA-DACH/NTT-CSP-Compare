@@ -20,7 +20,11 @@ mock_technical_data = {
         "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
     },
     "technical_score": 9.5,
-    "open_standard": "This is a mock open standard analysis."
+    "technical_reasoning": "This is a mock reasoning.",
+    "lockin_analysis": {
+        "lockin_score": 5,
+        "lockin_reasoning": "This is a mock lock-in reasoning."
+    }
 }
 
 mock_pricing_data = {
