@@ -9,7 +9,7 @@ MAX_CONCURRENT_REQUESTS = 10
 
 # File Paths
 PROMPT_CONFIG_PATH = "assets/json/prompt_config.json"
-SERVICE_MAP_SINGLE_SCHEMA_PATH = "assets/json/service_map_single_schema.json"
+SERVICE_MAP_BATCH_SCHEMA_PATH = "assets/json/service_map_batch_schema.json"
 SERVICE_LIST_SCHEMA_PATH = "assets/json/service_list_schema.json"
 TECHNICAL_SCHEMA_PATH = "assets/json/technical_schema.json"
 PRICING_SCHEMA_PATH = "assets/json/pricing_schema.json"
