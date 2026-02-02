@@ -19,10 +19,22 @@
       "description": "Score based purely on quality/features. -10 (B worse) to +10 (B better)."
     },
     "technical_reasoning": { "type": "string" },
-    "open_standard": {
-      "type": "string",
-      "description": "Whether the service is a proprietary service or based on an open standard and can be operated somewhere else. Explain your reasoning."
+    "lockin_analysis": {
+      "type": "object",
+      "properties": {
+        "lockin_score": {
+          "type": "number",
+          "minimum": -10,
+          "maximum": 10,
+          "description": "Score based on vendor lock-in. -10 (high lock-in) to +10 (low lock-in)."
+        },
+        "lockin_reasoning": {
+          "type": "string",
+          "description": "Explanation of the lock-in score, considering factors like proprietary APIs, data portability, and open standards."
+        }
+      },
+      "required": ["lockin_score", "lockin_reasoning"]
     }
   },
-  "required": ["service_pair_id", "maturity_analysis", "integration_quality", "technical_score", "technical_reasoning", "open_standard"]
+  "required": ["service_pair_id", "maturity_analysis", "integration_quality", "technical_score", "technical_reasoning", "lockin_analysis"]
 }

@@ -128,7 +128,7 @@ async def main():
 
     items = service_map.get("items", [])
     if test_mode:
-        items = items[:3]
+        items = items[:4]
         logger.info(f"Test mode: limiting to {len(items)} services.")
 
     # --- Phase 2, 3, 4: Analysis, Pricing, Synthesis ---
