@@ -81,16 +81,24 @@ async def main():
     parser.add_argument("--csp-a", required=True, help="First CSP (e.g., AWS)")
     parser.add_argument("--csp-b", required=True, help="Second CSP (e.g., GCP)")
     parser.add_argument("--test", action="store_true", help="Run in test mode (limit to 3 services)")
+    parser.add_argument("--clear-cache", action="store_true", help="Clear the cache before running")
     args = parser.parse_args()
 
     csp_a = args.csp_a
     csp_b = args.csp_b
     test_mode = args.test or Config.TEST_MODE
 
-    logger.info(f"Starting pipeline: {csp_a} vs {csp_b} (Test Mode: {test_mode})")
-
     # Initialize cache manager
     cache = CacheManager()
+
+    if args.clear_cache:
+        logger.info("Clearing cache...")
+        cache.clear()
+        logger.info("Cache cleared.")
+
+
+    logger.info(f"Starting pipeline: {csp_a} vs {csp_b} (Test Mode: {test_mode})")
+
     os.makedirs("public", exist_ok=True)
 
 
