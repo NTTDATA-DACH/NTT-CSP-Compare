@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import time
+import shutil
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +28,9 @@ class CacheManager:
 
             with open(filepath, "r") as f:
                 data = json.load(f)
-                if not self.is_valid(data):
-                    logger.warning(f"Invalid cached data for {key}")
+                # Inline validation check
+                if data is None or (isinstance(data, (list, dict)) and not data):
+                    logger.warning(f"Invalid cached data found for {key}, ignoring.")
                     return None
                 logger.info(f"Using cached data for {key}")
                 return data
@@ -37,8 +39,9 @@ class CacheManager:
             return None
 
     def set(self, key, data):
-        if not self.is_valid(data):
-            logger.warning(f"Skipping cache for {key} due to invalid data.")
+        # Inline validation check
+        if data is None or (isinstance(data, (list, dict)) and not data):
+            logger.warning(f"Skipping cache for {key} due to invalid data (None or empty).")
             return
 
         filepath = self._get_filepath(key)
@@ -49,11 +52,7 @@ class CacheManager:
         except OSError as e:
             logger.error(f"Failed to write cache to {filepath}: {e}")
 
-    def is_valid(self, data):
-        if not data:
-            return False
-        if isinstance(data, list) and len(data) == 0:
-            return False
-        if isinstance(data, dict) and not data:
-            return False
-        return True
+    def clear(self):
+        if os.path.exists(self.cache_dir):
+            shutil.rmtree(self.cache_dir)
+            os.makedirs(self.cache_dir, exist_ok=True)
