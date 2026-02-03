@@ -58,28 +58,10 @@ class ServiceMapper:
                     return json.load(f)
             except Exception as e:
                 logger.error(f"Error loading local service list for {csp}: {e}")
-                # Fallback to API if file load fails
-
-        logger.info(f"Getting service list for {csp} using {self.model_name}")
-
-        prompt_config = self.prompts["service_list_prompt"]
-        system_instruction = prompt_config["system_instruction"]
-        user_content = prompt_config["user_template"].format(csp=csp)
-
-        try:
-            response = await self.client.generate_content(
-                model_name=self.model_name,
-                user_content=user_content,
-                system_instruction=system_instruction,
-                schema=self.service_list_schema
-            )
-            if response is None:
-                logger.error(f"Received None response from GeminiClient for {csp}")
-                return None
-            return response
-        except Exception as e:
-            logger.error(f"Error getting service list for {csp}: {e}")
-            return None
+                return {"services": []}
+        else:
+            logger.error(f"Local service list file not found for {csp}: {file_path}")
+            return {"services": []}
 
     async def _map_batch_services(self, services_a_chunk: list, services_b: list, csp_a: str, csp_b: str, semaphore: asyncio.Semaphore) -> list:
         """

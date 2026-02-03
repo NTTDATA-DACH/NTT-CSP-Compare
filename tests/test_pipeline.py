@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch, MagicMock, AsyncMock
+from unittest.mock import patch, MagicMock, AsyncMock, mock_open
 import json
 import os
 import asyncio
@@ -45,12 +45,13 @@ expected_synthesis = {
 
 class TestPipeline(unittest.IsolatedAsyncioTestCase):
     @patch("builtins.open")
-    async def test_discovery(self, mock_open):
-        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
+    async def test_discovery(self, mock_open_func):
+        # Configure the mock to return valid JSON for calls to load assets
+        mock_open_func.return_value.__enter__.return_value.read.return_value = "{}"
+
         with patch('pipeline.discovery.Config.TEST_MODE', True):
             mapper = ServiceMapper()
-            # In test mode, discover_services returns a hardcoded mock object.
-            # The client is not used, so we don't need to mock it.
+            # In test mode, get_service_list returns a hardcoded mock object.
             services_a = await mapper.get_service_list("AWS")
             services_b = await mapper.get_service_list("GCP")
             result = await mapper.map_services("AWS", "GCP", services_a['services'], services_b['services'])
@@ -58,6 +59,31 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             # Verify that the mock data is returned
             self.assertIn("items", result)
             self.assertEqual(result["items"][0]["csp_a_service_name"], "EC2")
+
+    @patch("builtins.open", new_callable=mock_open, read_data='{"services": [{"service_name": "S3", "domain": "Storage", "service_url": "url", "description": "desc"}]}')
+    @patch("os.path.exists", return_value=True)
+    async def test_discovery_load_from_file(self, mock_exists, mock_file):
+         with patch('pipeline.discovery.Config.TEST_MODE', False):
+            mapper = ServiceMapper()
+            # Test that we load from file when not in test mode
+            services = await mapper.get_service_list("AWS")
+            self.assertEqual(services["services"][0]["service_name"], "S3")
+            # Verify file path was constructed correctly
+            expected_path = "assets/json/hyperscaler/service_list_AWS.json"
+            # We can't easily assert on the exact call args because open is called multiple times in __init__
+            # But the result confirms it read our mock data
+
+    @patch("builtins.open")
+    @patch("os.path.exists", return_value=False)
+    async def test_discovery_file_missing(self, mock_exists, mock_open_func):
+        # Mock open for asset loading in __init__
+        mock_open_func.return_value.__enter__.return_value.read.return_value = "{}"
+
+        with patch('pipeline.discovery.Config.TEST_MODE', False):
+            mapper = ServiceMapper()
+            # Test that we return empty list if file is missing
+            services = await mapper.get_service_list("AWS")
+            self.assertEqual(services, {"services": []})
 
     async def test_analyzer_test_mode(self):
         # Patch TEST_MODE in the module where it is checked
@@ -78,9 +104,9 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(result, expected_data)
 
     @patch("builtins.open")
-    async def test_synthesizer(self, mock_open):
+    async def test_synthesizer(self, mock_open_func):
         # This test now validates that TEST_MODE returns the correct mock data.
-        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
+        mock_open_func.return_value.__enter__.return_value.read.return_value = "{}"
         with patch("pipeline.synthesizer.Config.TEST_MODE", True):
             synthesizer = Synthesizer()
             # Pass the mock data to synthesize
@@ -92,8 +118,8 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             self.assertIn("metadata", result)
 
     @patch("builtins.open")
-    async def test_generate_management_summary(self, mock_open):
-        mock_open.return_value.__enter__.return_value.read.return_value = "{}"
+    async def test_generate_management_summary(self, mock_open_func):
+        mock_open_func.return_value.__enter__.return_value.read.return_value = "{}"
         with patch("pipeline.synthesizer.Config.TEST_MODE", True):
             synthesizer = Synthesizer()
             result = await synthesizer.generate_management_summary({"Compute": [{}]})
