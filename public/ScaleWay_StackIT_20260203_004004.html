@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Comparator: ScaleWay vs StackIT</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #333; }
+        .summary-card { background: #e8f4f8; padding: 20px; border-left: 5px solid #3498db; margin-bottom: 20px; }
+        .service-row { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .service-row:last-child { border-bottom: none; }
+        .domain-header { background-color: #eee; padding: 10px; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        .score { font-weight: bold; }
+        .score-positive { color: green; }
+        .score-negative { color: red; }
+        .score-neutral { color: gray; }
+        details { margin-bottom: 10px; }
+        summary { cursor: pointer; font-weight: bold; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-box { background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 5px; }
+        .stat-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Service Provider Comparison</h1>
+        <h2>ScaleWay vs StackIT</h2>
+        <p>Generated at: 2026-02-03 00:40:04</p>
+
+        <div class="summary-card">
+            <h3>Overarching Summary</h3>
+            
+            <div><p>Scaleway emerges as the superior strategic partner for the vast majority of technical and business use cases, consistently delivering better ROI, operational maturity, and developer velocity. It operates as a true hyperscaler alternative with modern hardware, serverless economies, and polished managed services. STACKIT defines itself strictly as a "Sovereign Cloud" solution; while it excels in specific niches like Managed Vault and OpenStack interoperability, it is generally technically immature, operationally riskier, and significantly more expensive. We recommend adopting Scaleway as the primary infrastructure provider, reserving STACKIT exclusively for workloads where German data residency or specific corporate compliance mandates are non-negotiable legal constraints.</p></div>
+            
+        </div>
+
+        <div class="summary-card">
+            <h3>Domain-Specific Summaries</h3>
+            
+            
+            <h4>Compute</h4>
+            <div><p>Scaleway is the clear leader for general-purpose compute and serverless, offering modern hardware (Apple Silicon/ARM) and superior unit economics with costs roughly 50% lower than the competition. STACKIT remains a niche option, viable only where German data sovereignty or specific confidential computing requirements outweigh its technical immaturity and lack of polished developer tooling.</p></div>
+            
+            <h4>Storage</h4>
+            <div><p>Scaleway offers a mature, full-featured object storage suite including archival tiers and compliance features (WORM), priced significantly lower than the competition. STACKIT provides only basic S3 capabilities at a premium, lacking the lifecycle management features required for enterprise data strategies unless restricted by strict ownership mandates.</p></div>
+            
+            <h4>Networking</h4>
+            <div><p>Operational stability dictates the choice here; Scaleway delivers reliable, managed infrastructure with predictable flat-rate pricing that favors high-bandwidth workloads. STACKIT poses significant operational risks with reported instability and tooling failures, making it unsuitable for production environments despite lower theoretical entry prices.</p></div>
+            
+            <h4>Container Operations</h4>
+            <div><p>The choice is between a production-grade incumbent and a beta challenger. Scaleway offers a stable, OCI-compliant registry with deep ecosystem integration. STACKIT is currently in a public beta; while free, it carries unacceptable operational risks for enterprise pipelines compared to Scaleway's proven low-cost reliability.</p></div>
+            
+            <h4>Databases and Big Data</h4>
+            <div><p>Scaleway dominates value and innovation, offering serverless scaling and modern AI extensions ideal for agile development and growth. STACKIT is the conservative alternative, enforcing expensive, high-availability architectures by default, which is necessary only for strict compliance or legacy heavy-read scenarios requiring granular recovery.</p></div>
+            
+            <h4>Monitoring</h4>
+            <div><p>Scaleway transforms observability into a seamless platform feature with zero-configuration integration and pay-per-use economics. STACKIT relies on a more manual, instance-based provisioning model that increases operational friction and sets a higher cost floor without delivering proportional value.</p></div>
+            
+            <h4>AI Services</h4>
+            <div><p>Scaleway is the definitive platform for high-performance AI, offering access to H100 hardware and custom model hosting at significantly lower rates. STACKIT provides a utility-grade inference service that competes on price for standard models but lacks the hardware control and depth required for serious AI development.</p></div>
+            
+            <h4>Security and Governance</h4>
+            <div><p>This is the sole domain where STACKIT holds a technical edge, offering a Managed HashiCorp Vault that ensures zero vendor lock-in and broad compatibility. Scaleway remains the cost-effective choice for native integration, but STACKIT is superior for multi-cloud security architectures and strict key management integration.</p></div>
+            
+            <h4>Developer Tools</h4>
+            <div><p>Scaleway provides a superior, modern developer experience with scale-to-zero capabilities that minimize burn rates for new initiatives. STACKIT relies on legacy Cloud Foundry standards that are becoming obsolete, making it a viable choice only for maintaining legacy applications or adhering to specific rigid compliance frameworks.</p></div>
+            
+            
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value">37</div>
+                <div>Total Services in ScaleWay</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">20</div>
+                <div>Services Compared</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">-2.1</div>
+                <div>Avg Technical Score (Positive = StackIT better)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">-4.8</div>
+                <div>Avg Cost Efficiency (Positive = StackIT cheaper)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">2.95</div>
+                <div>Avg LockIn Score (Positive = StackIT better)</div>
+            </div>
+        </div>
+
+        <h3>Domain Scores Overview</h3>
+        <div style="width: 50%; margin: auto;">
+            <canvas id="domainScoresChart"></canvas>
+        </div>
+
+        <h3>Detailed Comparison by Domain</h3>
+
+        
+        
+        <details>
+            <summary>Compute (Avg Score: -6.75)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/compute/instances/quickstart/" target="_blank">Instances</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/iaas/compute-engine/" target="_blank">STACKIT Compute Engine</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -3
+                        </td>
+                        <td class="score score-negative">
+                            -8
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) is a robust, enterprise-grade platform but lags behind Service A (Scaleway) in versatility and developer experience. Scaleway's inclusion of specialized hardware (Apple Silicon), wider instance variety, and a mature serverless ecosystem makes it noticeably superior for general-purpose and cloud-native development. STACKIT excels in regulatory compliance and basic IaaS but lacks the feature depth to compete on pure technical merit.<br><br>
+                                    <strong>Lock-in:</strong> Symmetrical Lock-in. Both services utilize proprietary APIs for their compute control planes (Scaleway API vs. STACKIT IaaS API) rather than exposing raw standard endpoints (like OpenStack Nova). Both rely on standard S3-compatible APIs for object storage and provide Terraform providers, resulting in comparable exit costs.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is significantly more cost-effective for startup and general-purpose workloads. Its 'Play' and 'Dev' lines offer compute resources at roughly 50% the cost of STACKIT's equivalent instances. STACKIT follows a traditional enterprise pricing model which, while transparent, lacks the aggressive budget options and free tier incentives found in Scaleway.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Decision: Scaleway vs. STACKIT</h3>
+<p><strong>1. Technical Capabilities &amp; Developer Experience</strong>
+Scaleway acts as a mature, developer-centric hyperscaler alternative. It creates a significant technical moat through hardware diversity, offering unique instances like Apple Silicon (M1/M4) and ARM64, alongside a polished CLI and Terraform ecosystem. Its 99.99% Multi-AZ SLA demonstrates high reliability.</p>
+<p>In contrast, STACKIT positions itself as the localized "German Sovereign" option backed by the Schwarz Group. While built on OpenStack foundations (providing predictable IaaS behavior), it feels distinctively corporate. It excels in niche Confidential Computing (SEV/TDX) but lacks the breadth of modern PaaS and Serverless integrations found in Scaleway.</p>
+<p><strong>2. Cost Efficiency &amp; Financials</strong>
+Scaleway is the decisive winner in unit economics. Its <code>DEV</code> and <code>PLAY</code> instance lines offer compute at approximately 50% of the cost of STACKIT's equivalents. Scaleway's aggressive approach to free tiers (Stardust) and spot instances maximizes budget efficiency.</p>
+<p>STACKIT utilizes a traditional enterprise pricing model. While transparent, it carries a premium justified only by data residency requirements. There are no significant savings plans or permanent free tiers to attract smaller workloads.</p>
+<p><strong>3. Final Recommendation</strong>
+*   <strong>Select Scaleway</strong> for 90% of use cases, including startups, SaaS platforms, and cost-sensitive scale-outs. The hardware variety and DX are superior.
+*   <strong>Select STACKIT</strong> only if your workload has strict regulatory requirements mandating German-owned infrastructure (Sovereignty/GDPR) or Confidential Computing enclaves.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/serverless/functions/quickstart/" target="_blank">Serverless Functions</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/iaas/functions/" target="_blank">STACKIT Functions</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -8
+                        </td>
+                        <td class="score score-negative">
+                            -8
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Scaleway provides a modern, polished FaaS experience that rivals major hyperscalers in usability, utilizing Knative to offer true serverless behavior (scale-to-zero, eventing). STACKIT Functions, by comparison, feels like 'vaporware' or a legacy PaaS rebrand in the current technical landscape. The absence of the service in the primary CLI command list and the reliance on a sunsetting Cloud Foundry platform (or a very new, undocumented replacement) creates a massive maturity gap. STACKIT is effectively a 'Noticeably Inferior' (-5) to 'Critically Flawed' (-10) option for pure FaaS use cases compared to Scaleway's stable GA offering.<br><br>
+                                    <strong>Lock-in:</strong> Both services score excellently on lock-in. Scaleway is explicitly built on Knative, meaning functions are effectively containerized standard workloads that can be ported to any Kubernetes cluster with Knative installed. STACKIT relies on open-source standards as well (Cloud Foundry or standard Kubernetes), avoiding proprietary runtimes or opaque APIs found in AWS Lambda or Azure Functions. Moving workloads between these two or to a self-hosted environment would require minimal code refactoring.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is significantly more cost-effective for startups due to its massive free tier which covers many small-to-medium workloads entirely (billing €0.00). STACKIT focuses on enterprise sovereignty; its lack of a published permanent free tier and reliance on standard pay-as-you-go rates makes it immediately more expensive for early-stage or fluctuating workloads compared to Scaleway's commoditized pricing.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Technical &amp; Pricing Synthesis</h3>
+<p>In the evaluation of <strong>Scaleway Serverless Functions</strong> versus <strong>STACKIT Functions</strong>, the disparity in product maturity is substantial. Scaleway presents a polished, General Availability (GA) product, whereas STACKIT's offering currently lacks the tooling and documentation required for enterprise adoption.</p>
+<h4>1. Architecture and Standards</h4>
+<p>Scaleway is built on <strong>Knative</strong>, leveraging an industry-standard open-source engine that ensures portability and "scale-to-zero" capabilities. This architectural choice minimizes vendor lock-in (<code>Lock-in Score: 0</code>) and guarantees that workloads are container-compatible across standard Kubernetes clusters. STACKIT relies on a mix of legacy Cloud Foundry (sunsetting) and ambiguous Kubernetes integration, resulting in a fragmented developer experience.</p>
+<h4>2. Developer Experience and Ecosystem</h4>
+<p>Scaleway offers a cohesive ecosystem with native integrations for Object Storage, Secret Manager, and Container Registry. Its support for Terraform, Serverless Framework, and a functional CLI makes it production-ready. Conversely, STACKIT demonstrates significant gaps: the function service is absent from the primary CLI command list, and documentation focuses heavily on deprecated PaaS components. The lack of SDKs and event triggers makes STACKIT high-friction for modern development.</p>
+<h4>3. Cost Efficiency</h4>
+<p>Scaleway dominates the pricing comparison (<code>Score: -8</code>) by offering a massive permanent free tier (1M requests, 400k GB-s per month) and low unit costs thereafter. STACKIT lacks a permanent free tier and relies on standard consumption billing, making it significantly more expensive for variable or startup workloads. STACKIT's value proposition is limited strictly to German data sovereignty compliance rather than economic efficiency.</p>
+<h3>Recommendation</h3>
+<p><strong>Scaleway</strong> is the definitive choice for teams seeking a functional, cost-effective serverless platform. STACKIT should only be considered if the project has non-negotiable compliance requirements tied specifically to the Schwarz Group infrastructure, accepting the heavy technical debt of an immature platform.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Storage (Avg Score: -7.5)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/storage/object/quickstart/" target="_blank">Object Storage</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/storage/object-storage/" target="_blank">STACKIT Object Storage</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -6
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT is noticeably inferior in feature depth. It functions as a competent 'bit bucket' but lacks the essential enterprise features present in Scaleway, such as native Cold Storage/Glacier tiers, Object Lock (WORM), and explicit Multi-AZ resiliency guarantees in the basic documentation. The reliance on the generic AWS Terraform provider for data-plane operations (vs. Scaleway's fully native integration) further highlights the maturity gap.<br><br>
+                                    <strong>Lock-in:</strong> Both services strictly adhere to the S3 API standard for data access, meaning migration between them (or to AWS) is trivial using tools like Rclone. STACKIT's lack of proprietary 'sticky' features (like specific cold-storage restoration protocols or proprietary event triggers) actually makes it slightly easier to leave, but practically, both represent near-zero lock-in due to the commodity nature of the S3 protocol they employ.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is drastically cheaper. Its standard Multi-AZ storage is nearly 50% cheaper than STACKIT's comparable tier (€0.0146 vs ~€0.027), and it offers a One Zone tier that is ~72% cheaper. Crucially, Scaleway includes API requests in the storage price and offers very low egress fees (€0.01/GB) with a 75GB free allowance, whereas STACKIT fits a traditional enterprise pricing model. For a typical startup, STACKIT provides no cost advantage.<br><br>
+                                    <strong>Synthesis:</strong> <h1>Executive Synthesis: Scaleway vs. STACKIT</h1>
+<p><strong>Verdict: Scaleway is the definitive winner for utility, cost, and tooling.</strong></p>
+<h2>Technical Maturity</h2>
+<p>Scaleway Object Storage is a mature product offering critical enterprise features that STACKIT currently lacks, specifically <strong>Cold Storage (Glacier)</strong> for archival and <strong>Object Lock (WORM)</strong> for compliance. While STACKIT provides a stable, GDPR-focused "basic S3" bucket, it misses the depth of lifecycle management required for modern cloud-native architectures.</p>
+<p>From a Developer Experience (DX) standpoint, Scaleway offers a cohesive, native Terraform provider. STACKIT relies on a high-friction hybrid approach, requiring its own provider for bucket creation but forcing the use of the generic AWS provider for object management.</p>
+<h2>Commercial Impact</h2>
+<p>The cost disparity is overwhelming. Scaleway's standard Multi-AZ tier is approximately <strong>50% cheaper</strong> than STACKIT's equivalent (€0.0146 vs ~€0.027/GB). Furthermore, Scaleway includes API requests in the storage price and offers a generous 75GB free egress allowance. STACKIT follows a traditional enterprise pricing model that offers no financial incentive for startups or scale-ups.</p>
+<h2>Strategic Recommendation</h2>
+<ul>
+<li><strong>Select Scaleway:</strong> For all production, backup, and archival workloads. The inclusion of One Zone-IA and Glacier tiers makes it the only viable option for cost-optimized storage.</li>
+<li><strong>Select STACKIT:</strong> Only if internal compliance mandates require infrastructure specifically owned by the Schwarz Group.</li>
+</ul>
+<p>Since both adhere to the <strong>S3 Open Standard</strong>, migration is trivial, rendering lock-in concerns negligible.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Networking (Avg Score: -4.12)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/network/public-gateways/quickstart/" target="_blank">Public Gateway</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/network/network-security/" target="_blank">STACKIT Network & Security</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -7
+                        </td>
+                        <td class="score score-positive">
+                            4
+                        </td>
+                        <td class="score score-positive">
+                            8
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service A (Scaleway) is a mature, managed product. Service B (STACKIT) receives a low score due to critical friction points reported in 2025: resource creation hanging for hours, reliance on experimental/beta Terraform features for core networking, and a general lack of managed conveniences (Bastion/NAT are DIY on raw routers). While Scaleway is a polished 'Cloud' product, STACKIT behaves like an unstable raw OpenStack installation.<br><br>
+                                    <strong>Lock-in:</strong> STACKIT is based heavily on OpenStack standards (Neutron); migrating away simply involves exporting standard OpenStack configurations or using generic OpenStack tools. Scaleway uses a proprietary API and orchestration layer for its Public Gateway, requiring specific Terraform provider logic and refactoring to migrate out.<br><br>
+                                    <strong>Pricing:</strong> STACKIT is significantly cheaper for the specific function of enabling Internet access for a private network, as it likely only incurs the cost of a Public/Floating IP (~€3-5/mo) compared to Scaleway's minimum managed gateway cost of ~€14.50/mo. However, Scaleway's value proposition reverses for high-traffic workloads, as it includes egress bandwidth and has no data processing fees, which can make it cheaper than competitors if throughput is high. For a typical early-stage startup with low traffic, STACKIT's lower barrier to entry is the more cost-effective choice.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Verdict: Operational Stability vs. Raw Savings</h3>
+<p>Scaleway Public Gateway is the superior choice for production environments, prioritizing stability and developer experience (DX) over the raw infrastructure savings offered by STACKIT.</p>
+<h4>1. Technical Maturity &amp; Risk</h4>
+<p><strong>Scaleway</strong> operates as a polished, second-generation managed service. It abstracts the complexity of NAT and Bastion hosts behind a reliable API and a production-grade Terraform provider. The inclusion of native IPAM and 'Allowed IPs' security features indicates a focus on enterprise readiness.</p>
+<p><strong>STACKIT</strong>, conversely, presents significant operational risks. Reports of resource creation hanging for 4-6 hours and the requirement to use 'experimental' flags for basic Terraform networking functionality classify it as a "problem child." While it adheres to OpenStack standards (Neutron), the platform's instability negates the benefits of open standards for most teams.</p>
+<h4>2. Cost Analysis: Sticker Price vs. TCO</h4>
+<ul>
+<li><strong>Low Traffic:</strong> STACKIT is cheaper (~€3-5/mo for a Floating IP vs. ~€14.50/mo for Scaleway). If the workload is idle, STACKIT wins on paper.</li>
+<li><strong>High Traffic:</strong> Scaleway's model (Hourly Flat Rate + Free Egress) is a massive competitive advantage. It eliminates the per-GB data processing fees common in cloud NAT gateways, potentially saving hundreds of Euros for bandwidth-heavy applications.</li>
+</ul>
+<h4>3. Strategic Recommendation</h4>
+<ul>
+<li><strong>Choose Scaleway</strong> for all production workloads. The €10/month premium is negligible compared to the engineering cost of debugging STACKIT's provisioning failures.</li>
+<li><strong>Choose STACKIT</strong> only for non-critical, low-bandwidth experiments where OpenStack compatibility is a strict mandate and operational delays are acceptable.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/network/load-balancer/quickstart/" target="_blank">Load Balancer</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/network/application-load-balancer/" target="_blank">STACKIT Application Load Balancer</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -5
+                        </td>
+                        <td class="score score-negative">
+                            -3
+                        </td>
+                        <td class="score score-positive">
+                            5
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) is noticeably inferior in terms of modern feature breadth and developer quality-of-life. While capable of handling standard L4/L7 traffic, it lacks the 'next-gen' protocols (HTTP/3) and convenience features (native automated SSL, integrated WAF on the LB resource) that Service A (Scaleway) provides out-of-the-box. Scaleway's offering is a fully managed, optimized service, whereas STACKIT's offering feels like a wrapper around a standard component, requiring more operational overhead to achieve feature parity (e.g., setting up sidecars for cert management).<br><br>
+                                    <strong>Lock-in:</strong> Service B (STACKIT) is built on OpenStack. While it offers a custom API wrapper, the underlying architecture and concepts (Octavia) are open standards, allowing for easier migration to other OpenStack providers (OVH, private clouds). Service A (Scaleway) uses a proprietary API and control plane; migrating away requires rewriting all infrastructure-as-code definitions to a new provider's specific API specifications.<br><br>
+                                    <strong>Pricing:</strong> Scaleway (A) is generally more cost-effective for typical web startups because it bundles bandwidth into the hourly price. While STACKIT (B) has a slightly lower base instance fee, the likely addition of egress traffic costs (standard in enterprise clouds) and the connection-based limits make it potentially more expensive for data-heavy applications. Scaleway's 'Unlimited Traffic' model provides superior predictability.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Technical &amp; Financial Synthesis</h3>
+<p>In the evaluation of <strong>Scaleway Load Balancer</strong> versus <strong>STACKIT Application Load Balancer</strong>, the decision rests on the trade-off between <strong>developer velocity</strong> and <strong>architectural sovereignty</strong>.</p>
+<h4>Capability vs. Compliance</h4>
+<p>Scaleway (Service A) provides a highly polished, modern experience. It natively supports <strong>HTTP/3 (QUIC)</strong>, integrates seamlessly with Let's Encrypt for zero-touch SSL, and offers built-in Edge Services like WAF and caching. It is a true "managed service" that abstracts infrastructure toil. </p>
+<p>STACKIT (Service B), backed by Schwarz Group, is built on <strong>OpenStack Octavia</strong>. While this ensures low vendor lock-in regarding architectural concepts and robust German data sovereignty, the product feels "raw." It lacks native conveniences like one-click SSL automation or global caching, requiring engineering teams to build tooling around the load balancer rather than just consuming it.</p>
+<h4>Cost Predictability vs. Connection Scaling</h4>
+<p>Scaleway's pricing model is superior for the vast majority of web applications. By bundling unlimited traffic into a bandwidth-provisioned hourly rate, it eliminates the fear of egress bill shock. </p>
+<p>STACKIT charges based on concurrent connections. While the entry price is marginally lower (~€9.40 vs ~€11.70), this model favors specialized workloads (like IoT with high concurrency but low throughput) over standard data-heavy web traffic. </p>
+<h3>Strategic Recommendation</h3>
+<ul>
+<li><strong>Choose Scaleway</strong> if your priority is <strong>Time-to-Market</strong>. The integrated ecosystem and modern protocol support significantly reduce operational overhead.</li>
+<li><strong>Choose STACKIT</strong> only if you are already invested in an <strong>OpenStack ecosystem</strong> or require strict <strong>German-hosted data sovereignty</strong> that mandates a specific compliance posture.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/network/domains-and-dns/quickstart-domains/" target="_blank">Domains and DNS</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/network/dns/" target="_blank">STACKIT DNS</a>
+                            
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Both services achieve Technical Parity (0) as they offer functionally identical core DNS capabilities (Zones, Records, API, Terraform). Scaleway excels in Developer Experience (DX) for the 'long tail' of users with its integrated registrar and polish. STACKIT matches this with a strong Enterprise focus, modern Kubernetes tooling (Webhook vs. Legacy In-tree), and explicit Anycast guarantees. The choice depends purely on the target audience (SMB/Dev vs. Enterprise/Compliance) rather than a feature gap.<br><br>
+                                    <strong>Lock-in:</strong> Both services rely on standard DNS principles. While management APIs are proprietary, both support Terraform (allowing configuration portability) and standard zone file structures (BIND). Switching costs are minimal as 'export zone' and 'import zone' workflows are standard across the industry. Neither vendor imposes unique proprietary logic that prevents migration.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is vastly superior for value-for-money. Its base price is roughly 60% cheaper than STACKIT's entry tier, and the inclusion of 5 million queries makes it effectively flat-rate for almost all startup workloads. STACKIT's pricing model, based on record limits (100/1000/10000), punishes complex configurations even with low traffic and lacks a free tier.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical Synthesis</h3>
+<p>Scaleway and STACKIT maintain functional parity in core DNS resolution but diverge significantly in market positioning and architecture.</p>
+<p><strong>Scaleway Domains &amp; DNS</strong> optimizes for <strong>Developer Experience (DX)</strong> and cost. It provides a seamless "buy-and-host" workflow by integrating the registrar and DNS into a single console. While its Kubernetes integration utilizes the older "in-tree" ExternalDNS provider, its maturity ensures stability and extensive community support. It represents the "Commodity Cloud" ideal: frictionless and effective.</p>
+<p><strong>STACKIT DNS</strong> targets the <strong>Enterprise &amp; Compliance</strong> sector. It adopts more modern integration standards, specifically the ExternalDNS Webhook provider, ensuring better long-term compatibility with Kubernetes evolution. Backed by the Schwarz Group, STACKIT emphasizes Anycast reliability and German/EU data sovereignty, catering to highly regulated industries rather than the general developer market.</p>
+<h3>Financial Assessment</h3>
+<p>Scaleway holds a decisive economic advantage:
+*   <strong>Base Cost:</strong> Scaleway is ~60% cheaper per zone (~€0.73 vs. ~€1.94).
+*   <strong>Volume:</strong> Scaleway includes 5 million queries/month, effectively making it flat-rate for most use cases.
+*   <strong>Structure:</strong> STACKIT prices based on record limits (100/1000/10000), which penalizes complex architectural patterns even if query volume is low.</p>
+<h3>Final Recommendation</h3>
+<ul>
+<li><strong>Primary Choice (Scaleway):</strong> Best for 90% of use cases. It offers superior ROI, a better registrar workflow, and sufficient technical robustness for standard production environments.</li>
+<li><strong>Specialized Choice (STACKIT):</strong> Best for DACH-region compliance requirements or architectural mandates demanding the latest Kubernetes webhook standards.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/network/edge-services/quickstart/" target="_blank">Edge Services</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/network/cdn/" target="_blank">STACKIT Content Delivery Network (CDN)</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -4
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-positive">
+                            8
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) is architecturally superior as a general-purpose CDN due to its support for arbitrary origins, whereas Service A (Scaleway) is limited to accelerating its own internal resources. However, Service B is penalized significantly for its lack of maturity. With a GA release in Dec 2025 and active critical bugs in its Terraform provider (inconsistent states, 500 errors), STACKIT is effectively in a 'Late Beta' state reliability-wise. Scaleway offers a polished, stable, production-ready experience, albeit with a restricted feature scope. For a pure technical implementation today, Scaleway is usable; STACKIT is risky.<br><br>
+                                    <strong>Lock-in:</strong> Scaleway Edge Services imposes high vendor lock-in by necessitating the use of Scaleway's Object Storage or Load Balancers as the origin; migrating away requires re-architecting the backend or accepting high friction. STACKIT CDN follows a standard decoupled model where the CDN config points to any backend (IP/Hostname). Switching away from STACKIT involves a simple DNS change and config port, whereas leaving Scaleway Edge implies moving the underlying data or compute.<br><br>
+                                    <strong>Pricing:</strong> Scaleway (A) is significantly cheaper for almost any active workload. Its subscription model provides bandwidth at effectively ~€0.013/GB (e.g., 1TB for €12.99), whereas STACKIT (B) charges ~€0.05/GB for European traffic. For a startup with 1TB of traffic, Scaleway costs ~€13 while STACKIT costs ~€50. STACKIT is only cheaper if monthly usage is near zero (below ~20GB), avoiding Scaleway's €0.99 minimum.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Review</h3>
+<p><strong>Reliability &amp; Maturity</strong>
+Scaleway Edge Services is the only production-ready candidate in this pair. Having stabilized since its November 2024 General Availability, it offers a polished CLI, Console, and API experience. Conversely, STACKIT CDN (GA December 2025) exhibits unacceptable risk characteristics for a production environment. Reports of active Terraform provider bugs (500 errors, inconsistent states) and high-friction onboarding (intrusive KYC) indicate a platform still in late-stage beta, despite its GA label.</p>
+<p><strong>Architecture &amp; Lock-in</strong>
+This is the primary differentiator. STACKIT is architecturally superior as a general-purpose CDN, supporting arbitrary origins (external servers/clouds) and native geo-fencing. Scaleway functions strictly as an "Origin Accelerator," accelerating only Scaleway Object Storage and Load Balancers. While Scaleway imposes significant vendor lock-in (Score: 8/10), this integration results in a seamless "one-click" security and caching layer for existing workloads.</p>
+<p><strong>Cost Efficiency</strong>
+Scaleway dominates on price. Its bundled subscription model yields an effective cost of ~€0.013/GB, roughly 25% of STACKIT's ~€0.05/GB rate. For a standard 1TB workload, Scaleway costs ~€13 while STACKIT costs ~€50. STACKIT is only viable financially for dormant projects transferring &lt;20GB/month.</p>
+<p><strong>Verdict</strong>
+We prioritize stability and ROI. STACKIT's architectural flexibility does not justify its pricing premium or its current instability.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Container Operations (Avg Score: -1.5)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/containers/container-registry/quickstart/" target="_blank">Container Registry</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/container/container-registry/" target="_blank">STACKIT Container Registry</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -7
+                        </td>
+                        <td class="score score-positive">
+                            4
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> There is a significant maturity gap. Scaleway (Service A) is a polished, production-grade product with deep ecosystem hooks. STACKIT (Service B) was in Beta as of mid-2025. While STACKIT's feature set is promising (scanning, mirroring), it cannot technically compete with a mature GA service in terms of stability, tooling depth, and reliability guarantees. The negative score reflects the risk and feature disparity of a Beta product versus a mature incumbent.<br><br>
+                                    <strong>Lock-in:</strong> Both services strictly adhere to OCI (Open Container Initiative) standards, allowing for the use of standard Docker/Podman clients without proprietary SDKs. Migration between them is a standard `docker pull` / `docker push` operation. While Scaleway has some unique API wrappers for namespace management, neither enforces a high exit cost or proprietary data format. The lock-in risk is effectively neutral and low for both.<br><br>
+                                    <strong>Pricing:</strong> STACKIT is technically cheaper (Free) due to its Beta status, which includes private repositories that Scaleway charges for. However, Scaleway's pricing for private storage is negligible (€0.027/GB), and it offers a permanent, high-volume free tier for public images. Once STACKIT exits Beta, it will likely align with standard market rates, whereas Scaleway remains a proven low-cost leader. STACKIT gets a positive score for currently being free for private workloads, but the long-term cost advantage likely belongs to Scaleway's predictable low rates.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Assessment</h3>
+<p><strong>Maturity vs. Opportunity</strong>
+The contrast between Scaleway and STACKIT represents a classic "Incumbent vs. Challenger" dynamic. Scaleway Container Registry is a <strong>production-grade, General Availability (GA)</strong> service backed by a recently modernized HIVE architecture for high availability. It is deeply embedded in the Scaleway ecosystem (Kapsule, Serverless). STACKIT, conversely, is in <strong>Public Beta (as of mid-2025)</strong>. While it shows promise with built-in features like vulnerability scanning and geo-redundancy, it lacks the operational mileage and tooling depth of Scaleway.</p>
+<p><strong>Technical Architecture &amp; Integration</strong>
+*   <strong>Scaleway:</strong> Offers a superior developer experience with a mature CLI (<code>scw</code>) and a stable Terraform provider. It supports advanced namespace privacy policies and immutable tags, critical for immutable infrastructure patterns. Its recent multi-AZ upgrades address previous stability concerns.
+*   <strong>STACKIT:</strong> Likely leverages a managed open-source engine (resembling Harbor). While OCI-compliant, it functions more as a standalone repository than an integrated cloud component. Its Beta status implies potential API volatility and Service Level Objective (SLO) gaps.</p>
+<p><strong>Cost Efficiency &amp; Lock-In</strong>
+*   <strong>Pricing:</strong> STACKIT is currently <strong>free</strong> (Beta incentive), making it attractive for temporary staging environments. However, Scaleway is exceptionally cost-efficient at <strong>•0.027/GB</strong>, with a 75GB free tier for public images. The long-term cost risk lies with STACKIT's eventual pricing model, while Scaleway is a known, low-cost commodity.
+*   <strong>Lock-In:</strong> <strong>Low.</strong> Both adhere strictly to <strong>OCI (Open Container Initiative)</strong> standards. Migration is trivial (<code>docker pull/push</code>), allowing engineering teams to pivot if STACKIT's post-Beta pricing is unfavorable.</p>
+<h3>Strategic Recommendation</h3>
+<p><strong>Select Scaleway</strong> for all production workloads. The operational risk of using a Beta registry (STACKIT) outweighs the temporary cost savings. Scaleway provides the necessary reliability, integration, and predictability for enterprise CI/CD pipelines.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Databases and Big Data (Avg Score: -2.5)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/managed-databases/postgresql-and-mysql/quickstart/" target="_blank">Managed Database for PostgreSQL and MySQL</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/postgresql-flex/" target="_blank">STACKIT PostgreSQL Flex</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -4
+                        </td>
+                        <td class="score score-negative">
+                            -8
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) is a robust, compliance-focused option but strictly inferior in feature breadth compared to Service A (Scaleway). Scaleway's inclusion of a 'Serverless' tier and explicit support for modern extensions like 'pgvector' makes it a more versatile platform for 2025-era applications. STACKIT adheres to a traditional provisioned model; while its '3-replica' default is excellent for stability, it lacks the elasticity and developer-centric innovation (serverless, transparent extension catalog) found in Scaleway.<br><br>
+                                    <strong>Lock-in:</strong> Both services are managed wrappers around the open-source PostgreSQL engine. There are no proprietary query languages or non-standard APIs required to use either service. Data can be migrated in or out using standard tools (pg_dump, pg_restore) without modification. The Terraform providers for both facilitate infrastructure-as-code without deep vendor coupling.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is drastically more cost-effective for typical startup workloads. A standard 2 vCPU / 4GB RAM single instance costs approximately €0.043/hour on Scaleway compared to ~€0.126/hour on STACKIT. Additionally, Scaleway includes unmetered bandwidth, whereas many providers charge for egress. STACKIT's pricing structure is more aligned with enterprise contracts and lacks the aggressive low-end SKU pricing found in Scaleway.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Review</h3>
+<p><strong>Verdict:</strong> Scaleway is the clear operational choice for 95% of use cases, delivering superior technical versatility at a fraction of the cost. STACKIT serves a narrow niche for strict German data sovereignty.</p>
+<h4>1. Technical Capabilities: Innovation vs. Compliance</h4>
+<p>Scaleway (Service A) demonstrates a higher technical maturity. It supports modern application patterns through a <strong>Serverless tier</strong> (auto-scaling to zero) and explicit support for critical AI/ML extensions like <code>pgvector</code>. Their infrastructure is transparent, with a public 99.95% SLA and robust observability via 'Cockpit'.</p>
+<p>STACKIT (Service B) focuses on resilience, offering a default 3-replica architecture that is excellent for durability but lacks flexibility. It misses key modern features like serverless compute and public confirmation of AI extensions, limiting its utility for dynamic or cutting-edge workloads.</p>
+<h4>2. Cost Efficiency: A Massive Gap</h4>
+<p>Scaleway provides drastic cost advantages:
+*   <strong>Compute:</strong> Approximately <strong>65% cheaper</strong> for equivalent instances.
+*   <strong>Network:</strong> Unlimited free ingress/egress is a massive differentiator, eliminating hidden bandwidth bills.
+*   <strong>Flexibility:</strong> Low-cost entry points (under €15/mo) vs. STACKIT's enterprise-focused pricing.</p>
+<h4>3. Strategic Fit &amp; Lock-in</h4>
+<p>Both vendors adhere to <strong>Open Standards</strong>, utilizing standard PostgreSQL engines. Migration between them is standard (<code>pg_dump</code>), ensuring zero proprietary lock-in. </p>
+<p><strong>Choose Scaleway if:</strong> You value performance per euro, need serverless scaling, or run AI/vector workloads.
+<strong>Choose STACKIT if:</strong> You are legally mandated to utilize a Schwarz Group-backed, strictly German sovereign cloud.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/managed-databases/redis/quickstart/" target="_blank">Managed Database for Redis™</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/redis/" target="_blank">STACKIT Redis</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            2
+                        </td>
+                        <td class="score score-negative">
+                            -8
+                        </td>
+                        <td class="score score-negative">
+                            -3
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) technically outperforms A (Scaleway) in pure database capability by supporting Redis Modules (JSON, Search), effectively turning Redis into a multi-model database. This allows architectures (e.g., RAG pipelines, document caching) that are impossible on Service A without sidecars or client-side complexity. However, Service B loses points on maturity and developer tooling (DX), preventing a higher score. If you need standard caching, A is the safer, more stable choice; if you need advanced data structures, B is the only option.<br><br>
+                                    <strong>Lock-in:</strong> Service B (STACKIT) introduces 'Soft Lock-in' through its support for Redis Modules (RedisJSON, RediSearch). While these are 'source-available' technologies, heavily relying on them prevents migration to standard managed Redis providers (like Scaleway, AWS ElastiCache, or Azure Basic) that do not support these modules. Migrating away from STACKIT would require either refactoring the application to remove module dependencies or self-hosting Redis Stack. Service A is pure vanilla Redis, ensuring near-zero migration friction.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is drastically more cost-effective for typical startup workloads, offering a standalone entry point around €35/month. STACKIT's publicly listed pricing focuses on 3-node HA clusters (Replica plans) starting at ~€146/month, which is a high barrier for early-stage projects. Unless a hidden single-node option exists, Scaleway is ~4x cheaper for getting started.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Decision: Scaleway vs. STACKIT</h3>
+<p><strong>Maturity vs. Functionality</strong>
+Scaleway is the pragmatist's choice. It delivers a mature platform with explicit SLAs (up to 99.95%), a stable Terraform provider, and seamless private network integration. It is "developer-ready" for standard caching workloads. STACKIT, backed by the Schwarz Group, is less polished regarding DX and documentation but offers a critical functional differentiator: native support for Redis Modules (RedisJSON, RediSearch, RedisTimeSeries).</p>
+<p><strong>Cost Efficiency</strong>
+Scaleway wins decisively on price flexibility. Its standalone nodes start around €35/mo with granular hourly billing, making it ideal for standard development and production scaling. STACKIT focuses on Enterprise-grade HA (3-node clusters) by default, starting at ~€146/mo, creating a high barrier to entry (4x cost) for smaller workloads.</p>
+<p><strong>Lock-in &amp; Open Standards</strong>
+Scaleway minimizes lock-in by sticking to vanilla Redis; migration out is trivial. STACKIT's inclusion of Redis Modules introduces "Soft Lock-in." Architectures built around RediSearch or RedisJSON cannot be migrated to other standard managed providers (like Scaleway or AWS ElastiCache) without significant application refactoring.</p>
+<p><strong>Final Recommendation</strong>
+*   <strong>Select Scaleway</strong> for standard caching, session management, and cost-efficient scaling. It is the safer, standard-compliant choice.
+*   <strong>Select STACKIT</strong> only if your architecture specifically requires Redis Modules (e.g., Vector Search, RAG pipelines) or strictly mandates DACH data residency.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/managed-databases/mongodb/quickstart/" target="_blank">Managed MongoDB®</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/mongodb-flex/" target="_blank">STACKIT MongoDB Flex</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            4
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT (Service B) is technically superior due to the inclusion of 'Hard Specs' that Scaleway (Service A) currently lacks: Sharding (horizontal scaling) and Point-in-Time Recovery (PITR). Scaleway relies on vertical scaling and discrete snapshots, which limits its utility for massive or critical transactional workloads. Although STACKIT has a pending deprecation for its resizing mechanism (scheduled for late 2026), the presence of Sharding makes it the only viable option for large-scale applications, justifying a score of +4.<br><br>
+                                    <strong>Lock-in:</strong> Both services are fully compliant with the standard MongoDB wire protocol. Developers use standard MongoDB drivers, `mongosh`, and tools like Compass. Migration in or out is achieved via standard `mongodump`/`mongorestore` or replication tools, with no proprietary API wrappers or non-standard query languages involved.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is drastically more cost-effective for startup workloads. Its entry-level 'PLAY2-PICO' instance offers 2GB RAM for ~€0.023/hour (~€17/mo), whereas STACKIT's comparable 'Nano' tier offers only 1GB RAM and costs significantly more (estimated ~€0.07/hour or ~€50/mo for Single, based on Replica pricing of ~€0.20/hour). STACKIT's pricing structure targets enterprise users with 3-node Replica Sets as the standard, making it overkill and overpriced for typical early-stage startup needs compared to Scaleway's aggressive shared-resource pricing.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Strategic Synthesis: Agility vs. Enterprise Scale</h3>
+<p>In the evaluation of Managed MongoDB providers, the choice bifurcates clearly between high-efficiency growth (Scaleway) and heavy-duty horizontal scaling (STACKIT).</p>
+<p><strong>Technical Assessment</strong>
+STACKIT wins on pure technical capability for "Day 2" enterprise operations. Its support for <strong>Sharded Clusters</strong> and <strong>Point-in-Time Recovery (PITR)</strong> makes it the only viable option for multi-terabyte datasets or mission-critical financial transactions requiring granular rollback. However, the current roadmap indicates operational friction regarding performance class upgrades.</p>
+<p>Scaleway focuses on developer velocity. While it lacks sharding, its Replica Set architecture is sufficient for the vast majority of web applications. The absence of PITR is a drawback, but its snapshotting is frictionless and the UX is superior for rapid deployment.</p>
+<p><strong>Cost Efficiency</strong>
+Scaleway dominates here. The presence of shared resource tiers allows for development and production at a fraction of STACKIT's cost (approx. €17 vs €50 for entry tiers). STACKIT's pricing assumes an enterprise baseline that is overkill for most startups and mid-sized workloads.</p>
+<p><strong>Recommendation</strong>
+Unless your data architecture specifically demands Sharding today, <strong>Scaleway</strong> is the superior choice for its aggressive price-to-performance ratio and simplicity. STACKIT is the fallback only when data volume exceeds vertical scaling limits.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/serverless-sql-database/quickstart/" target="_blank">Serverless SQL Database</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/postgresql-flex/" target="_blank">STACKIT PostgreSQL Flex</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            4
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-positive">
+                            8
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> While Scaleway (Service A) offers an innovative serverless paradigm with scale-to-zero automation, it suffers from critical functional limitations (inability to use temporary tables is a major blocker for many complex SQL workflows and ORMs). STACKIT (Service B), while following a more traditional 'provisioned' model, delivers a technically superior database product in terms of stability, standards compliance, and performance predictability. Service B is a robust production engine, whereas Service A is currently specialized for stateless, low-traffic, or cost-optimized use cases.<br><br>
+                                    <strong>Lock-in:</strong> STACKIT (Service B) scores significantly higher (lower lock-in) as it provides a standard PostgreSQL environment; migrating out is as simple as a `pg_dump`/`pg_restore` to any other Postgres host. Scaleway (Service A) introduces 'implementation lock-in' where applications must be architected to handle its specific limitations (e.g., avoiding temp tables, handling cold start timeouts, stateless connection logic), making exit costs higher due to necessary code refactoring.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is vastly more cost-effective for a typical startup workload due to its 'scale-to-zero' architecture, which eliminates compute costs during idle periods. A startup MVP could run on Scaleway for pennies per month, whereas STACKIT requires provisioning a dedicated instance (even the smallest single instance costs roughly €50+/month and the smallest replica ~€140/month). STACKIT is priced for enterprise consistency, not startup variability.<br><br>
+                                    <strong>Synthesis:</strong> <h1>Executive Technical Review: Scaleway Serverless vs. STACKIT Flex</h1>
+<p>This comparison evaluates two fundamentally different paradigms: <strong>Scaleway's Cost-Optimized Serverless</strong> model versus <strong>STACKIT's Reliability-First Provisioned</strong> model.</p>
+<h2>1. Technical Architecture &amp; Stability</h2>
+<p><strong>Winner: STACKIT PostgreSQL Flex</strong></p>
+<p>STACKIT provides a standard, enterprise-grade PostgreSQL environment. It supports critical features like <strong>temporary tables</strong>, prepared transactions, and comprehensive extensions. Its High Availability (HA) setup includes 3 replicas by default, ensuring uptime.</p>
+<p><strong>Scaleway</strong> operates with significant caveats. The lack of support for temporary tables breaks compatibility with many standard ORMs and complex analytical queries. Additionally, the documented <strong>5-second cold start</strong> creates unacceptable latency spikes for user-facing production applications.</p>
+<h2>2. Economic Efficiency</h2>
+<p><strong>Winner: Scaleway Serverless SQL</strong></p>
+<p>For sporadic workloads, MVPs, or development environments, Scaleway is unrivaled. Its <strong>Scale-to-Zero</strong> capability allows idle databases to cost effectively nothing (~€0.10/mo for storage). In contrast, STACKIT requires a provisioned commitment (~€50-€140/mo minimum), making it financially inefficient for low-traffic applications.</p>
+<h2>3. Lock-In &amp; Portability</h2>
+<p><strong>Winner: STACKIT</strong></p>
+<p>STACKIT offers low lock-in via standard PostgreSQL compliance; migration is a simple dump/restore. Scaleway imposes "implementation lock-in," requiring application-level workarounds for its limitations (e.g., cold starts, pooling logic) which increases technical debt upon exit.</p>
+<h2>Final Verdict</h2>
+<p>We will treat these as complementary rather than competitive. Scaleway is the de facto choice for non-critical environments to minimize burn rate. STACKIT is the mandatory choice for production systems requiring SLA guarantees and standard SQL behavior.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/messaging/reference-content/messaging-overview/" target="_blank">Messaging and Queuing</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/rabbitmq/" target="_blank">STACKIT RabbitMQ</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            5
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-positive">
+                            9
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT RabbitMQ (Service B) offers a technically superior messaging engine for serious applications. Its support for the full AMQP protocol enables complex routing, lower latency (push vs. poll), and ordered delivery guarantees that Scaleway's 'Queues' (Service A) cannot match due to its SQS-based limitations. While Scaleway offers a 'Serverless' DX advantage, the technical debt of using an 'in-house SQS clone' that lacks full feature parity is a significant negative compared to a managed standard RabbitMQ instance.<br><br>
+                                    <strong>Lock-in:</strong> Service B (STACKIT) is a standard managed RabbitMQ instance; you can migrate to any other Cloud (AWS Amazon MQ, CloudAMQP) or self-hosted Docker container by simply exporting definitions, resulting in near-zero lock-in. Service A (Scaleway) uses a proprietary implementation of the AWS SQS API. While it uses the SQS protocol, it is *not* AWS SQS, and it is not an open standard. Migrating away involves either code rewrites (if moving to a standard broker) or potential behavior incompatibilities (if moving to AWS SQS), creating high friction.<br><br>
+                                    <strong>Pricing:</strong> Scaleway (A) offers a serverless 'Messaging and Queuing' product (supporting NATS/SQS/SNS) with an aggressive usage-based model (€0.01/GB), making it virtually free for early-stage startups. STACKIT (B) provides a fully managed RabbitMQ service that appears to default to High Availability clusters (3 nodes), resulting in a high minimum monthly cost (~€146/mo for the smallest 'Replica' tier). While STACKIT offers a dedicated RabbitMQ environment, Scaleway is drastically more cost-effective for typical startup needs unless specific RabbitMQ features are mandatory.<br><br>
+                                    <strong>Synthesis:</strong> <h1>Strategic Assessment: Scaleway Messaging vs. STACKIT RabbitMQ</h1>
+<p>This comparison represents a fundamental choice between <strong>serverless cost efficiency</strong> and <strong>standardized architectural maturity</strong>.</p>
+<h2>1. Architecture and Performance</h2>
+<p><strong>STACKIT RabbitMQ</strong> is the superior technical platform. By providing a managed instance of the industry-standard RabbitMQ broker, it supports AMQP 0-9-1, MQTT, and STOMP natively. This enables push-based delivery (sub-millisecond latency), complex routing topologies (Fanout/Topic exchanges), and ordered delivery. It allows the use of battle-hardened libraries like MassTransit or NServiceBus.</p>
+<p><strong>Scaleway Messaging</strong>, specifically its 'Queues' offering, acts as a serverless emulator of AWS SQS. While it scales to zero, it relies on polling (higher latency) and lacks full protocol parity. The NATS offering is robust but requires a specific architectural commitment.</p>
+<h2>2. Cost Dynamics</h2>
+<p><strong>Scaleway</strong> dominates on price efficiency for sporadic or scaling workloads. Its pricing model (€0.01/GB) means idle environments cost nothing, making it ideal for startups or event-driven serverless functions.</p>
+<p><strong>STACKIT</strong> operates on a provisioned cluster model. With High Availability (3-node) defaults, the entry cost is high (~€146/mo). This fits steady-state enterprise workloads but is wasteful for early-stage development.</p>
+<h2>3. Vendor Lock-In &amp; Risk</h2>
+<p><strong>STACKIT</strong> offers near-zero lock-in. Because it is standard RabbitMQ, configurations can be lifted and shifted to any other cloud or self-hosted environment. </p>
+<p><strong>Scaleway</strong> presents high lock-in risk. Its SQS-compatible queues are a proprietary implementation; migrating away requires handling subtle behavioral differences or rewriting code to fit a standard broker.</p>
+<h2>Verdict</h2>
+<p>Choose <strong>STACKIT</strong> for mission-critical systems requiring complex routing, low latency, and protocol standardization. Choose <strong>Scaleway</strong> only if cost is the primary constraint and the application can tolerate the latency and limitations of a polling-based SQS emulation.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/managed-databases/opensearch/quickstart/" target="_blank">Cloud Essentials for OpenSearch</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/databases/opensearch/" target="_blank">STACKIT OpenSearch</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -5
+                        </td>
+                        <td class="score score-positive">
+                            7
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT (Service B) is noticeably inferior in flexibility. Its reliance on fixed 'plans' (e.g., 3-node Replica sets) limits the ability to fine-tune cluster architecture (e.g., adding dedicated coordinator nodes or scaling storage independently of RAM in granular increments) compared to Scaleway (Service A). Furthermore, STACKIT's documentation references older versions (2.8) and seemingly conflates configuration with versioning in plan names, suggesting a rigid managed service wrapper that may lag in exposing critical new OpenSearch features like neural search/vector improvements.<br><br>
+                                    <strong>Lock-in:</strong> Both services are managed wrappers around the open-source OpenSearch engine. Data is portable via snapshots (S3-compatible). Neither introduces proprietary query languages or closed APIs. While STACKIT favors Cloud Foundry for provisioning, the underlying engine remains standard OpenSearch, meaning migration costs are strictly operational (data movement) rather than technical refactoring.<br><br>
+                                    <strong>Pricing:</strong> Scaleway (A) is the clear winner for early-stage startups due to a much lower barrier to entry. STACKIT (B) appears to enforce a 3-node replica architecture even for its smallest plans (starting at ~€0.20/hour or ~€146/month), which is overkill for a dev/test environment. Scaleway's 'Cloud Essentials' and general pricing strategy typically allow for single-node instances at a fraction of that cost (<€40/month). While STACKIT offers good value for production HA, Scaleway is far more cost-effective for typical startup growth curves.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Synthesis</h3>
+<p><strong>Scaleway</strong> (Service A) is the superior choice for modern, scalable OpenSearch deployments, offering granular control and cost efficiency. <strong>STACKIT</strong> (Service B) serves a specific niche: enterprises requiring strict German data sovereignty or legacy Cloud Foundry integrations.</p>
+<h4>1. Architecture and Flexibility</h4>
+<p>Scaleway mimics the flexibility of major hyperscalers. It allows engineers to decouple storage from compute, choose between Shared (dev) and Dedicated (prod) vCPU instances, and scale nodes horizontally based on load. Its support for modern OpenSearch versions (2.17+) ensures access to critical AI and vector search capabilities.</p>
+<p>In contrast, STACKIT relies on a rigid "Service Broker" model. It enforces "t-shirt size" plans, requiring a minimum of three nodes for reliability even in smaller tiers. This lack of granularity prevents architecture optimization (e.g., dedicated coordinator nodes) and forces over-provisioning.</p>
+<h4>2. Cost Efficiency</h4>
+<p>Scaleway wins decisively on price-to-performance. Its ability to provision single-node instances allows for low-cost development environments (&lt;€40/mo), scaling linearly with demand. STACKIT's pricing structure, while transparent, sets a high floor (~€146/mo) by mandating High Availability clusters immediately, making it fiscally irresponsible for non-production or early-stage workloads.</p>
+<h4>3. Strategic Fit</h4>
+<ul>
+<li><strong>Choose Scaleway:</strong> For agile teams needing modern vector search, granular scaling, and optimized spend.</li>
+<li><strong>Choose STACKIT:</strong> Only if bound by strict Schwarz Group compliance or if operating within a Cloud Foundry ecosystem.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Monitoring (Avg Score: -7.0)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/observability/cockpit/quickstart/" target="_blank">Cockpit</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/monitoring/observability/" target="_blank">STACKIT Observability</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -4
+                        </td>
+                        <td class="score score-negative">
+                            -10
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Scaleway Cockpit (Service A) is technically superior in terms of Developer Experience (DX) and seamlessness. Its architecture (Mimir/Loki/Tempo) is invisible to the user but provides immediate value through auto-instrumentation of the platform. STACKIT Observability (Service B) is a standard 'Managed Prometheus/Grafana' offering that lacks the deep platform integration that makes Cockpit feel next-gen. The need to manually deploy Promtail or OTel collectors for STACKIT's own Kubernetes clusters (SKE) is a significant friction point compared to Cockpit's out-of-the-box readiness.<br><br>
+                                    <strong>Lock-in:</strong> Both services are exemplary in avoiding vendor lock-in. They both expose standard open-source endpoints (Prometheus Remote Write, Loki push API, OpenTelemetry/Tempo). Migrating away from either service is as simple as changing the destination URL in your agents (Grafana Alloy, OTel Collector, or Promtail). There are no proprietary query languages or non-exportable data formats used.<br><br>
+                                    <strong>Pricing:</strong> Scaleway offers a vastly superior model for startups by providing free monitoring for its own infrastructure and a low-cost pay-per-use rate (€0.15/1M samples) for custom data. STACKIT requires provisioning dedicated instances with a minimum cost of ~€20-70/month regardless of usage volume, making it significantly more expensive for typical startup workloads.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Verdict</h3>
+<p>Scaleway Cockpit dominates this comparison by transforming observability from a "manageable task" into an invisible, platform-native feature. While STACKIT offers a competent managed Prometheus/Grafana stack, it feels archaic requiring manual instance provisioning and configuration. Scaleway provides superior time-to-value and cost efficiency.</p>
+<h3>Technical Architecture: Integration vs. Provisioning</h3>
+<p><strong>Scaleway Cockpit</strong> leverages a modern Grafana Mimir backend to offer "zero-conf" auto-discovery. It automatically ingests metrics from Scaleway resources (Kapsule, Serverless) without agent installation. This unified approach reduces operational overhead significantly.</p>
+<p><strong>STACKIT Observability</strong>, conversely, treats monitoring as a standalone SaaS product. Users must provision specific "T-shirt sized" instances and manually deploy OpenTelemetry collectors or Promtail, even for STACKIT's own Kubernetes clusters. This friction makes it less agile than Cockpit's seamless integration.</p>
+<h3>Cost Analysis: Consumption vs. Capacity</h3>
+<p>Scaleway’s pricing strategy is aggressive and highly favorable:
+*   <strong>Scaleway:</strong> Free ingestion/retention for internal platform data. Custom data is pay-per-use (€0.15/1M samples).
+*   <strong>STACKIT:</strong> Minimum monthly commit of ~€20 for the smallest instance, scaling up to dedicated capacity pricing.</p>
+<p>For startups and variable workloads, Scaleway's model prevents paying for idle capacity, whereas STACKIT imposes a rigid floor cost.</p>
+<h3>Strategic Recommendation</h3>
+<p>Both vendors adhere strictly to OpenTelemetry and Grafana standards, ensuring zero vendor lock-in. However, <strong>Scaleway Cockpit</strong> is the clear winner for maximizing ROI and developer velocity. Use STACKIT only if you require strict capacity reservations within a dedicated German enterprise context.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>AI Services (Avg Score: -2.75)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/compute/gpu/quickstart/" target="_blank">GPU Instances</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/iaas/compute-engine/" target="_blank">STACKIT Compute Engine GPU</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -3
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-positive">
+                            10
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) provides raw power and enterprise-grade hardware (H100 HGX) that rivals or matches Service A. However, Service A (Scaleway) offers a significantly more refined Developer Experience, a broader range of GPU options (from cheap inference chips to training monsters), and a more mature surrounding ecosystem (Managed K8s, Serverless). STACKIT's reliance on raw OpenStack interfaces, while powerful, presents a steeper learning curve and higher friction for general developers compared to Scaleway's polished, modern cloud UX.<br><br>
+                                    <strong>Lock-in:</strong> Service B (STACKIT) is built directly on OpenStack (Nova, Cinder), the industry-standard open-source cloud infrastructure. Workloads and automation scripts built for STACKIT can be migrated to any other OpenStack provider or private cloud with near-zero friction. In contrast, Service A (Scaleway) utilizes a proprietary API and orchestration layer; while they support Terraform, migrating away requires significant re-tooling of the infrastructure management layer.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is aggressively priced, positioning itself as a budget-friendly alternative to hyperscalers with H100 instances available at ~€2.73/hr and H100 SXM nodes at ~€23/hr. STACKIT, while offering high-performance German-hosted infrastructure, charges premium enterprise rates (e.g., ~€64/hr for an 8x H100 node vs. Scaleway's ~€23/hr). For a typical startup focused on value-for-money, STACKIT is significantly more expensive.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Verdict</h3>
+<p>For the vast majority of technical organizations, <strong>Scaleway</strong> is the superior choice due to a massive cost advantage and a significantly more mature developer experience (DX). STACKIT serves a niche role for enterprises requiring absolute German data sovereignty or native OpenStack portability.</p>
+<h3>Technical Architecture &amp; Usability</h3>
+<p><strong>Scaleway</strong> operates as a modern public cloud. It offers a polished console, a rich ecosystem of managed services (Kubernetes Kapsule, Serverless Containers), and a "click-and-deploy" experience comparable to US hyperscalers. It abstracts the infrastructure complexity, allowing teams to focus on shipping code.</p>
+<p><strong>STACKIT</strong> is built on <strong>OpenStack</strong>. This is a double-edged sword: it offers zero-layer abstraction and high portability (low vendor lock-in), making it ideal for Ops teams already managing hybrid OpenStack environments. However, it lacks the refined UX of Scaleway, presenting a steeper learning curve for developers accustomed to modern managed clouds.</p>
+<h3>The Cost Efficiency Gap</h3>
+<p>The pricing disparity is stark. Scaleway aggressively targets the AI market with H100 nodes priced roughly <strong>65% lower</strong> than STACKIT (€23/hr vs. ~€64/hr). For inference, Scaleway offers entry-level L4 GPUs and legacy P100s, whereas STACKIT's entry point is significantly higher. Unless the premium for German sovereignty is a legal requirement, Scaleway's ROI is unassailable.</p>
+<h3>Recommendation</h3>
+<ul>
+<li><strong>Choose Scaleway</strong> for AI training, inference, and general application hosting. The combination of low cost, high performance, and ease of use makes it the default winner.</li>
+<li><strong>Choose STACKIT</strong> only if your workload strictly requires <strong>OpenStack</strong> APIs for hybrid cloud automation or if you are bound by rigorous compliance frameworks necessitating Schwarz Group-backed sovereignty.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/ai-inference/managed-inference/quickstart/" target="_blank">Managed Inference</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/ai/ai-model-serving/" target="_blank">STACKIT AI Model Serving</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -5
+                        </td>
+                        <td class="score score-positive">
+                            6
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT (Service B) is noticeably inferior in feature depth compared to Scaleway (Service A). While STACKIT provides a competent, compliant serverless inference endpoint, it lacks the 'Dedicated' tier that allows for custom model hosting, specific GPU selection, and performance tuning which Scaleway offers. Scaleway's maturity is also superior, having moved past the basic 'hosting open weights' phase into offering a comprehensive AI platform with observability (Cockpit) and hardware transparency. STACKIT is effectively a subset of what Scaleway offers (comparable only to Scaleway's 'Generative APIs' product).<br><br>
+                                    <strong>Lock-in:</strong> Symmetrical Standards. Both vendors rely entirely on open-source model weights (Llama, Mistral, etc.) and expose them via the industry-standard OpenAI API format. Migration between the two (or to AWS/Azure) requires only changing the API Base URL and API Key, with no proprietary SDKs or data formats enforcing stickiness.<br><br>
+                                    <strong>Pricing:</strong> STACKIT is the clear winner for cost-conscious startups needing large model inference (e.g., Llama 70B), undercutting Scaleway's per-token pricing by approximately 30-40%. For smaller models (8B), pricing is effectively at parity (~€0.40 blended for 1M In/Out). While Scaleway offers a Dedicated GPU option ('Managed Inference'), its high monthly minimum (~€679) makes it unviable for early-stage startups compared to STACKIT's flexible token-based model. STACKIT's only downside is the manual approval for the free trial, but strictly on unit economics, it provides better value.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical Assessment</h3>
+<p>Scaleway acts as the mature, engineer-focused platform, while STACKIT operates as a cost-efficient, sovereign utility for the DACH market. The choice hinges on whether your workload requires infrastructure control (Scaleway) or purely commoditized inference (STACKIT).</p>
+<h4>1. Architecture &amp; Capabilities</h4>
+<p>Scaleway's dominance lies in its dual-mode offering. It provides <strong>Generative APIs</strong> for quick prototyping and <strong>Managed Inference</strong> for production. The latter allows for dedicated GPU reservation (L4, H100 SXM), enabling customers to load custom Hugging Face weights and control quantization (FP8/INT8). STACKIT, by contrast, is strictly a shared, serverless endpoint. It restricts users to a curated menu of open-source models (Llama, Mistral) with no ability to tune the runtime or access the underlying hardware.</p>
+<h4>2. Cost Efficiency vs. Performance</h4>
+<p>STACKIT is the clear winner for cost-sensitive, generic workloads. It undercuts Scaleway's per-token pricing on large models (e.g., Llama 70B) by approximately 30-40%. However, this comes with shared-tenant latency risks. Scaleway's dedicated nodes require a higher monthly commit (starting ~€679/mo) but deliver predictable throughput and isolation, which is non-negotiable for high-SLA applications.</p>
+<h4>3. Integration &amp; Lock-in</h4>
+<p>Both vendors utilize the OpenAI-compatible API standard, resulting in near-zero switching costs. Migration is as simple as swapping the API base URL. </p>
+<h3>Recommendation</h3>
+<ul>
+<li><strong>Select Scaleway</strong> for core product features requiring custom models, low-latency guarantees, or specific hardware optimization.</li>
+<li><strong>Select STACKIT</strong> for internal tooling, batch processing, or standard RAG workflows where price and GDPR/DACH sovereignty are the primary constraints.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Security and Governance (Avg Score: -1.75)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/identity-and-access-management/secret-manager/quickstart/" target="_blank">Secret Manager</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/security/secrets-manager/" target="_blank">STACKIT Secrets Manager</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            5
+                        </td>
+                        <td class="score score-negative">
+                            -7
+                        </td>
+                        <td class="score score-positive">
+                            9
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT (Service B) acts as a Managed HashiCorp Vault. This is technically superior to Scaleway's (Service A) proprietary Key-Value store because it provides a richer, industry-standard API protocol. While Scaleway's implementation is solid and functional for its ecosystem, STACKIT effectively gives developers 'Vault-as-a-Service,' which typically requires significant operational effort to run self-hosted. The ability to use standard Vault tooling places STACKIT ahead in terms of capability ceiling and ecosystem readiness.<br><br>
+                                    <strong>Lock-in:</strong> STACKIT (Service B) has near-zero lock-in because it exposes the standard HashiCorp Vault API. A user can migrate away from STACKIT by simply exporting their data and importing it into any other Vault instance (self-hosted, HCP, or another cloud's managed Vault) with no code changes to their applications. Scaleway (Service A) uses a proprietary API; while tools like External Secrets Operator abstract this for Kubernetes, the underlying application logic and Terraform code are vendor-specific.<br><br>
+                                    <strong>Pricing:</strong> Scaleway is the more cost-effective choice for a typical startup workload. Its base storage rate is €0.04 per version compared to STACKIT's ~€0.10 (for low volumes), making it 60% cheaper on storage. While Scaleway charges for API requests (€0.03/10k), the cost is negligible for standard application traffic. STACKIT only becomes competitive at massive scale (>1M secrets) where its unit price drops below Scaleway's flat rate.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Synthesis</h3>
+<p><strong>Architecture &amp; Ecosystem</strong>
+This comparison highlights a fundamental divergence in design philosophy: Proprietary Cloud-Native vs. Managed Open Standard.</p>
+<ul>
+<li><strong>STACKIT Secrets Manager</strong> operates as a Managed HashiCorp Vault. This is a significant technical advantage, granting users access to the industry-standard <code>vault</code> CLI, SDKs, and vast ecosystem of integrations (e.g., Spring Cloud Vault, Kubernetes sidecars) without code modification. It effectively democratizes 'Vault' for teams unwilling to manage the operational complexity of self-hosting.</li>
+<li><strong>Scaleway Secret Manager</strong> is a proprietary Key-Value store. It excels in simplicity and tight integration with the Scaleway ecosystem (Kapsule, Serverless). While it supports the External Secrets Operator for Kubernetes, it lacks the portability of STACKIT.</li>
+</ul>
+<p><strong>Lock-In &amp; Standards</strong>
+STACKIT achieves a rare perfect score on lock-in avoidance. Because it exposes the standard Vault API, migration is as simple as data export/import to any other Vault instance. Scaleway, utilizing a custom API, imposes moderate vendor coupling.</p>
+<p><strong>Cost Efficiency</strong>
+Scaleway is the clear winner for cost efficiency in typical scenarios. Its storage cost (€0.04/version) is roughly 60% cheaper than STACKIT's base tier (~€0.10/version). STACKIT's pricing model implies it targets enterprise-grade scale, where volume discounts (&gt;1M secrets) eventually undercut Scaleway's flat rate.</p>
+<h3>Strategic Recommendation</h3>
+<ul>
+<li><strong>Choose STACKIT</strong> if your architecture relies on the HashiCorp Vault standard, requires multi-cloud portability, or demands zero lock-in.</li>
+<li><strong>Choose Scaleway</strong> for pure Scaleway-native workloads where cost optimization and integration simplicity outweigh the need for an open API standard.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/identity-and-access-management/key-manager/quickstart/" target="_blank">Key Manager</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/security/key-management-service/" target="_blank">STACKIT Key Management Service (KMS)</a>
+                            
+                        </td>
+                        <td class="score score-positive">
+                            4
+                        </td>
+                        <td class="score score-negative">
+                            -9
+                        </td>
+                        <td class="score score-neutral">
+                            0
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> STACKIT receives a positive score (+4) primarily due to its superior 'Platform Integration'. In the context of a Cloud KMS, the ability to seamlessly encrypt other cloud resources (Volumes, Secrets, Buckets) without writing custom glue code is the primary value proposition. Scaleway's approach, particularly for Object Storage (relying on manual SSE-C plumbing), forces developers to build their own key retrieval and injection logic, which is a significant degradation in Developer Experience (DX) compared to STACKIT's native associations. While Scaleway is slightly more mature in documentation, STACKIT's architectural model is more aligned with modern enterprise expectations of a 'Managed KMS'.<br><br>
+                                    <strong>Lock-in:</strong> Both services exhibit symmetrical vendor lock-in. They both utilize proprietary REST APIs (Scaleway API vs. STACKIT KMS API) rather than exposing a standard interface like KMIP or a raw Vault endpoint to the public internet. While STACKIT is likely built on OpenStack Barbican, the public API documentation indicates a provider-specific wrapper (v1), neutralizing any standardization benefit. Moving away from either service would require re-implementing the cryptographic calls and re-encrypting data (or exporting/importing keys where BYOK is supported), resulting in identical exit costs.<br><br>
+                                    <strong>Pricing:</strong> Scaleway (A) is the clear winner for cost-efficiency with an exceptionally low price point of €0.04 per key/month, which rivals or beats almost all major providers (Google Cloud is ~$0.06, AWS is $1.00). STACKIT (B) does not publicly display granular KMS pricing on its web pages (requiring PDF download or login), which usually indicates standard enterprise pricing (typically ~€1.00/key). For a typical startup workload, Scaleway's pricing is significantly more transparent and cheaper.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Strategic Overview</h3>
+<p>This evaluation contrasts <strong>Scaleway Key Manager</strong>, a cost-leader focused on application-layer cryptography, against <strong>STACKIT KMS</strong>, an enterprise-oriented service deeply embedded in its infrastructure ecosystem. The decision hinges on whether the priority is raw cryptographic utility at the lowest price or seamless infrastructure compliance.</p>
+<h3>Technical Architecture &amp; Integration</h3>
+<p><strong>STACKIT KMS</strong> (Technical Score: +4) is the superior choice for platform engineering. Its defining advantage is native integration: encrypting Block Storage (Volumes) or Secrets requires simple configuration parameters rather than custom code. It supports enterprise essentials like Bring Your Own Key (BYOK) and automatic rotation out-of-the-box. The architecture, likely based on OpenStack Barbican, fits standard enterprise patterns.</p>
+<p><strong>Scaleway</strong> offers a stable, mature product but suffers from high friction in platform operations. Encrypting Object Storage, for instance, demands a manual Server-Side Encryption with Customer-Provided Keys (SSE-C) workflow. This forces developers to manage key retrieval and injection logic within the application code, increasing complexity compared to STACKIT's managed integration.</p>
+<h3>Cost Efficiency</h3>
+<p><strong>Scaleway</strong> (Cost Score: -9) dominates purely on economics. At €0.04 per key version/month and €0.03 per 10k requests, it is practically negligible on the bill. It is ideal for startups or high-volume key architectures.</p>
+<p><strong>STACKIT</strong> lacks public pricing transparency, a trait typical of enterprise agreements. While likely competitive for large contracts (Schwarz Group), it cannot compete with Scaleway's advertised efficiency for granular usage.</p>
+<h3>Recommendation</h3>
+<ul>
+<li><strong>Select STACKIT KMS</strong> if hosting infrastructure (VMs, Volumes) on STACKIT. The operational savings from native encryption integration outweigh the higher unit costs.</li>
+<li><strong>Select Scaleway</strong> for standalone applications requiring cryptographic primitives (signing, decoupled encryption) where infrastructure integration is secondary to cost.</li>
+</ul>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        <details>
+            <summary>Developer Tools (Avg Score: 1.0)</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ScaleWay Service</th>
+                        <th>StackIT Service</th>
+                        <th>Technical Score</th>
+                        <th>Cost Score</th>
+                        <th>LockIn Score</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://www.scaleway.com/en/docs/web-platform/clever-cloud/quickstart/" target="_blank">Web Platform</a></td>
+                        <td>
+                            
+                            <a href="https://docs.stackit.cloud/stackit/en/services/container/cloud-foundry/" target="_blank">STACKIT Cloud Foundry</a>
+                            
+                        </td>
+                        <td class="score score-negative">
+                            -5
+                        </td>
+                        <td class="score score-positive">
+                            7
+                        </td>
+                        <td class="score score-positive">
+                            5
+                        </td>
+                        <td>
+                            <details>
+                                <summary>View Details</summary>
+                                <div style="padding: 10px; background: #fafafa;">
+                                    <strong>Technical:</strong> Service B (STACKIT) is noticeably inferior in terms of modern developer experience and ecosystem vitality. Cloud Foundry is widely regarded as a legacy standard in 2026, with declining adoption and 'heavy' operations compared to Service A's (Scaleway/Clever Cloud) lightweight, modern PaaS approach. The sunsetting of STACKIT's 'Dedicated' CF preview further erodes confidence in its roadmap, whereas Service A offers a vibrant, user-praised deployment model.<br><br>
+                                    <strong>Lock-in:</strong> Service B (STACKIT) is based on Cloud Foundry, an open-source industry standard. Users can theoretically migrate manifests and buildpacks to any other Cloud Foundry provider or a self-hosted instance with minimal code changes. Service A (Scaleway) relies on Clever Cloud's proprietary orchestration and configuration (e.g., clever.json); while the application code remains standard, the deployment logic and platform behaviors are specific to the vendor, creating higher friction for exit.<br><br>
+                                    <strong>Pricing:</strong> Scaleway's Serverless Containers (Web Platform) model is superior for startups due to its 'scale-to-zero' capability and per-second billing, allowing sporadic workloads to run almost for free. StackIT uses a traditional PaaS model (likely per MB-hour, approx. €0.04/GB/hr), which incurs costs as long as the application is deployed, regardless of traffic. While the raw hourly cost for an active 1GB instance is similar (~€0.04/hr), Scaleway's free tier and idle savings make it significantly cheaper for early-stage or variable startup workloads.<br><br>
+                                    <strong>Synthesis:</strong> <h3>Executive Technical &amp; Financial Review</h3>
+<p><strong>Scaleway Web Platform</strong> (powered by Clever Cloud) and <strong>STACKIT Cloud Foundry</strong> represent two diverging philosophies in Platform-as-a-Service: modern agility versus enterprise legacy compliance.</p>
+<h4>1. Technical Architecture &amp; Developer Experience</h4>
+<p>Scaleway delivers a superior Developer Experience (DX). By utilizing the Clever Cloud engine, it offers a "git-push" deployment model that is lightweight and highly praised by the developer community. It supports polyglot applications with minimal friction. Conversely, STACKIT relies on Cloud Foundry (CF), a standard that, while robust, is facing declining market share and "heavier" operational overhead. The recent sunsetting of STACKIT's "Dedicated CF" preview suggests roadmap consolidation, making it a riskier bet for long-term innovation compared to Scaleway's vibrant ecosystem.</p>
+<h4>2. Cost Efficiency &amp; Economics</h4>
+<p>Scaleway wins decisively on economics for modern workloads. Its <strong>scale-to-zero</strong> capability and per-second billing mean idle applications cost nothing—a critical advantage for startups and variable workloads. The generous recurring free tier further sweetens the deal. STACKIT operates on a traditional billing model (per MB-Hour) where costs accrue as long as the service is deployed, regardless of traffic. For sporadic or early-stage applications, Scaleway is significantly cheaper.</p>
+<h4>3. Strategic Trade-offs: Innovation vs. Sovereignty</h4>
+<p>The only strong argument for STACKIT is <strong>Digital Sovereignty</strong> and <strong>Portability</strong>. As a Schwarz Group entity, STACKIT is ideal for German enterprises requiring strict data residency and adherence to Cloud Foundry open standards (low lock-in). Scaleway, while European, relies on a proprietary orchestration layer (medium lock-in), though the underlying code remains standard.</p>
+<h3>CTO Verdict</h3>
+<p>Select <strong>Scaleway</strong> for all greenfield projects, startups, and agile teams requiring cost efficiency and modern tooling. Relegate <strong>STACKIT</strong> solely to scenarios where German data sovereignty or legacy Cloud Foundry manifest compatibility is a non-negotiable compliance requirement.</p>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </details>
+        
+        
+
+        <h3>Services in ScaleWay Missing in StackIT</h3>
+        
+        <ul>
+            
+            <li>Dedibox (Compute)</li>
+            
+            <li>Elastic Metal (Compute)</li>
+            
+            <li>Apple Silicon (Compute)</li>
+            
+            <li>Serverless Containers (Compute)</li>
+            
+            <li>Serverless Jobs (Compute)</li>
+            
+            <li>Kubernetes Kosmos (Container Operations)</li>
+            
+            <li>Data Warehouse for ClickHouse® (Databases and Big Data)</li>
+            
+            <li>Data Lab for Apache Spark™ (Databases and Big Data)</li>
+            
+            <li>Generative APIs (AI Services)</li>
+            
+            <li>Identity and Access Management (IAM) (Security and Governance)</li>
+            
+            <li>Cost Manager (Security and Governance)</li>
+            
+            <li>Transactional Email (TEM) (Developer Tools)</li>
+            
+            <li>Web Hosting (Developer Tools)</li>
+            
+            <li>IoT Hub (Edge and IoT)</li>
+            
+        </ul>
+        
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('domainScoresChart');
+        const chartData = {
+            labels: JSON.parse('["Compute", "Storage", "Networking", "Container Operations", "Databases and Big Data", "Monitoring", "AI Services", "Security and Governance", "Developer Tools"]'),
+            datasets: [
+                {
+                    label: 'Technical Score (StackIT vs ScaleWay)',
+                    data: JSON.parse('[-5.5, -6.0, -4.0, -7.0, 1.0, -4.0, -4.0, 4.5, -5.0]'),
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    pointBackgroundColor: 'rgb(54, 162, 235)',
+                },
+                {
+                    label: 'Cost Efficiency (StackIT vs ScaleWay)',
+                    data: JSON.parse('[-8.0, -9.0, -4.25, 4.0, -6.0, -10.0, -1.5, -8.0, 7.0]'),
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                },
+                {
+                    label: 'LockIn Score (StackIT vs ScaleWay)',
+                    data: JSON.parse('[0.0, 0.0, 5.25, 0.0, 2.33, 0.0, 5.0, 4.5, 5.0]'),
+                    fill: true,
+                    backgroundColor: 'rgba(255, 205, 86, 0.2)',
+                    borderColor: 'rgb(255, 205, 86)',
+                    pointBackgroundColor: 'rgb(255, 205, 86)',
+                }
+            ]
+        };
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: chartData,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        min: -10,
+                        max: 10,
+                        ticks: {
+                           backdropColor: 'rgba(0, 0, 0, 0)',
+                           color: '#444'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
