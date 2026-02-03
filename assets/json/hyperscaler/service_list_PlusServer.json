@@ -1,0 +1,244 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "pluscloud open",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudopen/introduction/resources/",
+      "description": "A sovereign, OpenStack-based public cloud offering flexible IaaS components. It provides virtual instances with various flavors, including CPU-optimized and RAM-optimized options, fully integrated with software-defined networking and shared storage, adhering to the Sovereign Cloud Stack (SCS)."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "pluscloud VMware",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudvmware/introduction/quickstart/",
+      "description": "Enterprise-grade cloud platform based on VMware vCloud Director. It enables users to manage virtual data centers (OrgVDCs), deploy vApps, and manage virtual machines with seamless integration into existing VMware environments, providing high availability and dedicated resource isolation."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Dedicated Server",
+      "service_url": "https://docs.plusserver.com/en/compute/dedicated-server/introduction/",
+      "description": "High-performance physical servers provided as a managed or self-service offering. These servers provide dedicated hardware resources for demanding workloads that require maximum performance, security, and hardware-level control without the overhead of virtualization."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Managed OS",
+      "service_url": "https://docs.plusserver.com/en/compute/managed-os/introduction/",
+      "description": "Comprehensive management for Linux and Windows server instances. PlusServer handles the patch management, OS hardening, proactive monitoring, and 24/7 incident response, allowing customers to focus entirely on their application layer while ensuring system stability and security."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "S3 Object Storage",
+      "service_url": "https://docs.plusserver.com/en/storage-backup/s3-storage/documentation/",
+      "description": "Scalable, S3-compatible object storage for unstructured data. It supports advanced features like Object Lock (Compliance and Governance modes) for data immutability, versioning, and identity federation, making it ideal for backups, archiving, and cloud-native application data."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Local SSD Storage",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudopen/reference/local-storage/",
+      "description": "High-performance, non-shared storage physically attached to compute instances. Optimized for low-latency and high IOPS workloads such as temporary caches, ephemeral processing, or distributed databases with built-in replication like Patroni or Etcd."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "plusstorage (NFS)",
+      "service_url": "https://docs.plusserver.com/en/storage-backup/plusstorage/introduction/",
+      "description": "Managed Network Attached Storage (NAS) based on the NFS protocol. It allows multiple compute instances to mount the same volume simultaneously, providing a shared file system for applications requiring centralized data access and simplified file management."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Managed Backup (Veeam)",
+      "service_url": "https://docs.plusserver.com/en/storage-backup/backup/introduction/",
+      "description": "Centralized backup solution based on Veeam for securing virtual instances and data. Includes planning, daily monitoring of backup jobs, and encrypted storage in German data centers to meet compliance and recovery requirements (RTO/RPO) with managed restoration support."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Block Storage (Volumes)",
+      "service_url": "https://docs.plusserver.com/en/storage-backup/block-storage/introduction/",
+      "description": "Persistent block storage for pluscloud instances based on OpenStack Cinder. Offers various performance classes (SSD/NVMe), supports snapshots, and allows for dynamic volume resizing while attached, ensuring flexibility for data-intensive applications and databases."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Disaster Recovery as a Service (DRaaS)",
+      "service_url": "https://docs.plusserver.com/en/storage-backup/disaster-recovery/introduction/",
+      "description": "Solution for rapid recovery of critical IT infrastructure in a secondary data center in the event of a total failure. Continuous replication ensures that business operations and data availability are maintained with minimal interruption and low recovery time objectives."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Virtual Cloud Firewall",
+      "service_url": "https://docs.plusserver.com/en/network/vcfw-pco/documentation/",
+      "description": "A comprehensive security solution for pluscloud environments providing edge gateway functions, including stateful inspection, NAT rules, and VPN capabilities. It allows fine-grained control over inbound and outbound traffic to protect cloud resources."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Load Balancer as a Service",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudopen/documentation/network/loadbalancer/",
+      "description": "Managed load balancing service that distributes incoming network traffic across multiple backend instances. It supports health monitoring, SSL termination, and various balancing algorithms to ensure high availability and scalability for web applications and services."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Hybrid Connector",
+      "service_url": "https://docs.plusserver.com/en/network/hybrid-connector/introduction/",
+      "description": "A networking service designed to bridge pluscloud open with external infrastructures, including on-premises data centers or other cloud providers. It facilitates secure, low-latency connectivity for hybrid cloud architectures and seamless data migration."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "pluslink",
+      "service_url": "https://docs.plusserver.com/en/network/pluslink/introduction/",
+      "description": "Dedicated, private high-speed connection between corporate sites or other data centers and the pluscloud. This service offers guaranteed bandwidth, minimal latency, and maximum security by bypassing the public internet for sensitive data transfers."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "DNS as a Service (Designate)",
+      "service_url": "https://docs.plusserver.com/en/network/dns/introduction/",
+      "description": "Managed DNS service based on OpenStack Designate. Enables programmatic management of DNS zones and records via the CloudHub portal or API, supporting both private and public zones for name resolution within and outside the pluscloud infrastructure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "VPN as a Service (VPNaaS)",
+      "service_url": "https://docs.plusserver.com/en/network/vpn/introduction/",
+      "description": "Enables the setup of secure IPsec tunnels between local corporate networks and the pluscloud VPC. SREs can configure site-to-site connections to realize hybrid setups without needing to manually maintain dedicated hardware appliances within individual instances."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Floating IPs",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudopen/documentation/network/floating-ips/",
+      "description": "Public IPv4 addresses that can be dynamically assigned to instances or load balancers. They enable internet accessibility and can be rapidly remapped between instances in the event of failure, supporting high-availability and failover scenarios."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "plusserver Kubernetes Engine (PSKE)",
+      "service_url": "https://docs.plusserver.com/en/container/managed-kubernetes/documentation/",
+      "description": "A fully managed Kubernetes service that automates the deployment, scaling, and management of containerized applications. It features automated patching, monitoring, integrated storage classes, and autoscaling capabilities, providing a production-ready container orchestration platform."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Private Registry",
+      "service_url": "https://docs.plusserver.com/en/container/private-registry/introduction/",
+      "description": "Managed Docker registry based on Harbor. It provides a secure environment for storing and managing container images, featuring vulnerability scanning, image signing (Notary), and role-based access control (RBAC) to ensure container security throughout the CI/CD lifecycle."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Database as a Service (DBaaS)",
+      "service_url": "https://docs.plusserver.com/en/databases/",
+      "description": "Managed database services for PostgreSQL, MariaDB, and MySQL. PlusServer handles installation, automated backups, patching, and 24/7 monitoring. Users can scale resources on-demand and configure high-availability clusters with read replicas via the CloudHub portal."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Caching (Valkey)",
+      "service_url": "https://docs.plusserver.com/en/caching/valkey/introduction/overview/",
+      "description": "A fully managed, Redis-compatible in-memory data store based on Valkey. It provides ultra-low latency data access for session management, page caching, and real-time analytics, featuring automated backups, horizontal scaling with read replicas, and high-availability configurations."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed SAP on Cloud",
+      "service_url": "https://docs.plusserver.com/en/compute/sap/introduction/",
+      "description": "Specialized infrastructure and management services for SAP environments (HANA & Classic). Includes certified resource provisioning and operation of the basis layer under strict performance and security requirements for business-critical ERP systems."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Managed Monitoring",
+      "service_url": "https://docs.plusserver.com/en/compute/pluscloudopen/tutorials/prometheus-grafana/",
+      "description": "A monitoring solution typically integrated with managed services like PSKE. It utilizes Prometheus for metrics collection and Grafana for visualization, providing deep visibility into infrastructure performance, health, and application-specific metrics."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "plusAI",
+      "service_url": "https://docs.plusserver.com/en/ai/plusai/introduction/",
+      "description": "A digitally sovereign AI platform providing dedicated GPU resources and inference servers for Large Language Models (LLMs). It allows businesses to run AI workloads in a GDPR-compliant environment using open-source models tailored to their specific data and compliance needs."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Keycloak (Managed IAM)",
+      "service_url": "https://docs.plusserver.com/en/security/keycloak/introduction/",
+      "description": "Managed Identity and Access Management (IAM) based on Keycloak. It provides single sign-on (SSO), identity brokering, and social login capabilities, allowing organizations to centralize user management and secure applications with standard protocols like OpenID Connect and SAML."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "SOC as a Service",
+      "service_url": "https://docs.plusserver.com/en/security/soc/introduction/",
+      "description": "A 24/7 Security Operations Center service providing real-time monitoring and threat detection. It leverages expert analysts to identify suspicious behavior across cloud infrastructures, facilitating rapid incident response and continuous compliance management."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Managed WAF & DDoS Protection",
+      "service_url": "https://docs.plusserver.com/en/security/waf-ddos/introduction/",
+      "description": "Multi-layered protection for web applications against DDoS attacks and exploit attempts. The Web Application Firewall (WAF) filters malicious traffic based on OWASP rules, while DDoS protection ensures infrastructure availability even during massive attack scenarios."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Managed SSL",
+      "service_url": "https://docs.plusserver.com/en/security/managed-ssl/introduction/",
+      "description": "Automated provisioning and management of SSL/TLS certificates for web services. The service covers the entire lifecycle from request to installation and renewal, ensuring continuous encryption of customer communication without manual intervention."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Key Management Service (KMS)",
+      "service_url": "https://docs.plusserver.com/en/security/key-management/introduction/",
+      "description": "Centralized service for the secure storage and management of cryptographic keys, passwords, and certificates. Based on OpenStack Barbican, it enables the encryption of volumes and the secure provisioning of secrets for applications within the pluscloud environment."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "pluscloud open Terraform Provider",
+      "service_url": "https://registry.terraform.io/providers/plusserver/pluscloudopen/latest/docs",
+      "description": "Enables Infrastructure as Code (IaC) for automated resource provisioning in the pluscloud open. The provider supports the definition of instances, networks, security groups, and storage components for integration into CI/CD pipelines and GitOps workflows."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "pluscloud open CLI / API Access",
+      "service_url": "https://docs.plusserver.com/en/developer-tools/api-access/",
+      "description": "Provides direct access to the underlying APIs for all IaaS resources. SREs can use standard OpenStack clients or specific tools to create automation scripts, query cloud status, and perform complex orchestration tasks across the platform."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Colocation",
+      "service_url": "https://www.plusserver.com/en/product/colocation-hosting/",
+      "description": "Secure space in certified German data centers for housing customer-owned hardware. Provides redundant power, cooling, and high-speed connectivity with 24/7 access control and professional remote-hands support for seamless hybrid infrastructure integration."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed MySQL",
+      "service_url": "https://docs.plusserver.com/en/databases/mysql/introduction/overview/",
+      "description": "Fully managed MySQL database service including automated installation, daily backups, and security patching. It offers high availability configurations, vertical scaling, and SSL-encrypted access managed through the CloudHub portal for easy operations."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed MariaDB",
+      "service_url": "https://docs.plusserver.com/en/databases/mariadb/introduction/overview/",
+      "description": "Sovereign MariaDB-as-a-Service managed by plusserver. Provides automated lifecycle management, monitoring, and pay-as-you-go billing. SREs can quickly deploy instances and rely on plusserver for maintenance and performance optimization."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed PostgreSQL",
+      "service_url": "https://docs.plusserver.com/en/databases/postgresql/introduction/overview/",
+      "description": "Managed PostgreSQL service designed for enterprise workloads. Includes automatic failover, point-in-time recovery, and 24/7 monitoring. It allows developers to focus on data schema and application logic while plusserver handles the database infrastructure."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed CouchDB",
+      "service_url": "https://docs.plusserver.com/en/databases/couchdb/introduction/overview/",
+      "description": "Managed NoSQL database service based on Apache CouchDB. Ideal for document-oriented data and synchronization between distributed devices. Includes automated backups, maintenance, and high availability, making it a robust alternative for modern web and mobile apps."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Security Scanner",
+      "service_url": "https://docs.plusserver.com/en/security/10-security-scanner/10-introduction/quickstart_guide/",
+      "description": "Self-service vulnerability scanning tool that identifies security gaps and configuration errors in your cloud environment. It provides detailed reports and actionable recommendations to harden your infrastructure and ensure continuous security compliance."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "EDR as a Service",
+      "service_url": "https://docs.plusserver.com/en/security/20-siem-reporting/10-introduction/reporting-guide/",
+      "description": "Endpoint Detection and Response service that monitors server endpoints for malicious activities. It uses advanced telemetry to detect threats like ransomware or zero-day exploits, providing visibility through a central dashboard and integration with the plusserver SOC."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Workload Protection",
+      "service_url": "https://docs.plusserver.com/en/security/30-workload-protection/",
+      "description": "Real-time monitoring and threat detection for cloud workloads and containers. It analyzes system behavior, detects anomalies, and performs runtime vulnerability scans, helping to secure applications from code to deployment in multi-cloud environments."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Managed Nextcloud",
+      "service_url": "https://www.plusserver.com/produkt/managed-nextcloud/",
+      "description": "Souveräne Content Collaboration Plattform als Managed Service. Bietet Dateisynchronisation, Online-Dokumentenbearbeitung und sicheren Datenaustausch in einer DSGVO-konformen deutschen Cloud-Umgebung."
+    }
+  ]
+}

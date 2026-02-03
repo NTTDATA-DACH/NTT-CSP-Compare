@@ -1,0 +1,286 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Compute Engine",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/compute-engine",
+      "description": "Flexible and scalable virtual compute instances (VMs) supporting both Linux and Windows operating systems. Offers configurable CPU, RAM, and storage options to meet various workload requirements, from general-purpose to memory-optimized instances."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Run Command",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/run-command",
+      "description": "A remote execution framework that allows you to securely run scripts and commands across multiple virtual machines without needing direct SSH/RDP access. Facilitates automation of administrative tasks and configuration management."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Server Backup Management",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/server-backup",
+      "description": "Automated, crash-consistent, and self-managed server protection solution. Allows users to define flexible backup schedules and retention policies to ensure data resilience and disaster recovery compliance for their compute instances."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Server Update Management",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/server-update",
+      "description": "Automates the operating system (OS) update process for both Windows and Linux servers. Helps maintain security and stability by applying patches and updates according to user-defined maintenance windows."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "STACKIT Kubernetes Engine (SKE)",
+      "service_url": "https://docs.stackit.cloud/documentation/container/kubernetes-engine",
+      "description": "A fully managed Kubernetes service that automates the deployment, scaling, and management of containerized applications. Provides a certified Kubernetes environment with integrated monitoring, updates, and seamless integration with other STACKIT services."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "STACKIT Container Registry",
+      "service_url": "https://docs.stackit.cloud/documentation/container/container-registry",
+      "description": "A secure and private repository for storing and managing container images. Integrates with STACKIT Kubernetes Engine to streamline the deployment pipeline and ensure reliable access to container artifacts."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "STACKIT Object Storage",
+      "service_url": "https://docs.stackit.cloud/documentation/storage/object-storage",
+      "description": "S3-compatible, scalable object storage solution designed for storing large amounts of unstructured data. Ideal for backup, archiving, and data lakes, offering high availability, security, and easy integration with S3-compatible tools."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "STACKIT Block Storage",
+      "service_url": "https://docs.stackit.cloud/documentation/storage/block-storage",
+      "description": "High-performance, persistent block storage volumes that can be attached to Compute Engine instances. Suitable for latency-sensitive workloads, databases, and applications requiring reliable, low-latency disk access."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "STACKIT File Storage",
+      "service_url": "https://docs.stackit.cloud/documentation/storage/file-storage",
+      "description": "Managed file storage service supporting standard protocols like NFS. Provides a shared file system that can be accessed concurrently by multiple instances, making it suitable for content management systems and shared data workloads."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "STACKIT Backup Storage",
+      "service_url": "https://docs.stackit.cloud/documentation/storage/backup-storage",
+      "description": "Dedicated storage solution optimized for long-term retention of backup data. Integrates with backup tools to provide a secure and cost-effective target for preserving business-critical data assets."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Core Networking",
+      "service_url": "https://docs.stackit.cloud/documentation/network/core-networking",
+      "description": "Provides the fundamental networking components including Virtual Networks, subnets, and routing. Enables the construction of isolated and secure network environments to connect your cloud resources and on-premise infrastructure."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Load Balancer",
+      "service_url": "https://docs.stackit.cloud/documentation/network/load-balancing",
+      "description": "Distributes incoming network traffic across multiple targets to ensure high availability and reliability. Supports both Network Load Balancers (Layer 4) for high throughput and Application Load Balancers (Layer 7) for intelligent routing."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Content Delivery Network (CDN)",
+      "service_url": "https://docs.stackit.cloud/documentation/network/cdn",
+      "description": "A global content delivery network that caches content at edge locations closer to end-users. Improves application performance and reduces latency by delivering static assets like images, videos, and scripts from the nearest point of presence."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT DNS",
+      "service_url": "https://docs.stackit.cloud/documentation/network/dns",
+      "description": "A reliable and high-performance Domain Name System (DNS) service. Allows you to manage public DNS zones and records, ensuring that your applications and services are resolvable and accessible via user-friendly domain names."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Public IP",
+      "service_url": "https://docs.stackit.cloud/documentation/network/public-ip",
+      "description": "Provides static and dynamic public IPv4 addresses for your resources. Enables external connectivity for virtual machines, load balancers, and other services requiring internet access."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Unified Firewall",
+      "service_url": "https://docs.stackit.cloud/documentation/network/unified-firewall",
+      "description": "Centralized firewall management service providing comprehensive traffic control rules. Enhances network security by filtering traffic at the network edge and within your virtual networks based on defined security policies."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT PostgreSQL Flex",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/postgresql-flex",
+      "description": "Fully managed PostgreSQL database service offering high availability, automated backups, and updates. Designed for reliability and performance, it supports a wide range of applications from web services to enterprise workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT MongoDB Flex",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/mongodb-flex",
+      "description": "Managed MongoDB service providing a flexible, document-oriented database for modern applications. Offers automated operations, scaling, and enterprise-grade security features for handling unstructured data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT Redis",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/redis",
+      "description": "Managed in-memory data store compatible with Redis. High-performance solution used for caching, session management, and real-time analytics, delivering sub-millisecond latency for data-intensive applications."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT MariaDB",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/mariadb",
+      "description": "Managed relational database service optimized for dynamic web applications. Based on the open-source MariaDB engine, it provides a robust and scalable platform with automated maintenance and backup capabilities."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT OpenSearch",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/opensearch",
+      "description": "Managed search and analytics suite derived from Elasticsearch. Enables real-time search, log analytics, and data visualization, helping organizations extract insights from large volumes of operational and business data."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT SQLServer Flex",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/sqlserver-flex",
+      "description": "Managed Microsoft SQL Server database service. Provides enterprise-grade reliability, performance, and compatibility for mission-critical applications requiring the specific features of the MS SQL engine."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT RabbitMQ",
+      "service_url": "https://docs.stackit.cloud/documentation/messaging/rabbitmq",
+      "description": "Managed message broker service based on RabbitMQ. Facilitates asynchronous communication between microservices, ensuring reliable message delivery and decoupling of application components in distributed systems."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT Intake",
+      "service_url": "https://docs.stackit.cloud/documentation/data-ai/intake",
+      "description": "Managed streaming ingestion service leveraging the Kafka protocol. Simplifies the process of streaming data into the STACKIT Data Platform, enabling real-time data pipelines and integration with analytical storage."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "STACKIT AI Model Serving",
+      "service_url": "https://docs.stackit.cloud/documentation/data-ai/ai-model-serving",
+      "description": "Managed service for hosting and serving AI and LLM models with autoscaling capabilities. Allows developers to deploy machine learning models easily and serve predictions via API without managing the underlying infrastructure."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "STACKIT LogMe",
+      "service_url": "https://docs.stackit.cloud/documentation/logging-monitoring/logme",
+      "description": "Centralized log management service based on the ELK stack (Elasticsearch, Logstash, Kibana). Enables aggregation, search, and visualization of log data from various sources to troubleshoot issues and monitor system health."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "STACKIT Observability",
+      "service_url": "https://docs.stackit.cloud/documentation/logging-monitoring/observability",
+      "description": "Unified observability platform integrating metrics, logs, and traces. Provides dashboards, alerting, and correlation capabilities to gain deep visibility into the performance and health of applications and infrastructure."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "STACKIT Telemetry Router",
+      "service_url": "https://docs.stackit.cloud/documentation/logging-monitoring/telemetry-router",
+      "description": "Centralized solution for handling audit streams and telemetry data. Routes telemetry data to various destinations, ensuring compliance and enabling comprehensive monitoring and auditing of cloud resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Key Management Service (KMS)",
+      "service_url": "https://docs.stackit.cloud/documentation/security/key-management",
+      "description": "Managed service for creating and managing cryptographic keys. Enables secure generation, storage, and rotation of keys used to encrypt data across STACKIT services, helping meet compliance and data protection requirements."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Secrets Manager",
+      "service_url": "https://docs.stackit.cloud/documentation/security/secrets-manager",
+      "description": "Secure storage and lifecycle management for sensitive information such as API keys, passwords, and certificates. Allows applications to retrieve secrets programmatically, reducing the risk of hard-coded credentials."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Security Hardening",
+      "service_url": "https://docs.stackit.cloud/documentation/security/security-hardening",
+      "description": "Provides automated security configurations and compliance checks for your infrastructure. Helps reduce the attack surface by applying best-practice security settings to operating systems and services."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "STACKIT Cloud Foundry",
+      "service_url": "https://docs.stackit.cloud/documentation/runtime/cloud-foundry",
+      "description": "Managed Platform-as-a-Service (PaaS) based on Cloud Foundry. Enables developers to deploy, scale, and manage cloud-native applications quickly without worrying about the underlying infrastructure complexity."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "STACKIT Git",
+      "service_url": "https://docs.stackit.cloud/documentation/developer-platform/git",
+      "description": "Managed Git repository hosting service. Provides a secure and private environment for version control, enabling teams to collaborate on code and manage software development workflows within the STACKIT ecosystem."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "STACKIT Workflows",
+      "service_url": "https://docs.stackit.cloud/documentation/data-ai/workflows",
+      "description": "Workflow orchestration engine that allows users to define and execute pipelines where custom code is triggered by defined rules. Facilitates the automation of complex business processes and data processing tasks."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "STACKIT Edge Cloud",
+      "service_url": "https://docs.stackit.cloud/documentation/edge/edge-cloud",
+      "description": "Extends STACKIT's cloud capabilities to the edge. Provides managed Kubernetes clusters designed for edge environments, enabling low-latency data processing and local application execution closer to the data source."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Confidential Server",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/confidential-server",
+      "description": "Virtual machines protected by hardware-based memory encryption (AMD SEV-SNP). Ensures data remains encrypted during processing, isolating it from the cloud provider and hypervisor for high-security workloads."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "STACKIT Confidential Kubernetes",
+      "service_url": "https://docs.stackit.cloud/documentation/container/confidential-kubernetes",
+      "description": "Managed Kubernetes clusters using Confidential VMs for worker nodes. Provides end-to-end encryption for containerized workloads, protecting data in use against infrastructure-level access."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "STACKIT Archiving",
+      "service_url": "https://docs.stackit.cloud/documentation/storage/archiving",
+      "description": "Long-term data retention solution with WORM (Write Once, Read Many) capabilities. Ensures audit-proof storage for compliance-critical data, preventing modification or deletion."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT VPN",
+      "service_url": "https://docs.stackit.cloud/documentation/network/vpn",
+      "description": "IPsec-based Site-to-Site VPN service. Establishes encrypted tunnels between on-premises networks and STACKIT VPCs for secure hybrid cloud connectivity."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Security Groups",
+      "service_url": "https://docs.stackit.cloud/documentation/network/security-groups",
+      "description": "Distributed virtual firewall for VMs. granular stateful packet filtering rules applied directly at the network interface level to control micro-segmentation traffic."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "STACKIT Dremio",
+      "service_url": "https://docs.stackit.cloud/documentation/databases/dremio",
+      "description": "Data Lakehouse platform. Enables high-performance SQL analytics directly on data in object storage without data movement or copies."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "STACKIT Notebooks",
+      "service_url": "https://docs.stackit.cloud/documentation/data-ai/notebooks",
+      "description": "Managed JupyterHub environments. Provides collaborative workspaces for data science, experimentation, and model development."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Identity & Access Management (IAM)",
+      "service_url": "https://docs.stackit.cloud/documentation/platform/iam",
+      "description": "Access control system for STACKIT resources. Manages users, groups, service accounts, and roles to enforce least-privilege access."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Resource Manager",
+      "service_url": "https://docs.stackit.cloud/documentation/platform/resource-manager",
+      "description": "Hierarchical organization of cloud resources. Uses Projects and Folders to group resources for billing, access control, and governance."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Cost Management",
+      "service_url": "https://docs.stackit.cloud/documentation/platform/costs-billing",
+      "description": "Financial operations tool. Provides transparency into cloud usage and costs, enabling budget tracking and reporting."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "STACKIT Portal",
+      "service_url": "https://docs.stackit.cloud/documentation/platform/portal",
+      "description": "Web-based graphical user interface. The central control plane for provisioning, configuring, and monitoring all STACKIT services."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "STACKIT Marketplace",
+      "service_url": "https://docs.stackit.cloud/documentation/marketplace",
+      "description": "Catalog of partner and third-party solutions. Enables easy deployment of verified software and services directly into STACKIT projects."
+    }
+  ]
+}

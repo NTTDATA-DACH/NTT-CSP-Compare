@@ -1,0 +1,550 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "Instances",
+      "service_url": "https://www.scaleway.com/en/docs/compute/instances/",
+      "description": "Scalable virtual cloud instances (VMs) providing a wide range of compute power, from development to high-performance production workloads. Features include flexible IPs, security groups, and local NVMe or Block Storage options."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Elastic Metal",
+      "service_url": "https://www.scaleway.com/en/docs/bare-metal/elastic-metal/",
+      "description": "Fully dedicated bare metal servers with cloud-native integration. Offers the performance of dedicated hardware with the flexibility of hourly billing, fast delivery, and integration with VPC, private networks, and other cloud services."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Dedibox",
+      "service_url": "https://www.scaleway.com/en/docs/dedibox/",
+      "description": "Historical range of premium dedicated servers for high-performance and intensive workloads. Available with monthly billing, offering a vast choice of hardware configurations, including high-end GPUs and large storage capacities."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Apple silicon",
+      "service_url": "https://www.scaleway.com/en/docs/bare-metal/apple-silicon/",
+      "description": "Mac-as-a-Service solution providing dedicated Mac mini M1, M2, and M4 instances. Designed for developing, building, testing, and signing applications for the Apple ecosystem (iOS, macOS) with full native performance."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "GPU Instances",
+      "service_url": "https://www.scaleway.com/en/docs/compute/gpu/",
+      "description": "Specialized virtual instances equipped with NVIDIA GPUs (H100, L40S, L4, P100) for AI, machine learning, rendering, and video processing tasks. Provides powerful parallel computing capabilities on demand."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Functions",
+      "service_url": "https://www.scaleway.com/en/docs/serverless/functions/",
+      "description": "Function-as-a-Service (FaaS) platform allowing developers to deploy code snippets that run on demand without managing infrastructure. Supports multiple languages and scales automatically based on event triggers."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Containers",
+      "service_url": "https://www.scaleway.com/en/docs/serverless/containers/",
+      "description": "Run containerized applications in a serverless environment. Scales containers from zero to handle traffic spikes, eliminating the need to manage servers or clusters while paying only for resources used during execution."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Jobs",
+      "service_url": "https://www.scaleway.com/en/docs/serverless/jobs/",
+      "description": "Fully managed batch computing service for running short-lived tasks and large-scale data processing jobs. Handles scheduling, execution, and resource provisioning for containerized batch workloads."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Web Hosting",
+      "service_url": "https://www.scaleway.com/en/docs/webhosting/",
+      "description": "Fully managed shared web hosting service with cPanel support. Provides a simple and secure environment for hosting websites and emails, including free SSL certificates, automated backups, and one-click CMS installations."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Object Storage",
+      "service_url": "https://www.scaleway.com/en/docs/storage/object/",
+      "description": "S3-compatible object storage service for storing and retrieving any amount of data. Features standard Multi-AZ redundancy, lifecycle rules, bucket versioning, and object locking for data durability and high availability."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Glacier",
+      "service_url": "https://www.scaleway.com/en/docs/storage/object/concepts/#glacier-storage-class",
+      "description": "Cold storage class within Object Storage designed for long-term data archiving and backup. Offers a cost-effective solution for data that is infrequently accessed, with secure retention and retrieval options."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Block Storage",
+      "service_url": "https://www.scaleway.com/en/docs/storage/block/",
+      "description": "High-performance, low-latency persistent block storage volumes (SSD) that can be attached to Compute Instances and Kubernetes nodes. Supports resizing, snapshots, and decoupling from instances for flexible data management."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "VPC (Virtual Private Cloud)",
+      "service_url": "https://www.scaleway.com/en/docs/network/vpc/",
+      "description": "Isolated network environment allowing users to provision private networks and connect cloud resources securely. Enables segmentation, traffic control, and secure communication between instances, databases, and other services."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Public Gateway",
+      "service_url": "https://www.scaleway.com/en/docs/network/public-gateways/",
+      "description": "Managed NAT gateway service providing internet access for resources in a Private Network. Enables instances with private IPs to initiate outbound connections while remaining inaccessible from the public internet."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Load Balancer",
+      "service_url": "https://www.scaleway.com/en/docs/network/load-balancer/",
+      "description": "Fully managed Layer 4 and Layer 7 load balancing service. Distributes incoming traffic across multiple backend servers to ensure high availability, fault tolerance, and automatic scaling of applications."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Domains and DNS",
+      "service_url": "https://www.scaleway.com/en/docs/network/domains-and-dns/",
+      "description": "Domain name registration and managed DNS service. Allows users to buy, transfer, and manage domain names and configure DNS zones with support for DNSSEC and advanced record types."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "IPAM",
+      "service_url": "https://www.scaleway.com/en/docs/network/ipam/",
+      "description": "IP Address Management service to centralize and simplify the management of IP resources across the Scaleway infrastructure. key features include reserving, attaching, and monitoring public and private IP addresses."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Kubernetes (Kapsule)",
+      "service_url": "https://www.scaleway.com/en/docs/containers/kubernetes/",
+      "description": "Fully managed Kubernetes service certified by the CNCF. Handles the control plane management, allowing users to focus on deploying containerized applications with integrated auto-scaling, healing, and monitoring."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Kubernetes (Kosmos)",
+      "service_url": "https://www.scaleway.com/en/docs/containers/kubernetes/concepts/#kosmos",
+      "description": "Multi-cloud Kubernetes engine allowing the attachment of nodes from any cloud provider or on-premise infrastructure to a single managed control plane. Unifies container management across hybrid environments."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Container Registry",
+      "service_url": "https://www.scaleway.com/en/docs/containers/container-registry/",
+      "description": "Fully managed Docker container registry for storing, managing, and securing container images. Integrated with Kapsule and other services, offering private repositories and image visibility control."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Database for PostgreSQL and MySQL",
+      "service_url": "https://www.scaleway.com/en/docs/managed-databases/postgresql-and-mysql/",
+      "description": "Fully managed relational database service for PostgreSQL and MySQL. Provides high availability, automated backups, auto-scaling, and security features, removing the burden of database administration."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Database for Redis™",
+      "service_url": "https://www.scaleway.com/en/docs/managed-databases/redis/",
+      "description": "Managed in-memory data store based on Redis™. Optimized for caching, session management, and real-time analytics, offering high performance, persistence, and cluster mode options."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed MongoDB®",
+      "service_url": "https://www.scaleway.com/en/docs/managed-databases/mongodb/",
+      "description": "Fully managed NoSQL document database service compatible with MongoDB. Offers automatic scaling, backups, and high availability for building modern, flexible, and data-intensive applications."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Serverless SQL Database",
+      "service_url": "https://www.scaleway.com/en/docs/serverless/sql-databases/",
+      "description": "Auto-scaling, serverless PostgreSQL-compatible database. Automatically adjusts compute and storage resources based on demand and scales to zero when idle, optimizing costs for variable workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Warehouse for ClickHouse®",
+      "service_url": "https://www.scaleway.com/en/docs/data-analytics/data-warehouse/",
+      "description": "Managed Online Analytical Processing (OLAP) database based on ClickHouse. Designed for high-performance real-time analytics on large volumes of data with columnar storage and fast query execution."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "NATS",
+      "service_url": "https://www.scaleway.com/en/docs/messaging/nats/",
+      "description": "Cloud-native messaging system based on NATS. Facilitates high-performance, lightweight communication for microservices, IoT, and distributed systems with pub/sub and request-reply patterns."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Queues",
+      "service_url": "https://www.scaleway.com/en/docs/messaging/queues/",
+      "description": "Managed message queuing service compatible with SQS. Enables decoupling of microservices and distributed systems by providing a reliable buffer for messages between producers and consumers."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Topics and Events",
+      "service_url": "https://www.scaleway.com/en/docs/messaging/topics/",
+      "description": "Managed pub/sub messaging service compatible with SNS. Allows fan-out message delivery to multiple subscribers (endpoints, queues, functions) from a single topic for event-driven architectures."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Cloud Essentials for OpenSearch",
+      "service_url": "https://www.scaleway.com/en/docs/data-analytics/opensearch/",
+      "description": "Managed OpenSearch service for search, analytics, and visualization. Provides a distributed engine to index, search, and analyze large datasets in near real-time, often used for log analytics and application search."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Lab for Apache Spark",
+      "service_url": "https://www.scaleway.com/en/docs/data-analytics/data-lab/",
+      "description": "Managed environment for Apache Spark, enabling large-scale data processing and machine learning tasks. Simplifies the deployment and management of Spark clusters for data engineers and scientists."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Managed Inference",
+      "service_url": "https://www.scaleway.com/en/docs/ai-inference/managed-inference/",
+      "description": "Deploy and run AI models in production with a fully managed inference infrastructure. Supports autoscaling and provides secure endpoints for serving machine learning models with low latency."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Generative APIs",
+      "service_url": "https://www.scaleway.com/en/docs/ai-inference/generative-apis/",
+      "description": "Access foundational generative AI models (LLMs like Llama, Mistral) via simple API calls. Allows developers to integrate AI capabilities into applications without managing underlying infrastructure or models."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Identity and Access Management (IAM)",
+      "service_url": "https://www.scaleway.com/en/docs/identity-and-access-management/iam/",
+      "description": "Centralized service for managing user access and permissions across the Scaleway organization. Supports policies, groups, and API keys to enforce granular security controls and least privilege principles."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Secret Manager",
+      "service_url": "https://www.scaleway.com/en/docs/identity-and-access-management/secret-manager/",
+      "description": "Secure storage and lifecycle management for sensitive data such as API keys, passwords, and certificates. Enables programmatic access to secrets while keeping them encrypted and audit-logged."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Key Manager",
+      "service_url": "https://www.scaleway.com/en/docs/identity-and-access-management/key-manager/",
+      "description": "Managed Key Management Service (KMS) for creating, storing, and managing cryptographic keys. integrated with other Scaleway services to control data encryption and meet compliance requirements."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Audit Trail",
+      "service_url": "https://www.scaleway.com/en/docs/observability/audit-trail/",
+      "description": "Governance tool that logs all API activities and events within a Scaleway Organization. Provides visibility into who did what and when, aiding in security auditing, compliance, and troubleshooting."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cockpit",
+      "service_url": "https://www.scaleway.com/en/docs/observability/cockpit/",
+      "description": "Fully managed observability platform based on Grafana, Prometheus, and Loki. Aggregates metrics, logs, and traces from Scaleway resources and external sources into a unified dashboard for monitoring and alerting."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Transactional Email (TEM)",
+      "service_url": "https://www.scaleway.com/en/docs/managed-services/transactional-email/",
+      "description": "Managed email delivery service optimized for transactional emails. Provides high deliverability, real-time analytics, and easy integration via API or SMTP for sending notifications, password resets, and alerts."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "IoT Hub",
+      "service_url": "https://www.scaleway.com/en/docs/iot/iot-hub/",
+      "description": "Managed MQTT broker connecting IoT devices to the cloud. Enables secure bi-directional communication, device management, and message routing to other Scaleway services for processing and storage."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Edge Services",
+      "service_url": "https://www.scaleway.com/en/docs/network/edge-services/",
+      "description": "Suite of edge computing features including Web Application Firewall (WAF) and Caching. Improves application performance and security by processing requests closer to the user and filtering malicious traffic."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Instances",
+      "service_url": "https://www.scaleway.com/en/compute/instances/",
+      "description": "Flexible virtual cloud instances (VMs) ranging from cost-effective development sandboxes (Stardust, Play2) to high-performance production workloads (Enterprise, GP1). Features include flexible IPs, security groups, and local NVMe options."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "GPU Instances",
+      "service_url": "https://www.scaleway.com/en/compute/gpu/",
+      "description": "Virtual instances equipped with dedicated NVIDIA GPUs (L4, L40S, H100 PCIe, P100) designed for AI training, rendering, and video encoding. Offers pass-through performance for heavy parallel computing tasks."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "AI Supercomputer (Nabuchodonosor)",
+      "service_url": "https://www.scaleway.com/en/ai-supercomputer/",
+      "description": "NVIDIA DGX H100 SuperPOD infrastructure designed for training massive AI models. Provides interconnected H100 SXM5 GPUs with high-bandwidth NVIDIA Quantum-2 InfiniBand networking for extreme performance."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Elastic Metal",
+      "service_url": "https://www.scaleway.com/en/elastic-metal/",
+      "description": "Dedicated bare metal servers delivered with cloud-native flexibility. Users get full hardware control without a hypervisor, integrated with VPC and billed hourly. Supports various configurations including Aluminium, Beryllium, and Lithium."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Elastic Metal RISC-V",
+      "service_url": "https://www.scaleway.com/en/elastic-metal/rv1/",
+      "description": "World's first RISC-V servers available in the cloud (EM-RV1). Based on the T-HEAD TH1520 SoC, these servers allow developers to build and test applications on the open RISC-V architecture natively."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Dedibox",
+      "service_url": "https://www.scaleway.com/en/dedibox/",
+      "description": "Premium range of dedicated servers for intensive workloads, offering a vast selection of hardware (Intel/AMD), high bandwidth, and storage options. Managed via a specific console with monthly billing and long-term stability."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Apple silicon",
+      "service_url": "https://www.scaleway.com/en/hello-m4-mac-mini/",
+      "description": "Mac-as-a-Service providing dedicated Mac mini M1, M2, and M4 instances. Essential for CI/CD pipelines targeting the Apple ecosystem (iOS/macOS), enabling native building and signing of applications."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Functions",
+      "service_url": "https://www.scaleway.com/en/serverless/functions/",
+      "description": "Event-driven compute service that lets developers deploy code snippets (Python, Go, Node.js, etc.) without managing servers. Scales strictly based on demand, scaling to zero when not in use."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Containers",
+      "service_url": "https://www.scaleway.com/en/serverless/containers/",
+      "description": "Deploys containerized applications in a fully managed serverless environment using Knative. Handles infrastructure scaling automatically, allowing usage of custom runtimes and binaries."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Serverless Jobs",
+      "service_url": "https://www.scaleway.com/en/serverless/jobs/",
+      "description": "Managed batch computing service for running finite, short-lived tasks. Ideal for data processing, reporting, and asynchronous workflows, managing the queue and execution resources automatically."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Quantum Computing",
+      "service_url": "https://www.scaleway.com/en/quantum-computing/",
+      "description": "Quantum-as-a-Service offering access to real Quantum Processing Units (QPUs) from partners like Pasqal, IQM, and AQT, as well as high-performance quantum emulators (Aer, Qsim) running on NVIDIA GPUs."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Web Hosting",
+      "service_url": "https://www.scaleway.com/en/web-hosting/",
+      "description": "Managed shared hosting solution with cPanel. Provides a secure and maintenance-free environment for websites and emails, featuring automated backups, DDoS protection, and free SSL."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Object Storage",
+      "service_url": "https://www.scaleway.com/en/object-storage/",
+      "description": "S3-compatible storage service for unstructured data. Features Multi-AZ redundancy, bucket versioning, object locking, and distinct storage classes (Standard, One Zone - IA) to optimize costs."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Glacier",
+      "service_url": "https://www.scaleway.com/en/c14-cold-storage/",
+      "description": "Deep archive storage class for long-term data retention. Designed for rarely accessed data like backups and logs, offering the lowest cost per GB with retrieval times ranging from minutes to hours."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Block Storage",
+      "service_url": "https://www.scaleway.com/en/block-storage/",
+      "description": "High-speed network-attached SSD volumes (5,000 to 15,000 IOPS) for instances and Kubernetes nodes. Supports dynamic resizing, snapshots, and can be detached/reattached to different compute resources."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "VPC (Virtual Private Cloud)",
+      "service_url": "https://www.scaleway.com/en/vpc/",
+      "description": "Regional Software Defined Network (SDN) enabling the creation of isolated private networks. Connects instances, databases, and load balancers securely with segmentation and private IP addressing."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Public Gateway",
+      "service_url": "https://www.scaleway.com/en/public-gateway/",
+      "description": "Managed NAT gateway service. Allows resources within a private VPC to access the internet for updates or external APIs while preventing unsolicited inbound traffic from reaching them."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Load Balancer",
+      "service_url": "https://www.scaleway.com/en/load-balancer/",
+      "description": "Managed Layer 4 (TCP) and Layer 7 (HTTP/HTTPS) load balancer. Distributes traffic across backend services to ensure high availability, SSL termination, and health checking."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Domains and DNS",
+      "service_url": "https://www.scaleway.com/en/domains-and-dns/",
+      "description": "Registrar and Managed DNS service. Allows purchasing domain names and managing DNS records (A, CNAME, MX, etc.) with support for DNSSEC and API automation."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Scaleway InterLink",
+      "service_url": "https://www.scaleway.com/en/interlink/",
+      "description": "Physical direct connectivity service linking on-premises infrastructure or other cloud providers directly to Scaleway VPCs via fiber cross-connects, bypassing the public internet for better security and latency."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Site-to-Site VPN",
+      "service_url": "https://www.scaleway.com/en/vpc/site-to-site-vpn/",
+      "description": "Managed VPN Gateway allowing secure, encrypted IPsec tunnels between Scaleway Private Networks (VPC) and remote office networks or other cloud environments."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Kubernetes (Kapsule)",
+      "service_url": "https://www.scaleway.com/en/kubernetes-kapsule/",
+      "description": "Fully managed Kubernetes service. Scaleway manages the control plane (master nodes) at no cost, while users pay for the worker nodes (instances) which can auto-scale and auto-heal."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Kubernetes (Kosmos)",
+      "service_url": "https://www.scaleway.com/en/kubernetes-kosmos/",
+      "description": "Multi-cloud Kubernetes engine. Extends a managed control plane to nodes running on any infrastructure (AWS, GCP, or on-premise), creating a unified cluster across hybrid environments."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Container Registry",
+      "service_url": "https://www.scaleway.com/en/container-registry/",
+      "description": "Managed registry for storing and delivering container images (Docker/OCI). Integrated with Kapsule and Serverless, featuring vulnerability scanning and image privacy policies."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Database for PostgreSQL",
+      "service_url": "https://www.scaleway.com/en/database/postgresql/",
+      "description": "Fully managed PostgreSQL service offering high availability, automated backups, and read replicas. Supports extensions like PostGIS and pgvector for geospatial and AI vector workloads."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Database for MySQL",
+      "service_url": "https://www.scaleway.com/en/database/mysql/",
+      "description": "Managed MySQL service handling provisioning, patching, and backups. Optimized for web applications with options for high-availability nodes and easy scaling."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Database for Redis™",
+      "service_url": "https://www.scaleway.com/en/database/redis/",
+      "description": "In-memory data store service supporting Redis protocols. used for caching and session management with support for standalone or cluster modes to ensure performance and durability."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed MongoDB®",
+      "service_url": "https://www.scaleway.com/en/database/mongodb/",
+      "description": "Official managed service for MongoDB. Provides a document-oriented NoSQL database with native auto-scaling, backup management, and integration with the Scaleway ecosystem."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Managed Kafka",
+      "service_url": "https://www.scaleway.com/en/managed-services/kafka/",
+      "description": "Fully managed Apache Kafka service for real-time data streaming and pipelines. Handles cluster deployment and maintenance, allowing users to focus on producing and consuming event streams."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Warehouse (ClickHouse)",
+      "service_url": "https://www.scaleway.com/en/data-warehouse/",
+      "description": "Managed OLAP database based on ClickHouse. Engineered for real-time analytics on massive datasets, delivering ultra-fast query performance with columnar storage."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Serverless SQL Database",
+      "service_url": "https://www.scaleway.com/en/serverless-sql-database/",
+      "description": "On-demand PostgreSQL-compatible database that scales compute and storage automatically based on traffic. Ideal for variable workloads and prototypes, billing only for active usage."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Opensearch",
+      "service_url": "https://www.scaleway.com/en/managed-services/opensearch/",
+      "description": "Managed search and analytics suite based on OpenSearch. Enables ingestion, search, and visualization of data (logs, metrics, documents) with integrated Dashboards."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Data Lab (Apache Spark)",
+      "service_url": "https://www.scaleway.com/en/data-lab/",
+      "description": "Managed Apache Spark environment for big data processing and machine learning. Allows deploying Spark clusters quickly to run ETL jobs and data analysis tasks."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "NATS",
+      "service_url": "https://www.scaleway.com/en/messaging/nats/",
+      "description": "Cloud-native messaging system based on NATS. Provides lightweight, high-performance pub/sub communication for microservices and distributed systems."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Queues",
+      "service_url": "https://www.scaleway.com/en/messaging/queues/",
+      "description": "Managed message queue service (compatible with SQS). Decouples application components by buffering messages to ensure reliable asynchronous processing."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Topics",
+      "service_url": "https://www.scaleway.com/en/messaging/topics/",
+      "description": "Managed pub/sub notification service (compatible with SNS). Fans out messages from a single event source to multiple subscribers like functions, queues, or HTTP endpoints."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Managed Inference",
+      "service_url": "https://www.scaleway.com/en/managed-inference/",
+      "description": "Deploys open-source AI models (from Hugging Face, etc.) on managed GPU infrastructure. Provides secure API endpoints for inference without managing the underlying hardware."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "Generative APIs",
+      "service_url": "https://www.scaleway.com/en/generative-apis/",
+      "description": "Provides instant access to leading foundation models (Llama, Mistral) via API. Enables developers to integrate LLM capabilities like text generation and chat into apps without model hosting."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Identity and Access Management (IAM)",
+      "service_url": "https://www.scaleway.com/en/iam/",
+      "description": "Centralized access control system. Manages users, groups, applications, and policies to enforce least-privilege access across all Scaleway resources."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Secret Manager",
+      "service_url": "https://www.scaleway.com/en/secret-manager/",
+      "description": "Secure vault for storing and managing sensitive credentials like API keys, passwords, and certificates. Supports versioning and strict access control."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Key Manager",
+      "service_url": "https://www.scaleway.com/en/key-manager/",
+      "description": "Managed Key Management Service (KMS) for generating, storing, and controlling cryptographic keys (HSM-backed) used to encrypt data across Scaleway services."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Audit Trail",
+      "service_url": "https://www.scaleway.com/en/audit-trail/",
+      "description": "Governance service that records API activity and events within the organization. Provides logs for security auditing, compliance tracking, and forensic analysis."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Cockpit",
+      "service_url": "https://www.scaleway.com/en/cockpit/",
+      "description": "Managed observability platform based on Grafana, Mimir (Prometheus), and Loki. Aggregates metrics, logs, and traces from Scaleway resources and custom agents into unified dashboards."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Transactional Email (TEM)",
+      "service_url": "https://www.scaleway.com/en/transactional-email/",
+      "description": "High-deliverability email sending service for application notifications. Supports SMTP and API integration with features for template management and reputation monitoring."
+    },
+    {
+      "domain": "Developer Tools",
+      "service_name": "Environmental Footprint",
+      "service_url": "https://www.scaleway.com/en/environmental-footprint/",
+      "description": "Dashboard service that tracks and reports the carbon and water footprint of your cloud infrastructure usage, aiding in sustainability reporting and optimization."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "IoT Hub",
+      "service_url": "https://www.scaleway.com/en/iot-hub/",
+      "description": "Managed MQTT broker for connecting IoT devices. Handles device authentication, message routing to cloud services, and 'Device Twins' for state management."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Edge Services (Caching)",
+      "service_url": "https://www.scaleway.com/en/edge-services/",
+      "description": "Caching layer for Object Storage and Load Balancers. Caches content at the network edge to reduce latency and data transfer costs for end-users."
+    },
+    {
+      "domain": "Edge and IoT",
+      "service_name": "Web Application Firewall (WAF)",
+      "service_url": "https://www.scaleway.com/en/edge-services/waf/",
+      "description": "Security service deployed at the edge to protect web applications from common attacks (OWASP Top 10, SQL injection) by filtering malicious traffic before it reaches the backend."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Dedirack",
+      "service_url": "https://www.scaleway.com/en/dedirack/",
+      "description": "Colocation service allowing you to host your own hardware in Scaleway's secure datacenters (e.g., DC5). Provides standard racks, power, and high-performance network connectivity while you manage the physical hardware."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "File Storage (NFS)",
+      "service_url": "https://www.scaleway.com/en/docs/storage/file-storage/",
+      "description": "Fully managed Network Attached Storage (NFS) service. Allows multiple instances and Kubernetes nodes to mount shared file systems simultaneously, ideal for content management and shared workloads."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Cost Manager",
+      "service_url": "https://www.scaleway.com/en/docs/billing/cost-manager/",
+      "description": "Financial operations tool providing visibility into cloud spend. Features billing alerts, consumption analysis, and invoice breakdown to help optimize infrastructure costs."
+    }
+  ]
+}
