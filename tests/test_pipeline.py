@@ -20,10 +20,10 @@ mock_technical_data = {
         "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
     },
     "technical_score": 9.5,
-    "technical_reasoning": "This is a mock reasoning.",
+    "technical_reasoning": "<p>This is a mock reasoning.</p>",
     "lockin_analysis": {
         "lockin_score": 5,
-        "lockin_reasoning": "This is a mock lock-in reasoning."
+        "lockin_reasoning": "<p>This is a mock lock-in reasoning.</p>"
     }
 }
 
@@ -33,11 +33,11 @@ mock_pricing_data = {
         {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
     ],
     "cost_efficiency_score": 8.0,
-    "pricing_reasoning": "This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability."
+    "pricing_reasoning": "<p>This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability.</p>"
 }
 
 # The expected synthesis result should now be a concatenation of the reasonings
-expected_synthesis_detailed = "## Technical Analysis\n\nThis is a mock reasoning.\n\n## Pricing Analysis\n\nThis is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability."
+expected_synthesis_detailed = "<h4>Technical Analysis</h4><p>This is a mock reasoning.</p><h4>Lock-in Analysis</h4><p>This is a mock lock-in reasoning.</p><h4>Pricing Analysis</h4><p>This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability.</p>"
 
 expected_synthesis = {
     "detailed_comparison": expected_synthesis_detailed

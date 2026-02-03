@@ -75,17 +75,24 @@ class Synthesizer:
         """
         Synthesizes technical and pricing analysis into a narrative.
         Returns the Result object (Technical + Pricing + Synthesis).
-        Now purely concatenates the detailed narratives from previous steps.
+        Now purely concatenates the detailed narratives from previous steps into an HTML block.
         """
-        tech_reasoning = technical_data.get("technical_reasoning", "No technical reasoning provided.")
-        pricing_reasoning = pricing_data.get("pricing_reasoning", "No pricing reasoning provided.")
+        tech_reasoning = technical_data.get("technical_reasoning", "<p>No technical reasoning provided.</p>")
+
+        lockin_data = technical_data.get("lockin_analysis", {})
+        lockin_reasoning = lockin_data.get("lockin_reasoning", "<p>No lock-in reasoning provided.</p>")
+
+        pricing_reasoning = pricing_data.get("pricing_reasoning", "<p>No pricing reasoning provided.</p>")
 
         # Concatenate narratives for the detailed comparison
-        detailed_comparison = f"## Technical Analysis\n\n{tech_reasoning}\n\n## Pricing Analysis\n\n{pricing_reasoning}"
+        detailed_comparison = (
+            f"<h4>Technical Analysis</h4>{tech_reasoning}"
+            f"<h4>Lock-in Analysis</h4>{lockin_reasoning}"
+            f"<h4>Pricing Analysis</h4>{pricing_reasoning}"
+        )
 
         synthesis_result = {
             "detailed_comparison": detailed_comparison
-            # executive_summary is removed as per requirements
         }
 
         if Config.TEST_MODE:
