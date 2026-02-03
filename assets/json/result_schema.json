@@ -25,15 +25,10 @@
       "properties": {
         "detailed_comparison": {
           "type": "string",
-          "description": "A comprehensive Markdown essay synthesizing technical and pricing findings."
-        },
-        "executive_summary": {
-          "type": "string",
-          "maxLength": 300,
-          "description": "A high-impact summary strictly under 300 characters."
+          "description": "A comprehensive HTML string synthesizing technical and pricing findings."
         }
       },
-      "required": ["detailed_comparison", "executive_summary"]
+      "required": ["detailed_comparison"]
     }
   },
   "required": ["metadata", "technical_data", "pricing_data", "synthesis"]
