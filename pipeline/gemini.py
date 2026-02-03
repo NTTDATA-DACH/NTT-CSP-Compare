@@ -23,11 +23,13 @@ class GeminiClient:
             else AsyncMock()
         )
 
-    async def generate_content(self, model_name: str, user_content: str, system_instruction: str, schema: dict = None, enable_grounding: bool = True) -> dict:
+    async def generate_content(self, model_name: str, user_content: str, system_instruction: str, schema: dict = None, enable_grounding: bool = True, enable_thinking: bool = True) -> dict:
         system_time = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S %Z')
         timed_system_instruction = f"Today is {system_time}. Use this date as the reference point for all Google Search queries.\n\n{system_instruction}"
 
         tools = [types.Tool(google_search=types.GoogleSearch())] if enable_grounding else []
+
+        thinking_config = types.ThinkingConfig(include_thoughts=True, thinking_level="HIGH") if enable_thinking else None
 
         for attempt in range(3):
             try:
@@ -37,10 +39,7 @@ class GeminiClient:
                     config=types.GenerateContentConfig(
                         tools=tools,
                         max_output_tokens=65536,
-                        thinking_config=types.ThinkingConfig(
-                            include_thoughts=True,
-                            thinking_level="HIGH"
-                        ),
+                        thinking_config=thinking_config,
                         temperature=1.0,
                         system_instruction=timed_system_instruction,
                         response_mime_type='application/json',

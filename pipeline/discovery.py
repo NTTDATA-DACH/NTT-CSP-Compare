@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import os
 from config import Config
 from constants import MAX_CONCURRENT_REQUESTS, MODEL_DISCOVERY, PROMPT_CONFIG_PATH, SERVICE_LIST_SCHEMA_PATH, SERVICE_MAP_BATCH_SCHEMA_PATH
 from pipeline.gemini import GeminiClient
@@ -47,6 +48,17 @@ class ServiceMapper:
                         {"service_name": "Virtual Private Cloud", "service_url": "https://cloud.google.com/vpc/", "description": "Managed Networking for Your Google Cloud Resources"}
                     ]
                 }
+
+        # Check for local file override first
+        file_path = f"assets/json/hyperscaler/service_list_{csp}.json"
+        if os.path.exists(file_path):
+            logger.info(f"Loading service list for {csp} from local file: {file_path}")
+            try:
+                with open(file_path, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                logger.error(f"Error loading local service list for {csp}: {e}")
+                # Fallback to API if file load fails
 
         logger.info(f"Getting service list for {csp} using {self.model_name}")
 
@@ -105,7 +117,8 @@ class ServiceMapper:
                     model_name=self.model_name,
                     user_content=user_content,
                     system_instruction=system_instruction,
-                    schema=self.batch_schema
+                    schema=self.batch_schema,
+                    enable_grounding=False
                 )
                 if response is None or "items" not in response:
                     logger.warning(f"Invalid or None response for batch mapping.")
