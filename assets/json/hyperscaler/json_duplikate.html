@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Bereiniger</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px dashed #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            display: none;
+        }
+        #download-btn {
+            background-color: #28a745;
+            display: none;
+            margin-top: 15px;
+        }
+        #download-btn:hover {
+            background-color: #218838;
+        }
+        .stats {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 JSON Duplikat- und Text-Bereiniger</h1>
+
+    <div class="step">
+        <label for="jsonFile"><strong>Schritt 1:</strong> JSON-Datei auswählen</label>
+        <input type="file" id="jsonFile" accept=".json">
+    </div>
+
+    <div class="step">
+        <button id="process-btn" disabled>JSON verarbeiten</button>
+    </div>
+
+    <div id="status">
+        <p id="status-text"></p>
+        <button id="download-btn">Bereinigte JSON herunterladen</button>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('jsonFile');
+        const processBtn = document.getElementById('process-btn');
+        const statusDiv = document.getElementById('status');
+        const statusText = document.getElementById('status-text');
+        const downloadBtn = document.getElementById('download-btn');
+
+        let originalData = null;
+        let cleanedData = null;
+        let originalFileName = "bereinigt.json"; // Standardname als Fallback
+
+        // RegEx, um Muster wie [[1](https://...)] zu finden
+        const linkRegex = /\[\[\d+\]\([^)]+\)\]/g;
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                // NEU: Hier merken wir uns den exakten Dateinamen der Eingabe!
+                originalFileName = file.name; 
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        originalData = JSON.parse(event.target.result);
+                        processBtn.disabled = false;
+                        statusDiv.style.display = 'none';
+                        downloadBtn.style.display = 'none';
+                    } catch (error) {
+                        alert("Fehler: Das ist keine gültige JSON-Datei.");
+                        processBtn.disabled = true;
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        processBtn.addEventListener('click', () => {
+            if (!originalData || !originalData.services) {
+                alert("Die JSON-Datei muss ein 'services' Array enthalten.");
+                return;
+            }
+
+            const uniqueUrls = new Set();
+            const initialCount = originalData.services.length;
+            let linkRemovals = 0;
+
+            const filteredServices = originalData.services.filter(service => {
+                if (uniqueUrls.has(service.service_url)) {
+                    return false;
+                }
+                uniqueUrls.add(service.service_url);
+                return true; 
+            }).map(service => {
+                const newService = { ...service };
+                if (typeof newService.description === 'string') {
+                    const originalLength = newService.description.length;
+                    newService.description = newService.description.replace(linkRegex, '').replace(/\s+/g, ' ').trim();
+                    if (originalLength !== newService.description.length) {
+                        linkRemovals++;
+                    }
+                }
+                return newService;
+            });
+
+            cleanedData = { services: filteredServices };
+            const finalCount = filteredServices.length;
+            const duplicatesRemoved = initialCount - finalCount;
+
+            statusText.innerHTML = `✅ <strong>Verarbeitung erfolgreich!</strong><br><br>
+            • Ursprüngliche Einträge: ${initialCount}<br>
+            • <span class="stats">Entfernte Duplikate: ${duplicatesRemoved}</span><br>
+            • Bereinigte Beschreibungen: ${linkRemovals}<br>
+            • Verbleibende Einträge: ${finalCount}`;
+            
+            statusDiv.style.display = 'block';
+            downloadBtn.style.display = 'inline-block';
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (!cleanedData) return;
+
+            const jsonString = JSON.stringify(cleanedData, null, 2); 
+            const blob = new Blob([jsonString], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            // NEU: Hier verwenden wir den gespeicherten Dateinamen für den Download!
+            a.download = originalFileName; 
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
