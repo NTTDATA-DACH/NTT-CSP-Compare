@@ -3,6 +3,8 @@
 ## 1.0 Project Overview
 This project automates the comprehensive comparison of two Cloud Service Providers (e.g., AWS vs. GCP) using a Generative AI pipeline. The system identifies equivalent services, performs deep-dive architectural and pricing analysis, and generates a static HTML dashboard for visualization.
 
+A required step is to generate a service_list file for each CSP, as this was not possible in acceptable quality in the tool itself.
+
 **Key Features:**
 *   **Automated Discovery:** Maps services from CSP A to CSP B using high-speed LLMs.
 *   **Deep-Dive Analysis:** Uses reasoning models (Thinking Mode) with **Google Search Grounding** to analyze documentation, pricing, and user sentiment.

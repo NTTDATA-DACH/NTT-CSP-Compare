@@ -188,12 +188,6 @@
     },
     {
       "domain": "Databases and Big Data",
-      "service_name": "Autonomous AI Database for Transaction Processing and Mixed Workloads",
-      "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html",
-      "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html%22,%22description%22:%22Autonomous) database optimized for OLTP and mixed workloads."
-    },
-    {
-      "domain": "Databases and Big Data",
       "service_name": "Autonomous AI Database on Dedicated Exadata Infrastructure",
       "service_url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbd-index.html",
       "description": "Autonomous](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbd-index.html%22,%22description%22:%22Autonomous) database on dedicated Exadata infrastructure."
@@ -608,12 +602,6 @@
     },
     {
       "domain": "Security and Governance",
-      "service_name": "Billing and Cost Management",
-      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
-      "description": "Manage](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Manage) usage, budgets, cost analysis, and rewards."
-    },
-    {
-      "domain": "Security and Governance",
       "service_name": "Certificates",
       "service_url": "https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm",
       "description": "Certificate](https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm%22,%22description%22:%22Certificate) lifecycle management for TLS/SSL."
@@ -647,12 +635,6 @@
       "service_name": "Control Center",
       "service_url": "https://docs.oracle.com/iaas/Content/control-center/home.htm",
       "description": "Centralized](https://docs.oracle.com/iaas/Content/control-center/home.htm%22,%22description%22:%22Centralized) governance and controls for OCI environments."
-    },
-    {
-      "domain": "Security and Governance",
-      "service_name": "Cost Management",
-      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
-      "description": "Cost](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Cost) tracking, reporting, and FinOps capabilities."
     },
     {
       "domain": "Security and Governance",
@@ -701,12 +683,6 @@
       "service_name": "Network Firewall",
       "service_url": "https://docs.oracle.com/iaas/Content/network-firewall/home.htm",
       "description": "Stateful](https://docs.oracle.com/iaas/Content/network-firewall/home.htm%22,%22description%22:%22Stateful) network firewall for VCN traffic."
-    },
-    {
-      "domain": "Security and Governance",
-      "service_name": "Oracle Support Rewards",
-      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm",
-      "description": "Earn](https://docs.oracle.com/en-us/iaas/Content/Billing/home.htm%22,%22description%22:%22Earn) Oracle Support Rewards based on OCI spend."
     },
     {
       "domain": "Security and Governance",
@@ -818,12 +794,6 @@
     },
     {
       "domain": "Developer Tools",
-      "service_name": "Data Transforms",
-      "service_url": "https://docs.oracle.com/en/database/data-integration/data-transforms/index.html",
-      "description": "Data](https://docs.oracle.com/en/database/data-integration/data-transforms/index.html%22,%22description%22:%22Data) transformation tooling for integration workflows."
-    },
-    {
-      "domain": "Developer Tools",
       "service_name": "Database Tools",
       "service_url": "https://docs.oracle.com/en-us/iaas/database-tools/home.htm",
       "description": "Database](https://docs.oracle.com/en-us/iaas/database-tools/home.htm%22,%22description%22:%22Database) tooling for connections and utilities."
@@ -869,12 +839,6 @@
       "service_name": "Marketplace",
       "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm",
       "description": "Discover](https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm%22,%22description%22:%22Discover), purchase, and deploy solutions on OCI."
-    },
-    {
-      "domain": "Developer Tools",
-      "service_name": "Marketplace Guide",
-      "service_url": "https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm",
-      "description": "Marketplace](https://docs.oracle.com/en-us/iaas/Content/Marketplace/home.htm%22,%22description%22:%22Marketplace) documentation and guidance."
     },
     {
       "domain": "Developer Tools",

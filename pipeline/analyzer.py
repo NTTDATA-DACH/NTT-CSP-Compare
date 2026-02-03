@@ -42,10 +42,10 @@ class TechnicalAnalyst:
                     "api_consistency": "Good", "documentation_quality": "Excellent", "sdk_support": "Broad"
                 },
                 "technical_score": 9.5,
-                "technical_reasoning": "This is a mock reasoning.",
+                "technical_reasoning": "<p>This is a mock reasoning.</p>",
                 "lockin_analysis": {
                     "lockin_score": 5,
-                    "lockin_reasoning": "This is a mock lock-in reasoning."
+                    "lockin_reasoning": "<p>This is a mock lock-in reasoning.</p>"
                 }
             }
 

@@ -163,4 +163,8 @@ class ServiceMapper:
         # Flatten the list of lists
         mapped_services = [item for sublist in results for item in sublist]
 
+        if not mapped_services:
+            logger.warning("Service mapping resulted in empty list.")
+            return None
+
         return {"items": mapped_services}

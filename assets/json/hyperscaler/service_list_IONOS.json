@@ -1,0 +1,166 @@
+{
+  "services": [
+    {
+      "domain": "Compute",
+      "service_name": "Compute Engine",
+      "service_url": "https://docs.ionos.com/cloud/compute/compute-engine",
+      "description": "Scalable IaaS platform offering high-performance virtual machines with dedicated cores or vCPUs. Supports live vertical scaling of CPU and RAM without rebooting, enabling flexible resource management for varying workloads."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Cubes",
+      "service_url": "https://docs.ionos.com/cloud/compute/cubes",
+      "description": "Cost-effective, pre-configured virtual private server instances (VPS) with NVMe storage. Designed for balanced workloads like development environments and web hosting, offering predictable performance and pricing."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "Private Cloud by VMware",
+      "service_url": "https://docs.ionos.com/cloud/compute/private-cloud",
+      "description": "Dedicated private cloud infrastructure powered by VMware. Provides a fully managed, single-tenant environment with root access, allowing migration of legacy VMware workloads to the cloud without re-architecting."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "VM Auto Scaling",
+      "service_url": "https://docs.ionos.com/cloud/network-services/vm-auto-scaling",
+      "description": "Automated scaling service that adjusts the number of virtual machine instances in a group based on defined metrics and policies, ensuring application availability and cost efficiency during traffic fluctuations."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Block Storage",
+      "service_url": "https://docs.ionos.com/cloud/storage-backup/block-storage",
+      "description": "High-performance, network-attached block storage for compute instances. Available in HDD and SSD tiers, supporting dynamic resizing and dual-redundancy to ensure data persistence and reliability."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "IONOS Object Storage",
+      "service_url": "https://docs.ionos.com/cloud/storage-backup/object-storage",
+      "description": "S3-compatible object storage service for storing and retrieving large amounts of unstructured data. Features scalability, high availability, and bucket-level access policies, suitable for backups, archiving, and media hosting."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Backup Service",
+      "service_url": "https://docs.ionos.com/cloud/storage-backup/backup-service",
+      "description": "Fully managed backup solution powered by Acronis. Protects virtual machines, applications, and data with customizable schedules, encryption, and incremental backups to ensure business continuity."
+    },
+    {
+      "domain": "Storage",
+      "service_name": "Network File Storage",
+      "service_url": "https://docs.ionos.com/cloud/storage-backup/network-file-storage",
+      "description": "Managed shared file storage utilizing the NFS protocol. Allows multiple virtual machines to access shared data simultaneously, ideal for clustered applications and content management systems."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Managed Network Load Balancer",
+      "service_url": "https://docs.ionos.com/cloud/network-services/managed-network-load-balancer",
+      "description": "Layer 4 load balancing service that distributes TCP/UDP traffic across multiple targets. Ensures high availability and fault tolerance for applications by automatically rerouting traffic from unhealthy instances."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Managed Application Load Balancer",
+      "service_url": "https://docs.ionos.com/cloud/network-services/managed-application-load-balancer",
+      "description": "Layer 7 load balancer for HTTP/HTTPS traffic management. Features SSL termination, path-based routing, and cookie persistence to optimize application delivery and simplify certificate management."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Managed NAT Gateway",
+      "service_url": "https://docs.ionos.com/cloud/network-services/managed-nat-gateway",
+      "description": "Enables instances in private networks to access the internet for updates and patches without exposing them to incoming external traffic, maintaining security and network isolation."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "Cloud DNS",
+      "service_url": "https://docs.ionos.com/cloud/network-services/cloud-dns",
+      "description": "Scalable and programmable Domain Name System service. Allows management of DNS zones and records via API or console, ensuring fast and reliable domain resolution for global users."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "DDoS Protect",
+      "service_url": "https://docs.ionos.com/cloud/network-services/ddos-protect",
+      "description": "Automatic distributed denial-of-service protection that detects and mitigates malicious traffic attacks. safeguarding infrastructure availability without requiring manual intervention."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "VPN Gateway",
+      "service_url": "https://docs.ionos.com/cloud/network-services/vpn-gateway",
+      "description": "Managed VPN service establishing secure, encrypted IPsec connections between local on-premises networks and the IONOS Cloud virtual data centers, enabling hybrid cloud architectures."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Managed Kubernetes",
+      "service_url": "https://docs.ionos.com/cloud/containers/managed-kubernetes",
+      "description": "Fully managed Kubernetes service facilitating the deployment and operation of containerized applications. Handles control plane management, updates, and scaling, allowing teams to focus on workloads."
+    },
+    {
+      "domain": "Container Operations",
+      "service_name": "Private Container Registry",
+      "service_url": "https://docs.ionos.com/cloud/containers/container-registry",
+      "description": "Secure, private repository for storing and managing Docker container images. Integrated with Managed Kubernetes for streamlined deployment pipelines and access control."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "DBaaS PostgreSQL",
+      "service_url": "https://docs.ionos.com/cloud/databases/postgresql",
+      "description": "Managed PostgreSQL database service offering high availability, automated backups, and scalability. Removes the administrative burden of patching and maintenance, ensuring a production-ready SQL environment."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "DBaaS MongoDB",
+      "service_url": "https://docs.ionos.com/cloud/databases/mongodb",
+      "description": "Managed MongoDB service providing a document-oriented NoSQL database. Supports clustering, sharding, and automated backups for scalable, high-performance modern application development."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "DBaaS MariaDB",
+      "service_url": "https://docs.ionos.com/cloud/databases/mariadb",
+      "description": "Managed MariaDB service delivering a reliable open-source relational database. Features automated replication, updates, and monitoring to support enterprise-grade transactional applications."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "In-Memory DB",
+      "service_url": "https://docs.ionos.com/cloud/databases/in-memory-db",
+      "description": "Managed Redis-compatible in-memory data store. Delivers sub-millisecond latency for caching, session management, and real-time analytics by keeping data in RAM."
+    },
+    {
+      "domain": "Databases and Big Data",
+      "service_name": "Event Streams for Apache Kafka",
+      "service_url": "https://docs.ionos.com/cloud/data-analytics/event-streams-kafka",
+      "description": "Fully managed Apache Kafka service for real-time data streaming and event processing. Handles cluster provisioning and scaling, enabling reliable ingestion of high-throughput data streams."
+    },
+    {
+      "domain": "AI Services",
+      "service_name": "AI Model Hub",
+      "service_url": "https://docs.ionos.com/cloud/ai/ai-model-hub",
+      "description": "Platform providing access to open-source foundation models (e.g., Llama, Mistral) via API. Enables integration of generative AI capabilities like text and image generation into applications."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Monitoring Service",
+      "service_url": "https://docs.ionos.com/cloud/observability/monitoring-service",
+      "description": "Centralized monitoring solution that collects and visualizes metrics from infrastructure resources. Provides dashboards and alerting capabilities to track performance and health."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "Logging Service",
+      "service_url": "https://docs.ionos.com/cloud/observability/logging-service",
+      "description": "Centralized log management service. Aggregates and stores logs from various sources, enabling search, analysis, and troubleshooting of system and application events."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Certificate Manager",
+      "service_url": "https://docs.ionos.com/cloud/security/certificate-manager",
+      "description": "Service for managing SSL/TLS certificates. Simplifies the provisioning, renewal, and deployment of certificates for secure communication across load balancers and web endpoints."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "Network Security Groups",
+      "service_url": "https://docs.ionos.com/cloud/security/network-security-groups",
+      "description": "Firewall management service allowing the definition of inbound and outbound traffic rules. Policies can be applied to multiple network interfaces to enforce consistent security postures."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "CDN",
+      "service_url": "https://docs.ionos.com/cloud/network-services/cdn",
+      "description": "Content Delivery Network service that caches content at edge locations globally. Reduces latency and server load by serving static assets closer to end-users."
+    }
+  ]
+}

@@ -582,7 +582,7 @@
       "service_url": "https://aws.amazon.com/roborunner/",
       "description": "Service that helps you build applications that make it easier to manage robot fleets."
     },
-   {
+    {
       "domain": "Compute",
       "service_name": "Amazon EC2",
       "service_url": "https://aws.amazon.com/ec2/",
@@ -605,12 +605,6 @@
       "service_name": "Amazon Lightsail",
       "service_url": "https://aws.amazon.com/lightsail/",
       "description": "Easy-to-use virtual private server (VPS) for simple web applications."
-    },
-    {
-      "domain": "Compute",
-      "service_name": "AWS App Runner",
-      "service_url": "https://aws.amazon.com/apprunner/",
-      "description": "Fully managed service for deploying containerized web apps at scale."
     },
     {
       "domain": "Compute",
@@ -701,12 +695,6 @@
       "service_name": "Amazon VPC Lattice",
       "service_url": "https://aws.amazon.com/vpc/lattice/",
       "description": "Simplifies service-to-service communication and security."
-    },
-    {
-      "domain": "Networking",
-      "service_name": "AWS Global Accelerator",
-      "service_url": "https://aws.amazon.com/global-accelerator/",
-      "description": "Improves global application performance via the AWS network."
     },
     {
       "domain": "Container Operations",
@@ -1112,12 +1100,6 @@
     },
     {
       "domain": "Networking",
-      "service_name": "AWS Cloud WAN",
-      "service_url": "https://aws.amazon.com/cloud-wan/",
-      "description": "Managed wide-area network service to connect your data centers and branch offices to AWS."
-    },
-    {
-      "domain": "Networking",
       "service_name": "AWS Verified Access",
       "service_url": "https://aws.amazon.com/verified-access/",
       "description": "Provides secure, corporate-grade access to applications without a VPN."
@@ -1199,12 +1181,6 @@
       "service_name": "AWS Clean Rooms",
       "service_url": "https://aws.amazon.com/clean-rooms/",
       "description": "Enables secure collaboration on collective datasets without sharing raw underlying data."
-    },
-    {
-      "domain": "Databases and Big Data",
-      "service_name": "Amazon FinSpace",
-      "service_url": "https://aws.amazon.com/finspace/",
-      "description": "Analytics service designed specifically for the financial services industry."
     },
     {
       "domain": "Databases and Big Data",
@@ -1295,12 +1271,6 @@
       "service_name": "Amazon Fraud Detector",
       "service_url": "https://aws.amazon.com/fraud-detector/",
       "description": "Fully managed service that makes it easy to identify potentially fraudulent online activities."
-    },
-    {
-      "domain": "AI Services",
-      "service_name": "Amazon HealthLake",
-      "service_url": "https://aws.amazon.com/healthlake/",
-      "description": "HIPAA-eligible service that enables healthcare providers to store and analyze health data at scale."
     },
     {
       "domain": "AI Services",
