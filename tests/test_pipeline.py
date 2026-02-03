@@ -33,12 +33,14 @@ mock_pricing_data = {
         {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
     ],
     "cost_efficiency_score": 8.0,
-    "notes": "Mock pricing data."
+    "pricing_reasoning": "This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability."
 }
 
+# The expected synthesis result should now be a concatenation of the reasonings
+expected_synthesis_detailed = "## Technical Analysis\n\nThis is a mock reasoning.\n\n## Pricing Analysis\n\nThis is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability."
+
 expected_synthesis = {
-    "detailed_comparison": "Mock detailed comparison.",
-    "executive_summary": "Mock executive summary."
+    "detailed_comparison": expected_synthesis_detailed
 }
 
 class TestPipeline(unittest.IsolatedAsyncioTestCase):
@@ -81,7 +83,8 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
         mock_open.return_value.__enter__.return_value.read.return_value = "{}"
         with patch("pipeline.synthesizer.Config.TEST_MODE", True):
             synthesizer = Synthesizer()
-            result = await synthesizer.synthesize("EC2_vs_GCE", {}, {})
+            # Pass the mock data to synthesize
+            result = await synthesizer.synthesize("EC2_vs_GCE", mock_technical_data, mock_pricing_data)
 
             # The result object contains more than just the synthesis, let's check that part
             self.assertIn("synthesis", result)
