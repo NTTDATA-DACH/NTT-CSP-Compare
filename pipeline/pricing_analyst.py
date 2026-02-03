@@ -36,7 +36,7 @@ class PricingAnalyst:
                     {"model_type": "On-Demand", "csp_a_details": "Standard hourly rates", "csp_b_details": "Standard hourly rates"}
                 ],
                 "cost_efficiency_score": 8.0,
-                "pricing_reasoning": "This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability."
+                "pricing_reasoning": "<p>This is a detailed mock pricing narrative for testing purposes. It explains that pricing is relatively similar but one has better spot instance availability.</p>"
             }
 
         prompt_config = self.prompts["pricing_prompt"]

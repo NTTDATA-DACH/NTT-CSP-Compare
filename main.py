@@ -108,29 +108,50 @@ async def main():
     # Step 1: Get service lists for each CSP
     service_list_a_key = f"service_list_{csp_a}"
     service_list_a = cache.get(service_list_a_key)
+    if service_list_a and not service_list_a.get("services"):
+        logger.warning(f"Cached service list for {csp_a} is empty. Ignoring.")
+        service_list_a = None
+
     if not service_list_a:
         service_list_a = await mapper.get_service_list(csp_a)
-        cache.set(service_list_a_key, service_list_a)
+        if service_list_a and service_list_a.get("services"):
+            cache.set(service_list_a_key, service_list_a)
+        else:
+            logger.error(f"Failed to retrieve service list for {csp_a}")
 
     service_list_b_key = f"service_list_{csp_b}"
     service_list_b = cache.get(service_list_b_key)
+    if service_list_b and not service_list_b.get("services"):
+        logger.warning(f"Cached service list for {csp_b} is empty. Ignoring.")
+        service_list_b = None
+
     if not service_list_b:
         service_list_b = await mapper.get_service_list(csp_b)
-        cache.set(service_list_b_key, service_list_b)
+        if service_list_b and service_list_b.get("services"):
+            cache.set(service_list_b_key, service_list_b)
+        else:
+            logger.error(f"Failed to retrieve service list for {csp_b}")
 
     # Step 2: Map services between the two CSPs
     service_map_key = f"service_map_{csp_a}_{csp_b}"
     service_map = cache.get(service_map_key)
+    if service_map and not service_map.get("items"):
+        logger.warning("Cached service map is empty. Ignoring.")
+        service_map = None
+
     if not service_map:
         # Ensure service lists are valid before mapping
-        if service_list_a and service_list_b:
+        if service_list_a and service_list_a.get("services") and service_list_b and service_list_b.get("services"):
             service_map = await mapper.map_services(csp_a, csp_b, service_list_a.get('services', []), service_list_b.get('services', []))
-            cache.set(service_map_key, service_map)
+            if service_map and service_map.get("items"):
+                cache.set(service_map_key, service_map)
+            else:
+                logger.error("Service mapping failed or returned empty items.")
         else:
             logger.error("Could not retrieve one or both service lists. Aborting.")
             sys.exit(1)
 
-    if not service_map or "items" not in service_map:
+    if not service_map or not service_map.get("items"):
         logger.error("Service mapping failed or produced invalid format. Aborting.")
         sys.exit(1)
 

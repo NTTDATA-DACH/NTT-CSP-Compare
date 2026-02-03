@@ -18,7 +18,7 @@
       "maximum": 10,
       "description": "Score based purely on quality/features. -10 (B worse) to +10 (B better)."
     },
-    "technical_reasoning": { "type": "string", "description": "A detailed, Markdown-formatted narrative explaining the technical comparison, scores, and trade-offs. Do not use bullet points." },
+    "technical_reasoning": { "type": "string", "description": "A detailed, HTML-formatted narrative explaining the comparison, scores, and trade-offs. Use valid HTML tags." },
     "lockin_analysis": {
       "type": "object",
       "properties": {
@@ -30,7 +30,7 @@
         },
         "lockin_reasoning": {
           "type": "string",
-          "description": "Explanation of the lock-in score, considering factors like proprietary APIs, data portability, and open standards."
+          "description": "Explanation of the lock-in score, considering factors like proprietary APIs, data portability, and open standards. HTML-formatted."
         }
       },
       "required": ["lockin_score", "lockin_reasoning"]

@@ -75,11 +75,11 @@ class ServiceMapper:
             )
             if response is None:
                 logger.error(f"Received None response from GeminiClient for {csp}")
-                return {"services": []}
+                return None
             return response
         except Exception as e:
             logger.error(f"Error getting service list for {csp}: {e}")
-            return {"services": []}
+            return None
 
     async def _map_batch_services(self, services_a_chunk: list, services_b: list, csp_a: str, csp_b: str, semaphore: asyncio.Semaphore) -> list:
         """
@@ -180,5 +180,9 @@ class ServiceMapper:
 
         # Flatten the list of lists
         mapped_services = [item for sublist in results for item in sublist]
+
+        if not mapped_services:
+            logger.warning("Service mapping resulted in empty list.")
+            return None
 
         return {"items": mapped_services}

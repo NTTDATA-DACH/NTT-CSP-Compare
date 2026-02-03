@@ -140,17 +140,6 @@ class DashboardGenerator:
             for domain, summary in domain_summaries.items()
         }
 
-        # Convert synthesis markdown to HTML
-        for item in results:
-            if (
-                "synthesis" in item["result"]
-                and "detailed_comparison" in item["result"]["synthesis"]
-            ):
-                item["result"]["synthesis"]["detailed_comparison"] = markdown.markdown(
-                    item["result"]["synthesis"]["detailed_comparison"]
-                )
-
-
         # Render final HTML
         html_content = self.template.render(
             csp_a=csp_a,
