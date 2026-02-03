@@ -18,7 +18,7 @@
       "maximum": 10,
       "description": "Score based purely on quality/features. -10 (B worse) to +10 (B better)."
     },
-    "technical_reasoning": { "type": "string" },
+    "technical_reasoning": { "type": "string", "description": "A detailed, Markdown-formatted narrative explaining the technical comparison, scores, and trade-offs. Do not use bullet points." },
     "lockin_analysis": {
       "type": "object",
       "properties": {

@@ -25,8 +25,7 @@ class Synthesizer:
         with open(PROMPT_CONFIG_PATH, "r") as f:
             self.prompts = json.load(f)
 
-        with open(SYNTHESIS_SCHEMA_PATH, "r") as f:
-            self.schema = json.load(f)
+        # Removed SYNTHESIS_SCHEMA_PATH usage as per-pair synthesis is now deterministic concatenation
 
         with open(MANAGEMENT_SUMMARY_SCHEMA_PATH, "r") as f:
             self.management_summary_schema = json.load(f)
@@ -69,71 +68,44 @@ class Synthesizer:
         except Exception as e:
             logger.error(f"Error generating management summary: {e}")
             return None
+
     async def synthesize(
         self, service_pair_id: str, technical_data: dict, pricing_data: dict
     ) -> dict:
         """
         Synthesizes technical and pricing analysis into a narrative.
         Returns the Result object (Technical + Pricing + Synthesis).
+        Now purely concatenates the detailed narratives from previous steps.
         """
+        tech_reasoning = technical_data.get("technical_reasoning", "No technical reasoning provided.")
+        pricing_reasoning = pricing_data.get("pricing_reasoning", "No pricing reasoning provided.")
+
+        # Concatenate narratives for the detailed comparison
+        detailed_comparison = f"## Technical Analysis\n\n{tech_reasoning}\n\n## Pricing Analysis\n\n{pricing_reasoning}"
+
+        synthesis_result = {
+            "detailed_comparison": detailed_comparison
+            # executive_summary is removed as per requirements
+        }
+
         if Config.TEST_MODE:
             logger.info(
                 f"TEST_MODE enabled for Synthesizer. Returning mock data for {service_pair_id}"
             )
-            synthesis_result = {
-                "executive_summary": "Mock executive summary.",
-                "detailed_comparison": "Mock detailed comparison.",
-            }
-            return {
-                "metadata": {
-                    "service_pair_id": service_pair_id,
-                    "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                    "model_version": self.model_name
-                },
-                "technical_data": technical_data,
-                "pricing_data": pricing_data,
-                "synthesis": synthesis_result
-            }
+            # In TEST_MODE, we also just return the concatenated structure,
+            # assuming upstream components provide mock data that fits.
+            # If not, we can force a mock string here, but better to use the inputs if available.
+            pass # Use the same logic for test mode as production since it's just string concatenation
 
-        prompt_config = self.prompts["synthesis_prompt"]
-        system_instruction = prompt_config["system_instruction"]
-
-        # Serialize inputs for the prompt
-        tech_str = json.dumps(technical_data)
-        price_str = json.dumps(pricing_data)
-
-        user_content = prompt_config["user_template"].format(
-            service_pair_id=service_pair_id,
-            technical_json=tech_str,
-            pricing_json=price_str
-        )
-
-        try:
-            synthesis_result = await self.client.generate_content(
-                model_name=self.model_name,
-                user_content=user_content,
-                system_instruction=system_instruction,
-                schema=self.schema,
-                enable_grounding=False
-            )
-
-            if synthesis_result is None:
-                logger.error(f"Received None response from GeminiClient for {service_pair_id}")
-                return None
-
-            # Construct final Result object
-            result = {
-                "metadata": {
-                    "service_pair_id": service_pair_id,
-                    "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                    "model_version": self.model_name
-                },
-                "technical_data": technical_data,
-                "pricing_data": pricing_data,
-                "synthesis": synthesis_result
-            }
-            return result
-
-        except Exception as e:
-            logger.error(f"Error synthesizing {service_pair_id}: {e}")
-            return None
+        # Construct final Result object
+        result = {
+            "metadata": {
+                "service_pair_id": service_pair_id,
+                "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "model_version": "deterministic_concatenation" # No model used
+            },
+            "technical_data": technical_data,
+            "pricing_data": pricing_data,
+            "synthesis": synthesis_result
+        }
+        return result

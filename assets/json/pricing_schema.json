@@ -19,7 +19,7 @@
       "maximum": 10,
       "description": "Score based purely on cost. -10 (B expensive) to +10 (B cheaper)."
     },
-    "pricing_reasoning": { "type": "string" }
+    "pricing_reasoning": { "type": "string", "description": "A detailed, Markdown-formatted narrative explaining the pricing models, cost efficiency, and value for money. Do not use bullet points." }
   },
   "required": ["service_pair_id", "pricing_models", "free_tier_comparison", "cost_efficiency_score", "pricing_reasoning"]
 }
