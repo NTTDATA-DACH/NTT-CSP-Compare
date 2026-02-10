@@ -24,6 +24,8 @@ class DashboardGenerator:
         service_maps: list,
         management_summary: dict,
         output_path: str,
+        sov_data_a: dict = None,
+        sov_data_b: dict = None,
     ):
         """
         Generates the HTML dashboard from the aggregated results.
@@ -140,6 +142,35 @@ class DashboardGenerator:
             for domain, summary in domain_summaries.items()
         }
 
+        # Sovereignty Data Preparation
+        sov_chart_data = None
+        if sov_data_a and sov_data_b:
+            sov_labels = [c["control_id"] for c in sov_data_a["controls"]]
+            sov_a_scores = [c["score"] for c in sov_data_a["controls"]]
+            sov_b_scores = [c["score"] for c in sov_data_b["controls"]]
+
+            sov_chart_data = {
+                "labels": json.dumps(sov_labels),
+                "datasets": [
+                    {
+                        "label": f"{csp_a} Sovereignty",
+                        "data": json.dumps(sov_a_scores),
+                        "fill": True,
+                        "backgroundColor": "rgba(75, 192, 192, 0.2)",
+                        "borderColor": "rgb(75, 192, 192)",
+                        "pointBackgroundColor": "rgb(75, 192, 192)",
+                    },
+                    {
+                        "label": f"{csp_b} Sovereignty",
+                        "data": json.dumps(sov_b_scores),
+                        "fill": True,
+                        "backgroundColor": "rgba(153, 102, 255, 0.2)",
+                        "borderColor": "rgb(153, 102, 255)",
+                        "pointBackgroundColor": "rgb(153, 102, 255)",
+                    }
+                ]
+            }
+
         # Render final HTML
         html_content = self.template.render(
             csp_a=csp_a,
@@ -156,6 +187,9 @@ class DashboardGenerator:
             domain_scores=domain_scores,
             domain_scores_chart_data=domain_scores_chart_data,
             missing_services=missing_services_list,
+            sov_data_a=sov_data_a,
+            sov_data_b=sov_data_b,
+            sov_chart_data=sov_chart_data,
         )
 
         with open(output_path, 'w') as f:
