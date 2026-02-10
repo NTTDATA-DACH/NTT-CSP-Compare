@@ -8,6 +8,7 @@ from config import Config
 from constants import MAX_CONCURRENT_REQUESTS
 from pipeline.cache import CacheManager
 from pipeline.discovery import ServiceMapper
+from pipeline.sovereignty_analyst import SovereigntyAnalyst
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
 from pipeline.synthesizer import Synthesizer
@@ -160,6 +161,31 @@ async def main():
         items = items[:4]
         logger.info(f"Test mode: limiting to {len(items)} services.")
 
+    # --- Phase 1.5: Sovereignty Analysis ---
+    sov_analyst = SovereigntyAnalyst()
+
+    # Sovereignty Analysis for CSP A
+    sov_a_key = f"sovereignty_{csp_a}"
+    sov_data_a = cache.get(sov_a_key)
+    if not sov_data_a:
+        logger.info(f"Performing sovereignty analysis for {csp_a}...")
+        sov_data_a = await sov_analyst.perform_analysis(csp_a)
+        if sov_data_a:
+            cache.set(sov_a_key, sov_data_a)
+        else:
+            logger.warning(f"Sovereignty analysis failed for {csp_a}")
+
+    # Sovereignty Analysis for CSP B
+    sov_b_key = f"sovereignty_{csp_b}"
+    sov_data_b = cache.get(sov_b_key)
+    if not sov_data_b:
+        logger.info(f"Performing sovereignty analysis for {csp_b}...")
+        sov_data_b = await sov_analyst.perform_analysis(csp_b)
+        if sov_data_b:
+            cache.set(sov_b_key, sov_data_b)
+        else:
+            logger.warning(f"Sovereignty analysis failed for {csp_b}")
+
     # --- Phase 2, 3, 4: Analysis, Pricing, Synthesis ---
     tech_analyst = TechnicalAnalyst()
     pricing_analyst = PricingAnalyst()
@@ -210,6 +236,8 @@ async def main():
         items,
         management_summary,
         output_html,
+        sov_data_a,
+        sov_data_b
     )
 
     logger.info("Pipeline completed successfully.")

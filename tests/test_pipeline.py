@@ -4,6 +4,7 @@ import json
 import os
 import asyncio
 from pipeline.discovery import ServiceMapper
+from pipeline.sovereignty_analyst import SovereigntyAnalyst
 from pipeline.analyzer import TechnicalAnalyst
 from pipeline.pricing_analyst import PricingAnalyst
 from pipeline.synthesizer import Synthesizer
@@ -93,6 +94,16 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             result = await analyst.perform_analysis("AWS", "GCP", service_pair)
             expected_data = mock_technical_data.copy()
             self.assertEqual(result, expected_data)
+
+    @patch("builtins.open")
+    async def test_sovereignty_analyst(self, mock_open_func):
+        mock_open_func.return_value.__enter__.return_value.read.return_value = "{}"
+        with patch('pipeline.sovereignty_analyst.Config.TEST_MODE', True):
+            analyst = SovereigntyAnalyst()
+            result = await analyst.perform_analysis("AWS")
+            self.assertEqual(result["csp"], "AWS")
+            self.assertEqual(len(result["controls"]), 10)
+            self.assertEqual(result["controls"][0]["control_id"], "SOV-01")
 
     async def test_pricing(self):
         # This test now validates that TEST_MODE returns the correct mock data.

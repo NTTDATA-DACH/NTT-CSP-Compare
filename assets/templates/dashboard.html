@@ -82,6 +82,60 @@
             <canvas id="domainScoresChart"></canvas>
         </div>
 
+        {% if sov_data_a and sov_data_b %}
+        <div class="summary-card">
+            <h3>Digital Sovereignty (SOV Controls)</h3>
+            <p>Evaluation against C5-Ergänzungsmodul: Digitale Souveränität (SOV) - Version 1.2. Scores range from -10 to 10.</p>
+
+            <div style="width: 50%; margin: auto; margin-bottom: 30px;">
+                <canvas id="sovChart"></canvas>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Control ID</th>
+                        <th>Control Name</th>
+                        <th>{{ csp_a }} Score</th>
+                        <th>{{ csp_b }} Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(sov_data_a.controls|length) %}
+                    {% set control_a = sov_data_a.controls[i] %}
+                    {% set control_b = sov_data_b.controls[i] %}
+                    <tr>
+                        <td>{{ control_a.control_id }}</td>
+                        <td>{{ control_a.control_name }}</td>
+                        <td>
+                            <span class="score {{ 'score-positive' if control_a.score > 0 else 'score-negative' if control_a.score < 0 else 'score-neutral' }}">
+                                {{ control_a.score }}
+                            </span>
+                            <details style="margin-top: 5px;">
+                                <summary style="font-size: 0.8em; padding: 2px 5px;">Reasoning</summary>
+                                <div style="padding: 10px; background: #fff; border: 1px solid #ddd; font-size: 0.9em;">
+                                    {{ control_a.reasoning | safe }}
+                                </div>
+                            </details>
+                        </td>
+                        <td>
+                            <span class="score {{ 'score-positive' if control_b.score > 0 else 'score-negative' if control_b.score < 0 else 'score-neutral' }}">
+                                {{ control_b.score }}
+                            </span>
+                            <details style="margin-top: 5px;">
+                                <summary style="font-size: 0.8em; padding: 2px 5px;">Reasoning</summary>
+                                <div style="padding: 10px; background: #fff; border: 1px solid #ddd; font-size: 0.9em;">
+                                    {{ control_b.reasoning | safe }}
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
         <h3>Detailed Comparison by Domain</h3>
 
         {% if not services_by_domain %}
@@ -209,6 +263,59 @@
                 }
             }
         });
+
+        {% if sov_chart_data %}
+        const sovCtx = document.getElementById('sovChart');
+        const sovData = {
+            labels: JSON.parse('{{ sov_chart_data.labels | safe }}'),
+            datasets: [
+                {
+                    label: '{{ sov_chart_data.datasets[0].label }}',
+                    data: JSON.parse('{{ sov_chart_data.datasets[0].data | safe }}'),
+                    fill: true,
+                    backgroundColor: '{{ sov_chart_data.datasets[0].backgroundColor }}',
+                    borderColor: '{{ sov_chart_data.datasets[0].borderColor }}',
+                    pointBackgroundColor: '{{ sov_chart_data.datasets[0].pointBackgroundColor }}',
+                },
+                {
+                    label: '{{ sov_chart_data.datasets[1].label }}',
+                    data: JSON.parse('{{ sov_chart_data.datasets[1].data | safe }}'),
+                    fill: true,
+                    backgroundColor: '{{ sov_chart_data.datasets[1].backgroundColor }}',
+                    borderColor: '{{ sov_chart_data.datasets[1].borderColor }}',
+                    pointBackgroundColor: '{{ sov_chart_data.datasets[1].pointBackgroundColor }}',
+                }
+            ]
+        };
+
+        new Chart(sovCtx, {
+            type: 'radar',
+            data: sovData,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        min: -10,
+                        max: 10,
+                        ticks: {
+                           backdropColor: 'rgba(0, 0, 0, 0)',
+                           color: '#444'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        {% endif %}
     </script>
 </body>
 </html>
