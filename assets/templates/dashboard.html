@@ -106,7 +106,15 @@
                     {% set control_b = sov_data_b.controls[i] %}
                     <tr>
                         <td>{{ control_a.control_id }}</td>
-                        <td>{{ control_a.control_name }}</td>
+                        <td>
+                            <strong>{{ control_a.control_name }}</strong>
+                            <details style="margin-top: 5px;">
+                                <summary style="font-size: 0.7em; color: #666; cursor: pointer;">View Control Description</summary>
+                                <div style="padding: 8px; background: #f9f9f9; border: 1px solid #eee; font-size: 0.85em; font-weight: normal; white-space: pre-wrap;">
+                                    {{ control_a.control_description }}
+                                </div>
+                            </details>
+                        </td>
                         <td>
                             <span class="score {{ 'score-positive' if control_a.score > 0 else 'score-negative' if control_a.score < 0 else 'score-neutral' }}">
                                 {{ control_a.score }}
