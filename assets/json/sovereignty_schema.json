@@ -9,10 +9,11 @@
         "properties": {
           "control_id": { "type": "string" },
           "control_name": { "type": "string" },
+          "control_description": { "type": "string" },
           "score": { "type": "integer", "minimum": -10, "maximum": 10 },
           "reasoning": { "type": "string" }
         },
-        "required": ["control_id", "control_name", "score", "reasoning"]
+        "required": ["control_id", "control_name", "control_description", "score", "reasoning"]
       }
     }
   },
