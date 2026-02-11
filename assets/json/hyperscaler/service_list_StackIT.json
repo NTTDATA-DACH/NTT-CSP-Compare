@@ -25,6 +25,12 @@
       "description": "Automates the operating system (OS) update process for both Windows and Linux servers. Helps maintain security and stability by applying patches and updates according to user-defined maintenance windows."
     },
     {
+      "domain": "Compute",
+      "service_name": "STACKIT Server Agent",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/server-agent",
+      "description": "A lightweight agent installed on VM instances that enables advanced management features, including automated updates, monitoring, and the execution of remote scripts via STACKIT Run Command."
+    },
+    {
       "domain": "Container Operations",
       "service_name": "STACKIT Kubernetes Engine (SKE)",
       "service_url": "https://docs.stackit.cloud/documentation/container/kubernetes-engine",
@@ -68,6 +74,12 @@
     },
     {
       "domain": "Networking",
+      "service_name": "STACKIT Network Area (SNA)",
+      "service_url": "https://docs.stackit.cloud/documentation/network/network-area",
+      "description": "Enables the interconnection of multiple Virtual Networks across different projects and organizations. Facilitates complex network topologies and shared service architectures within a secure private network."
+    },
+    {
+      "domain": "Networking",
       "service_name": "STACKIT Load Balancer",
       "service_url": "https://docs.stackit.cloud/documentation/network/load-balancing",
       "description": "Distributes incoming network traffic across multiple targets to ensure high availability and reliability. Supports both Network Load Balancers (Layer 4) for high throughput and Application Load Balancers (Layer 7) for intelligent routing."
@@ -77,6 +89,12 @@
       "service_name": "STACKIT Content Delivery Network (CDN)",
       "service_url": "https://docs.stackit.cloud/documentation/network/cdn",
       "description": "A global content delivery network that caches content at edge locations closer to end-users. Improves application performance and reduces latency by delivering static assets like images, videos, and scripts from the nearest point of presence."
+    },
+    {
+      "domain": "Networking",
+      "service_name": "STACKIT Web Application Firewall (WAF)",
+      "service_url": "https://docs.stackit.cloud/documentation/network/web-application-firewall",
+      "description": "Protects web applications and APIs against common web exploits and bots. Integrates with STACKIT CDN and Application Load Balancers to provide customizable security rules and traffic filtering."
     },
     {
       "domain": "Networking",
@@ -281,6 +299,66 @@
       "service_name": "STACKIT Marketplace",
       "service_url": "https://docs.stackit.cloud/documentation/marketplace",
       "description": "Catalog of partner and third-party solutions. Enables easy deployment of verified software and services directly into STACKIT projects."
+    },
+    {
+      "domain": "Monitoring",
+      "service_name": "STACKIT Logs",
+      "service_url": "https://docs.stackit.cloud/documentation/logging-monitoring/logs",
+      "description": "A scalable and persistent logging service distinct from STACKIT LogMe. It focuses on the secure ingestion, storage, and retrieval of log data via API, often used as a backend for custom observability pipelines."
+    },
+    {
+      "domain": "Security and Governance",
+      "service_name": "STACKIT Service Accounts",
+      "service_url": "https://docs.stackit.cloud/documentation/platform/service-accounts",
+      "description": "Non-human identity management for automated processes and applications. Allows the creation of service accounts with specific roles and API keys to authenticate against STACKIT services securely without using user credentials."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Red Hat Enterprise Linux (RHEL)",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/rhel",
+      "description": "Provides official Red Hat Enterprise Linux images with integrated licensing and support. Ensures compliance and access to Red Hat's secure, enterprise-grade operating system environment."
+    },
+    {
+      "domain": "Compute",
+      "service_name": "STACKIT Windows Server",
+      "service_url": "https://docs.stackit.cloud/documentation/compute/windows-server",
+      "description": "Ready-to-use Windows Server instances with integrated licensing (SPL). Optimized for running .NET applications and other Microsoft workloads within the STACKIT ecosystem."
+    },
+    {
+      "domain": "Managed Solutions",
+      "service_name": "STACKIT Colocation",
+      "service_url": "https://stackit.cloud/en/solutions/colocation",
+      "description": "Secure rack housing services in STACKIT's certified data centers (Tier 3 equivalent). Offers private racks, redundant power/cooling, and direct high-performance connectivity to the STACKIT Cloud backbone."
+    },
+    {
+      "domain": "Managed Solutions",
+      "service_name": "STACKIT Cloud Migration",
+      "service_url": "https://stackit.cloud/en/solutions/cloud-migration",
+      "description": "Professional service for planning and executing the migration of legacy workloads to STACKIT. Includes assessment, strategy development, and technical implementation support."
+    },
+    {
+      "domain": "Managed Solutions",
+      "service_name": "STACKIT Consulting & Professional Services",
+      "service_url": "https://stackit.cloud/en/solutions/consulting",
+      "description": "Expert consulting for cloud architecture, security, and digital transformation. Provides tailored engineering support ('Helping Hands') for complex implementations and optimizations."
+    },
+    {
+      "domain": "SaaS & Productivity",
+      "service_name": "STACKIT Workspace",
+      "service_url": "https://stackit.cloud/en/solutions/workspace",
+      "description": "A secure, sovereign digital office solution. Bundles collaboration tools, document management, and communication services hosted entirely within the GDPR-compliant STACKIT cloud."
+    },
+    {
+      "domain": "SaaS & Productivity",
+      "service_name": "STACKIT Spaces",
+      "service_url": "https://stackit.cloud/en/solutions/spaces",
+      "description": "An immersive metaverse platform for business collaboration and virtual events. Offers secure virtual environments for meetings, training, and customer engagement."
+    },
+    {
+      "domain": "Support",
+      "service_name": "STACKIT Support",
+      "service_url": "https://docs.stackit.cloud/documentation/support",
+      "description": "Structured support plans (e.g., Business, Enterprise, Ultimate) providing defined SLAs, 24/7 access to technical experts, and incident management for mission-critical workloads."
     }
   ]
 }

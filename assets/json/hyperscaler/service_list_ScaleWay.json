@@ -545,6 +545,36 @@
       "service_name": "Cost Manager",
       "service_url": "https://www.scaleway.com/en/docs/billing/cost-manager/",
       "description": "Financial operations tool providing visibility into cloud spend. Features billing alerts, consumption analysis, and invoice breakdown to help optimize infrastructure costs."
+    },
+    {
+      "domain": "AI & Labs",
+      "service_name": "Embeddings API",
+      "service_url": "https://www.scaleway.com/en/docs/ai-inference/generative-apis/#embeddings",
+      "description": "Dedicated API endpoint for generating vector embeddings from text. Used for semantic search, recommendation systems, and RAG (Retrieval-Augmented Generation) architectures."
+    },
+    {
+      "domain": "AI & Labs",
+      "service_name": "Rerank API",
+      "service_url": "https://www.scaleway.com/en/docs/ai-inference/generative-apis/#rerank",
+      "description": "Specialized AI model API designed to re-order search results based on relevance. Optimizes output from standard search engines (like OpenSearch) for higher accuracy."
+    },
+    {
+      "domain": "Compute (Dedibox)",
+      "service_name": "RPN (Real Private Network)",
+      "service_url": "https://www.scaleway.com/en/docs/dedibox/rpn/",
+      "description": "The private network infrastructure specific to Dedibox bare-metal servers. Distinct from the Cloud VPC, it provides a high-performance, isolated network for inter-server communication."
+    },
+    {
+      "domain": "Storage (Dedibox)",
+      "service_name": "RPN SAN",
+      "service_url": "https://www.scaleway.com/en/docs/dedibox/san/",
+      "description": "Network Attached Storage specifically for Dedibox servers via the RPN. Offers iSCSI block storage expansion for legacy bare-metal configurations."
+    },
+    {
+      "domain": "Management",
+      "service_name": "Support Plans (Business/Enterprise)",
+      "service_url": "https://www.scaleway.com/en/support/",
+      "description": "Paid service tiers (Silver, Gold, Platinum) offering guaranteed response times (SLA), dedicated technical account managers, and architectural reviews."
     }
   ]
 }
