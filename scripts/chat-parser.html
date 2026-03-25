@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat HTML → JSON Parser</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1117;
+    --surface: #161b22;
+    --surface2: #1c2230;
+    --border: #2a3140;
+    --text: #c9d1d9;
+    --text-dim: #6e7681;
+    --accent: #58a6ff;
+    --accent-glow: rgba(88, 166, 255, 0.15);
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  header span {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    height: calc(100vh - 12rem);
+  }
+
+  @media (max-width: 900px) {
+    .panels {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .panel-header .badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 99px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  textarea {
+    flex: 1;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    resize: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    outline: none;
+  }
+
+  textarea::placeholder { color: var(--text-dim); }
+
+  .output-area {
+    flex: 1;
+    overflow: auto;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  button:hover {
+    background: var(--surface2);
+    border-color: var(--accent);
+  }
+
+  button.primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+
+  button.primary:hover {
+    background: #79bbff;
+  }
+
+  .stats {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  .stats .num { color: var(--green); font-weight: 600; }
+
+  /* JSON syntax coloring */
+  .json-key { color: #79c0ff; }
+  .json-string { color: #a5d6ff; }
+  .json-number { color: #d2a8ff; }
+  .json-bracket { color: var(--text-dim); }
+  .json-null { color: var(--orange); }
+
+  .error { color: var(--red); }
+
+  .drop-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(88, 166, 255, 0.06);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    z-index: 2;
+  }
+
+  .input-wrap {
+    position: relative;
+    flex: 1;
+    display: flex;
+  }
+
+  .input-wrap.dragover .drop-hint { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>chat-html → json</h1>
+    <span>Parst exportierten Chatbot-HTML (Gemini/Bard) in strukturiertes JSON</span>
+  </header>
+
+  <div class="controls">
+    <button class="primary" onclick="parseHTML()">▶ Parsen</button>
+    <button onclick="copyOutput()">Kopieren</button>
+    <button onclick="downloadJSON()">↓ JSON speichern</button>
+    <button onclick="clearAll()">Leeren</button>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <div class="panel-header">
+        <span>HTML Input</span>
+        <span class="badge">paste / drop</span>
+      </div>
+      <div class="input-wrap" id="inputWrap">
+        <div class="drop-hint">HTML-Datei hier ablegen</div>
+        <textarea id="htmlInput" placeholder="HTML hier einfügen oder .html-Datei reinziehen …"></textarea>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+        <span>JSON Output</span>
+        <span class="badge" id="outBadge">—</span>
+      </div>
+      <div class="output-area" id="jsonOutput"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// --- Drag & Drop ---
+const inputWrap = document.getElementById('inputWrap');
+const htmlInput = document.getElementById('htmlInput');
+
+['dragenter','dragover'].forEach(e => inputWrap.addEventListener(e, ev => {
+  ev.preventDefault(); inputWrap.classList.add('dragover');
+}));
+['dragleave','drop'].forEach(e => inputWrap.addEventListener(e, () => {
+  inputWrap.classList.remove('dragover');
+}));
+inputWrap.addEventListener('drop', ev => {
+  ev.preventDefault();
+  const file = ev.dataTransfer.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = e => { htmlInput.value = e.target.result; parseHTML(); };
+    reader.readAsText(file);
+  }
+});
+
+// --- Parser ---
+function parseHTML() {
+  const raw = htmlInput.value.trim();
+  if (!raw) return;
+
+  const output = document.getElementById('jsonOutput');
+  const stats = document.getElementById('stats');
+  const badge = document.getElementById('outBadge');
+
+  try {
+    // Parse in a sandboxed DOM
+    const doc = new DOMParser().parseFromString(raw, 'text/html');
+    const chats = [];
+
+    // Strategy 1: Find all user-query elements and pair each with its
+    // next-sibling model-response (they sit as siblings inside conversation-containers)
+    const allUserQueries = doc.querySelectorAll('user-query');
+
+    allUserQueries.forEach(uqEl => {
+      // --- Extract user text ---
+      let userText = '';
+      const userLines = uqEl.querySelectorAll('.query-text-line');
+      if (userLines.length) {
+        userText = Array.from(userLines)
+          .map(p => p.textContent.trim())
+          .filter(Boolean)
+          .join('\n');
+      } else {
+        userText = extractCleanText(uqEl);
+      }
+      userText = userText.replace(/^Du hast gesagt\s*/i, '').trim();
+
+      // --- Find the matching model-response ---
+      // Walk forward through siblings from the user-query
+      let modelEl = null;
+      let sibling = uqEl.nextElementSibling;
+      while (sibling) {
+        if (sibling.tagName && sibling.tagName.toLowerCase() === 'model-response') {
+          modelEl = sibling;
+          break;
+        }
+        // Also check if sibling contains a model-response
+        const nested = sibling.querySelector && sibling.querySelector('model-response');
+        if (nested) { modelEl = nested; break; }
+        sibling = sibling.nextElementSibling;
+      }
+      // If not found as sibling, check parent's next sibling (different nesting)
+      if (!modelEl && uqEl.parentElement) {
+        sibling = uqEl.parentElement.nextElementSibling;
+        while (sibling) {
+          if (sibling.tagName && sibling.tagName.toLowerCase() === 'model-response') {
+            modelEl = sibling;
+            break;
+          }
+          const nested = sibling.querySelector && sibling.querySelector('model-response');
+          if (nested) { modelEl = nested; break; }
+          sibling = sibling.nextElementSibling;
+        }
+      }
+
+      // --- Extract model text ---
+      let modelText = '';
+      if (modelEl) {
+        const markdownEl = modelEl.querySelector('.markdown, .response-content, .model-response-text, message-content');
+        if (markdownEl) {
+          modelText = extractCleanText(markdownEl);
+        } else {
+          const respContainer = modelEl.querySelector('.response-container');
+          if (respContainer) {
+            const clone = respContainer.cloneNode(true);
+            clone.querySelectorAll('button, .tts-button-container, .avatar-container, bot-logo, .response-container-header-controls, mat-icon, .action-button, tts-control, bard-avatar').forEach(el => el.remove());
+            modelText = extractCleanText(clone);
+          } else {
+            const clone = modelEl.cloneNode(true);
+            clone.querySelectorAll('button, .tts-button-container, .avatar-container, bot-logo, mat-icon, .action-button, tts-control, bard-avatar').forEach(el => el.remove());
+            modelText = extractCleanText(clone);
+          }
+        }
+        modelText = modelText.trim();
+      }
+
+      // --- Get ID from parent conversation-container ---
+      let id = null;
+      let parent = uqEl.parentElement;
+      while (parent) {
+        if (parent.classList && parent.classList.contains('conversation-container')) {
+          id = parent.id || null;
+          break;
+        }
+        parent = parent.parentElement;
+      }
+
+      chats.push({
+        ...(id ? { id } : {}),
+        user: userText || '',
+        model: modelText || ''
+      });
+    });
+
+    // Strategy 2 fallback: if no user-query tags found, try model-response only
+    if (chats.length === 0) {
+      const modelResponses = doc.querySelectorAll('model-response');
+      modelResponses.forEach((mr, i) => {
+        const clone = mr.cloneNode(true);
+        clone.querySelectorAll('button, .tts-button-container, .avatar-container, bot-logo, mat-icon, .action-button, tts-control, bard-avatar').forEach(el => el.remove());
+        chats.push({ user: '', model: extractCleanText(clone).trim() });
+      });
+    }
+
+    const result = { chats };
+    const jsonStr = JSON.stringify(result, null, 2);
+
+    output.innerHTML = syntaxHighlight(jsonStr);
+    const nUQ = doc.querySelectorAll('user-query').length;
+    const nMR = doc.querySelectorAll('model-response').length;
+    const nCC = doc.querySelectorAll('.conversation-container').length;
+    stats.innerHTML = `<span class="num">${chats.length}</span> Einträge &nbsp;·&nbsp; ${nUQ} user-query &nbsp;·&nbsp; ${nMR} model-response &nbsp;·&nbsp; ${nCC} container`;
+    badge.textContent = `${chats.length} Einträge`;
+
+    // Store for copy/download
+    window._lastJSON = jsonStr;
+
+  } catch (err) {
+    output.innerHTML = `<span class="error">Fehler beim Parsen: ${err.message}</span>`;
+    stats.innerHTML = '';
+    badge.textContent = 'Fehler';
+  }
+}
+
+function extractCleanText(el) {
+  // Walk through nodes, converting block elements to newlines
+  let text = '';
+  const walk = (node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      text += node.textContent;
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const tag = node.tagName.toLowerCase();
+      // Skip UI chrome
+      if (['button','mat-icon','bot-logo','style','script'].includes(tag)) return;
+      if (node.classList.contains('cdk-visually-hidden')) return;
+      if (node.classList.contains('action-button')) return;
+
+      const isBlock = ['p','div','br','h1','h2','h3','h4','h5','h6','li','tr'].includes(tag);
+      if (isBlock && text.length && !text.endsWith('\n')) text += '\n';
+
+      for (const child of node.childNodes) walk(child);
+
+      if (isBlock && !text.endsWith('\n')) text += '\n';
+    }
+  };
+  walk(el);
+  // Clean up excessive newlines
+  return text.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+/g, ' ').trim();
+}
+
+function syntaxHighlight(json) {
+  return json
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"(\\u[a-fA-F0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?/g, (match) => {
+      let cls = 'json-string';
+      if (match.endsWith(':')) cls = 'json-key';
+      return `<span class="${cls}">${match}</span>`;
+    })
+    .replace(/\b(\d+)\b/g, '<span class="json-number">$1</span>')
+    .replace(/\bnull\b/g, '<span class="json-null">null</span>')
+    .replace(/([[\]{}])/g, '<span class="json-bracket">$1</span>');
+}
+
+function copyOutput() {
+  if (!window._lastJSON) return;
+  navigator.clipboard.writeText(window._lastJSON);
+}
+
+function downloadJSON() {
+  if (!window._lastJSON) return;
+  const blob = new Blob([window._lastJSON], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'chat-export.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function clearAll() {
+  htmlInput.value = '';
+  document.getElementById('jsonOutput').innerHTML = '';
+  document.getElementById('stats').innerHTML = '';
+  document.getElementById('outBadge').textContent = '—';
+  window._lastJSON = null;
+}
+</script>
+
+</body>
+</html>
