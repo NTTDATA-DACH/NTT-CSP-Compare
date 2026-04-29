@@ -144,10 +144,24 @@ class DashboardGenerator:
 
         # Sovereignty Data Preparation
         sov_chart_data = None
+        sov_comparison = []
         if sov_data_a and sov_data_b:
-            sov_labels = [c["control_id"] for c in sov_data_a["controls"]]
-            sov_a_scores = [c["score"] for c in sov_data_a["controls"]]
-            sov_b_scores = [c["score"] for c in sov_data_b["controls"]]
+            # Create a lookup for CSP B controls by ID to ensure alignment
+            dict_b = {c["control_id"]: c for c in sov_data_b.get("controls", [])}
+            
+            sov_labels = []
+            sov_a_scores = []
+            sov_b_scores = []
+
+            for ctrl_a in sov_data_a.get("controls", []):
+                cid = ctrl_a["control_id"]
+                ctrl_b = dict_b.get(cid)
+                
+                sov_labels.append(cid)
+                sov_a_scores.append(ctrl_a["score"])
+                sov_b_scores.append(ctrl_b["score"] if ctrl_b else 0)
+                # Store pairs for the table iteration
+                sov_comparison.append({"a": ctrl_a, "b": ctrl_b})
 
             sov_chart_data = {
                 "labels": json.dumps(sov_labels),
@@ -189,6 +203,7 @@ class DashboardGenerator:
             missing_services=missing_services_list,
             sov_data_a=sov_data_a,
             sov_data_b=sov_data_b,
+            sov_comparison=sov_comparison,
             sov_chart_data=sov_chart_data,
         )
 

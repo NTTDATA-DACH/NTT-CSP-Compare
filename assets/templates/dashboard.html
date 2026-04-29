@@ -101,9 +101,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in range(sov_data_a.controls|length) %}
-                    {% set control_a = sov_data_a.controls[i] %}
-                    {% set control_b = sov_data_b.controls[i] %}
+                    {% for item in sov_comparison %}
+                    {% set control_a = item.a %}
+                    {% set control_b = item.b %}
                     <tr>
                         <td>{{ control_a.control_id }}</td>
                         <td>
@@ -127,6 +127,7 @@
                             </details>
                         </td>
                         <td>
+                            {% if control_b %}
                             <span class="score {{ 'score-positive' if control_b.score > 0 else 'score-negative' if control_b.score < 0 else 'score-neutral' }}">
                                 {{ control_b.score }}
                             </span>
@@ -136,6 +137,9 @@
                                     {{ control_b.reasoning | safe }}
                                 </div>
                             </details>
+                            {% else %}
+                            <span class="score score-neutral">N/A</span>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
