@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Automatically activate virtual environment if it exists
+for venv_dir in "venv" ".venv"; do
+    if [ -f "$venv_dir/bin/activate" ]; then
+        source "$venv_dir/bin/activate"
+        break
+    fi
+done
+
 fetch_infra() {
     echo "Querying Terraform for infrastructure details..."
     pushd terraform > /dev/null

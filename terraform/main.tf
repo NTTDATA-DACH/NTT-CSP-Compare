@@ -12,6 +12,24 @@ provider "google" {
   region  = var.region
 }
 
+# Enable Cloud Resource Manager API
+resource "google_project_service" "cloud_resource_manager" {
+  service            = "cloudresourcemanager.googleapis.com"
+  disable_on_destroy = false
+}
+
+# Enable IAM API
+resource "google_project_service" "iam" {
+  service            = "iam.googleapis.com"
+  disable_on_destroy = false
+}
+
+# Enable Cloud Storage API
+resource "google_project_service" "storage" {
+  service            = "storage.googleapis.com"
+  disable_on_destroy = false
+}
+
 # Enable Vertex AI API
 resource "google_project_service" "vertex_ai" {
   service            = "aiplatform.googleapis.com"

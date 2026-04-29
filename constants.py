@@ -1,7 +1,7 @@
 # Models
-MODEL_DISCOVERY = "gemini-3-pro-preview"
-MODEL_ANALYSIS = "gemini-3-pro-preview"
-MODEL_SYNTHESIS = "gemini-3-pro-preview"
+MODEL_DISCOVERY = "gemini-3.1-pro-preview"
+MODEL_ANALYSIS = "gemini-3.1-pro-preview"
+MODEL_SYNTHESIS = "gemini-3.1-pro-preview"
 
 # Budgets & Configs
 GROUNDING_THRESHOLD = 0.7
