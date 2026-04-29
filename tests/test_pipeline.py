@@ -102,8 +102,8 @@ class TestPipeline(unittest.IsolatedAsyncioTestCase):
             analyst = SovereigntyAnalyst()
             result = await analyst.perform_analysis("AWS")
             self.assertEqual(result["csp"], "AWS")
-            self.assertEqual(len(result["controls"]), 10)
-            self.assertEqual(result["controls"][0]["control_id"], "SOV-01")
+            self.assertEqual(len(result["controls"]), 30)
+            self.assertEqual(result["controls"][0]["control_id"], "SOV-1-01")
 
     async def test_pricing(self):
         # This test now validates that TEST_MODE returns the correct mock data.
